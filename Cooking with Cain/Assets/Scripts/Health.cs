@@ -5,17 +5,22 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
     //Keeps track of the character's health
-    public int health = 100;
-    public Text healthbar;
+    public float starting_health = 100;
+    private float health;
+    public Text hptext;
+    public Image hpbar;
 
 	void Start () {
-        healthbar.text = health.ToString();
+        health = starting_health;
+        hptext.text = health.ToString();
 	}
 	
 
 	//Takes an amount of damage, and updates its healthbar
 	public void  damage(int amt) {
         health -= amt;
-        healthbar.text = health.ToString();
+        hptext.text = health.ToString();
+        hpbar.fillAmount = health / starting_health;
+
     }
 }
