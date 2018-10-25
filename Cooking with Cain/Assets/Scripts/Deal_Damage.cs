@@ -12,8 +12,9 @@ public class Deal_Damage : MonoBehaviour {
         {
             Food food = foodObject.GetComponent<Food>();
 
-            totalDamage += attack * food.multiplier;
-            
+            totalDamage += attack * (food.multiplierRange.Length == 2 ? Random.Range(food.multiplierRange[0], food.multiplierRange[1]) : food.multiplier);
+
+
             foreach (string attribute in food.attributes)
             {
                 attributes.Add(attribute);
@@ -33,6 +34,11 @@ public class Deal_Damage : MonoBehaviour {
         else
         {
             damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"));
+        }
+
+        if (attributes.Contains("atkboost"))
+        {
+            // gives attack boost to attacker
         }
     }
 
