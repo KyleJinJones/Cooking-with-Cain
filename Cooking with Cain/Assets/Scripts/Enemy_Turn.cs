@@ -13,6 +13,6 @@ public class Enemy_Turn : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void turn() {
-        manager.GetComponent<Deal_Damage>().damage(this.gameObject, GameObject.FindGameObjectWithTag("Player"), atk, null);
+        manager.GetComponent<Deal_Damage>().damage(this.gameObject, GameObject.FindGameObjectWithTag("Player"), atk, false);
 	}
 }
