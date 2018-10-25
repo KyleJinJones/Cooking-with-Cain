@@ -27,7 +27,7 @@ public class Player_Turn : MonoBehaviour {
         //Stalls the function here until the button has been clicked, and attacked has been set to true
 
         //Stalls here until the button sets attacked to true, and it proceeds to deal damage
-        while (attacked == false)
+        while (!attacked)
         {
 
             yield return null;
@@ -35,7 +35,7 @@ public class Player_Turn : MonoBehaviour {
 
         //Deals damage to an enemy
         //Note, targeted enemy will likely be passed from ui function
-        manager.GetComponent<Deal_Damage>().damage(this.gameObject,GameObject.FindGameObjectWithTag("Enemy"),atk,null);
+        manager.GetComponent<Deal_Damage>().damage(this.gameObject,GameObject.FindGameObjectWithTag("Enemy"),atk,false);
         //turns the atkbutton off
         atkbutton.SetActive(false);
         attacked = false;

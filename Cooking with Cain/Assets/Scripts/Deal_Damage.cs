@@ -20,27 +20,30 @@ public class Deal_Damage : MonoBehaviour {
             }
         }
 
-        damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.ToArray());
+        if (attributes.Contains("lifesteal"))
+        {
+            attacker.GetComponent<Health>().heal(Mathf.RoundToInt(totalDamage * 0.15f));
+        }
+
+        if (attributes.Contains("splash"))
+        {
+            // obtain list of targets via Turn_Manager?
+            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"));
+        }
+        else
+        {
+            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"));
+        }
     }
 
-	public void damage(GameObject Attacker,GameObject target, int amt, string[] attributes) {
-        target.GetComponent<Health>().damage(amt);
+	public void damage(GameObject Attacker,GameObject target, int amt, bool burn) {
+        Health health = target.GetComponent<Health>();
 
-        foreach (string attribute in attributes)
+        health.damage(amt);
+        
+        if (burn)
         {
-            switch (attribute)
-            {
-                case "lifesteal":
-                    // do something
-                    break;
-                case "burn":
-                    // do something
-                    break;
-                case "splash":
-                    // do something
-                    break;
-                // etc
-            }
+            health.burnDuration = 3;
         }
-	}
+    }
 }
