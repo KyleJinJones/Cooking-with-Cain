@@ -10,6 +10,7 @@ public class Health : MonoBehaviour {
     public Text hptext;
     public Image hpbar;
     public int burnDuration;
+    public float burnPercent;
 
 	void Start () {
         health = starting_health;
@@ -20,8 +21,17 @@ public class Health : MonoBehaviour {
     {
         if (burnDuration > 0)
         {
-            damage(Mathf.RoundToInt(starting_health * 0.07f));
+            damage(Mathf.RoundToInt(health * 0.07f));
             burnDuration--;
+
+            if (burnDuration == 0)
+            {
+                burnPercent = 0;
+            }
+        }
+        else
+        {
+            burnPercent = 0;
         }
     }
 

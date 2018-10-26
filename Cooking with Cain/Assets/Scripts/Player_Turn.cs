@@ -39,7 +39,7 @@ public class Player_Turn : MonoBehaviour {
 
         //Deals damage to an enemy
         //Note, targeted enemy will likely be passed from ui function
-        manager.GetComponent<Deal_Damage>().damage(this.gameObject,GameObject.FindGameObjectWithTag("Enemy"),attack,false);
+        manager.GetComponent<Deal_Damage>().damage(this.gameObject,GameObject.FindGameObjectWithTag("Enemy"),attack,false, 0);
         //turns the atkbutton off
         atkbutton.SetActive(false);
         attacked = false;
