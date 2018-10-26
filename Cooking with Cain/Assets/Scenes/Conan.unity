@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 1393672913}
   - component: {fileID: 511422522}
   - component: {fileID: 511422525}
+  - component: {fileID: 511422526}
   m_Layer: 0
   m_Name: Cain
   m_TagString: Player
@@ -584,9 +585,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starting_health: 100
+  health: 0
   hptext: {fileID: 2078811377}
   hpbar: {fileID: 1293012610}
   burnDuration: 0
+  burnPercent: 0
 --- !u!212 &511422523
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -663,6 +666,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 10
   boostDuration: 0
+--- !u!114 &511422526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511422521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789e40134eeb41b46bcda1554095d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burn: 0.07
+  splash: 0.5
+  lifesteal: 0.5
+  atkboost: 0.2
 --- !u!1001 &552351112
 Prefab:
   m_ObjectHideFlags: 0
@@ -874,6 +892,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 5
   boostDuration: 0
+--- !u!114 &1151648157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1151648154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789e40134eeb41b46bcda1554095d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burn: 0.07
+  splash: 0.5
+  lifesteal: 0.5
+  atkboost: 0.2
 --- !u!1 &1293012608
 GameObject:
   m_ObjectHideFlags: 0

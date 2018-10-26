@@ -38,6 +38,10 @@ public class Health : MonoBehaviour {
 	//Takes an amount of damage, and updates its healthbar
 	public void  damage(int amt) {
         health -= amt;
+
+        if (health < 0)
+            health = 0;
+
         hptext.text = health.ToString();
         hpbar.fillAmount = health / starting_health;
 
