@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
     //Keeps track of the character's health
     public float starting_health = 100;
-    public float health;
+    public float health = 100;
     public Text hptext;
     public Image hpbar;
     public int burnDuration;
@@ -39,12 +39,27 @@ public class Health : MonoBehaviour {
 	public void  damage(int amt) {
         health -= amt;
 
-        if (health < 0)
+        if (health <= 0)
+        {
             health = 0;
+            StartCoroutine(die());
+        }
+
 
         hptext.text = health.ToString();
         hpbar.fillAmount = health / starting_health;
 
+    }
+
+    IEnumerator die()
+    {
+        for (int i = 60; i > 0; i--)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, i / 60f);
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 
     public void heal(int amt)

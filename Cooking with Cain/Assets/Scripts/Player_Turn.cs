@@ -44,7 +44,7 @@ public class Player_Turn : MonoBehaviour {
         atkbutton.SetActive(false);
         attacked = false;
         //incrments the turncounter and stops the coroutine
-        manager.GetComponent<Turn_Manager>().turncounter++;
+        //manager.GetComponent<Turn_Manager>().turncounter++;
         acted = true;
         StopCoroutine("turn");
 

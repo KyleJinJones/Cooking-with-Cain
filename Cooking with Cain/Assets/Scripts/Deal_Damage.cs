@@ -12,6 +12,8 @@ public class Deal_Damage : MonoBehaviour {
 
     public void processFood(GameObject attacker, GameObject target, int attack, GameObject[] ingredients)
     {
+        float spamMod = 0.8f;
+
         AttributeStats stats = attacker.GetComponent<AttributeStats>();
 
         float totalDamage = 0;
@@ -25,6 +27,11 @@ public class Deal_Damage : MonoBehaviour {
 
 
             attributes.Add(foodObject.GetComponent<Food>().attribute);
+
+            if (!attacker.GetComponent<Attack>().lastPlayed.Contains(foodObject.GetComponent<Food>().attribute) || attacker.tag.Equals("Enemy"))
+            {
+                spamMod = 1;
+            }
         }
 
         if (attributes.Contains("lifesteal"))
@@ -34,18 +41,15 @@ public class Deal_Damage : MonoBehaviour {
 
         if (attributes.Contains("splash"))
         {
-            GameObject[] enemies = manager.GetComponent<Turn_Manager>().enemies;
-            GameObject[] players = manager.GetComponent<Turn_Manager>().enemies;
-
-            if (UnityEditor.ArrayUtility.Contains<GameObject>(enemies, target))
-                foreach(GameObject targets in enemies)
-                   damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
-            else foreach (GameObject targets in players)
-                damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
+            if (target.tag.Equals("Enemy"))
+                foreach(GameObject targets in manager.GetComponent<Turn_Manager>().getEnemies())
+                   damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash * spamMod), attributes.Contains("burn"), stats.burn);
+            else foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getPlayers())
+                damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash * spamMod), attributes.Contains("burn"), stats.burn);
         }
         else
         {
-            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"), stats.burn);
+            damage(attacker, target, Mathf.RoundToInt(totalDamage * spamMod), attributes.Contains("burn"), stats.burn);
         }
 
         if (attributes.Contains("atkboost"))

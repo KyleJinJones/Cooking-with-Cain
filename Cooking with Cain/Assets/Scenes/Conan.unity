@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starting_health: 100
-  health: 0
+  health: 100
   hptext: {fileID: 2078811377}
   hpbar: {fileID: 1293012610}
   burnDuration: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf3272b58f439149930bd329450c3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 10
+  attack: 30
   boostDuration: 0
 --- !u!114 &511422526
 MonoBehaviour:
@@ -1193,6 +1193,11 @@ Prefab:
         type: 2}
       propertyPath: burnDuration
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068371789100522, guid: 80449d4138901e0429adb605f956fdc8,
+        type: 2}
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80449d4138901e0429adb605f956fdc8, type: 2}

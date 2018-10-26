@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour {
     public int attack = 10;
     public int boostDuration = 0;
+    public List<string> lastPlayed;
 
     public int UpdateTurn()
     {
