@@ -43,9 +43,12 @@ public class Turn_Manager : MonoBehaviour {
 
             foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<Enemy_Turn>().turn();
-                for (int i = 0; i < 100; i++)
-                    yield return null;
+                if (enemy.GetComponent<Health>().health > 0)
+                {
+                    enemy.GetComponent<Enemy_Turn>().turn();
+                    for (int i = 0; i < 100; i++)
+                        yield return null;
+                }
             }
         }
     }

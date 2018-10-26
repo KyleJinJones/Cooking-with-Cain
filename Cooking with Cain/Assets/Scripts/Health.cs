@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
     //Keeps track of the character's health
     public float starting_health = 100;
-    private float health;
+    public float health;
     public Text hptext;
     public Image hpbar;
     public int burnDuration;

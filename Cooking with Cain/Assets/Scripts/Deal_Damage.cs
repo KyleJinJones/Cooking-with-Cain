@@ -51,7 +51,7 @@ public class Deal_Damage : MonoBehaviour {
 
         if (attributes.Contains("atkboost"))
         {
-            // gives attack boost to attacker
+            attacker.GetComponent<Attack>().boostDuration = 2;
         }
     }
 
