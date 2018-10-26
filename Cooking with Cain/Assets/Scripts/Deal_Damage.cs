@@ -22,10 +22,7 @@ public class Deal_Damage : MonoBehaviour {
             totalDamage += attack * (food.multiplierRange.Length == 2 ? Random.Range(food.multiplierRange[0], food.multiplierRange[1]) : food.multiplier);
 
 
-            foreach (string attribute in food.attributes)
-            {
-                attributes.Add(attribute);
-            }
+            attributes.Add(foodObject.GetComponent<Food>().attribute);
         }
 
         if (attributes.Contains("lifesteal"))
