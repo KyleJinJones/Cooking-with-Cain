@@ -25,32 +25,35 @@ public class Turn_Manager : MonoBehaviour {
             players= GameObject.FindGameObjectsWithTag("Player");
         }
 
+        StartCoroutine(run());
+    }
+
+    IEnumerator run()
+    {
+        while (true)
+        {
+            foreach (GameObject player in players)
+            {
+                player.GetComponent<Player_Turn>().acted = false;
+                player.GetComponent<Player_Turn>().StartCoroutine("turn");
+                yield return new WaitUntil(() => player.GetComponent<Player_Turn>().acted);
+                for (int i = 0; i < 100; i++)
+                    yield return null;
+            }
+
+            foreach (GameObject enemy in enemies)
+            {
+                enemy.GetComponent<Enemy_Turn>().turn();
+                for (int i = 0; i < 100; i++)
+                    yield return null;
+            }
+        }
     }
 
     // Update is called once per frame
     void Update() {
 
-        if (turncounter < players.Length)
-        {
-            //starts a coroutine at playerturn which increments turncounter once it is finished and terminates itself
-            players[turncounter].GetComponent<Player_Turn>().StartCoroutine("turn");
-        }
-        else if(turncounter >= enemies.Length+players.Length){
-            //resets the turncounter to start over from the first players turn
-            turncounter = 0;
-        }
-        else
-        {
-            //Has a slight delay to show that enemies attack individually, and that player is unable to attack during their turn
-            //Then calls an enemies turn and increments the turncounter
-            if (delay > 100)
-            {
-                enemies[turncounter - players.Length].GetComponent<Enemy_Turn>().turn();
-                turncounter++;
-                delay = 0;
-            }
-            delay++;
-        }
+        
 
     }
 }

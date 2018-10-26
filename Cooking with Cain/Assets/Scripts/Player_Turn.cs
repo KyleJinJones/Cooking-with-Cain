@@ -6,6 +6,8 @@ public class Player_Turn : MonoBehaviour {
     public GameObject atkbutton;
     private bool attacked=false;
     public GameObject manager;
+
+    public bool acted = false;
 	// Use this for initialization
 	void Start () {
         manager = GameObject.FindGameObjectWithTag("Manager");
@@ -43,6 +45,7 @@ public class Player_Turn : MonoBehaviour {
         attacked = false;
         //incrments the turncounter and stops the coroutine
         manager.GetComponent<Turn_Manager>().turncounter++;
+        acted = true;
         StopCoroutine("turn");
 
 	}

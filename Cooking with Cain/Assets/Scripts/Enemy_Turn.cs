@@ -14,6 +14,6 @@ public class Enemy_Turn : MonoBehaviour {
 	public void turn() {
         GetComponent<Health>().UpdateTurn();
         int attack = GetComponent<Attack>().UpdateTurn();
-        manager.GetComponent<Deal_Damage>().damage(this.gameObject, GameObject.FindGameObjectWithTag("Player"), attack, false);
+        manager.GetComponent<Deal_Damage>().damage(this.gameObject, GameObject.FindGameObjectWithTag("Player"), attack, true);
 	}
 }
