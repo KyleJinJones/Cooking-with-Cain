@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Deal_Damage : MonoBehaviour {
+    public GameObject manager;
+
+    void Start()
+    {
+        manager = GameObject.FindGameObjectWithTag("Manager");
+    }
+
     public void processFood(GameObject attacker, GameObject target, int attack, GameObject[] ingredients)
     {
         float totalDamage = 0;
@@ -28,8 +35,14 @@ public class Deal_Damage : MonoBehaviour {
 
         if (attributes.Contains("splash"))
         {
-            // obtain list of targets via Turn_Manager?
-            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"));
+            GameObject[] enemies = manager.GetComponent<Turn_Manager>().enemies;
+            GameObject[] players = manager.GetComponent<Turn_Manager>().enemies;
+
+            if (UnityEditor.ArrayUtility.Contains<GameObject>(enemies, target))
+                foreach(GameObject targets in enemies)
+                   damage(attacker, targets, Mathf.RoundToInt(totalDamage / 2), attributes.Contains("burn"));
+            else foreach (GameObject targets in players)
+                    damage(attacker, targets, Mathf.RoundToInt(totalDamage / 2), attributes.Contains("burn"));
         }
         else
         {
