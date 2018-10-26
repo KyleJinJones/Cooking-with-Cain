@@ -8,7 +8,6 @@ public class Turn_Manager : MonoBehaviour {
     public GameObject[] players=null;
     //turncounter controls whose turn it is
     public int turncounter=0;
-    private int delay =0;
 	// Use this for initialization
 	void Start () {
         //if enemies have not been manually added, searches the scene for them
