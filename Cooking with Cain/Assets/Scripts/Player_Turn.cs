@@ -6,12 +6,15 @@ public class Player_Turn : MonoBehaviour {
     public GameObject atkbutton;
     private bool attacked=false;
     public GameObject manager;
+    GameObject[] playerui;
 
     public bool acted = false;
 	// Use this for initialization
 	void Start () {
         manager = GameObject.FindGameObjectWithTag("Manager");
-	}
+        playerui = GameObject.FindGameObjectsWithTag("PlayerUI");
+
+    }
 	
     public void setattacked(bool b)
     { 
@@ -26,8 +29,14 @@ public class Player_Turn : MonoBehaviour {
         {
             attacked = true;
         }
-
     }
+
+    public void setui(bool b)
+    {
+        foreach(GameObject n in playerui) {
+            n.SetActive(b);
+        }
+    } 
 
     //takes the players turn
     //should set active ui buttons
@@ -38,8 +47,7 @@ public class Player_Turn : MonoBehaviour {
     public IEnumerator turn () {
         GetComponent<Health>().UpdateTurn();
         int attack = GetComponent<Attack>().UpdateTurn();
-
-        atkbutton.SetActive(true);
+        setui(true);
         //Stalls the function here until the button has been clicked, and attacked has been set to true
 
         //Stalls here until the button sets attacked to true, and it proceeds to deal damage
@@ -54,8 +62,8 @@ public class Player_Turn : MonoBehaviour {
        
         manager.GetComponent<Deal_Damage>().processFood(this.gameObject, GameObject.FindGameObjectWithTag("Enemy"),attack, manager.GetComponent<Ingredient_Selection>().selected);
         manager.GetComponent<Ingredient_Selection>().clear();
-        //turns the atkbutton off
-        atkbutton.SetActive(false);
+        //turns the ui off
+        setui(false);
         attacked = false;
         //incrments the turncounter and stops the coroutine
         //manager.GetComponent<Turn_Manager>().turncounter++;
