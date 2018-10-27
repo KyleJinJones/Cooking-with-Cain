@@ -10,7 +10,7 @@ public class Deal_Damage : MonoBehaviour {
         manager = GameObject.FindGameObjectWithTag("Manager");
     }
 
-    public void processFood(GameObject attacker, GameObject target, int attack, GameObject[] ingredients)
+    public void processFood(GameObject attacker, GameObject target, int attack, List<Food> ingredients)
     {
         float spamMod = 0.8f;
 
@@ -19,7 +19,7 @@ public class Deal_Damage : MonoBehaviour {
         float totalDamage = 0;
         List<string> attributes = new List<string>();
 
-        foreach(GameObject foodObject in ingredients)
+        foreach(Food foodObject in ingredients)
         {
             Food food = foodObject.GetComponent<Food>();
 

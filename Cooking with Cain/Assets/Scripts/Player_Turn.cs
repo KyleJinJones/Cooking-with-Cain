@@ -14,16 +14,28 @@ public class Player_Turn : MonoBehaviour {
 	}
 	
     public void setattacked(bool b)
-    {
-        attacked = b;
+    { 
+        attacked = b;    
     }
-	//takes the players turn
+
+    //used specifically to check if three ingredients have been selected before setting attacked to true
+    //Only planned to be used with the attack button
+    public void check_recipe()
+    {
+        if (manager.GetComponent<Ingredient_Selection>().selected.Count == 3)
+        {
+            attacked = true;
+        }
+
+    }
+
+    //takes the players turn
     //should set active ui buttons
     //then recieve the result from them
     //Then calculate damage
     //Then deal damage based on the result and potentially update ui based on that
     //Note most of this is just calling functions, and it acts more as a manager for the overall player turn
-	public IEnumerator turn () {
+    public IEnumerator turn () {
         GetComponent<Health>().UpdateTurn();
         int attack = GetComponent<Attack>().UpdateTurn();
 
@@ -39,7 +51,9 @@ public class Player_Turn : MonoBehaviour {
 
         //Deals damage to an enemy
         //Note, targeted enemy will likely be passed from ui function
-        manager.GetComponent<Deal_Damage>().damage(this.gameObject,GameObject.FindGameObjectWithTag("Enemy"),attack,false, 0);
+       
+        manager.GetComponent<Deal_Damage>().processFood(this.gameObject, GameObject.FindGameObjectWithTag("Enemy"),attack, manager.GetComponent<Ingredient_Selection>().selected);
+        manager.GetComponent<Ingredient_Selection>().clear();
         //turns the atkbutton off
         atkbutton.SetActive(false);
         attacked = false;
