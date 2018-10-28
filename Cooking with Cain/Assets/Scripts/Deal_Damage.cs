@@ -12,26 +12,28 @@ public class Deal_Damage : MonoBehaviour {
 
     public void processFood(GameObject attacker, GameObject target, int attack, List<Food> ingredients)
     {
-        float spamMod = 0.8f;
-
         AttributeStats stats = attacker.GetComponent<AttributeStats>();
 
         float totalDamage = 0;
         List<string> attributes = new List<string>();
+        List<string> played = new List<string>();
 
-        foreach(Food foodObject in ingredients)
+        foreach(Food food in ingredients)
         {
-            Food food = foodObject.GetComponent<Food>();
 
             totalDamage += attack * (food.multiplierRange.Length == 2 ? Random.Range(food.multiplierRange[0], food.multiplierRange[1]) : food.multiplier);
 
 
-            attributes.Add(foodObject.GetComponent<Food>().attribute);
+            attributes.Add(food.GetComponent<Food>().attribute);
+            played.Add(food.foodName);
+        }
 
-            if (!attacker.GetComponent<Attack>().lastPlayed.Contains(foodObject.GetComponent<Food>().attribute) || attacker.tag.Equals("Enemy"))
-            {
-                spamMod = 1;
-            }
+        if (attacker.tag.Equals("Player"))
+        {
+            if (attacker.GetComponent<Attack>().lastPlayed.Capacity > 0 && !attacker.GetComponent<Attack>().lastPlayed.Exists(f => !played.Contains(f)))
+                totalDamage *= 0.8f;
+
+            attacker.GetComponent<Attack>().lastPlayed = played;
         }
 
         if (attributes.Contains("lifesteal"))
@@ -43,13 +45,13 @@ public class Deal_Damage : MonoBehaviour {
         {
             if (target.tag.Equals("Enemy"))
                 foreach(GameObject targets in manager.GetComponent<Turn_Manager>().getEnemies())
-                   damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash * spamMod), attributes.Contains("burn"), stats.burn);
+                   damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
             else foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getPlayers())
-                damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash * spamMod), attributes.Contains("burn"), stats.burn);
+                damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
         }
         else
         {
-            damage(attacker, target, Mathf.RoundToInt(totalDamage * spamMod), attributes.Contains("burn"), stats.burn);
+            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"), stats.burn);
         }
 
         if (attributes.Contains("atkboost"))
