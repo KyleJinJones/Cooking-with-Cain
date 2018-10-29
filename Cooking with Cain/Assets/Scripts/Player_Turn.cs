@@ -7,12 +7,14 @@ public class Player_Turn : MonoBehaviour {
     private bool attacked=false;
     public GameObject manager;
     GameObject[] playerui;
+    public GameObject target;
 
     public bool acted = false;
 	// Use this for initialization
 	void Start () {
         manager = GameObject.FindGameObjectWithTag("Manager");
         playerui = GameObject.FindGameObjectsWithTag("PlayerUI");
+        target = GameObject.FindGameObjectWithTag("Enemy");
 
     }
 	
@@ -60,7 +62,7 @@ public class Player_Turn : MonoBehaviour {
         //Deals damage to an enemy
         //Note, targeted enemy will likely be passed from ui function
        
-        manager.GetComponent<Deal_Damage>().processFood(this.gameObject, GameObject.FindGameObjectWithTag("Enemy"),attack, manager.GetComponent<Ingredient_Selection>().selected);
+        manager.GetComponent<Deal_Damage>().processFood(this.gameObject,target,attack, manager.GetComponent<Ingredient_Selection>().selected);
         manager.GetComponent<Ingredient_Selection>().clear();
         //turns the ui off
         setui(false);
