@@ -7,6 +7,7 @@ public class Turn_Manager : MonoBehaviour {
     public GameObject[] enemies = new GameObject[3];
     public List<GameObject> queue;
     public Vector3[] enemyPositions = new Vector3[3];
+    public int turnCount = 0;
 
     void Start () {
         StartCoroutine(run());
@@ -18,6 +19,8 @@ public class Turn_Manager : MonoBehaviour {
 
         while (true)
         {
+            turnCount++;
+
             foreach (GameObject player in getPlayers())
             {
                 if (player != null && player.GetComponent<Health>().health > 0)
