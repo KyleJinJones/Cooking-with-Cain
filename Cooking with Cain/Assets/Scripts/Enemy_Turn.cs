@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Turn : MonoBehaviour {
     public GameObject manager;
-    public 
+    public List<Food> recipe;
 	// Use this for initialization
 	void Start () {
         manager = GameObject.FindGameObjectWithTag("Manager");
@@ -14,6 +14,6 @@ public class Enemy_Turn : MonoBehaviour {
 	public void turn() {
         GetComponent<Health>().UpdateTurn();
         int attack = GetComponent<Attack>().UpdateTurn();
-        manager.GetComponent<Deal_Damage>().damage(this.gameObject, GameObject.FindGameObjectWithTag("Player"), attack, false, 0);
+        manager.GetComponent<Deal_Damage>().processFood(this.gameObject, GameObject.FindGameObjectWithTag("Player"), attack, recipe);
 	}
 }
