@@ -5,7 +5,8 @@ using UnityEngine;
 public class Turn_Manager : MonoBehaviour {
 
     public GameObject[] enemies = new GameObject[3];
-    public List<GameObject> queue = new List<GameObject>();
+    public List<GameObject> queue;
+    public Vector3[] enemyPositions = new Vector3[3];
 
     void Start () {
         StartCoroutine(run());
@@ -61,6 +62,7 @@ public class Turn_Manager : MonoBehaviour {
                 if (queue.Count > 0)
                 {
                     enemies[i] = queue[0];
+                    enemies[i].transform.position = enemyPositions[i];
                     queue.RemoveAt(0);
 
                     if (playerTurn.target == null)
