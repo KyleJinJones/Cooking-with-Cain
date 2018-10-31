@@ -6,7 +6,7 @@ public class Player_Turn : MonoBehaviour {
     public GameObject atkbutton;
     private bool attacked=false;
     public GameObject manager;
-    GameObject[] playerui;
+    public GameObject[] playerui;
     public GameObject target;
 
     public bool acted = false;
