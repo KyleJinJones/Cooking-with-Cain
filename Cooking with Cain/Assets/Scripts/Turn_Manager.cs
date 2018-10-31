@@ -13,6 +13,8 @@ public class Turn_Manager : MonoBehaviour {
 
     IEnumerator run()
     {
+        checkState();
+
         while (true)
         {
             foreach (GameObject player in getPlayers())
@@ -49,9 +51,8 @@ public class Turn_Manager : MonoBehaviour {
         {
             // lose state goes here
         }
-
-        // checks to see if any enemies are still alive
-        bool cont = false;
+        
+        Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
 
         for (int i = 0; i < 3; i++)
         {
@@ -61,16 +62,23 @@ public class Turn_Manager : MonoBehaviour {
                 {
                     enemies[i] = queue[0];
                     queue.RemoveAt(0);
-                    cont = true;
+
+                    if (playerTurn.target == null)
+                    {
+                        playerTurn.target = enemies[i];
+                    }
                 }
             }
             else
             {
-                cont = true;
+                if (playerTurn.target == null)
+                {
+                    playerTurn.target = enemies[i];
+                }
             }
         }
 
-        if (cont)
+        if (playerTurn.target == null)
         {
             // win state goes here
         }
