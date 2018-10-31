@@ -44,10 +44,14 @@ public class Deal_Damage : MonoBehaviour {
         if (attributes.Contains("splash"))
         {
             if (target.tag.Equals("Enemy"))
-                foreach(GameObject targets in manager.GetComponent<Turn_Manager>().getEnemies())
-                   damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
+            {
+                foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getEnemies())
+                    if (targets != null)
+                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
+            } 
             else foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getPlayers())
-                damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
+                    if (targets != null)
+                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
         }
         else
         {

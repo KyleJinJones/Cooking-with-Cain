@@ -4,26 +4,10 @@ using UnityEngine;
 
 public class Turn_Manager : MonoBehaviour {
 
-    //public GameObject[] enemies=null;
-    //public GameObject[] players=null;
-    //turncounter controls whose turn it is
-    //public int turncounter=0;
-	// Use this for initialization
-	void Start () {
-        //if enemies have not been manually added, searches the scene for them
-        //All enemies should have the tage Enemy
-		/*if (enemies.Length==0)
-        {
-            enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        }
+    public GameObject[] enemies = new GameObject[3];
+    public List<GameObject> queue = new List<GameObject>();
 
-        //If Players were not manually instantiated, searches the scene for them
-        //All Player controlled characters should have the tag Player
-        if (players.Length==0)
-        {
-            players= GameObject.FindGameObjectsWithTag("Player");
-        }*/
-
+    void Start () {
         StartCoroutine(run());
     }
 
@@ -31,44 +15,70 @@ public class Turn_Manager : MonoBehaviour {
     {
         while (true)
         {
-            if (getPlayers().Length > 0)
-                foreach (GameObject player in getPlayers())
-                {
-                    if (player != null && player.GetComponent<Health>().health > 0)
-                    {
-                        player.GetComponent<Player_Turn>().acted = false;
-                        player.GetComponent<Player_Turn>().StartCoroutine("turn");
-                        yield return new WaitUntil(() => player.GetComponent<Player_Turn>().acted);
-                        for (int i = 0; i < 100; i++)
-                            yield return null;
-                    }
-                }
-            else
+            foreach (GameObject player in getPlayers())
             {
-                // lose state
+                if (player != null && player.GetComponent<Health>().health > 0)
+                {
+                    player.GetComponent<Player_Turn>().acted = false;
+                    player.GetComponent<Player_Turn>().StartCoroutine("turn");
+                    yield return new WaitUntil(() => player.GetComponent<Player_Turn>().acted);
+                    for (int i = 0; i < 100; i++)
+                        yield return null;
+                }
+
+                checkState();
             }
 
-
-            if (getEnemies().Length > 0)
-                foreach (GameObject enemy in getEnemies())
+            foreach (GameObject enemy in getEnemies())
+            {
+                if (enemy != null && enemy.GetComponent<Health>().health > 0)
                 {
-                    if (enemy != null && enemy.GetComponent<Health>().health > 0)
-                    {
-                        enemy.GetComponent<Enemy_Turn>().turn();
-                        for (int i = 0; i < 100; i++)
-                            yield return null;
-                    }
+                    enemy.GetComponent<Enemy_Turn>().turn();
+                    for (int i = 0; i < 100; i++)
+                        yield return null;
                 }
+
+                checkState();
+            }
+        }
+    }
+
+    public void checkState()
+    {
+        if (getPlayers().Length == 0)
+        {
+            // lose state goes here
+        }
+
+        // checks to see if any enemies are still alive
+        bool cont = false;
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (enemies[i] == null)
+            {
+                if (queue.Count > 0)
+                {
+                    enemies[i] = queue[0];
+                    queue.RemoveAt(0);
+                    cont = true;
+                }
+            }
             else
             {
-                // win state
+                cont = true;
             }
+        }
+
+        if (cont)
+        {
+            // win state goes here
         }
     }
 
     public GameObject[] getEnemies()
     {
-        return GameObject.FindGameObjectsWithTag("Enemy");
+        return enemies;
     }
 
     public GameObject[] getPlayers()
