@@ -212,6 +212,11 @@ Prefab:
       propertyPath: enemyPositions.Array.data[2].x
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: nextScene
+      value: Molina
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
   m_IsPrefabAsset: 0
@@ -617,6 +622,11 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1010912931}
+    - target: {fileID: 114955599393302506, guid: 41cfc0b2afcad2444ac82055af33c52c,
+        type: 2}
+      propertyPath: lifesteal
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41cfc0b2afcad2444ac82055af33c52c, type: 2}
   m_IsPrefabAsset: 0
