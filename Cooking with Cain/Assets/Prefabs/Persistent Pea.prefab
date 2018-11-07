@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf3272b58f439149930bd329450c3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 1
+  attack: 2
   boostDuration: 0
   lastPlayed: []
 --- !u!114 &114813734209345814

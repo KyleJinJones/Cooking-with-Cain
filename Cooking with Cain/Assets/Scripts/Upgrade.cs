@@ -22,17 +22,17 @@ public class Upgrade : MonoBehaviour
         }
         else if (attribute == "splash")
         {
-            num *= 1.10f;
+            num += .10f;
             PlayerPrefs.SetFloat("splash", num);
         }
         else if (attribute == "lifesteal")
         {
-            num *= 1.10f;
+            num += .10f;
             PlayerPrefs.SetFloat("lifesteal", num);
         }
         else if (attribute == "atkboost")
         {
-            num += 3.0f;
+            num += .1f;
             PlayerPrefs.SetFloat("atkboost", num);
         }
         Debug.Log("Change attribute done");
