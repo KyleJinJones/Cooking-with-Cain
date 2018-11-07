@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Upgrade : MonoBehaviour
 {
-    public string nextScene;
+    
 
 
     // When button is pressed, changes the attribute.
@@ -40,7 +40,7 @@ public class Upgrade : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
 

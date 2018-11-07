@@ -216,8 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a390a3e3a19d2b4a861c69be402e6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starting_health: 40
-  health: 40
+  starting_health: 30
+  health: 30
   hptext: {fileID: 114675413391101200}
   hpbar: {fileID: 114404412571142178}
   burnDuration: 0

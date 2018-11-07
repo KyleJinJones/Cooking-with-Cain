@@ -6,7 +6,7 @@ public class AttributeStats : MonoBehaviour
 {
     public float burn = 0.07f;
     public float splash = 0.5f;
-    public float lifesteal = 0.3f;
+    public float lifesteal = 0.5f;
     public float atkboost = 0.2f;
 
     public void Start()
@@ -36,7 +36,7 @@ public class AttributeStats : MonoBehaviour
 
             if (!PlayerPrefs.HasKey("lifesteal"))
             {
-                PlayerPrefs.SetFloat("lifesteal", 0.3f);
+                PlayerPrefs.SetFloat("lifesteal", 0.5f);
             }
             else
             {

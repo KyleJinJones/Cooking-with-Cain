@@ -12,15 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: c135ce976e3326b48960d1a04d0d52cd
   - enabled: 1
-    path: Assets/Scenes/Kyle_Scene.unity
-    guid: 7a54f880c0a85864d9ecec4d406e5865
+    path: Assets/Scenes/lvl1.unity
+    guid: 15bfaf15592af654e98bcd387e8d832f
   - enabled: 1
     path: Assets/Scenes/Molina.unity
     guid: bfb31d081b692174782e44535c0e186e
   - enabled: 1
-    path: Assets/Scenes/TestingEndState.unity
-    guid: b825c58a0a430f34999e5ef2a2a121b5
+    path: Assets/Scenes/lvl2.unity
+    guid: 9cc8481d60fc9df41b4a7e6807735121
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 3bc402dea406b1342bca95c307b63749
+  - enabled: 0
+    path: Assets/Scenes/Kyle_Scene.unity
+    guid: 7a54f880c0a85864d9ecec4d406e5865
+  - enabled: 0
+    path: Assets/Scenes/TestingEndState.unity
+    guid: b825c58a0a430f34999e5ef2a2a121b5
   m_configObjects: {}
