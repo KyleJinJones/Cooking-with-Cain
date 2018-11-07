@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5b6bfc252daef44962c0e7cf9b751d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Kyle_Scene
 --- !u!114 &114650048316522072
 MonoBehaviour:
   m_ObjectHideFlags: 1
