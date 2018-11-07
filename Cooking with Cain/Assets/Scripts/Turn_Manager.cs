@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Turn_Manager : MonoBehaviour {
 
     public GameObject[] enemies = new GameObject[3];
+    public Image[] enemyHpBars = new Image[3];
+    public Text[] enemyHpText = new Text[3];
     public List<GameObject> queue;
     public Vector3[] enemyPositions = new Vector3[3];
     public int turnCount = 0;
@@ -18,6 +21,7 @@ public class Turn_Manager : MonoBehaviour {
     IEnumerator run()
     {
         checkState();
+        displayHealth();
 
         while (true)
         {
@@ -30,6 +34,7 @@ public class Turn_Manager : MonoBehaviour {
                     player.GetComponent<Player_Turn>().acted = false;
                     player.GetComponent<Player_Turn>().StartCoroutine("turn");
                     yield return new WaitUntil(() => player.GetComponent<Player_Turn>().acted);
+                    displayHealth();
                     for (int i = 0; i < 100; i++)
                         yield return null;
                 }
@@ -42,11 +47,30 @@ public class Turn_Manager : MonoBehaviour {
                 if (enemy != null && enemy.GetComponent<Health>().health > 0)
                 {
                     enemy.GetComponent<Enemy_Turn>().turn();
+                    displayHealth();
                     for (int i = 0; i < 100; i++)
                         yield return null;
                 }
 
                 checkState();
+            }
+        }
+    }
+
+    public void displayHealth()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (enemies[i] == null)
+            {
+                enemyHpBars[i].fillAmount = 0;
+                enemyHpText[i].text = "0";
+            }
+            else
+            {
+                Health health = enemies[i].GetComponent<Health>();
+                enemyHpBars[i].fillAmount = health.health / health.starting_health;
+                enemyHpText[i].text = health.health.ToString();
             }
         }
     }
