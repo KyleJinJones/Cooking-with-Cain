@@ -27,7 +27,7 @@ public class AttributeStats : MonoBehaviour
 
             if (!PlayerPrefs.HasKey("splash"))
             {
-                PlayerPrefs.SetFloat("splash", 0.05f);
+                PlayerPrefs.SetFloat("splash", 0.5f);
             }
             else
             {
