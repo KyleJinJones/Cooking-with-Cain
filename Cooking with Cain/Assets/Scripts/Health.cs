@@ -17,6 +17,13 @@ public class Health : MonoBehaviour {
         hptext.text = health.ToString();
 	}
 	
+    public void updateHealth(float newHealth)
+    {
+        starting_health = newHealth;
+        health = newHealth;
+        hptext.text = health.ToString();
+    }
+
     public void UpdateTurn()
     {
         if (burnDuration > 0)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Turn_Manager : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class Turn_Manager : MonoBehaviour {
     public List<GameObject> queue;
     public Vector3[] enemyPositions = new Vector3[3];
     public int turnCount = 0;
+    public string nextScene;
 
     void Start () {
         StartCoroutine(run());
@@ -54,6 +56,8 @@ public class Turn_Manager : MonoBehaviour {
         if (getPlayers().Length == 0)
         {
             // lose state goes here
+            Debug.Log("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
         
         Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
@@ -85,7 +89,9 @@ public class Turn_Manager : MonoBehaviour {
 
         if (playerTurn.target == null)
         {
-            // win state goes here
+            //Win state goes here.
+            Debug.Log("WinBattle");
+            SceneManager.LoadScene(nextScene);
         }
     }
 

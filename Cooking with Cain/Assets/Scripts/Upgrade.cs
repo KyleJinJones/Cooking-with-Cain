@@ -5,31 +5,42 @@ using UnityEngine;
 
 public class Upgrade : MonoBehaviour
 {
-    public GameObject Cain;
+    public string nextScene;
 
 
     // When button is pressed, changes the attribute.
     public void ChangeAttribute(string attribute)
     {
+        
+        float num = PlayerPrefs.GetFloat(attribute);
+        Debug.Log("Changing Attribute");
 
         if (attribute == "health")
         {
-            Cain.GetComponent<Health>().health += 10.0f;
+            num += 10.0f;
+            PlayerPrefs.SetFloat("health", num);
         }
         else if (attribute == "splash")
         {
-            Cain.GetComponent<AttributeStats>().splash *= 1.10f;
+            num *= 1.10f;
+            PlayerPrefs.SetFloat("splash", num);
         }
         else if (attribute == "lifesteal")
         {
-            Cain.GetComponent<AttributeStats>().lifesteal *= 1.10f;
+            num *= 1.10f;
+            PlayerPrefs.SetFloat("lifesteal", num);
         }
         else if (attribute == "atkboost")
         {
-            Cain.GetComponent<AttributeStats>().atkboost += 3.0f;
+            num += 3.0f;
+            PlayerPrefs.SetFloat("atkboost", num);
         }
+        Debug.Log("Change attribute done");
+    }
 
-
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(nextScene);
     }
 
 
