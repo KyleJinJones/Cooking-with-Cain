@@ -28,7 +28,7 @@ public class Health : MonoBehaviour {
     {
         if (burnDuration > 0)
         {
-            damage(Mathf.RoundToInt(health * burnPercent));
+            damage(Mathf.RoundToInt(Mathf.Max(health * burnPercent, 1)));
             burnDuration--;
 
             if (burnDuration == 0)
