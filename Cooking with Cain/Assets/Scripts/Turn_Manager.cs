@@ -43,39 +43,7 @@ public class Turn_Manager : MonoBehaviour {
                 checkState();
             }
 
-            for (int i = 0; i < 3; i++)
-            {
-                Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
-
-                if (enemies[i] == null)
-                {
-                    if (queue.Count > 0)
-                    {
-                        enemies[i] = queue[0];
-                        enemies[i].transform.position = enemyPositions[i];
-                        queue.RemoveAt(0);
-
-                        if (playerTurn.target == null)
-                        {
-                            playerTurn.target = enemies[i];
-                        }
-                    }
-                }
-                else
-                {
-                    enemies[i].GetComponent<Enemy_Turn>().turn();
-                    displayHealth();
-                    for (int i2 = 0; i2 < 100; i2++)
-                        yield return null;
-
-                    if (playerTurn.target == null)
-                    {
-                        playerTurn.target = enemies[i];
-                    }
-                }
-            }
-
-            /*foreach (GameObject enemy in getEnemies())
+            foreach (GameObject enemy in getEnemies())
             {
                 if (enemy != null && enemy.GetComponent<Health>().health > 0)
                 {
@@ -86,7 +54,7 @@ public class Turn_Manager : MonoBehaviour {
                 }
 
                 checkState();
-            }*/
+            }
         }
     }
 
@@ -132,7 +100,7 @@ public class Turn_Manager : MonoBehaviour {
             SceneManager.LoadScene("GameOver");
         }
 
-        /*Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
+        Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
 
         for (int i = 0; i < 3; i++)
         {
@@ -157,11 +125,11 @@ public class Turn_Manager : MonoBehaviour {
                     playerTurn.target = enemies[i];
                 }
             }
-        }*/
+        }
 
         enemyRemaining.text = "Enemies remaining: " + getEnemyRemaining();
 
-        if (getEnemyRemaining() > 0)
+        if (getEnemyRemaining() == 0)
         {
             //Win state goes here.
             Debug.Log("WinBattle");
