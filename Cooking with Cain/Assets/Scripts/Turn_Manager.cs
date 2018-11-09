@@ -9,6 +9,7 @@ public class Turn_Manager : MonoBehaviour {
     public GameObject[] enemies = new GameObject[3];
     public Image[] enemyHpBars = new Image[3];
     public Text[] enemyHpText = new Text[3];
+    public Text enemyRemaining;
     public List<GameObject> queue;
     public Vector3[] enemyPositions = new Vector3[3];
     public int turnCount = 0;
@@ -42,7 +43,39 @@ public class Turn_Manager : MonoBehaviour {
                 checkState();
             }
 
-            foreach (GameObject enemy in getEnemies())
+            for (int i = 0; i < 3; i++)
+            {
+                Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
+
+                if (enemies[i] == null)
+                {
+                    if (queue.Count > 0)
+                    {
+                        enemies[i] = queue[0];
+                        enemies[i].transform.position = enemyPositions[i];
+                        queue.RemoveAt(0);
+
+                        if (playerTurn.target == null)
+                        {
+                            playerTurn.target = enemies[i];
+                        }
+                    }
+                }
+                else
+                {
+                    enemies[i].GetComponent<Enemy_Turn>().turn();
+                    displayHealth();
+                    for (int i2 = 0; i2 < 100; i2++)
+                        yield return null;
+
+                    if (playerTurn.target == null)
+                    {
+                        playerTurn.target = enemies[i];
+                    }
+                }
+            }
+
+            /*foreach (GameObject enemy in getEnemies())
             {
                 if (enemy != null && enemy.GetComponent<Health>().health > 0)
                 {
@@ -53,7 +86,7 @@ public class Turn_Manager : MonoBehaviour {
                 }
 
                 checkState();
-            }
+            }*/
         }
     }
 
@@ -75,6 +108,21 @@ public class Turn_Manager : MonoBehaviour {
         }
     }
 
+    public int getEnemyRemaining()
+    {
+        int remain = queue.Count;
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (enemies[i] != null)
+            {
+                remain++;
+            }
+        }
+
+        return remain;
+    }
+
     public void checkState()
     {
         if (getPlayers().Length == 0)
@@ -83,8 +131,8 @@ public class Turn_Manager : MonoBehaviour {
             Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver");
         }
-        
-        Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
+
+        /*Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
 
         for (int i = 0; i < 3; i++)
         {
@@ -109,9 +157,11 @@ public class Turn_Manager : MonoBehaviour {
                     playerTurn.target = enemies[i];
                 }
             }
-        }
+        }*/
 
-        if (playerTurn.target == null)
+        enemyRemaining.text = "Enemies remaining: " + getEnemyRemaining();
+
+        if (getEnemyRemaining() > 0)
         {
             //Win state goes here.
             Debug.Log("WinBattle");
