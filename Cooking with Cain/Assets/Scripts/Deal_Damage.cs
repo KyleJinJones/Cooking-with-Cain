@@ -47,15 +47,15 @@ public class Deal_Damage : MonoBehaviour {
             {
                 foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getEnemies())
                     if (targets != null)
-                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
+                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"));
             } 
             else foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getPlayers())
                     if (targets != null)
-                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), stats.burn);
+                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"));
         }
         else
         {
-            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"), stats.burn);
+            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"), attributes.Contains("atkdebuff"));
         }
 
         if (attributes.Contains("atkboost"))
@@ -64,17 +64,28 @@ public class Deal_Damage : MonoBehaviour {
         }
     }
 
-	public void damage(GameObject Attacker,GameObject target, int amt, bool burn, float burnPercent) {
+	public void damage(GameObject attacker,GameObject target, int amt, bool burn, bool atkDebuff) {
         Health health = target.GetComponent<Health>();
 
         health.damage(amt);
         
         if (burn)
         {
+			float burnPercent = attacker.GetComponent<AttributeStats>().burn;
             health.burnDuration = 3;
 
             if (health.burnPercent < burnPercent)
                 health.burnPercent = burnPercent;
+        }
+		
+		if (atkDebuff)
+        {
+			Attack attack = target.GetComponent<Attack>();
+			float debuffPercent = attacker.GetComponent<AttributeStats>().atkdebuff;
+            attack.debuffDuration = 3;
+
+            if (attack.debuffPercent < debuffPercent)
+                attack.debuffPercent = debuffPercent;
         }
     }
 }
