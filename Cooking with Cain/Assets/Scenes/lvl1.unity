@@ -2622,6 +2622,7 @@ GameObject:
   - component: {fileID: 1198876686}
   - component: {fileID: 1198876685}
   - component: {fileID: 1198876684}
+  - component: {fileID: 1198876688}
   m_Layer: 5
   m_Name: Licorice
   m_TagString: PlayerUI
@@ -2756,6 +2757,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198876682}
   m_CullTransparentMesh: 0
+--- !u!114 &1198876688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198876682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445889f993d20e643b28fac2a781d6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  available_scene: 3
 --- !u!1001 &1237394598
 Prefab:
   m_ObjectHideFlags: 0
@@ -4375,6 +4388,7 @@ GameObject:
   - component: {fileID: 2100418666}
   - component: {fileID: 2100418665}
   - component: {fileID: 2100418664}
+  - component: {fileID: 2100418668}
   m_Layer: 5
   m_Name: Lemon
   m_TagString: PlayerUI
@@ -4507,6 +4521,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2100418662}
   m_CullTransparentMesh: 0
+--- !u!114 &2100418668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2100418662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445889f993d20e643b28fac2a781d6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  available_scene: 5
 --- !u!1 &2123049178
 GameObject:
   m_ObjectHideFlags: 0
