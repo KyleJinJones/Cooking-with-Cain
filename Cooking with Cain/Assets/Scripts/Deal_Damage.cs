@@ -10,7 +10,7 @@ public class Deal_Damage : MonoBehaviour {
         manager = GameObject.FindGameObjectWithTag("Manager");
     }
 
-    public void processFood(GameObject attacker, GameObject target, int attack, List<Food> ingredients)
+    public void processFood(GameObject attacker, GameObject target, float attack, List<Food> ingredients)
     {
         AttributeStats stats = attacker.GetComponent<AttributeStats>();
 
@@ -47,15 +47,15 @@ public class Deal_Damage : MonoBehaviour {
             {
                 foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getEnemies())
                     if (targets != null)
-                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"));
+                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"), attributes.Contains("stun"));
             } 
             else foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getPlayers())
                     if (targets != null)
-                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"));
+                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"),attributes.Contains("stun"));
         }
         else
         {
-            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"), attributes.Contains("atkdebuff"));
+            damage(attacker, target, Mathf.RoundToInt(totalDamage), attributes.Contains("burn"), attributes.Contains("atkdebuff"),attributes.Contains("stun"));
         }
 
         if (attributes.Contains("atkboost"))
@@ -64,7 +64,7 @@ public class Deal_Damage : MonoBehaviour {
         }
     }
 
-	public void damage(GameObject attacker,GameObject target, int amt, bool burn, bool atkDebuff) {
+	public void damage(GameObject attacker,GameObject target, int amt, bool burn, bool atkDebuff, bool stun) {
         Health health = target.GetComponent<Health>();
 
         health.damage(amt);
@@ -80,12 +80,32 @@ public class Deal_Damage : MonoBehaviour {
 		
 		if (atkDebuff)
         {
+            Debug.Log("debuffed");
 			Attack attack = target.GetComponent<Attack>();
 			float debuffPercent = attacker.GetComponent<AttributeStats>().atkdebuff;
             attack.debuffDuration = 3;
 
             if (attack.debuffPercent < debuffPercent)
+            {
                 attack.debuffPercent = debuffPercent;
+            }
+        }
+        //implements the stun mechanic, note does not work on players
+        if(stun)
+        {
+            float stunchance = attacker.GetComponent<AttributeStats>().stun;
+            float chance = Random.Range(1, 101);
+            //If the enemies were just stunned, halves their chance of being stunned again
+            if (target.GetComponent<Enemy_Turn>().juststunned)
+            {
+                stunchance *=.5f;
+            }
+            if (stunchance > chance)
+            {
+               
+                target.GetComponent<Enemy_Turn>().stunned = true;
+            }
+
         }
     }
 }

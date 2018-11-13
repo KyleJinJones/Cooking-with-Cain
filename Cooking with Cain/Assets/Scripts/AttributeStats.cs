@@ -9,6 +9,7 @@ public class AttributeStats : MonoBehaviour
     public float lifesteal = 0.5f;
     public float atkboost = 0.2f;
 	public float atkdebuff = 0.2f;
+    public float stun = 40.0f;
 
     public void Start()
     {

@@ -14,6 +14,8 @@ public class Select_View : MonoBehaviour {
     public Sprite Pepper;
     public Sprite Wine;
     public Sprite Rice;
+    public Sprite Lemon;
+    public Sprite Licorice;
     public int cmbnum;
     public string n;
 	// Use this for initialization
@@ -53,7 +55,14 @@ public class Select_View : MonoBehaviour {
             {
                 i.sprite = Pepper;
             }
-            
+            else if (n=="Lemon") {
+                i.sprite = Lemon;
+            }
+            else if (n == "Licorice")
+            {
+                i.sprite = Licorice;
+            }
+           
 
         }
         else

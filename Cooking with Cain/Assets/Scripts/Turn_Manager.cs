@@ -111,7 +111,7 @@ public class Turn_Manager : MonoBehaviour {
                     enemies[i] = queue[0];
                     if (turnCount != 0)
                     {
-                        enemies[i].GetComponent<Enemy_Turn>().stunned = true;
+                        enemies[i].GetComponent<Enemy_Turn>().summonstun = true;
                     }
                     enemies[i].transform.position = enemyPositions[i];
                     queue.RemoveAt(0);

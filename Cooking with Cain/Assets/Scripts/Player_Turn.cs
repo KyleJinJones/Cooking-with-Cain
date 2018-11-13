@@ -48,7 +48,7 @@ public class Player_Turn : MonoBehaviour {
     //Note most of this is just calling functions, and it acts more as a manager for the overall player turn
     public IEnumerator turn () {
         GetComponent<Health>().UpdateTurn();
-        int attack = GetComponent<Attack>().UpdateTurn();
+        float attack = GetComponent<Attack>().UpdateTurn();
         setui(true);
         //Stalls the function here until the button has been clicked, and attacked has been set to true
 
