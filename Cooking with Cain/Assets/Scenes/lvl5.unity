@@ -1913,7 +1913,7 @@ MonoBehaviour:
   lifesteal: 0.5
   atkboost: 0.2
   atkdebuff: 0.2
-  stun: 100
+  stun: 40
 --- !u!114 &989549780
 MonoBehaviour:
   m_ObjectHideFlags: 0
