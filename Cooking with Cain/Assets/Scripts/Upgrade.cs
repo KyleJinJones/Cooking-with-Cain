@@ -30,6 +30,11 @@ public class Upgrade : MonoBehaviour
             num += .10f;
             PlayerPrefs.SetFloat("lifesteal", num);
         }
+        else if (attribute == "atk")
+        {
+            num += 3.0f;
+            PlayerPrefs.SetFloat("atk", num);
+        }
         else if (attribute == "atkboost")
         {
             num += .1f;
