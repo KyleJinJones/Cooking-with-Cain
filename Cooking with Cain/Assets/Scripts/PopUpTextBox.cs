@@ -9,17 +9,16 @@ public class PopUpTextBox : MonoBehaviour
 
     void Start()
     {
-        textBox.GetComponent<Renderer>().enabled = false;
+        textBox.SetActive(false);
     }
 
     public void OnMouseOver()
     {
-        Debug.Log("MOUSE IS ON ME NUUU");
-        textBox.GetComponent<Renderer>().enabled = true;
+        textBox.SetActive(true);
     }
 
     public void OnMouseExit()
     {
-        textBox.GetComponent<Renderer>().enabled = false;
+        textBox.SetActive(false);
     }
 }
