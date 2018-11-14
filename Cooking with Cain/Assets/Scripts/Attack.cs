@@ -30,4 +30,9 @@ public class Attack : MonoBehaviour {
         return attack * multiplier;
         
     }
+
+    public void updateAtk (float newAtk)
+    {
+        attack = newAtk;
+    }
 }

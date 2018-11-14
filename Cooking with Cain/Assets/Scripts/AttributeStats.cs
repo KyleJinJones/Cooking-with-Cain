@@ -15,8 +15,8 @@ public class AttributeStats : MonoBehaviour
     {
         if(this.gameObject.tag == "Player")
         {
-            Debug.Log("Starting Attributes");
-            Debug.Log("Lifesteal: " + lifesteal);
+            Debug.Log("Start AttributeStats");
+            
             if (!PlayerPrefs.HasKey("health"))
             {
 
@@ -53,7 +53,16 @@ public class AttributeStats : MonoBehaviour
             {
                 atkboost = PlayerPrefs.GetFloat("atkboost");
             }
-            Debug.Log("New Lifesteal: " + lifesteal);
+
+            if (!PlayerPrefs.HasKey("atk"))
+            {
+                PlayerPrefs.SetFloat("atk", 10.0f);
+            }
+            else
+            {
+                GetComponent<Attack>().updateAtk(PlayerPrefs.GetFloat("atk"));
+            }
+            Debug.Log("Finished AttributeStats");
         }
         
     }
