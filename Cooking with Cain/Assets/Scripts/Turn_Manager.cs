@@ -113,7 +113,9 @@ public class Turn_Manager : MonoBehaviour {
                     {
                         enemies[i].GetComponent<Enemy_Turn>().summonstun = true;
                     }
-                    enemies[i].transform.position = enemyPositions[i];
+                    StartCoroutine(enemyAppear(enemies[i], enemyPositions[i]));
+                    //enemies[i].transform.position = enemyPositions[i];
+
                     queue.RemoveAt(0);
 
                     if (playerTurn.target == null)
@@ -138,6 +140,15 @@ public class Turn_Manager : MonoBehaviour {
             //Win state goes here.
             Debug.Log("WinBattle");
             SceneManager.LoadScene(nextScene);
+        }
+    }
+
+    IEnumerator enemyAppear(GameObject enemy, Vector3 position)
+    {
+        for (int i = 9; i >= 0; i--)
+        {
+            enemy.transform.position = position + new Vector3(0, i);
+            yield return null;
         }
     }
 
