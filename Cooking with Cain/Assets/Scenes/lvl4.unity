@@ -1872,7 +1872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Licorice
+  m_Text: Brussel Sprouts
 --- !u!222 &933353494
 CanvasRenderer:
   m_ObjectHideFlags: 0
