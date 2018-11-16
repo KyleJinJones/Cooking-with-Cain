@@ -11,10 +11,12 @@ public class Health : MonoBehaviour {
     public Image hpbar;
     public int burnDuration;
     public float burnPercent;
+    public Text damageIndicator;
 
 	void Start () {
         health = starting_health;
         hptext.text = health.ToString();
+        damageIndicator.color = Color.clear;
 	}
 	
     public void updateHealth(float newHealth)
@@ -44,6 +46,7 @@ public class Health : MonoBehaviour {
 
 	//Takes an amount of damage, and updates its healthbar
 	public void  damage(int amt) {
+        StartCoroutine(healthIndicator("-" + amt, Color.red));
         health -= amt;
 
         if (health <= 0)
@@ -71,6 +74,7 @@ public class Health : MonoBehaviour {
 
     public void heal(int amt)
     {
+        StartCoroutine(healthIndicator("+" + amt, Color.green));
         health += amt;
 
         if (health > starting_health)
@@ -81,5 +85,19 @@ public class Health : MonoBehaviour {
         hptext.text = health.ToString();
         hpbar.fillAmount = health / starting_health;
 
+    }
+
+    IEnumerator healthIndicator(string amt, Color clr)
+    {
+        damageIndicator.text = amt;
+        damageIndicator.color = clr;
+
+        for (int i = 60; i > 0; i--)
+        {
+            damageIndicator.color = new Color(clr.r, clr.g, clr.b, i / 60f);
+            yield return null;
+        }
+
+        damageIndicator.color = Color.clear;
     }
 }
