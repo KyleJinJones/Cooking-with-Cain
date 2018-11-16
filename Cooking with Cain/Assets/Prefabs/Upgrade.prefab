@@ -85,7 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5b6bfc252daef44962c0e7cf9b751d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Kyle_Scene
 --- !u!114 &114650048316522072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +117,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Upgrade
+  m_Text: Splash +10%
 --- !u!114 &114825177402690454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,7 +219,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894922460295820}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -230,6 +229,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208, y: 44.5}
-  m_SizeDelta: {x: 300, y: 70}
+  m_AnchoredPosition: {x: -312.40002, y: -230.99998}
+  m_SizeDelta: {x: 353.9, y: 83.2}
   m_Pivot: {x: 0.5, y: 0.5}
