@@ -205,8 +205,6 @@ GameObject:
   - component: {fileID: 200433039}
   - component: {fileID: 200433038}
   - component: {fileID: 200433037}
-  - component: {fileID: 200433042}
-  - component: {fileID: 200433041}
   m_Layer: 5
   m_Name: Rice
   m_TagString: PlayerUI
@@ -339,43 +337,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 200433035}
   m_CullTransparentMesh: 0
---- !u!114 &200433041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 200433035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5a567e0e2c48341b3722bba0bdcc0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 2063839198}
---- !u!61 &200433042
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 200433035}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.11282349, y: 0.3406639}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 323.79993, y: 174.35953}
-  m_EdgeRadius: 0
 --- !u!1 &247432043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1051,6 @@ GameObject:
   - component: {fileID: 610786273}
   - component: {fileID: 610786272}
   - component: {fileID: 610786271}
-  - component: {fileID: 610786276}
-  - component: {fileID: 610786275}
   m_Layer: 5
   m_Name: Chicken
   m_TagString: PlayerUI
@@ -1226,43 +1185,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610786269}
   m_CullTransparentMesh: 0
---- !u!114 &610786275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 610786269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5a567e0e2c48341b3722bba0bdcc0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 1038145519}
---- !u!61 &610786276
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 610786269}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.24281311, y: 0.3407364}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 312.8375, y: 164.71037}
-  m_EdgeRadius: 0
 --- !u!1 &620993737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,8 +1279,6 @@ GameObject:
   - component: {fileID: 707003373}
   - component: {fileID: 707003372}
   - component: {fileID: 707003371}
-  - component: {fileID: 707003376}
-  - component: {fileID: 707003375}
   m_Layer: 5
   m_Name: Pepper
   m_TagString: PlayerUI
@@ -1491,43 +1411,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707003369}
   m_CullTransparentMesh: 0
---- !u!114 &707003375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 707003369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5a567e0e2c48341b3722bba0bdcc0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 1525678661}
---- !u!61 &707003376
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 707003369}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.11264038, y: 0.3407364}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 317.17078, y: 164.71037}
-  m_EdgeRadius: 0
 --- !u!1 &724108025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,7 +1876,6 @@ MonoBehaviour:
   hpbar: {fileID: 247432044}
   burnDuration: 0
   burnPercent: 0
-  damageIndicator: {fileID: 0}
 --- !u!114 &989549781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2517,8 +2399,6 @@ GameObject:
   - component: {fileID: 1180098128}
   - component: {fileID: 1180098127}
   - component: {fileID: 1180098126}
-  - component: {fileID: 1180098131}
-  - component: {fileID: 1180098130}
   m_Layer: 5
   m_Name: Wine
   m_TagString: PlayerUI
@@ -2651,43 +2531,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1180098124}
   m_CullTransparentMesh: 0
---- !u!114 &1180098130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1180098124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5a567e0e2c48341b3722bba0bdcc0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 1836827507}
---- !u!61 &1180098131
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1180098124}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.15957642, y: 0.3407936}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 316.7179, y: 174.51709}
-  m_EdgeRadius: 0
 --- !u!224 &1195232344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2743,7 +2586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -138.16998, y: 42.52002}
+  m_AnchoredPosition: {x: -138.17, y: 42.520004}
   m_SizeDelta: {x: 276.34, y: 83.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251081989
@@ -3058,8 +2901,6 @@ GameObject:
   - component: {fileID: 1543237141}
   - component: {fileID: 1543237140}
   - component: {fileID: 1543237139}
-  - component: {fileID: 1543237144}
-  - component: {fileID: 1543237143}
   m_Layer: 5
   m_Name: Beef
   m_TagString: PlayerUI
@@ -3192,43 +3033,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543237137}
   m_CullTransparentMesh: 0
---- !u!114 &1543237143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1543237137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5a567e0e2c48341b3722bba0bdcc0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 1363842202}
---- !u!61 &1543237144
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1543237137}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.4102478, y: 0.14446259}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 311.2428, y: 174.52187}
-  m_EdgeRadius: 0
 --- !u!1001 &1557412013
 Prefab:
   m_ObjectHideFlags: 0
@@ -3600,8 +3404,6 @@ GameObject:
   - component: {fileID: 1763914829}
   - component: {fileID: 1763914828}
   - component: {fileID: 1763914827}
-  - component: {fileID: 1763914832}
-  - component: {fileID: 1763914831}
   m_Layer: 5
   m_Name: Egg
   m_TagString: PlayerUI
@@ -3734,43 +3536,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763914825}
   m_CullTransparentMesh: 0
---- !u!114 &1763914831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1763914825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5a567e0e2c48341b3722bba0bdcc0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 747614012}
---- !u!61 &1763914832
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1763914825}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.11281586, y: 0.3407364}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 323.79993, y: 164.71037}
-  m_EdgeRadius: 0
 --- !u!1 &1818286688
 GameObject:
   m_ObjectHideFlags: 0
