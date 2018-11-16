@@ -62,6 +62,15 @@ public class AttributeStats : MonoBehaviour
             {
                 GetComponent<Attack>().updateAtk(PlayerPrefs.GetFloat("atk"));
             }
+
+            if (!PlayerPrefs.HasKey("stun"))
+            {
+                PlayerPrefs.SetFloat("stun", 40.0f);
+            }
+            else
+            {
+                stun = PlayerPrefs.GetFloat("stun");
+            }
             Debug.Log("Finished AttributeStats");
         }
         

@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Upgrade : MonoBehaviour
 {
-    
+
 
 
     // When button is pressed, changes the attribute.
     public void ChangeAttribute(string attribute)
     {
-        
+
         float num = PlayerPrefs.GetFloat(attribute);
         Debug.Log("Changing Attribute");
 
@@ -39,6 +39,11 @@ public class Upgrade : MonoBehaviour
         {
             num += .1f;
             PlayerPrefs.SetFloat("atkboost", num);
+        }
+        else if (attribute == "stun")
+        {
+            num += .1f;
+            PlayerPrefs.SetFloat("stun", num);
         }
         Debug.Log("Change attribute done");
     }
