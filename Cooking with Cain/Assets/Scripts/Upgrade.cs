@@ -50,7 +50,7 @@ public class Upgrade : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("level")+1);
     }
 
 

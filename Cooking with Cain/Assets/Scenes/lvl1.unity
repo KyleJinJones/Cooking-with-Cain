@@ -674,16 +674,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemies.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4925090786217244, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -718,56 +708,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
-      propertyPath: enemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemies.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemies.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemies.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.data[0]
-      value: 
-      objectReference: {fileID: 1042187037}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.data[1]
-      value: 
-      objectReference: {fileID: 1042187037}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyPositions.Array.data[1].x
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyPositions.Array.data[2].x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
       propertyPath: enemyHpBars.Array.data[0]
       value: 
       objectReference: {fileID: 2036230681}
@@ -798,69 +738,42 @@ Prefab:
       objectReference: {fileID: 1948767980}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
-      propertyPath: queue.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyPositions.Array.data[0].y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyPositions.Array.data[1].y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyPositions.Array.data[2].y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: nextScene
-      value: Molina
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
       propertyPath: enemyRemaining
       value: 
       objectReference: {fileID: 724108027}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: queue.Array.data[0]
+      value: 
+      objectReference: {fileID: 1042187037}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: queue.Array.data[1]
+      value: 
+      objectReference: {fileID: 1042187037}
+    - target: {fileID: 114548552023733560, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: burnIcon
+      value: 
+      objectReference: {fileID: 1330927844}
+    - target: {fileID: 114548552023733560, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: attackBoostIcon
+      value: 
+      objectReference: {fileID: 1651702750}
+    - target: {fileID: 114548552023733560, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: attackDebuffIcon
+      value: 
+      objectReference: {fileID: 1618236709}
+    - target: {fileID: 114548552023733560, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: stunIcon
+      value: 
+      objectReference: {fileID: 1681910183}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &552351113 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1509796128658756, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-    type: 2}
-  m_PrefabInternal: {fileID: 552351112}
---- !u!114 &552351114 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-    type: 2}
-  m_PrefabInternal: {fileID: 552351112}
-  m_Script: {fileID: 11500000, guid: 7d3c41ac44cb41f46b95a2a358d26991, type: 3}
---- !u!114 &552351115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 552351113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b25cf81d0fb9a4788f9fe5bd9853cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnManager: {fileID: 552351114}
-  burnIcon: {fileID: 1330927844}
-  attackBoostIcon: {fileID: 1651702750}
-  attackDebuffIcon: {fileID: 1618236709}
-  stunIcon: {fileID: 1681910183}
 --- !u!1 &562853263
 GameObject:
   m_ObjectHideFlags: 0

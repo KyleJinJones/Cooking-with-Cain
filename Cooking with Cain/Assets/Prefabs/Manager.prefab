@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114894419425095862}
   - component: {fileID: 114251256170941794}
   - component: {fileID: 114420742052935846}
+  - component: {fileID: 114548552023733560}
+  - component: {fileID: 114144561227851196}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -42,6 +44,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114144561227851196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509796128658756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c88e3443881684bb3f31f168a41132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114251256170941794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,6 +79,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: []
+--- !u!114 &114548552023733560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509796128658756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b25cf81d0fb9a4788f9fe5bd9853cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnManager: {fileID: 114894419425095862}
+  burnIcon: {fileID: 0}
+  attackBoostIcon: {fileID: 0}
+  attackDebuffIcon: {fileID: 0}
+  stunIcon: {fileID: 0}
 --- !u!114 &114894419425095862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77,3 +106,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3c41ac44cb41f46b95a2a358d26991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyHpBars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyHpText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyRemaining: {fileID: 0}
+  queue:
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyPositions:
+  - {x: 0, y: 0.5, z: 0}
+  - {x: 3.5, y: 0.5, z: 0}
+  - {x: 7, y: 0.5, z: 0}
+  turnCount: 0
+  nextScene: Molina
