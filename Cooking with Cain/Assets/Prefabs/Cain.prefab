@@ -77,6 +77,7 @@ MonoBehaviour:
   hpbar: {fileID: 0}
   burnDuration: 0
   burnPercent: 0
+  damageIndicator: {fileID: 0}
 --- !u!114 &114787455715597606
 MonoBehaviour:
   m_ObjectHideFlags: 1

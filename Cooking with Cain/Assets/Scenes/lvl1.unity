@@ -721,16 +721,16 @@ Prefab:
       propertyPath: hpbar
       value: 
       objectReference: {fileID: 247432044}
-    - target: {fileID: 114175032952650708, guid: 41cfc0b2afcad2444ac82055af33c52c,
-        type: 2}
-      propertyPath: atkbutton
-      value: 
-      objectReference: {fileID: 1251081987}
     - target: {fileID: 114415000044318532, guid: 41cfc0b2afcad2444ac82055af33c52c,
         type: 2}
       propertyPath: damageIndicator
       value: 
       objectReference: {fileID: 469643060}
+    - target: {fileID: 114175032952650708, guid: 41cfc0b2afcad2444ac82055af33c52c,
+        type: 2}
+      propertyPath: atkbutton
+      value: 
+      objectReference: {fileID: 1251081987}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41cfc0b2afcad2444ac82055af33c52c, type: 2}
   m_IsPrefabAsset: 0
