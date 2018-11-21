@@ -261,6 +261,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &552351113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+    type: 2}
+  m_PrefabInternal: {fileID: 552351112}
+  m_Script: {fileID: 11500000, guid: 7d3c41ac44cb41f46b95a2a358d26991, type: 3}
 --- !u!1 &574404614
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042187037 stripped
 GameObject:
@@ -739,6 +745,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114998748539542878, guid: b4fe8793421a0164bb88fd64909a5998,
+        type: 2}
+      propertyPath: turnManager
+      value: 
+      objectReference: {fileID: 552351113}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4fe8793421a0164bb88fd64909a5998, type: 2}
   m_IsPrefabAsset: 0

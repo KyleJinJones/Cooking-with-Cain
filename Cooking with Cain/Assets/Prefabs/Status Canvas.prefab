@@ -515,8 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b25cf81d0fb9a4788f9fe5bd9853cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnManager: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-    type: 2}
+  turnManager: {fileID: 0}
   burnIcon: {fileID: 1792291835447702}
   attackBoostIcon: {fileID: 1357095069638678}
   attackDebuffIcon: {fileID: 1046542280830770}
