@@ -12,6 +12,7 @@ public class Deal_Damage : MonoBehaviour {
 
     public void processFood(GameObject attacker, GameObject target, float attack, List<Food> ingredients)
     {
+        StartCoroutine(attackAnimation(attacker));
         AttributeStats stats = attacker.GetComponent<AttributeStats>();
 
         float totalDamage = 0;
@@ -62,6 +63,31 @@ public class Deal_Damage : MonoBehaviour {
         {
             attacker.GetComponent<Attack>().boostDuration = 2;
         }
+    }
+
+    IEnumerator attackAnimation(GameObject attacker)
+    {
+        float offset = attacker.tag.Equals("Player") ? 0.2f : -0.2f;
+        Sprite revert = attacker.GetComponent<SpriteRenderer>().sprite;
+
+        Sprite attackSprite = attacker.GetComponent<Attack>().attackSprite;
+
+        if (attackSprite != null)
+            attacker.GetComponent<SpriteRenderer>().sprite = attackSprite;
+
+        for (int i = 0; i < 5; i++)
+        {
+            attacker.transform.SetPositionAndRotation(attacker.transform.position + new Vector3(offset, 0), attacker.transform.rotation);
+            yield return null;
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            attacker.transform.SetPositionAndRotation(attacker.transform.position - new Vector3(offset, 0), attacker.transform.rotation);
+            yield return null;
+        }
+
+        attacker.GetComponent<SpriteRenderer>().sprite = revert;
     }
 
 	public void damage(GameObject attacker,GameObject target, int amt, bool burn, bool atkDebuff, bool stun) {
