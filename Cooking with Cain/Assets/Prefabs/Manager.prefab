@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114420742052935846}
   - component: {fileID: 114144561227851196}
   - component: {fileID: 82395410812503040}
-  - component: {fileID: 114068666408524650}
+  - component: {fileID: 114857277317964358}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -140,22 +140,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114068666408524650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509796128658756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b25cf81d0fb9a4788f9fe5bd9853cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnManager: {fileID: 114894419425095862}
-  burnIcon: {fileID: 0}
-  attackBoostIcon: {fileID: 0}
-  attackDebuffIcon: {fileID: 0}
-  stunIcon: {fileID: 0}
 --- !u!114 &114144561227851196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,6 +175,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: []
+--- !u!114 &114857277317964358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509796128658756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b25cf81d0fb9a4788f9fe5bd9853cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnManager: {fileID: 114894419425095862}
+  burnIcon: {fileID: 0}
+  attackBoostIcon: {fileID: 0}
+  attackDebuffIcon: {fileID: 0}
+  stunIcon: {fileID: 0}
 --- !u!114 &114894419425095862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,10 +216,6 @@ MonoBehaviour:
   - {fileID: 0}
   enemyRemaining: {fileID: 0}
   queue:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   enemyPositions:
