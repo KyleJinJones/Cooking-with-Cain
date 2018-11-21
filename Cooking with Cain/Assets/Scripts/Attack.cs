@@ -9,6 +9,8 @@ public class Attack : MonoBehaviour {
 	public float debuffPercent = 0;
     public List<string> lastPlayed;
 
+    public Sprite attackSprite;
+
     public float UpdateTurn()
     {
 		float multiplier = 1;
