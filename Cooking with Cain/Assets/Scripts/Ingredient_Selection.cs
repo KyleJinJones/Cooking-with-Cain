@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ingredient_Selection : MonoBehaviour {
     public List<Food> selected;
     public PlaySound deselect;
+    public PlaySound attack;
     // Use this for initialization
     void Start() {
 
@@ -27,6 +28,7 @@ public class Ingredient_Selection : MonoBehaviour {
 
     public void clear()
     {
+        attack.psound();
         selected.Clear();
     }
 
