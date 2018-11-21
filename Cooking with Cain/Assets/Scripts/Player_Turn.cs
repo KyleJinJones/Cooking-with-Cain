@@ -14,7 +14,7 @@ public class Player_Turn : MonoBehaviour {
 	void Start () {
         manager = GameObject.FindGameObjectWithTag("Manager");
         playerui = GameObject.FindGameObjectsWithTag("PlayerUI");
-        target = GameObject.FindGameObjectWithTag("Enemy");
+        //target = GameObject.FindGameObjectWithTag("Enemy");
 
     }
 	
