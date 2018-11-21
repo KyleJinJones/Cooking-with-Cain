@@ -17,28 +17,28 @@ public class Statuses : MonoBehaviour {
 	void Start () {
         player = turnManager.getPlayers()[0];
         playerIcons = new GameObject[] {
-            Object.Instantiate(burnIcon, new Vector3(-8, 2), Quaternion.identity),
-            Object.Instantiate(attackBoostIcon, new Vector3(-6, 2), Quaternion.identity),
-            Object.Instantiate(attackDebuffIcon, new Vector3(-4, 2), Quaternion.identity)};
+            Object.Instantiate(burnIcon, new Vector3(-8, 2), Quaternion.identity, burnIcon.transform.parent),
+            Object.Instantiate(attackBoostIcon, new Vector3(-6, 2), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(attackDebuffIcon, new Vector3(-4, 2), Quaternion.identity, attackBoostIcon.transform.parent)};
 
         Vector3[] positions = turnManager.enemyPositions;
 
         enemyIcons = new GameObject[][] {
             new GameObject[] {
-            Object.Instantiate(burnIcon, positions[0] + new Vector3(-1.5f, 2), Quaternion.identity),
-            Object.Instantiate(attackBoostIcon, positions[0] + new Vector3(-0.5f, 2), Quaternion.identity),
-            Object.Instantiate(attackDebuffIcon, positions[0] + new Vector3(0.5f, 2), Quaternion.identity),
-            Object.Instantiate(stunIcon, positions[0] + new Vector3(1.5f, 2), Quaternion.identity)},
+            Object.Instantiate(burnIcon, positions[0] + new Vector3(-1.5f, 2), Quaternion.identity, burnIcon.transform.parent),
+            Object.Instantiate(attackBoostIcon, positions[0] + new Vector3(-0.5f, 2), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(attackDebuffIcon, positions[0] + new Vector3(0.5f, 2), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(stunIcon, positions[0] + new Vector3(1.5f, 2), Quaternion.identity, stunIcon.transform.parent)},
             new GameObject[] {
-            Object.Instantiate(burnIcon, positions[1] + new Vector3(-1.5f, 2), Quaternion.identity),
-            Object.Instantiate(attackBoostIcon, positions[1] + new Vector3(-0.5f, 2), Quaternion.identity),
-            Object.Instantiate(attackDebuffIcon, positions[1] + new Vector3(0.5f, 2), Quaternion.identity),
-            Object.Instantiate(stunIcon, positions[1] + new Vector3(1.5f, 2), Quaternion.identity)},
+            Object.Instantiate(burnIcon, positions[1] + new Vector3(-1.5f, 2), Quaternion.identity, burnIcon.transform.parent),
+            Object.Instantiate(attackBoostIcon, positions[1] + new Vector3(-0.5f, 2), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(attackDebuffIcon, positions[1] + new Vector3(0.5f, 2), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(stunIcon, positions[1] + new Vector3(1.5f, 2), Quaternion.identity, stunIcon.transform.parent)},
             new GameObject[] {
-            Object.Instantiate(burnIcon, positions[2] + new Vector3(-1.5f, 2), Quaternion.identity),
-            Object.Instantiate(attackBoostIcon, positions[2] + new Vector3(-0.5f, 2), Quaternion.identity),
-            Object.Instantiate(attackDebuffIcon, positions[2] + new Vector3(0.5f, 2), Quaternion.identity),
-            Object.Instantiate(stunIcon, positions[2] + new Vector3(1.5f, 2), Quaternion.identity)}
+            Object.Instantiate(burnIcon, positions[2] + new Vector3(-1.5f, 2), Quaternion.identity, burnIcon.transform.parent),
+            Object.Instantiate(attackBoostIcon, positions[2] + new Vector3(-0.5f, 2), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(attackDebuffIcon, positions[2] + new Vector3(0.5f, 2), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(stunIcon, positions[2] + new Vector3(1.5f, 2), Quaternion.identity, stunIcon.transform.parent)}
         };
     }
 	
