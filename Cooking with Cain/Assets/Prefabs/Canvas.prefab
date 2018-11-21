@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 1
   foodName: Beef
-  attribute: atkbuff
+  attribute: atkboost
   multiplierRange: []
 --- !u!114 &114236390424737796
 MonoBehaviour:
