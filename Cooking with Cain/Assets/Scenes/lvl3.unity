@@ -212,6 +212,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: queue.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4925090786217244, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -293,22 +298,22 @@ Prefab:
         type: 2}
       propertyPath: queue.Array.data[2]
       value: 
-      objectReference: {fileID: 655811347}
+      objectReference: {fileID: 513246728}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
       propertyPath: queue.Array.data[3]
       value: 
-      objectReference: {fileID: 343804295}
+      objectReference: {fileID: 655811347}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
       propertyPath: queue.Array.data[4]
       value: 
-      objectReference: {fileID: 884934897}
+      objectReference: {fileID: 343804295}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
       propertyPath: queue.Array.data[5]
       value: 
-      objectReference: {fileID: 513246728}
+      objectReference: {fileID: 884934897}
     - target: {fileID: 114068666408524650, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
       propertyPath: burnIcon
@@ -775,7 +780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042187037 stripped
 GameObject:
