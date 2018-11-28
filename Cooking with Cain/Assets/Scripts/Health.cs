@@ -7,6 +7,7 @@ public class Health : MonoBehaviour {
     //Keeps track of the character's health
     public float starting_health = 100;
     public float health = 100;
+    public float renderhealth = 100;
     public Text hptext;
     public Image hpbar;
     public int burnDuration;
@@ -14,11 +15,18 @@ public class Health : MonoBehaviour {
     public Text damageIndicator;
 
 	void Start () {
-        health = starting_health;
+        health = renderhealth = starting_health;
         hptext.text = health.ToString();
         damageIndicator.color = Color.clear;
 	}
-	
+
+    void Update()
+    {
+        renderhealth += (health - renderhealth) / 5;
+
+        hpbar.fillAmount = renderhealth / starting_health;
+    }
+
     public void updateHealth(float newHealth)
     {
         starting_health = newHealth;
@@ -57,7 +65,6 @@ public class Health : MonoBehaviour {
 
 
         hptext.text = health.ToString();
-        hpbar.fillAmount = health / starting_health;
 
     }
 
@@ -85,7 +92,6 @@ public class Health : MonoBehaviour {
         }
 
         hptext.text = health.ToString();
-        hpbar.fillAmount = health / starting_health;
 
     }
 

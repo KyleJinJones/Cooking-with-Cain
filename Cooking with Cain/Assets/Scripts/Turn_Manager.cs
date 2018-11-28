@@ -19,10 +19,14 @@ public class Turn_Manager : MonoBehaviour {
         StartCoroutine(run());
     }
 
+    void FixedUpdate()
+    {
+        displayHealth();
+    }
+
     IEnumerator run()
     {
         checkState();
-        displayHealth();
 
         while (true)
         {
@@ -35,7 +39,6 @@ public class Turn_Manager : MonoBehaviour {
                     player.GetComponent<Player_Turn>().acted = false;
                     player.GetComponent<Player_Turn>().StartCoroutine("turn");
                     yield return new WaitUntil(() => player.GetComponent<Player_Turn>().acted);
-                    displayHealth();
                     for (int i = 0; i < 100; i++)
                         yield return null;
                 }
@@ -48,7 +51,6 @@ public class Turn_Manager : MonoBehaviour {
                 if (enemy != null && enemy.GetComponent<Health>().health > 0)
                 {
                     enemy.GetComponent<Enemy_Turn>().turn();
-                    displayHealth();
                     for (int i = 0; i < 100; i++)
                         yield return null;
                 }
@@ -64,14 +66,14 @@ public class Turn_Manager : MonoBehaviour {
         {
             if (enemies[i] == null)
             {
-                enemyHpBars[i].fillAmount = 0;
+                enemyHpBars[i].fillAmount /= 5;
                 enemyHpText[i].text = "0";
             }
             else
             {
                 Health health = enemies[i].GetComponent<Health>();
-                enemyHpBars[i].fillAmount = health.health / health.starting_health;
                 enemyHpText[i].text = health.health.ToString();
+                enemyHpBars[i].fillAmount = health.renderhealth / health.starting_health;
             }
         }
     }
