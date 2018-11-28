@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
     public Text nameText;
     public Text dialogueText;
+    public int scene;
 
     private Queue<string> sentences;
 
@@ -37,11 +39,22 @@ public class DialogueManager : MonoBehaviour {
         }
 
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        SceneManager.LoadScene(scene);
     }
 }

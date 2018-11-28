@@ -370,8 +370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201.9, y: -6.8}
-  m_SizeDelta: {x: 360, y: 60}
+  m_AnchoredPosition: {x: -109.29, y: -7}
+  m_SizeDelta: {x: 523.88, y: 102.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
 GameObject:
@@ -474,9 +474,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 593931445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334b4ed3a1bf72f438e71d12f62014b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b04572dd2ae4514ea5a8017065abd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 221127177}
+  dialogueText: {fileID: 348778712}
+  scene: 3
 --- !u!4 &593931447
 Transform:
   m_ObjectHideFlags: 0
@@ -600,7 +603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 159}
+  m_AnchoredPosition: {x: 0, y: 278}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017235709
@@ -611,9 +614,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017235707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c969b32173bdc0344b0100ae698f1f9b, type: 3}
+  m_Script: {fileID: 11500000, guid: e979f4eb5ccf4ae44942647848e5604f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - "Cain:\n\n*cough, cough* Wha\u2026. What happened? All I did was open that damn
+      book.. \nWait, who are you?"
+    - 'Gluttony:
+
+
+      Heh, I know it''s been centuries but have you meat bags really forgotten about
+      me?
+
+      Looks like we got some catching up to do. Hehehe'
+    - 'Cain:
+
+
+      Who you calling meat bag!?'
+    - "Gluttony:\n\nAs much as I'd like to chat, Meatbag, I really ought to be going.\r\nI
+      haven't eaten anything in a millennia, and I got quite the appetite.\r\nWonder
+      if you all still taste the same\u2026 Hahahaha\r\n"
+    - "Cain:\n\nWait! Get back here you son of a\u2026 Damn. He's gone. This is not
+      good at all. \r\nMaybe I'll find some answers in this stupid book\u2026\r\nHm?
+      Interesting\u2026\r\nThere's a page here on how to fight demons with cursed
+      food\r\n"
 --- !u!114 &1017235710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 20}
-  m_SizeDelta: {x: 840, y: 150}
+  m_AnchoredPosition: {x: 260, y: -20.9}
+  m_SizeDelta: {x: 214.7, y: 41.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358037686
 MonoBehaviour:
@@ -950,7 +976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748858147
@@ -985,7 +1011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: CONTINUE >>
 --- !u!222 &1748858148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1062,7 +1088,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1811600348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.08, y: 0.51, z: 0}
+  m_LocalPosition: {x: 4.66, y: 0.51, z: 0}
   m_LocalScale: {x: 1.746, y: 1.663, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1137,11 +1163,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1812933288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.27, y: 1.68, z: 0}
+  m_LocalPosition: {x: -4.99, y: 1.59, z: 0}
   m_LocalScale: {x: 0.4976509, y: 0.46094814, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996835610
 GameObject:
@@ -1216,5 +1242,5 @@ Transform:
   m_LocalScale: {x: 3.3024993, y: 0.47845677, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
