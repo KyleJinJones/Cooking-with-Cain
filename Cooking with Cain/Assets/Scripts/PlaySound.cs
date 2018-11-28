@@ -14,7 +14,7 @@ public class PlaySound : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void psound() {
+	public void psound() {
         asrc.clip = cl;
         asrc.Play();
 	}

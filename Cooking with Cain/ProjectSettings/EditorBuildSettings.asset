@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: c135ce976e3326b48960d1a04d0d52cd
@@ -27,12 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/lvl3.unity
     guid: e9c6827ad7addec488d80aebbf9c8706
   - enabled: 1
+    path: Assets/Scenes/lvl4.unity
+    guid: c9e6b1eb89399fb44b881cce9d82144b
+  - enabled: 1
+    path: Assets/Scenes/lvl5.unity
+    guid: 66530d09cbe05a34292c1f6ab55cedee
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 3bc402dea406b1342bca95c307b63749
-  - enabled: 0
-    path: Assets/Scenes/Kyle_Scene.unity
-    guid: 7a54f880c0a85864d9ecec4d406e5865
-  - enabled: 0
-    path: Assets/Scenes/TestingEndState.unity
-    guid: b825c58a0a430f34999e5ef2a2a121b5
   m_configObjects: {}
