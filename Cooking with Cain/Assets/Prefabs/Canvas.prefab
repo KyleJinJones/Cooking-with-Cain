@@ -913,8 +913,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281725979461196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.2, y: 1, z: -9719.225}
-  m_LocalScale: {x: 81.700294, y: 75.59397, z: 107.99139}
+  m_LocalPosition: {x: -19.800032, y: 81.69999, z: -9719.225}
+  m_LocalScale: {x: 73.530266, y: 54.427654, z: 107.99139}
   m_Children: []
   m_Father: {fileID: 224386933098347820}
   m_RootOrder: 1
@@ -926,8 +926,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347143045112068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 1, z: -9719.225}
-  m_LocalScale: {x: 108.0656, y: 108.0656, z: 108.0656}
+  m_LocalPosition: {x: 6.09997, y: 81.999985, z: -9719.225}
+  m_LocalScale: {x: 97.25903, y: 77.80723, z: 108.0656}
   m_Children: []
   m_Father: {fileID: 224941152404476780}
   m_RootOrder: 1
@@ -939,8 +939,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1710652513083356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 1, z: -9719.225}
-  m_LocalScale: {x: 108.0656, y: 108.0656, z: 108.0656}
+  m_LocalPosition: {x: -18.300032, y: 81.69999, z: -9719.225}
+  m_LocalScale: {x: 97.25903, y: 77.80723, z: 108.0656}
   m_Children: []
   m_Father: {fileID: 224991851061844736}
   m_RootOrder: 1
@@ -952,8 +952,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770612204858292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 1, z: -9719.225}
-  m_LocalScale: {x: 108.0656, y: 108.0656, z: 108.0656}
+  m_LocalPosition: {x: -6, y: 82, z: -9719.225}
+  m_LocalScale: {x: 97.25903, y: 77.80723, z: 108.0656}
   m_Children: []
   m_Father: {fileID: 224846325236364452}
   m_RootOrder: 1
@@ -2662,7 +2662,7 @@ MonoBehaviour:
   def: {fileID: 0}
   Chicken: {fileID: 21300000, guid: 1bbb952f263f9a64eb7025db5a4e4761, type: 3}
   Beef: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
-  Egg: {fileID: 21300000, guid: 271b4f022b1f98249ac7b87f41e94c68, type: 3}
+  Egg: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
   Pepper: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
   Wine: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
   Rice: {fileID: 21300000, guid: 488b1d7bb9d401f4196e4a3a016c0750, type: 3}
@@ -3040,7 +3040,7 @@ MonoBehaviour:
   def: {fileID: 0}
   Chicken: {fileID: 21300000, guid: 1bbb952f263f9a64eb7025db5a4e4761, type: 3}
   Beef: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
-  Egg: {fileID: 21300000, guid: 271b4f022b1f98249ac7b87f41e94c68, type: 3}
+  Egg: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
   Pepper: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
   Wine: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
   Rice: {fileID: 21300000, guid: 488b1d7bb9d401f4196e4a3a016c0750, type: 3}
@@ -3077,7 +3077,7 @@ MonoBehaviour:
   def: {fileID: 0}
   Chicken: {fileID: 21300000, guid: 1bbb952f263f9a64eb7025db5a4e4761, type: 3}
   Beef: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
-  Egg: {fileID: 21300000, guid: 271b4f022b1f98249ac7b87f41e94c68, type: 3}
+  Egg: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
   Pepper: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
   Wine: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
   Rice: {fileID: 21300000, guid: 488b1d7bb9d401f4196e4a3a016c0750, type: 3}
@@ -4265,7 +4265,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 271b4f022b1f98249ac7b87f41e94c68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
