@@ -292,7 +292,7 @@ Prefab:
     - target: {fileID: 114650048316522072, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
       propertyPath: m_Text
-      value: Attack +3
+      value: A Fierce Concotion
       objectReference: {fileID: 0}
     - target: {fileID: 114825177402690454, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
@@ -411,7 +411,7 @@ Prefab:
     - target: {fileID: 114650048316522072, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
       propertyPath: m_Text
-      value: Stun +10%
+      value: A Stunning Smoothie
       objectReference: {fileID: 0}
     - target: {fileID: 114825177402690454, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
@@ -535,7 +535,7 @@ Prefab:
     - target: {fileID: 114650048316522072, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
       propertyPath: m_Text
-      value: Upgrade
+      value: The Feast
       objectReference: {fileID: 0}
     - target: {fileID: 114599224551371104, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
@@ -728,7 +728,7 @@ Prefab:
     - target: {fileID: 114650048316522072, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
       propertyPath: m_Text
-      value: Attack Boost +10%
+      value: A Buff Beef
       objectReference: {fileID: 0}
     - target: {fileID: 114599224551371104, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
@@ -852,7 +852,7 @@ Prefab:
     - target: {fileID: 114650048316522072, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
       propertyPath: m_Text
-      value: Health +10
+      value: A Hearty Supper
       objectReference: {fileID: 0}
     - target: {fileID: 114599224551371104, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
@@ -967,6 +967,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1572824389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1894922460295820, guid: 8a9844235731f2d40a423c488b87e165,
+    type: 2}
+  m_PrefabInternal: {fileID: 466313246}
+--- !u!114 &1572824390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572824389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbec37fd3ba82574dada30d7d7a73777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvl_unlocked: 6
 --- !u!1 &1832406863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1160,11 @@ Prefab:
       propertyPath: m_Name
       value: Splash
       objectReference: {fileID: 0}
+    - target: {fileID: 114650048316522072, guid: 8a9844235731f2d40a423c488b87e165,
+        type: 2}
+      propertyPath: m_Text
+      value: An Explosive Breakfast
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a9844235731f2d40a423c488b87e165, type: 2}
   m_IsPrefabAsset: 0
@@ -1260,7 +1282,7 @@ Prefab:
     - target: {fileID: 114650048316522072, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
       propertyPath: m_Text
-      value: Life Steal +10%
+      value: The Blood of My Enemies
       objectReference: {fileID: 0}
     - target: {fileID: 114599224551371104, guid: 8a9844235731f2d40a423c488b87e165,
         type: 2}
