@@ -99,9 +99,13 @@ public class Health : MonoBehaviour {
     {
         damageIndicator.text = amt;
         damageIndicator.color = clr;
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
 
         for (int i = 60; i > 0; i--)
         {
+            if (clr.r == 1)
+                renderer.color = new Color(1, clr.g + 3 - i / 20f, clr.g + 3 - i / 20f, 1);
+
             damageIndicator.color = new Color(clr.r, clr.g, clr.b, i / 60f);
             yield return null;
         }

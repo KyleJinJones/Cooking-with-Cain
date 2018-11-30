@@ -59,7 +59,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1057157403997218
 GameObject:
   m_ObjectHideFlags: 1
@@ -76,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1087525000785292
 GameObject:
   m_ObjectHideFlags: 1
@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1225819341379484
 GameObject:
   m_ObjectHideFlags: 1
@@ -179,7 +179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1319368972619648
 GameObject:
   m_ObjectHideFlags: 1
@@ -252,7 +252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1347143045112068
 GameObject:
   m_ObjectHideFlags: 1
@@ -286,7 +286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1354105076847656
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1406694030613488
 GameObject:
   m_ObjectHideFlags: 1
@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1473004253583668
 GameObject:
   m_ObjectHideFlags: 1
@@ -389,7 +389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1474412926681142
 GameObject:
   m_ObjectHideFlags: 1
@@ -481,7 +481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1520453269147954
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1560641738045404
 GameObject:
   m_ObjectHideFlags: 1
@@ -614,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1667274070096126
 GameObject:
   m_ObjectHideFlags: 1
@@ -631,7 +631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1668894869748376
 GameObject:
   m_ObjectHideFlags: 1
@@ -681,7 +681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1710652513083356
 GameObject:
   m_ObjectHideFlags: 1
@@ -809,7 +809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1868752129469370
 GameObject:
   m_ObjectHideFlags: 1
@@ -926,7 +926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1953749747603792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,9 +2058,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '100
-
-'
+  m_Text: 100
 --- !u!114 &114040714645365802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2251,9 +2249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '100
-
-'
+  m_Text: 30
 --- !u!114 &114093890151599196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2836,7 +2832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2869,16 +2865,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  i: {fileID: 0}
-  def: {fileID: 0}
+  i: {fileID: 114289894960407208}
+  def: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   Chicken: {fileID: 21300000, guid: 1bbb952f263f9a64eb7025db5a4e4761, type: 3}
   Beef: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
   Egg: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
   Pepper: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
   Wine: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
   Rice: {fileID: 21300000, guid: 488b1d7bb9d401f4196e4a3a016c0750, type: 3}
-  Lemon: {fileID: 21300000, guid: edb13b906cd07ac4a90fd721069420ec, type: 3}
-  Licorice: {fileID: 21300000, guid: edddcf7cdbc839343983d320a5266d84, type: 3}
+  Lemon: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d, type: 3}
+  Licorice: {fileID: 21300000, guid: 77069380669a4d6458c1e9bf7bfa0a7d, type: 3}
   cmbnum: 2
   n: 
 --- !u!114 &114468715302419754
@@ -3298,16 +3294,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  i: {fileID: 0}
-  def: {fileID: 0}
+  i: {fileID: 114136595187150250}
+  def: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   Chicken: {fileID: 21300000, guid: 1bbb952f263f9a64eb7025db5a4e4761, type: 3}
   Beef: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
   Egg: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
   Pepper: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
   Wine: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
   Rice: {fileID: 21300000, guid: 488b1d7bb9d401f4196e4a3a016c0750, type: 3}
-  Lemon: {fileID: 21300000, guid: edb13b906cd07ac4a90fd721069420ec, type: 3}
-  Licorice: {fileID: 21300000, guid: edddcf7cdbc839343983d320a5266d84, type: 3}
+  Lemon: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d, type: 3}
+  Licorice: {fileID: 21300000, guid: 77069380669a4d6458c1e9bf7bfa0a7d, type: 3}
   cmbnum: 1
   n: 
 --- !u!114 &114610220793234866
@@ -3335,16 +3331,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  i: {fileID: 0}
-  def: {fileID: 0}
+  i: {fileID: 114057342880015776}
+  def: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   Chicken: {fileID: 21300000, guid: 1bbb952f263f9a64eb7025db5a4e4761, type: 3}
   Beef: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
   Egg: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
   Pepper: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
   Wine: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
   Rice: {fileID: 21300000, guid: 488b1d7bb9d401f4196e4a3a016c0750, type: 3}
-  Lemon: {fileID: 21300000, guid: edb13b906cd07ac4a90fd721069420ec, type: 3}
-  Licorice: {fileID: 21300000, guid: edddcf7cdbc839343983d320a5266d84, type: 3}
+  Lemon: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d, type: 3}
+  Licorice: {fileID: 21300000, guid: 77069380669a4d6458c1e9bf7bfa0a7d, type: 3}
   cmbnum: 3
   n: 
 --- !u!114 &114636873880703746
@@ -3433,9 +3429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '100
-
-'
+  m_Text: 30
 --- !u!114 &114659407417538402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3664,9 +3658,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '0
-
-'
+  m_Text: 'Enemies remaining: 3'
 --- !u!114 &114709148557268490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3978,9 +3970,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '100
-
-'
+  m_Text: 110
 --- !u!114 &114835214876899804
 MonoBehaviour:
   m_ObjectHideFlags: 1

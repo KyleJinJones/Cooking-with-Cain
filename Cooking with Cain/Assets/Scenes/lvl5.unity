@@ -550,6 +550,42 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099761035}
+    - target: {fileID: 114583379151886460, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: Licorice
+      value: 
+      objectReference: {fileID: 21300000, guid: 77069380669a4d6458c1e9bf7bfa0a7d,
+        type: 3}
+    - target: {fileID: 114425995918117836, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: Licorice
+      value: 
+      objectReference: {fileID: 21300000, guid: 77069380669a4d6458c1e9bf7bfa0a7d,
+        type: 3}
+    - target: {fileID: 114624484839206018, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: Licorice
+      value: 
+      objectReference: {fileID: 21300000, guid: 77069380669a4d6458c1e9bf7bfa0a7d,
+        type: 3}
+    - target: {fileID: 114583379151886460, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: Lemon
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d,
+        type: 3}
+    - target: {fileID: 114425995918117836, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: Lemon
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d,
+        type: 3}
+    - target: {fileID: 114624484839206018, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: Lemon
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c049d7c20b00611429847b1333eaa42f, type: 2}
   m_IsPrefabAsset: 0
