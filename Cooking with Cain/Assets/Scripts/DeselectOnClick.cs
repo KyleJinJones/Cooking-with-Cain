@@ -10,12 +10,11 @@ public class DeselectOnClick : MonoBehaviour {
     {
         if (manager == null)
         {
-            manager = GameObject.FindGameObjectWithTag("manager");
+            manager = GameObject.FindGameObjectWithTag("Manager");
         }
     }
     // Use this for initialization
     void OnMouseDown () {
-        Debug.Log("tryed");
         manager.GetComponent<Ingredient_Selection>().selected.RemoveAt(cmbnum);
 	}
 	

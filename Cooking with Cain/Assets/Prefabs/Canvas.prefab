@@ -191,7 +191,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224998063641610454}
   - component: {fileID: 222155255167210308}
-  - component: {fileID: 114111546741589320}
   m_Layer: 5
   m_Name: Enemy Name 2
   m_TagString: Untagged
@@ -824,7 +823,7 @@ GameObject:
   - component: {fileID: 114136595187150250}
   - component: {fileID: 114583379151886460}
   - component: {fileID: 61229583404906696}
-  - component: {fileID: 114115017348547228}
+  - component: {fileID: 114555244068346208}
   m_Layer: 5
   m_Name: ingredient_viewer
   m_TagString: PlayerUI
@@ -3426,6 +3425,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 1602949812920830}
+--- !u!114 &114555244068346208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833980131351438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70085240829164a90ffccd0e4e89c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cmbnum: 0
+  manager: {fileID: 0}
 --- !u!114 &114555607897773970
 MonoBehaviour:
   m_ObjectHideFlags: 1
