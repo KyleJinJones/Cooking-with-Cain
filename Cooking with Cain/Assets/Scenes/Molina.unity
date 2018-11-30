@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00974400f8915df48b2398950229e3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: lemon
+  named: lemon
 --- !u!1 &149512141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1894922460295820, guid: 8a9844235731f2d40a423c488b87e165,
@@ -2734,7 +2734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00974400f8915df48b2398950229e3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: brussel
+  named: brussel
 --- !u!1001 &1875482448
 Prefab:
   m_ObjectHideFlags: 0
