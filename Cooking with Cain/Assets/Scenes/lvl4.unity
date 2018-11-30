@@ -272,7 +272,7 @@ Prefab:
         type: 2}
       propertyPath: enemyNames.Array.data[1]
       value: 
-      objectReference: {fileID: 849769193}
+      objectReference: {fileID: 0}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
       propertyPath: enemyNames.Array.data[2]
@@ -318,12 +318,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &620993740 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114815204794320646, guid: c049d7c20b00611429847b1333eaa42f,
-    type: 2}
-  m_PrefabInternal: {fileID: 849769192}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &724108027 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114706800343223172, guid: c049d7c20b00611429847b1333eaa42f,
@@ -509,7 +503,7 @@ Prefab:
   m_IsPrefabAsset: 0
 --- !u!114 &849769193 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114111546741589320, guid: c049d7c20b00611429847b1333eaa42f,
+  m_CorrespondingSourceObject: {fileID: 114825389061765576, guid: c049d7c20b00611429847b1333eaa42f,
     type: 2}
   m_PrefabInternal: {fileID: 849769192}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -944,7 +938,7 @@ Prefab:
         type: 2}
       propertyPath: hptext
       value: 
-      objectReference: {fileID: 620993740}
+      objectReference: {fileID: 849769193}
     - target: {fileID: 114415000044318532, guid: 41cfc0b2afcad2444ac82055af33c52c,
         type: 2}
       propertyPath: hpbar
