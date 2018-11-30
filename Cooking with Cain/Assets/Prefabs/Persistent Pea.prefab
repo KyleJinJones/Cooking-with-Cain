@@ -145,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651874180269286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.51, y: 8.03, z: 0}
+  m_LocalPosition: {x: -8.17, y: 8.15, z: 0}
   m_LocalScale: {x: 1.25, y: 1.75, z: 1.25}
   m_Children:
   - {fileID: 224003422839883306}
@@ -292,6 +292,7 @@ MonoBehaviour:
   summonstun: 0
   stunned: 0
   juststunned: 0
+  enemyName: Persistent Pea
 --- !u!114 &114379933459101904
 MonoBehaviour:
   m_ObjectHideFlags: 1

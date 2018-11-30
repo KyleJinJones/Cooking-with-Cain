@@ -9,6 +9,7 @@ public class Turn_Manager : MonoBehaviour {
     public GameObject[] enemies = new GameObject[3];
     public Image[] enemyHpBars = new Image[3];
     public Text[] enemyHpText = new Text[3];
+    public Text[] enemyNames = new Text[3];
     public Text enemyRemaining;
     public List<GameObject> queue;
     public Vector3[] enemyPositions = new Vector3[3];
@@ -67,13 +68,15 @@ public class Turn_Manager : MonoBehaviour {
             if (enemies[i] == null)
             {
                 enemyHpBars[i].fillAmount /= 5;
-                enemyHpText[i].text = "0";
+                enemyHpText[i].text = "";
+                enemyNames[i].text = "";
             }
             else
             {
                 Health health = enemies[i].GetComponent<Health>();
                 enemyHpText[i].text = health.health.ToString();
                 enemyHpBars[i].fillAmount = health.renderhealth / health.starting_health;
+                enemyNames[i].text = enemies[i].GetComponent<Enemy_Turn>().enemyName;
             }
         }
     }
