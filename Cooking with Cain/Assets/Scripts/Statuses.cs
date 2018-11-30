@@ -55,7 +55,7 @@ public class Statuses : MonoBehaviour {
 
         for (int j = 0; j < 3; j++)
         {
-            if (enemies[j] == null)
+            if (enemies[j] == null || enemies[j].GetComponent<Health>().health == 0)
             {
                 for (int i = 0; i < 4; i++)
                 {

@@ -16,12 +16,13 @@ public class Turn_Manager : MonoBehaviour {
     public Vector3[] enemyPositions = new Vector3[3];
     public int turnCount = 0;
     public string nextScene;
+    public GameObject targetDisplayObject;
 
     void Start () {
         StartCoroutine(run());
     }
 
-    void FixedUpdate()
+    void Update()
     {
         displayHealth();
     }
@@ -71,6 +72,13 @@ public class Turn_Manager : MonoBehaviour {
 
     public void displayHealth()
     {
+        Player_Turn turn = getPlayers()[0].GetComponent<Player_Turn>();
+        targetDisplayObject.SetActive(turn.target != null && turn.target.GetComponent<Health>().health != 0);
+        if (turn.target != null)
+        {
+            targetDisplayObject.transform.SetPositionAndRotation(turn.target.transform.position, Quaternion.identity);
+        }
+
         for (int i = 0; i < 3; i++)
         {
             if (enemies[i] == null)
@@ -179,12 +187,5 @@ public class Turn_Manager : MonoBehaviour {
     public GameObject[] getPlayers()
     {
         return GameObject.FindGameObjectsWithTag("Player");
-    }
-
-    // Update is called once per frame
-    void Update() {
-
-        
-
     }
 }
