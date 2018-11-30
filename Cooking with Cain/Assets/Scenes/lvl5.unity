@@ -113,12 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &176911782 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114111546741589320, guid: c049d7c20b00611429847b1333eaa42f,
-    type: 2}
-  m_PrefabInternal: {fileID: 849769192}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &247432044 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114671720824590534, guid: c049d7c20b00611429847b1333eaa42f,
@@ -238,7 +232,7 @@ Prefab:
         type: 2}
       propertyPath: enemyNames.Array.data[1]
       value: 
-      objectReference: {fileID: 176911782}
+      objectReference: {fileID: 849769193}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
       propertyPath: enemyNames.Array.data[2]
@@ -594,6 +588,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c049d7c20b00611429847b1333eaa42f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &849769193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114973397101939066, guid: c049d7c20b00611429847b1333eaa42f,
+    type: 2}
+  m_PrefabInternal: {fileID: 849769192}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &989549781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114175032952650708, guid: 41cfc0b2afcad2444ac82055af33c52c,

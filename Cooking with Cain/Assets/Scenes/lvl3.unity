@@ -369,7 +369,7 @@ Prefab:
         type: 2}
       propertyPath: enemyNames.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 849769195}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
       propertyPath: enemyNames.Array.data[2]
@@ -671,6 +671,12 @@ MonoBehaviour:
 --- !u!114 &849769194 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114825389061765576, guid: c049d7c20b00611429847b1333eaa42f,
+    type: 2}
+  m_PrefabInternal: {fileID: 849769192}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &849769195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114973397101939066, guid: c049d7c20b00611429847b1333eaa42f,
     type: 2}
   m_PrefabInternal: {fileID: 849769192}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
