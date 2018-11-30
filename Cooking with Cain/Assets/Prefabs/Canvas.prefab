@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 224056799396389230}
   - component: {fileID: 222298232814556800}
   - component: {fileID: 114309146682554704}
+  - component: {fileID: 114297204628504090}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -70,6 +71,7 @@ GameObject:
   - component: {fileID: 224358310644752578}
   - component: {fileID: 222106906711391718}
   - component: {fileID: 114488695647540000}
+  - component: {fileID: 114698177514111688}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -246,6 +248,7 @@ GameObject:
   - component: {fileID: 224862210848441174}
   - component: {fileID: 222420780841267514}
   - component: {fileID: 114263720842550512}
+  - component: {fileID: 114375481079011672}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -280,6 +283,7 @@ GameObject:
   - component: {fileID: 224550679185843890}
   - component: {fileID: 222360348141148004}
   - component: {fileID: 114148045075214780}
+  - component: {fileID: 114531158736890818}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -315,6 +319,7 @@ GameObject:
   - component: {fileID: 224911207536668816}
   - component: {fileID: 222061908341091844}
   - component: {fileID: 114543927548126468}
+  - component: {fileID: 114209936984897210}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -383,6 +388,7 @@ GameObject:
   - component: {fileID: 224734457135328694}
   - component: {fileID: 222383234001533622}
   - component: {fileID: 114212441192994436}
+  - component: {fileID: 114124285335832914}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -516,6 +522,7 @@ GameObject:
   - component: {fileID: 224830477939531190}
   - component: {fileID: 222649587998490966}
   - component: {fileID: 114333663794002400}
+  - component: {fileID: 114396476940605524}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -920,6 +927,7 @@ GameObject:
   - component: {fileID: 224103456039729836}
   - component: {fileID: 222360186246390644}
   - component: {fileID: 114837631376492926}
+  - component: {fileID: 114970313110529144}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -2313,6 +2321,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114124285335832914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1473004253583668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114202765581583504}
 --- !u!114 &114136595187150250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2387,7 +2407,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Rice
 
-    +2x damage'
+    +{0} damage'
 --- !u!114 &114152876473674860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2455,6 +2475,18 @@ MonoBehaviour:
   foodName: Licorice
   attribute: atkdebuff
   multiplierRange: []
+--- !u!114 &114209936984897210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373806937929296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114835214876899804}
 --- !u!114 &114212441192994436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2489,7 +2521,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Brussel Sprout
 
-    +1x damage
+    +{0} damage
 
     Effect: attack debuff'
 --- !u!114 &114229207627687374
@@ -2562,7 +2594,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Lemon
 
-    +0.5x damage
+    +{0} damage
 
     Effect: stun'
 --- !u!114 &114280192143454468
@@ -2617,6 +2649,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114297204628504090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055736054450208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114229207627687374}
 --- !u!114 &114309146682554704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2651,7 +2695,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Beef
 
-    +1x damage
+    +{0} damage
 
     Effect: attack boost'
 --- !u!114 &114312159934582230
@@ -2768,6 +2812,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Wine
 
+    +{0} damage
+
     Effect: lifesteal'
 --- !u!114 &114352898074171874
 MonoBehaviour:
@@ -2795,6 +2841,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114375481079011672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346494171734182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114738463151785270}
 --- !u!114 &114380074181440178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2807,6 +2865,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 1851895880518524}
+--- !u!114 &114396476940605524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534460138796334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114502289972744032}
 --- !u!114 &114399179315379204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3013,7 +3083,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Egg
 
-    +0.25x damage
+    +{0} damage
 
     Effect: splash'
 --- !u!114 &114502289972744032
@@ -3027,7 +3097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209059a7c09c9f4428dc2ca2619b53a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 1
+  multiplier: 0
   foodName: Wine
   attribute: lifesteal
   multiplierRange: []
@@ -3047,6 +3117,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114531158736890818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347995751553702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114636873880703746}
 --- !u!114 &114541200234265680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3108,7 +3190,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Chicken
 
-    +1-3x damage'
+    +{0} damage'
 --- !u!114 &114547018437846152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3547,6 +3629,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114698177514111688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057157403997218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114738131558784058}
 --- !u!114 &114698293372431596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4001,7 +4095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4022,7 +4116,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Pepper
 
-    +0.5x damage
+    +{0} damage
 
     Effect: burn'
 --- !u!114 &114841131046857094
@@ -4452,6 +4546,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114970313110529144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944101313844138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a562fc45ecc124591c904ef1eb3e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 114939477615357410}
 --- !u!212 &212203086312909540
 SpriteRenderer:
   m_ObjectHideFlags: 1
