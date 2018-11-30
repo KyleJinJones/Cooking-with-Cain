@@ -17,9 +17,9 @@ public class Statuses : MonoBehaviour {
 	void Start () {
         player = turnManager.getPlayers()[0];
         playerIcons = new GameObject[] {
-            Object.Instantiate(burnIcon, new Vector3(-8, 2), Quaternion.identity, burnIcon.transform.parent),
-            Object.Instantiate(attackBoostIcon, new Vector3(-6, 2), Quaternion.identity, attackBoostIcon.transform.parent),
-            Object.Instantiate(attackDebuffIcon, new Vector3(-4, 2), Quaternion.identity, attackBoostIcon.transform.parent)};
+            Object.Instantiate(burnIcon, new Vector3(-8, 2.5f), Quaternion.identity, burnIcon.transform.parent),
+            Object.Instantiate(attackBoostIcon, new Vector3(-6, 2.5f), Quaternion.identity, attackBoostIcon.transform.parent),
+            Object.Instantiate(attackDebuffIcon, new Vector3(-4, 2.5f), Quaternion.identity, attackBoostIcon.transform.parent)};
 
         Vector3[] positions = turnManager.enemyPositions;
 
