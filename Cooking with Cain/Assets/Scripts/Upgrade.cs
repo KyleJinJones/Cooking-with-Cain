@@ -17,7 +17,7 @@ public class Upgrade : MonoBehaviour
 
         if (attribute == "health")
         {
-            num += 10.0f;
+            num += 20.0f;
             PlayerPrefs.SetFloat("health", num);
         }
         else if (attribute == "splash")
@@ -32,7 +32,7 @@ public class Upgrade : MonoBehaviour
         }
         else if (attribute == "atk")
         {
-            num += 3.0f;
+            num += 2.0f;
             PlayerPrefs.SetFloat("atk", num);
         }
         else if (attribute == "atkboost")
