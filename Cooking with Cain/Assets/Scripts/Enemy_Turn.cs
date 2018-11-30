@@ -8,6 +8,7 @@ public class Enemy_Turn : MonoBehaviour {
     public bool summonstun = false;
     public bool stunned = false;
     public bool juststunned = false;
+    public string enemyName = "You haven't set a name for this enemy reeeeeeeeeeee";
 	// Use this for initialization
 	void Start () {
         manager = GameObject.FindGameObjectWithTag("Manager");

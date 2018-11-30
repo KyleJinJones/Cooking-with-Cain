@@ -244,6 +244,7 @@ MonoBehaviour:
   debuffDuration: 0
   debuffPercent: 0
   lastPlayed: []
+  attackSprite: {fileID: 0}
 --- !u!114 &114111354339828874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,6 +375,7 @@ MonoBehaviour:
   summonstun: 0
   stunned: 0
   juststunned: 0
+  enemyName: Withering Wine
 --- !u!114 &114520104658903066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,6 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starting_health: 100
   health: 100
+  renderhealth: 100
   hptext: {fileID: 114184261754612850}
   hpbar: {fileID: 114152891621525070}
   burnDuration: 0
@@ -649,10 +652,10 @@ RectTransform:
   m_Father: {fileID: 224140675742386722}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000015259, y: 87.6771}
-  m_SizeDelta: {x: 297.8, y: 172.7}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000015259, y: -0.000030517578}
+  m_SizeDelta: {x: 297.8, y: 172.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224492050449118558
 RectTransform:
