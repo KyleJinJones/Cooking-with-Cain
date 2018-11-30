@@ -255,6 +255,7 @@ MonoBehaviour:
   debuffDuration: 0
   debuffPercent: 0
   lastPlayed: []
+  attackSprite: {fileID: 0}
 --- !u!114 &114168040074202032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starting_health: 70
   health: 70
+  renderhealth: 100
   hptext: {fileID: 114867534723281436}
   hpbar: {fileID: 114143484854967820}
   burnDuration: 0
@@ -454,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789e40134eeb41b46bcda1554095d5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burn: 0.1
+  burn: 0.2
   splash: 0.5
   lifesteal: 0.5
   atkboost: 0.2
@@ -492,9 +494,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1498133649
+  m_SortingLayer: -1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: f4af485a8275df64f9126de1384ab04f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -557,7 +559,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

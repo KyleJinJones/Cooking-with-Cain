@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 114990872901485168}
   - component: {fileID: 114781741978484054}
   - component: {fileID: 114405435174965136}
-  - component: {fileID: 114402675531278286}
   - component: {fileID: 114379933459101904}
   - component: {fileID: 114047910599209300}
   m_Layer: 0
@@ -268,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starting_health: 30
   health: 30
+  renderhealth: 100
   hptext: {fileID: 114675413391101200}
   hpbar: {fileID: 114404412571142178}
   burnDuration: 0
@@ -286,8 +286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   recipe:
-  - {fileID: 114402675531278286}
   - {fileID: 114379933459101904}
+  - {fileID: 114047910599209300}
   - {fileID: 114047910599209300}
   summonstun: 0
   stunned: 0
@@ -306,21 +306,6 @@ MonoBehaviour:
   multiplier: 2
   foodName: Rice
   attribute: 
-  multiplierRange: []
---- !u!114 &114402675531278286
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1651874180269286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209059a7c09c9f4428dc2ca2619b53a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  multiplier: 0.5
-  foodName: Pepper
-  attribute: burn
   multiplierRange: []
 --- !u!114 &114404412571142178
 MonoBehaviour:
@@ -434,6 +419,7 @@ MonoBehaviour:
   debuffDuration: 0
   debuffPercent: 0
   lastPlayed: []
+  attackSprite: {fileID: 0}
 --- !u!114 &114813734209345814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,9 +512,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1498133649
+  m_SortingLayer: -1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: f4af485a8275df64f9126de1384ab04f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
