@@ -68,7 +68,7 @@ public class Turn_Manager : MonoBehaviour {
             if (enemies[i] == null)
             {
                 enemyHpBars[i].fillAmount /= 5;
-                enemyHpText[i].text = "0";
+                enemyHpText[i].text = "";
                 enemyNames[i].text = "";
             }
             else

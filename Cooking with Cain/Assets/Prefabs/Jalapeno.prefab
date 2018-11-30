@@ -445,6 +445,7 @@ MonoBehaviour:
   summonstun: 0
   stunned: 0
   juststunned: 0
+  enemyName: Jalapeno
 --- !u!114 &114950016240395722
 MonoBehaviour:
   m_ObjectHideFlags: 1
