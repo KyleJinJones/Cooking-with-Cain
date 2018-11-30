@@ -70,13 +70,14 @@ public class Health : MonoBehaviour {
 
     IEnumerator die()
     {
-        for (int i = 20; i > 0; i--)
+        for (int i = 75; i > 0; i--)
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, i / 20f);
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, i / 75f);
             transform.Rotate(0, 0, 15);
             transform.position = transform.position + new Vector3(0.5f, 0.2f);
             yield return null;
         }
+
 
         Destroy(gameObject);
     }
