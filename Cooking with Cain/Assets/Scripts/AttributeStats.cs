@@ -6,10 +6,10 @@ public class AttributeStats : MonoBehaviour
 {
     public float burn = 0.07f;
     public float splash = 0.5f;
-    public float lifesteal = 0.5f;
+    public float lifesteal = 0.35f;
     public float atkboost = 0.2f;
 	public float atkdebuff = 0.2f;
-    public float stun = 40.0f;
+    public float stun = 50.0f;
 
     public void Start()
     {

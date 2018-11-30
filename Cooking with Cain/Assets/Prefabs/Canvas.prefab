@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 82418387732548998}
   - component: {fileID: 114399179315379204}
   - component: {fileID: 114578627391515438}
+  - component: {fileID: 114641787045781732}
   m_Layer: 5
   m_Name: Licorice
   m_TagString: PlayerUI
@@ -717,6 +718,8 @@ GameObject:
   - component: {fileID: 222976747068148216}
   - component: {fileID: 114289894960407208}
   - component: {fileID: 114425995918117836}
+  - component: {fileID: 61832813724782906}
+  - component: {fileID: 114253093298486722}
   m_Layer: 5
   m_Name: ingredient_viewer (2)
   m_TagString: PlayerUI
@@ -769,6 +772,8 @@ GameObject:
   - component: {fileID: 222493914859472730}
   - component: {fileID: 114136595187150250}
   - component: {fileID: 114583379151886460}
+  - component: {fileID: 61229583404906696}
+  - component: {fileID: 114115017348547228}
   m_Layer: 5
   m_Name: ingredient_viewer
   m_TagString: PlayerUI
@@ -851,6 +856,7 @@ GameObject:
   - component: {fileID: 82000093181078116}
   - component: {fileID: 114813135668901122}
   - component: {fileID: 114935514815734572}
+  - component: {fileID: 114170183936602150}
   m_Layer: 5
   m_Name: Lemon
   m_TagString: PlayerUI
@@ -946,6 +952,8 @@ GameObject:
   - component: {fileID: 222170754090954976}
   - component: {fileID: 114057342880015776}
   - component: {fileID: 114624484839206018}
+  - component: {fileID: 61551583649420784}
+  - component: {fileID: 114217897193381634}
   m_Layer: 5
   m_Name: ingredient_viewer (1)
   m_TagString: PlayerUI
@@ -1087,6 +1095,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 240, y: 180}
   m_EdgeRadius: 0
+--- !u!61 &61229583404906696
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833980131351438}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 125, y: 125}
+  m_EdgeRadius: 0
 --- !u!61 &61284788833523260
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1162,6 +1195,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 240, y: 180}
   m_EdgeRadius: 0
+--- !u!61 &61551583649420784
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953749747603792}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 125, y: 125}
+  m_EdgeRadius: 0
 --- !u!61 &61574227005993108
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1236,6 +1294,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 240, y: 180}
+  m_EdgeRadius: 0
+--- !u!61 &61832813724782906
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725617236639636}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 125, y: 125}
   m_EdgeRadius: 0
 --- !u!61 &61991806633999956
 BoxCollider2D:
@@ -2270,6 +2353,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 1373806937929296}
+--- !u!114 &114115017348547228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833980131351438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70085240829164a90ffccd0e4e89c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cmbnum: 0
+  manager: {fileID: 0}
 --- !u!114 &114116814848116308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2448,6 +2544,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114170183936602150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894999359531412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dd8b2672f23a342849d87981733160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: lemon
+  keyvalue: 1
 --- !u!114 &114199677076093262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2524,6 +2633,19 @@ MonoBehaviour:
     +{0} damage
 
     Effect: attack debuff'
+--- !u!114 &114217897193381634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953749747603792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70085240829164a90ffccd0e4e89c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cmbnum: 2
+  manager: {fileID: 0}
 --- !u!114 &114229207627687374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2560,6 +2682,19 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114253093298486722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725617236639636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70085240829164a90ffccd0e4e89c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cmbnum: 1
+  manager: {fileID: 0}
 --- !u!114 &114263720842550512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3479,6 +3614,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 1317970475006148}
+--- !u!114 &114641787045781732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342764639218388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dd8b2672f23a342849d87981733160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: brussel
+  keyvalue: 1
 --- !u!114 &114648060593215192
 MonoBehaviour:
   m_ObjectHideFlags: 1

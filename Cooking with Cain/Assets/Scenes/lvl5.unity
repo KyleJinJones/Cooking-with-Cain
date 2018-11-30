@@ -232,6 +232,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 552351112}
   m_Script: {fileID: 11500000, guid: 7d3c41ac44cb41f46b95a2a358d26991, type: 3}
+--- !u!1 &552351114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1509796128658756, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+    type: 2}
+  m_PrefabInternal: {fileID: 552351112}
 --- !u!1 &574404614
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,26 +500,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223062610965653598, guid: c049d7c20b00611429847b1333eaa42f,
+    - target: {fileID: 114253093298486722, guid: c049d7c20b00611429847b1333eaa42f,
         type: 2}
-      propertyPath: m_Camera
+      propertyPath: manager
       value: 
-      objectReference: {fileID: 1010912931}
-    - target: {fileID: 223020770437328774, guid: c049d7c20b00611429847b1333eaa42f,
+      objectReference: {fileID: 552351114}
+    - target: {fileID: 114217897193381634, guid: c049d7c20b00611429847b1333eaa42f,
         type: 2}
-      propertyPath: m_Camera
+      propertyPath: manager
       value: 
-      objectReference: {fileID: 1010912931}
-    - target: {fileID: 114947257748740900, guid: c049d7c20b00611429847b1333eaa42f,
+      objectReference: {fileID: 552351114}
+    - target: {fileID: 114115017348547228, guid: c049d7c20b00611429847b1333eaa42f,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: manager
       value: 
-      objectReference: {fileID: 1099761035}
-    - target: {fileID: 114933512338078930, guid: c049d7c20b00611429847b1333eaa42f,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1099761035}
+      objectReference: {fileID: 552351114}
     - target: {fileID: 114844593994244864, guid: c049d7c20b00611429847b1333eaa42f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -525,12 +525,27 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 989549781}
-    - target: {fileID: 114709148557268490, guid: c049d7c20b00611429847b1333eaa42f,
+    - target: {fileID: 223020770437328774, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1010912931}
+    - target: {fileID: 223062610965653598, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1010912931}
+    - target: {fileID: 114698293372431596, guid: c049d7c20b00611429847b1333eaa42f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099761035}
-    - target: {fileID: 114698293372431596, guid: c049d7c20b00611429847b1333eaa42f,
+    - target: {fileID: 114557447446781468, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1099761035}
+    - target: {fileID: 114709148557268490, guid: c049d7c20b00611429847b1333eaa42f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -540,7 +555,12 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1099761035}
-    - target: {fileID: 114557447446781468, guid: c049d7c20b00611429847b1333eaa42f,
+    - target: {fileID: 114933512338078930, guid: c049d7c20b00611429847b1333eaa42f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1099761035}
+    - target: {fileID: 114947257748740900, guid: c049d7c20b00611429847b1333eaa42f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
