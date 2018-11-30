@@ -9,14 +9,16 @@ public class DamagePreview : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        AttributeStats stats = GameObject.FindGameObjectWithTag("Player").GetComponent<AttributeStats>();
+        stats.loadStats();
+
         attack = GameObject.FindGameObjectWithTag("Player").GetComponent<Attack>().attack;
         Text text = GetComponent<Text>();
-        
         if (food.attribute.Equals(""))
             text.text = string.Format(text.text, food.multiplierRange.Length == 2 ? Mathf.RoundToInt(food.multiplierRange[0] * attack).ToString() + "-" + Mathf.RoundToInt(food.multiplierRange[1] * attack).ToString() : Mathf.RoundToInt(food.multiplier * attack).ToString());
         else
         {
-            AttributeStats stats = GameObject.FindGameObjectWithTag("Player").GetComponent<AttributeStats>();
+            
             string percent = "";
 
             if (food.attribute.Equals("burn"))

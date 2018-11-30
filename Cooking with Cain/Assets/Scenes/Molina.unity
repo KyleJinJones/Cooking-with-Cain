@@ -2992,6 +2992,11 @@ Prefab:
       propertyPath: m_Text
       value: An Explosive Breakfast
       objectReference: {fileID: 0}
+    - target: {fileID: 114825177402690454, guid: 8a9844235731f2d40a423c488b87e165,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: splash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a9844235731f2d40a423c488b87e165, type: 2}
   m_IsPrefabAsset: 0

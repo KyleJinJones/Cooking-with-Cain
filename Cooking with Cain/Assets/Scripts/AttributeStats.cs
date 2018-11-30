@@ -11,16 +11,26 @@ public class AttributeStats : MonoBehaviour
 	public float atkdebuff = 0.2f;
     public float stun = 50.0f;
 
+    bool loaded = false;
+
     public void Start()
     {
-        if(this.gameObject.tag == "Player")
+        loadStats();
+    }
+
+    public void loadStats()
+    {
+        if (this.gameObject.tag == "Player")
         {
+            if (loaded)
+                return;
+
             Debug.Log("Start AttributeStats");
-            
+
             if (!PlayerPrefs.HasKey("health"))
             {
 
-                PlayerPrefs.SetFloat("health", 100.0f);    
+                PlayerPrefs.SetFloat("health", 100.0f);
             }
             else
             {
@@ -72,8 +82,7 @@ public class AttributeStats : MonoBehaviour
                 stun = PlayerPrefs.GetFloat("stun");
             }
             Debug.Log("Finished AttributeStats");
+            loaded = true;
         }
-        
     }
-
 }
