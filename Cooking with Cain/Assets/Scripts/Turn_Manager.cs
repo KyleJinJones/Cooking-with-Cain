@@ -10,17 +10,19 @@ public class Turn_Manager : MonoBehaviour {
     public Image[] enemyHpBars = new Image[3];
     public Text[] enemyHpText = new Text[3];
     public Text[] enemyNames = new Text[3];
+    public Text[] enemyDamageIndicators = new Text[3];
     public Text enemyRemaining;
     public List<GameObject> queue;
     public Vector3[] enemyPositions = new Vector3[3];
     public int turnCount = 0;
     public string nextScene;
+    public GameObject targetDisplayObject;
 
     void Start () {
         StartCoroutine(run());
     }
 
-    void FixedUpdate()
+    void Update()
     {
         displayHealth();
     }
@@ -44,25 +46,39 @@ public class Turn_Manager : MonoBehaviour {
                         yield return null;
                 }
 
-                checkState();
+                if (checkState())
+                    yield break;
             }
 
             foreach (GameObject enemy in getEnemies())
             {
                 if (enemy != null && enemy.GetComponent<Health>().health > 0)
                 {
-                    enemy.GetComponent<Enemy_Turn>().turn();
-                    for (int i = 0; i < 100; i++)
-                        yield return null;
+                    if (enemy.GetComponent<Enemy_Turn>().summonstun)
+                        enemy.GetComponent<Enemy_Turn>().summonstun = false;
+                    else
+                    {
+                        enemy.GetComponent<Enemy_Turn>().turn();
+                        for (int i = 0; i < 100; i++)
+                            yield return null;
+                    }
                 }
 
-                checkState();
+                if (checkState())
+                    yield break;
             }
         }
     }
 
     public void displayHealth()
     {
+        Player_Turn turn = getPlayers()[0].GetComponent<Player_Turn>();
+        targetDisplayObject.SetActive(turn.target != null && turn.target.GetComponent<Health>().health != 0);
+        if (turn.target != null)
+        {
+            targetDisplayObject.transform.SetPositionAndRotation(turn.target.transform.position, Quaternion.identity);
+        }
+
         for (int i = 0; i < 3; i++)
         {
             if (enemies[i] == null)
@@ -96,13 +112,15 @@ public class Turn_Manager : MonoBehaviour {
         return remain;
     }
 
-    public void checkState()
+    // returns true if the level ends
+    public bool checkState()
     {
         if (getPlayers().Length == 0)
         {
             // lose state goes here
             Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver");
+            return true;
         }
 
         Player_Turn playerTurn = getPlayers()[0].GetComponent<Player_Turn>();
@@ -114,6 +132,7 @@ public class Turn_Manager : MonoBehaviour {
                 if (queue.Count > 0)
                 {
                     enemies[i] = queue[0];
+                    enemies[i].GetComponent<Health>().damageIndicator = enemyDamageIndicators[i];
                     if (turnCount != 0)
                     {
                         enemies[i].GetComponent<Enemy_Turn>().summonstun = true;
@@ -145,7 +164,10 @@ public class Turn_Manager : MonoBehaviour {
             //Win state goes here.
             Debug.Log("WinBattle");
             SceneManager.LoadScene(nextScene);
+            return true;
         }
+
+        return false;
     }
 
     IEnumerator enemyAppear(GameObject enemy, Vector3 position)
@@ -165,12 +187,5 @@ public class Turn_Manager : MonoBehaviour {
     public GameObject[] getPlayers()
     {
         return GameObject.FindGameObjectsWithTag("Player");
-    }
-
-    // Update is called once per frame
-    void Update() {
-
-        
-
     }
 }

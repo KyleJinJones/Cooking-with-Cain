@@ -113,6 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &146338765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114399388127141726, guid: c049d7c20b00611429847b1333eaa42f,
+    type: 2}
+  m_PrefabInternal: {fileID: 862902409}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &247432044 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114671720824590534, guid: c049d7c20b00611429847b1333eaa42f,
@@ -173,11 +179,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4925090786217244, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -242,6 +243,36 @@ Prefab:
       objectReference: {fileID: 1948767980}
     - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
         type: 2}
+      propertyPath: enemyNames.Array.data[0]
+      value: 
+      objectReference: {fileID: 2074407051}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: enemyNames.Array.data[1]
+      value: 
+      objectReference: {fileID: 862902412}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: enemyNames.Array.data[2]
+      value: 
+      objectReference: {fileID: 740090076}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: enemyDamageIndicators.Array.data[0]
+      value: 
+      objectReference: {fileID: 1927710582}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: enemyDamageIndicators.Array.data[1]
+      value: 
+      objectReference: {fileID: 810983540}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: enemyDamageIndicators.Array.data[2]
+      value: 
+      objectReference: {fileID: 146338765}
+    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
       propertyPath: enemyRemaining
       value: 
       objectReference: {fileID: 724108027}
@@ -255,66 +286,6 @@ Prefab:
       propertyPath: queue.Array.data[1]
       value: 
       objectReference: {fileID: 1113328102}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: queue.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865190042990856, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: burnIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865190042990856, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: attackBoostIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865190042990856, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: attackDebuffIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865190042990856, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: stunIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114857277317964358, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: burnIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114857277317964358, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: attackBoostIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114857277317964358, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: attackDebuffIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114857277317964358, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: stunIcon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyNames.Array.data[0]
-      value: 
-      objectReference: {fileID: 2074407051}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyNames.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114894419425095862, guid: 70bfe258906ae5a4ba459dbb23e1c163,
-        type: 2}
-      propertyPath: enemyNames.Array.data[2]
-      value: 
-      objectReference: {fileID: 740090076}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
   m_IsPrefabAsset: 0
@@ -363,6 +334,12 @@ MonoBehaviour:
 --- !u!114 &740090076 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114084797587289834, guid: c049d7c20b00611429847b1333eaa42f,
+    type: 2}
+  m_PrefabInternal: {fileID: 862902409}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &810983540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114961462742059856, guid: c049d7c20b00611429847b1333eaa42f,
     type: 2}
   m_PrefabInternal: {fileID: 862902409}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -542,6 +519,12 @@ MonoBehaviour:
 --- !u!114 &862902411 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114825389061765576, guid: c049d7c20b00611429847b1333eaa42f,
+    type: 2}
+  m_PrefabInternal: {fileID: 862902409}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &862902412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114973397101939066, guid: c049d7c20b00611429847b1333eaa42f,
     type: 2}
   m_PrefabInternal: {fileID: 862902409}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -803,7 +786,13 @@ GameObject:
   m_PrefabInternal: {fileID: 1758359105}
 --- !u!114 &1898083159 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114399388127141726, guid: c049d7c20b00611429847b1333eaa42f,
+  m_CorrespondingSourceObject: {fileID: 114512508788500790, guid: c049d7c20b00611429847b1333eaa42f,
+    type: 2}
+  m_PrefabInternal: {fileID: 862902409}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1927710582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114084239422120424, guid: c049d7c20b00611429847b1333eaa42f,
     type: 2}
   m_PrefabInternal: {fileID: 862902409}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}

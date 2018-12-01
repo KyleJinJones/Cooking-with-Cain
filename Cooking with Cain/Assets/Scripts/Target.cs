@@ -9,6 +9,7 @@ public class Target : MonoBehaviour {
     public GameObject indicator;
 	// Use this for initialization
 	void Start () {
+        indicator.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
 	}
 
@@ -20,11 +21,11 @@ public class Target : MonoBehaviour {
     void Update () {
         if (player.GetComponent<Player_Turn>().target == this.gameObject)
         {
-            indicator.SetActive(true);
+        //    indicator.SetActive(true);
         }
         else
         {
-            indicator.SetActive(false);
+        //    indicator.SetActive(false);
         }
 	}
 }
