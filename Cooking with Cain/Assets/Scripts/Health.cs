@@ -16,22 +16,29 @@ public class Health : MonoBehaviour {
 
 	void Start () {
         health = renderhealth = starting_health;
-        hptext.text = health.ToString();
-        damageIndicator.color = Color.clear;
+
+        if (hptext != null)
+            hptext.text = health.ToString();
+
+        if (damageIndicator != null)
+            damageIndicator.color = Color.clear;
 	}
 
     void Update()
     {
         renderhealth += (health - renderhealth) / 5;
 
-        hpbar.fillAmount = renderhealth / starting_health;
+        if (hpbar != null)
+            hpbar.fillAmount = renderhealth / starting_health;
     }
 
     public void updateHealth(float newHealth)
     {
         starting_health = newHealth;
         health = newHealth;
-        hptext.text = health.ToString();
+
+        if (hptext != null)
+            hptext.text = health.ToString();
     }
 
     public void UpdateTurn()
@@ -63,8 +70,8 @@ public class Health : MonoBehaviour {
             StartCoroutine(die());
         }
 
-
-        hptext.text = health.ToString();
+        if (hptext != null)
+            hptext.text = health.ToString();
 
     }
 
@@ -92,7 +99,8 @@ public class Health : MonoBehaviour {
             health = starting_health;
         }
 
-        hptext.text = health.ToString();
+        if (hptext != null)
+            hptext.text = health.ToString();
 
     }
 
@@ -111,6 +119,7 @@ public class Health : MonoBehaviour {
             yield return null;
         }
 
-        damageIndicator.color = Color.clear;
+        if (damageIndicator != null)
+            damageIndicator.color = Color.clear;
     }
 }
