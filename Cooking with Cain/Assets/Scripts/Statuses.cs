@@ -44,11 +44,21 @@ public class Statuses : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        bool[] render = getStatuses(player);
-
-        for (int i = 0; i < 3; i++)
+        if (player == null)
         {
-            playerIcons[i].SetActive(render[i]);
+            for (int i = 0; i < 3; i++)
+            {
+                playerIcons[i].SetActive(false);
+            }
+        }
+        else
+        {
+            bool[] render = getStatuses(player);
+
+            for (int i = 0; i < 3; i++)
+            {
+                playerIcons[i].SetActive(render[i]);
+            }
         }
 
         GameObject[] enemies = turnManager.enemies;

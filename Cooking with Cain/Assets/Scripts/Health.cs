@@ -77,12 +77,25 @@ public class Health : MonoBehaviour {
 
     IEnumerator die()
     {
-        for (int i = 75; i > 0; i--)
+        if (tag == "Player")
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, i / 75f);
-            transform.Rotate(0, 0, 15);
-            transform.position = transform.position + new Vector3(0.5f, 0.2f);
-            yield return null;
+            for (int i = 75; i > 0; i--)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, i / 75f);
+                transform.Rotate(0, 0, 15);
+                transform.position = transform.position + new Vector3(-0.05f, (i - 50)/100f);
+                yield return null;
+            }
+        }
+        else
+        {
+            for (int i = 75; i > 0; i--)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, i / 75f);
+                transform.Rotate(0, 0, 15);
+                transform.position = transform.position + new Vector3(0.5f, 0.2f);
+                yield return null;
+            }
         }
 
 
