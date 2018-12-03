@@ -46,9 +46,14 @@ public class Deal_Damage : MonoBehaviour {
         {
             if (target.tag.Equals("Enemy"))
             {
+                int delay = 0;
+
                 foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getEnemies())
                     if (targets != null)
-                        damage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"), attributes.Contains("stun"));
+                    {
+                        StartCoroutine(delayDamage(attacker, targets, Mathf.RoundToInt(totalDamage * stats.splash), attributes.Contains("burn"), attributes.Contains("atkdebuff"), attributes.Contains("stun"), delay));
+                        delay += 5;
+                    }
             } 
             else foreach (GameObject targets in manager.GetComponent<Turn_Manager>().getPlayers())
                     if (targets != null)
@@ -88,6 +93,16 @@ public class Deal_Damage : MonoBehaviour {
         }
 
         attacker.GetComponent<SpriteRenderer>().sprite = revert;
+    }
+
+    IEnumerator delayDamage(GameObject attacker, GameObject target, int amt, bool burn, bool atkDebuff, bool stun, int delay)
+    {
+        for (int i = 0; i < delay; i++)
+        {
+            yield return null;
+        }
+
+        damage(attacker, target, amt, burn, atkDebuff, stun);
     }
 
 	public void damage(GameObject attacker,GameObject target, int amt, bool burn, bool atkDebuff, bool stun) {

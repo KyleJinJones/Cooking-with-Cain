@@ -55,7 +55,9 @@ public class Turn_Manager : MonoBehaviour {
                 if (enemy != null && enemy.GetComponent<Health>().health > 0)
                 {
                     if (enemy.GetComponent<Enemy_Turn>().summonstun)
+                    {
                         enemy.GetComponent<Enemy_Turn>().summonstun = false;
+                    }
                     else
                     {
                         enemy.GetComponent<Enemy_Turn>().turn();
