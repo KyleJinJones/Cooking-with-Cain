@@ -74,11 +74,14 @@ public class Turn_Manager : MonoBehaviour {
 
     public void displayHealth()
     {
-        Player_Turn turn = getPlayers()[0].GetComponent<Player_Turn>();
-        targetDisplayObject.SetActive(turn.target != null && turn.target.GetComponent<Health>().health != 0);
-        if (turn.target != null)
+        if (getPlayers().Length > 0)
         {
-            targetDisplayObject.transform.SetPositionAndRotation(turn.target.transform.position, Quaternion.identity);
+            Player_Turn turn = getPlayers()[0].GetComponent<Player_Turn>();
+            targetDisplayObject.SetActive(turn.target != null && turn.target.GetComponent<Health>().health != 0);
+            if (turn.target != null)
+            {
+                targetDisplayObject.transform.SetPositionAndRotation(turn.target.transform.position, Quaternion.identity);
+            }
         }
 
         for (int i = 0; i < 3; i++)
