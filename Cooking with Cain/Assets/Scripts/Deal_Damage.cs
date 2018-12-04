@@ -21,11 +21,10 @@ public class Deal_Damage : MonoBehaviour {
 
         foreach(Food food in ingredients)
         {
-
             totalDamage += attack * (food.multiplierRange.Length == 2 ? Random.Range(food.multiplierRange[0], food.multiplierRange[1]) : food.multiplier);
 
 
-            attributes.Add(food.GetComponent<Food>().attribute);
+            attributes.Add(food.attribute);
             played.Add(food.foodName);
         }
 

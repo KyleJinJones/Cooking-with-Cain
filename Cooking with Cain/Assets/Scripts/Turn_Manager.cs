@@ -18,6 +18,10 @@ public class Turn_Manager : MonoBehaviour {
     public string nextScene;
     public GameObject targetDisplayObject;
 
+    public bool bossStage = false;
+    public GameObject boss;
+    public GameObject spawner; // continuously spawns enemies until boss is defeated
+
     void Start () {
         StartCoroutine(run());
     }
@@ -33,6 +37,12 @@ public class Turn_Manager : MonoBehaviour {
 
         while (true)
         {
+
+            if (bossStage && queue.Count == 0)
+            {
+                queue.Add(Instantiate(spawner));
+            }
+
             turnCount++;
 
             foreach (GameObject player in getPlayers())
@@ -162,9 +172,9 @@ public class Turn_Manager : MonoBehaviour {
             }
         }
 
-        enemyRemaining.text = "Enemies remaining: " + getEnemyRemaining();
+        enemyRemaining.text = "Enemies remaining: " + (bossStage ? "???" : getEnemyRemaining().ToString());
 
-        if (getEnemyRemaining() == 0)
+        if (getEnemyRemaining() == 0 || (bossStage && boss == null))
         {
             //Win state goes here.
             Debug.Log("WinBattle");

@@ -21,6 +21,14 @@ public class Enemy_Turn : MonoBehaviour {
         if (stunned ==false&&summonstun==false)
         {
             float attack = GetComponent<Attack>().UpdateTurn();
+
+            IngredientRandomizer randomizer = GetComponent<IngredientRandomizer>();
+
+            if (randomizer != null)
+            {
+                recipe[2] = randomizer.ingredients[Random.Range(0, randomizer.ingredients.Length)];
+            }
+
             manager.GetComponent<Deal_Damage>().processFood(this.gameObject, GameObject.FindGameObjectWithTag("Player"), attack, recipe);
         }
         else if (summonstun)
