@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf3272b58f439149930bd329450c3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 8
+  attack: 4
   boostDuration: 0
   debuffDuration: 0
   debuffPercent: 0

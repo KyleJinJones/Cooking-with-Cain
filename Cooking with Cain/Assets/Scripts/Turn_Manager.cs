@@ -51,7 +51,7 @@ public class Turn_Manager : MonoBehaviour {
                 {
                     player.GetComponent<Player_Turn>().acted = false;
                     player.GetComponent<Player_Turn>().StartCoroutine("turn");
-                    yield return new WaitUntil(() => player.GetComponent<Player_Turn>().acted);
+                    yield return new WaitUntil(() => player == null || player.GetComponent<Player_Turn>().acted);
                     for (int i = 0; i < 100; i++)
                         yield return null;
                 }
