@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114420742052935846}
   - component: {fileID: 114144561227851196}
   - component: {fileID: 82395410812503040}
+  - component: {fileID: 114508944055182166}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -471,6 +472,18 @@ MonoBehaviour:
   selected: []
   deselect: {fileID: 114384087518451626}
   attack: {fileID: 114826524284235838}
+--- !u!114 &114508944055182166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509796128658756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6a20030a0c7ec448ab7bc3d5328308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausemenu: {fileID: 0}
 --- !u!114 &114826524284235838
 MonoBehaviour:
   m_ObjectHideFlags: 1
