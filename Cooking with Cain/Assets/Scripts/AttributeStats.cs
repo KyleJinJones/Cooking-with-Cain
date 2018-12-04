@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AttributeStats : MonoBehaviour
 {
-    public float burn = 0.07f;
+    public float burn = 0.1f;
     public float splash = 0.5f;
-    public float lifesteal = 0.35f;
+    public float lifesteal = 0.5f;
     public float atkboost = 0.2f;
 	public float atkdebuff = 0.2f;
-    public float stun = 50.0f;
+    public float stun = 60.0f;
 
     bool loaded = false;
 
@@ -75,7 +75,7 @@ public class AttributeStats : MonoBehaviour
 
             if (!PlayerPrefs.HasKey("stun"))
             {
-                PlayerPrefs.SetFloat("stun", 40.0f);
+                PlayerPrefs.SetFloat("stun", 60.0f);
             }
             else
             {

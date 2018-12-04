@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour {
     public Text dialogueText;
     public int scene;
 
-    private Queue<string> sentences;
+    public Queue<string> sentences;
 
     void Start()
     {
@@ -46,11 +46,20 @@ public class DialogueManager : MonoBehaviour {
     IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        char[] carray = sentence.ToCharArray();
+        for(int i=0;i<carray.Length;i++)
         {
-            dialogueText.text += letter;
+            dialogueText.text += carray[i];
+            i++;
+            dialogueText.text += carray[i];
             yield return null;
         }
+
+        //foreach(char letter in sentence.ToCharArray())
+        //{
+            //dialogueText.text += letter;
+           // yield return null;
+        //}
     }
 
     public void EndDialogue()

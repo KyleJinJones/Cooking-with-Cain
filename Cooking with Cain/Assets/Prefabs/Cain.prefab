@@ -107,12 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789e40134eeb41b46bcda1554095d5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burn: 0.07
+  burn: 0.1
   splash: 0.5
   lifesteal: 0.5
   atkboost: 0.2
   atkdebuff: 0.2
-  stun: 40
+  stun: 60
 --- !u!212 &212640819023690740
 SpriteRenderer:
   m_ObjectHideFlags: 1
