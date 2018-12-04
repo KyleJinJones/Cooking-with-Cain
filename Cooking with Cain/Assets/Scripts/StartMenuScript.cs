@@ -13,6 +13,18 @@ public class StartMenuScript : MonoBehaviour {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(scene);
     }
+
+    public void contgame()
+    {
+        if (PlayerPrefs.HasKey("level"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("level"));
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
     
 
 }
