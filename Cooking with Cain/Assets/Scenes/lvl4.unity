@@ -340,6 +340,11 @@ Prefab:
       propertyPath: pausemenu
       value: 
       objectReference: {fileID: 849769199}
+    - target: {fileID: 82395410812503040, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a2422dc6a005d545af3e35003deb662, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
   m_IsPrefabAsset: 0
