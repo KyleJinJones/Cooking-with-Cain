@@ -50,9 +50,8 @@ public class DialogueManager : MonoBehaviour {
         for(int i=0;i<carray.Length;i++)
         {
             dialogueText.text += carray[i];
-            i++;
-            dialogueText.text += carray[i];
-            yield return null;
+            if (i % 2 == 0)
+                yield return null;
         }
 
         //foreach(char letter in sentence.ToCharArray())
