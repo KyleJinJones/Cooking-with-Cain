@@ -112,7 +112,7 @@ MonoBehaviour:
   lifesteal: 0.5
   atkboost: 0.2
   atkdebuff: 0.2
-  stun: 60
+  stun: 75
 --- !u!212 &212640819023690740
 SpriteRenderer:
   m_ObjectHideFlags: 1

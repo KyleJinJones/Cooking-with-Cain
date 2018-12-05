@@ -17,7 +17,7 @@ public class Upgrade : MonoBehaviour
 
         if (attribute == "health")
         {
-            num += 20.0f;
+            num += 50.0f;
             PlayerPrefs.SetFloat("health", num);
         }
         else if (attribute == "splash")
