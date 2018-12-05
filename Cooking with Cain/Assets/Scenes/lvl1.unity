@@ -306,6 +306,12 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7a2422dc6a005d545af3e35003deb662, type: 3}
+    - target: {fileID: 212182651431098802, guid: 70bfe258906ae5a4ba459dbb23e1c163,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a24f5661957ca2e41a3bb3fc30b1c7c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe258906ae5a4ba459dbb23e1c163, type: 2}
   m_IsPrefabAsset: 0
@@ -909,6 +915,11 @@ Prefab:
       propertyPath: atkbutton
       value: 
       objectReference: {fileID: 1251081987}
+    - target: {fileID: 114955599393302506, guid: 41cfc0b2afcad2444ac82055af33c52c,
+        type: 2}
+      propertyPath: stun
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41cfc0b2afcad2444ac82055af33c52c, type: 2}
   m_IsPrefabAsset: 0
