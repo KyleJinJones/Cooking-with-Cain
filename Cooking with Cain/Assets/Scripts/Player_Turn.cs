@@ -48,7 +48,7 @@ public class Player_Turn : MonoBehaviour {
     //Note most of this is just calling functions, and it acts more as a manager for the overall player turn
     public IEnumerator turn () {
         GetComponent<Health>().UpdateTurn();
-        float attack = GetComponent<Attack>().UpdateTurn();
+        
         setui(true);
         //Stalls the function here until the button has been clicked, and attacked has been set to true
 
@@ -61,7 +61,7 @@ public class Player_Turn : MonoBehaviour {
 
         //Deals damage to an enemy
         //Note, targeted enemy will likely be passed from ui function
-       
+        float attack = GetComponent<Attack>().UpdateTurn();
         manager.GetComponent<Deal_Damage>().processFood(this.gameObject,target,attack, manager.GetComponent<Ingredient_Selection>().selected);
         manager.GetComponent<Ingredient_Selection>().clear();
         //turns the ui off
