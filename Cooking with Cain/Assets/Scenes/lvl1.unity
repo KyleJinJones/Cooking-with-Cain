@@ -915,11 +915,6 @@ Prefab:
       propertyPath: atkbutton
       value: 
       objectReference: {fileID: 1251081987}
-    - target: {fileID: 114955599393302506, guid: 41cfc0b2afcad2444ac82055af33c52c,
-        type: 2}
-      propertyPath: stun
-      value: 75
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41cfc0b2afcad2444ac82055af33c52c, type: 2}
   m_IsPrefabAsset: 0
