@@ -706,12 +706,12 @@ MonoBehaviour:
       commercial break. Just remember that not watching the commercials that is punishable
       by exorcism.\r"
     - "Pot:\r\n\tHAHAHAHAHAHAHAHAHA (gurgle) HACK HAHAHA.\n"
-    - "Pot: \r\n\tI\u2019m finally free to roam the Underworld again, I Buffel Sprouts
-      will be the new ruler of the Underworld.\r\n\n"
+    - "Buffel Sprouts: \r\n\tI\u2019m finally free to roam the Underworld again. I,
+      Buffel Sprouts, will be the new ruler of the Underworld.\r\n\n"
     - "Cain:\r\n\tPlease get back in the pot, I have a knife.\r\n"
     - "\rBuffel Sprouts:\r\n\tFellow oppressed foods come to my aid!\r\n"
     - "Cain: \r\n\tWhy is it that all the food that I cook ends up trying to kill
-      me.\r\n"
+      me?\r\n"
 --- !u!114 &1017235710
 MonoBehaviour:
   m_ObjectHideFlags: 0
