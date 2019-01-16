@@ -12,6 +12,9 @@ public class Tooltip : MonoBehaviour
     {
         image = GetComponentInChildren<Image>();
         text = GetComponentInChildren<Text>();
+
+        image.raycastTarget = false;
+        text.raycastTarget = false;
     }
 
     void Update()
@@ -25,16 +28,16 @@ public class Tooltip : MonoBehaviour
         {
             text.text = hovered.GetText();
             Canvas.ForceUpdateCanvases();
-            image.rectTransform.sizeDelta = text.rectTransform.sizeDelta + new Vector2(5, 5);
-            float sizeX = image.rectTransform.sizeDelta.x / 2;
-            float sizeY = image.rectTransform.sizeDelta.y / 2;
+            image.rectTransform.sizeDelta = text.rectTransform.sizeDelta + new Vector2(10, 10);
+            float sizeX = image.rectTransform.sizeDelta.x / 2 * image.rectTransform.lossyScale.x;
+            float sizeY = image.rectTransform.sizeDelta.y / 2 * image.rectTransform.lossyScale.y;
 
             float posX = Input.mousePosition.x + sizeX;
             float posY = Input.mousePosition.y + sizeY;
 
-            float camWidth = Camera.current.pixelWidth;
-            float camHeight = Camera.current.pixelHeight;
-
+            float camWidth = Camera.main.pixelWidth;
+            float camHeight = Camera.main.pixelHeight;
+            
             transform.position = new Vector3(Mathf.Min(posX, camWidth - sizeX), Mathf.Min(posY, camHeight - sizeY));
         }
     }
