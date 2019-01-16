@@ -120,7 +120,6 @@ public class Deal_Damage : MonoBehaviour {
 		
 		if (atkDebuff)
         {
-            Debug.Log("debuffed");
 			Attack attack = target.GetComponent<Attack>();
 			float debuffPercent = attacker.GetComponent<AttributeStats>().atkdebuff;
             attack.debuffDuration = 3;

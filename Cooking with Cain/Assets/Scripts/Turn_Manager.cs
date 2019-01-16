@@ -133,7 +133,6 @@ public class Turn_Manager : MonoBehaviour {
         if (getPlayers().Length == 0)
         {
             // lose state goes here
-            Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver");
             return true;
         }
@@ -177,7 +176,6 @@ public class Turn_Manager : MonoBehaviour {
         if (getEnemyRemaining() == 0 || (bossStage && boss == null))
         {
             //Win state goes here.
-            Debug.Log("WinBattle");
             SceneManager.LoadScene(nextScene);
             return true;
         }

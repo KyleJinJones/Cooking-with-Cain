@@ -13,7 +13,6 @@ public class Upgrade : MonoBehaviour
     {
 
         float num = PlayerPrefs.GetFloat(attribute);
-        Debug.Log("Changing Attribute");
 
         if (attribute == "health")
         {
@@ -45,7 +44,6 @@ public class Upgrade : MonoBehaviour
             num += .1f;
             PlayerPrefs.SetFloat("stun", num);
         }
-        Debug.Log("Change attribute done");
     }
 
     public void ChangeScene()

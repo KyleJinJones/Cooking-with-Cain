@@ -24,8 +24,7 @@ public class AttributeStats : MonoBehaviour
         {
             if (loaded)
                 return;
-
-            Debug.Log("Start AttributeStats");
+            
 
             if (!PlayerPrefs.HasKey("health"))
             {
@@ -81,7 +80,7 @@ public class AttributeStats : MonoBehaviour
             {
                 stun = PlayerPrefs.GetFloat("stun");
             }
-            Debug.Log("Finished AttributeStats");
+
             loaded = true;
         }
     }
