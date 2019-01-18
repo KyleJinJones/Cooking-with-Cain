@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7aeef658e16b9c43a4f91d186ca01e5, type: 3}
+  m_Name: Egg
+  m_EditorClassIdentifier: 
+  foodName: Egg
+  sprite: {fileID: 21300000, guid: caecc4dfdba17574e95525d8728c8986, type: 3}
+  audioClip: {fileID: 8300000, guid: d1111b50c3ea2094db34c4c2e75ad16f, type: 3}
+  damageType: 0
+  multiplier: 0.25
+  multiplierMin: 0
+  multiplierMax: 0
+  attribute: 2

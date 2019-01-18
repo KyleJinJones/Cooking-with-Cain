@@ -6,10 +6,9 @@ using UnityEngine.EventSystems;
 public class TooltipText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public static TooltipText hovered = null;
-
-    [SerializeField]
+    
     [Multiline]
-    string text = "";
+    public string text = "";
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
@@ -19,10 +18,5 @@ public class TooltipText : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
         hovered = null;
-    }
-
-    public string GetText()
-    {
-        return text;
     }
 }

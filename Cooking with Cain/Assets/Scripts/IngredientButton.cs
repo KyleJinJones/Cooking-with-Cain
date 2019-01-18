@@ -1,0 +1,118 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+[RequireComponent(typeof(Image))]
+public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+{
+    public Ingredient ingredient;
+    public IngredientSelector selector;
+
+    bool selected;
+    Image image;
+    Coroutine fade = null;
+
+    Color lightGray = new Color(0.8f, 0.8f, 0.8f);
+    Color gray = new Color(0.6f, 0.6f, 0.6f);
+
+    GameObject player;
+    
+    void Start()
+    {
+        image = GetComponent<Image>();
+
+        GameObject obj = new GameObject("Icon");
+        obj.transform.SetParent(transform, false);
+
+        Image image2 = obj.AddComponent<Image>();
+        image2.sprite = ingredient.sprite;
+        image2.SetNativeSize();
+
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    void Update()
+    {
+        AttributeStats stats = player.GetComponent<AttributeStats>();
+        stats.loadStats();
+
+        float attack = player.GetComponent<Attack>().attack;
+
+        string tooltip = ingredient.foodName;
+
+        switch (ingredient.damageType)
+        {
+            case Ingredient.DamageType.flat:
+                tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ingredient.multiplier));
+                break;
+            case Ingredient.DamageType.range:
+                tooltip += string.Format("\n+{0} to {1} damage", Mathf.RoundToInt(attack * ingredient.multiplierMin), Mathf.RoundToInt(attack * ingredient.multiplierMax));
+                break;
+        }
+
+        switch (ingredient.attribute)
+        {
+            case Ingredient.Attribute.burn:
+                tooltip += string.Format("\nEffect: {0}% Burn", Mathf.RoundToInt(stats.burn * 100));
+                break;
+            case Ingredient.Attribute.splash:
+                tooltip += string.Format("\nEffect: {0}% Splash", Mathf.RoundToInt(stats.splash * 100));
+                break;
+            case Ingredient.Attribute.leech:
+                tooltip += string.Format("\nEffect: {0}% Lifesteal", Mathf.RoundToInt(stats.lifesteal * 100));
+                break;
+            case Ingredient.Attribute.atkup:
+                tooltip += string.Format("\nEffect: {0}% Attack Boost", Mathf.RoundToInt(stats.atkboost * 100));
+                break;
+            case Ingredient.Attribute.atkdown:
+                tooltip += string.Format("\nEffect: {0}% Attack Boost", Mathf.RoundToInt(stats.atkdebuff * 100));
+                break;
+            case Ingredient.Attribute.stun:
+                tooltip += string.Format("\nEffect: {0}% Attack Boost", Mathf.RoundToInt(stats.stun * 100));
+                break;
+        }
+
+        TooltipText tooltipText = gameObject.GetComponent<TooltipText>();
+        if (tooltipText == null)
+            tooltipText = gameObject.AddComponent<TooltipText>();
+
+        tooltipText.text = tooltip;
+    }
+
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
+    {
+        if (fade != null)
+            StopCoroutine(fade);
+
+        fade = StartCoroutine(FadeColor(lightGray));
+    }
+
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    {
+        if (fade != null)
+            StopCoroutine(fade);
+
+        if (selected)
+            fade = StartCoroutine(FadeColor(gray));
+        else
+            fade = StartCoroutine(FadeColor(Color.white));
+    }
+
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    {
+        selected = selector.Select(this);
+    }
+
+    IEnumerator FadeColor(Color color)
+    {
+        Color current = image.color;
+
+        for (int i = 0; i < 10; i++)
+        {
+            image.color = Color.Lerp(current, color, (i + 1) / 10f);
+            yield return null;
+        }
+    }
+}

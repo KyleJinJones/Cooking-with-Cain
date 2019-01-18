@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7aeef658e16b9c43a4f91d186ca01e5, type: 3}
+  m_Name: Pepper
+  m_EditorClassIdentifier: 
+  foodName: Pepper
+  sprite: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
+  audioClip: {fileID: 8300000, guid: d216ae778248c394fb0691ebb95e79c4, type: 3}
+  damageType: 0
+  multiplier: 0.5
+  multiplierMin: 0
+  multiplierMax: 0
+  attribute: 1

@@ -26,7 +26,7 @@ public class Tooltip : MonoBehaviour
 
         if (hovered != null)
         {
-            text.text = hovered.GetText();
+            text.text = hovered.text;
             Canvas.ForceUpdateCanvases();
             image.rectTransform.sizeDelta = text.rectTransform.sizeDelta + new Vector2(10, 10);
             float sizeX = image.rectTransform.sizeDelta.x / 2 * image.rectTransform.lossyScale.x;
