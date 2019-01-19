@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 [RequireComponent(typeof(Image))]
 public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
@@ -16,8 +17,6 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     Color lightGray = new Color(0.8f, 0.8f, 0.8f);
     Color gray = new Color(0.6f, 0.6f, 0.6f);
-
-    GameObject player;
     
     void Start()
     {
@@ -29,16 +28,13 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         Image image2 = obj.AddComponent<Image>();
         image2.sprite = ingredient.sprite;
         image2.SetNativeSize();
-
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        AttributeStats stats = player.GetComponent<AttributeStats>();
-        stats.loadStats();
+        Stats stats = Entity.playerStats;
 
-        float attack = player.GetComponent<Attack>().attack;
+        float attack = stats.attack;
 
         string tooltip = ingredient.foodName;
 
@@ -48,7 +44,7 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ingredient.multiplier));
                 break;
             case Ingredient.DamageType.range:
-                tooltip += string.Format("\n+{0} to {1} damage", Mathf.RoundToInt(attack * ingredient.multiplierMin), Mathf.RoundToInt(attack * ingredient.multiplierMax));
+                tooltip += string.Format("\n+{0}~{1} damage", Mathf.RoundToInt(attack * ingredient.multiplierMin), Mathf.RoundToInt(attack * ingredient.multiplierMax));
                 break;
         }
 
@@ -79,6 +75,12 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
             tooltipText = gameObject.AddComponent<TooltipText>();
 
         tooltipText.text = tooltip;
+    }
+
+    public void Deselect()
+    {
+        selected = false;
+        image.color = Color.white;
     }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)

@@ -21,10 +21,10 @@ public class Tooltip : MonoBehaviour
     {
         TooltipText hovered = TooltipText.hovered;
 
-        image.gameObject.SetActive(hovered != null);
-        text.gameObject.SetActive(hovered != null);
+        image.gameObject.SetActive(hovered != null && hovered.text != null);
+        text.gameObject.SetActive(hovered != null && hovered.text != null);
 
-        if (hovered != null)
+        if (hovered != null && hovered.text != null)
         {
             text.text = hovered.text;
             Canvas.ForceUpdateCanvases();
