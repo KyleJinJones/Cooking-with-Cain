@@ -20,7 +20,7 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     Color lightGray = new Color(0.8f, 0.8f, 0.8f);
     Color gray = new Color(0.6f, 0.6f, 0.6f);
     
-    void Start()
+    void Awake()
     {
         image = GetComponent<Image>();
 

@@ -21,12 +21,15 @@ public class EntityManager : MonoBehaviour
     public GameObject ingredientMenu;
 
     public Vector3[] positions = new Vector3[3];
-    
 
-    void Start()
+    void Awake()
     {
         attackManager = GetComponent<AttackManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
+    }
+
+    void Start()
+    {
         StartCoroutine(Run());
     }
 

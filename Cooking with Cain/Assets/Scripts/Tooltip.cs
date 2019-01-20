@@ -8,7 +8,7 @@ public class Tooltip : MonoBehaviour
     Image image = null;
     Text text = null;
 
-    private void Start()
+    void Awake()
     {
         image = GetComponentInChildren<Image>();
         text = GetComponentInChildren<Text>();
@@ -19,6 +19,8 @@ public class Tooltip : MonoBehaviour
 
     void Update()
     {
+        transform.SetAsLastSibling();
+
         TooltipText hovered = TooltipText.hovered;
 
         image.gameObject.SetActive(hovered != null && hovered.text != null);

@@ -10,7 +10,7 @@ public class Entity : MonoBehaviour
     public string entityName = "";
     public Stats stats;
 
-    List<StatusInstance> statuses = new List<StatusInstance>();
+    public List<StatusInstance> statuses = new List<StatusInstance>();
 
     void Start()
     {
@@ -25,13 +25,23 @@ public class Entity : MonoBehaviour
 
     public bool AddStatus(StatusInstance.Status status, float potency, int duration)
     {
-        if (statuses.Find(instance => instance.status == status) == null)
+        if (stats.health > 0)
         {
-            StatusInstance instance = new StatusInstance();
-            instance.status = status;
-            instance.potency = potency;
-            instance.duration = duration;
-            statuses.Add(instance);
+            StatusInstance exist = statuses.Find(statusInstance => statusInstance.status == status);
+
+            if (exist == null)
+            {
+                StatusInstance instance = new StatusInstance();
+                instance.status = status;
+                instance.potency = potency;
+                instance.duration = duration;
+                statuses.Add(instance);
+            }
+            else
+            {
+                exist.potency = potency;
+                exist.duration = duration;
+            }
 
             return true;
         }
@@ -82,6 +92,7 @@ public class Entity : MonoBehaviour
         else if (stats.health < 0)
         {
             stats.health = 0;
+            statuses.Clear();
             StartCoroutine(Die());
         }
     }
@@ -92,9 +103,9 @@ public class Entity : MonoBehaviour
         {
             for (int i = 60; i > 0; i--)
             {
-                GetComponent<Image>().color = new Color(1, 1, 1, i / 30f);
+                GetComponent<Image>().color = new Color(1, 1, 1, i / 60f);
                 transform.Rotate(0, 0, 15);
-                transform.position = transform.position + new Vector3(-5, i - 40);
+                transform.localPosition = transform.position + new Vector3(-5, i - 40);
                 yield return null;
             }
         }
@@ -104,7 +115,7 @@ public class Entity : MonoBehaviour
             {
                 GetComponent<Image>().color = new Color(1, 1, 1, i / 30f);
                 transform.Rotate(0, 0, 15);
-                transform.position = transform.position + new Vector3(30, 10);
+                transform.localPosition = transform.position + new Vector3(30, 10);
                 yield return null;
             }
         }

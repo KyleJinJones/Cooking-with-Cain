@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AttackManager : MonoBehaviour
 {
+    public List<Ingredient> lastPlayed = new List<Ingredient>();
+
     public void ProcessAttack(Entity attacker, Entity target, Entity[] targetTeam, Ingredient[] ingredients)
     {
         float attack = attacker.GetEffectiveAttack();
+
+        if (attacker.tag == "Player")
+        {
+            foreach (Ingredient ingredient in ingredients)
+            {
+                ;
+            }
+        }
 
         int damageMin = 0;
         int damageMax = 0;

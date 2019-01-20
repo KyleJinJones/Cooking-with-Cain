@@ -18,10 +18,14 @@ public class IngredientSelector : MonoBehaviour
 
     Entity player;
 
-    void Start()
+    void Awake()
     {
         results = attackButton.gameObject.AddComponent<TooltipText>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
+    }
 
+    void Start()
+    {
         audio = GetComponent<AudioSource>();
         for (int i = 0; i < 3; i++)
         {
@@ -32,8 +36,6 @@ public class IngredientSelector : MonoBehaviour
         }
 
         UpdateImages();
-
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
     }
 
     public bool Select(IngredientButton button)

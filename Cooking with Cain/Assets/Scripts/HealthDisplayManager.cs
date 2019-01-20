@@ -15,7 +15,7 @@ public class HealthDisplayManager : MonoBehaviour
 
     EntityManager manager;
 
-    void Start()
+    void Awake()
     {
         manager = GetComponent<EntityManager>();
     }
