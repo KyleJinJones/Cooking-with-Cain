@@ -27,7 +27,6 @@ public class IngredientInventory : MonoBehaviour
 
     public void Selected()
     {
-        Debug.Log("YO");
         if (igm.ing1 ==null)
         {
             igm.ing1 = this;
