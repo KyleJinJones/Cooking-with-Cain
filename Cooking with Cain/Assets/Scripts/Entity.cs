@@ -10,6 +10,8 @@ public class Entity : MonoBehaviour
     public string entityName = "";
     public Stats stats;
 
+    public bool stunnedLastTurn;
+
     public List<StatusInstance> statuses = new List<StatusInstance>();
 
     void Start()
@@ -58,7 +60,8 @@ public class Entity : MonoBehaviour
             ModifyHealth(-stats.health * burn.potency);
         }
 
-        return statuses.Find(status => status.status == StatusInstance.Status.stun) == null;
+        stunnedLastTurn = statuses.Find(status => status.status == StatusInstance.Status.stun) != null;
+        return !stunnedLastTurn;
     }
 
     public void UpdateEnd()

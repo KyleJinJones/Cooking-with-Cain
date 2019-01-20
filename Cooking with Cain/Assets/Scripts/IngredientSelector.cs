@@ -18,6 +18,8 @@ public class IngredientSelector : MonoBehaviour
 
     Entity player;
 
+    List<Ingredient> lastPlayed = new List<Ingredient>();
+
     void Awake()
     {
         results = attackButton.gameObject.AddComponent<TooltipText>();
@@ -111,7 +113,9 @@ public class IngredientSelector : MonoBehaviour
     {
         if (selected.Count == 3)
         {
-            manager.PlayerAction(selected.ConvertAll(button => button.ingredient).ToArray());
+            lastPlayed = selected.ConvertAll(button => button.ingredient);
+
+            manager.PlayerAction(lastPlayed.ToArray());
             Clear();
         }
     }
@@ -120,12 +124,24 @@ public class IngredientSelector : MonoBehaviour
     {
         float attack = player.GetEffectiveAttack();
 
+        List<Ingredient> ingredientList = selected.ConvertAll(button => button.ingredient);
+
+        bool same = !ingredientList.Find(ingredient => !lastPlayed.Contains(ingredient));
+
+        string tooltip = "Total damage: ";
+
+        if (same)
+        {
+            tooltip = "Using the same ingredients will reduce damage dealt by 20%\nTotal damage: ";
+            attack *= 0.8f;
+        }
+
         int damageMin = 0;
         int damageMax = 0;
 
         List<Ingredient.Attribute> attributes = new List<Ingredient.Attribute>();
 
-        foreach (Ingredient ingredient in selected.ConvertAll(button => button.ingredient))
+        foreach (Ingredient ingredient in ingredientList)
         {
             switch (ingredient.damageType)
             {
@@ -144,8 +160,6 @@ public class IngredientSelector : MonoBehaviour
                 attributes.Add(ingredient.attribute);
             }
         }
-
-        string tooltip = "Total damage: ";
 
         if (damageMin == damageMax)
             tooltip += damageMin;

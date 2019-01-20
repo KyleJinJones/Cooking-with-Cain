@@ -4437,7 +4437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27df96405606272468c38c0ef5db248e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityName: Pea 1
+  entityName: Pea with mega attack debuff
   stats:
     attack: 5
     health: 100
@@ -4446,7 +4446,7 @@ MonoBehaviour:
     splash: 0.5
     lifesteal: 0.5
     atkboost: 0.2
-    atkdebuff: 0.2
+    atkdebuff: 0.9
     stun: 0.6
   statuses: []
 --- !u!114 &2114560791

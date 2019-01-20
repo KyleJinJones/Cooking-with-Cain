@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    public List<Ingredient> lastPlayed = new List<Ingredient>();
+    List<Ingredient> lastPlayed = new List<Ingredient>();
 
     public void ProcessAttack(Entity attacker, Entity target, Entity[] targetTeam, Ingredient[] ingredients)
     {
@@ -12,10 +12,16 @@ public class AttackManager : MonoBehaviour
 
         if (attacker.tag == "Player")
         {
+            float mod = 0.8f;
+
             foreach (Ingredient ingredient in ingredients)
-            {
-                ;
-            }
+                if (!lastPlayed.Contains(ingredient))
+                    mod = 1;
+
+            attack *= mod;
+
+            lastPlayed.Clear();
+            lastPlayed.AddRange(ingredients);
         }
 
         int damageMin = 0;
@@ -105,7 +111,7 @@ public class AttackManager : MonoBehaviour
                     target.AddStatus(StatusInstance.Status.atkdown, attacker.stats.atkdebuff, 3);
                     break;
                 case Ingredient.Attribute.stun:
-                    if (Random.value < attacker.stats.stun)
+                    if (Random.value < attacker.stats.stun * (target.stunnedLastTurn ? 0.5f : 1))
                         target.AddStatus(StatusInstance.Status.stun, 0, 1);
                     break;
             }
