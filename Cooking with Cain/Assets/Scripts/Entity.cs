@@ -80,7 +80,7 @@ public class Entity : MonoBehaviour
 
         StatusInstance atkboost = statuses.Find(status => status.status == StatusInstance.Status.atkup);
         StatusInstance atkdebuff = statuses.Find(status => status.status == StatusInstance.Status.atkdown);
-
+        
         return attack + (atkboost == null ? 0 : attack * atkboost.potency) - (atkdebuff == null ? 0 : attack * atkdebuff.potency);
     }
 
@@ -108,7 +108,7 @@ public class Entity : MonoBehaviour
             {
                 GetComponent<Image>().color = new Color(1, 1, 1, i / 60f);
                 transform.Rotate(0, 0, 15);
-                transform.localPosition = transform.position + new Vector3(-5, i - 40);
+                transform.localPosition = transform.localPosition + new Vector3(-5, i - 40);
                 yield return null;
             }
         }
@@ -118,7 +118,7 @@ public class Entity : MonoBehaviour
             {
                 GetComponent<Image>().color = new Color(1, 1, 1, i / 30f);
                 transform.Rotate(0, 0, 15);
-                transform.localPosition = transform.position + new Vector3(30, 10);
+                transform.localPosition = transform.localPosition + new Vector3(30, 10);
                 yield return null;
             }
         }

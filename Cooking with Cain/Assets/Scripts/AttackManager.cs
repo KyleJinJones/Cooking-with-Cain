@@ -124,13 +124,13 @@ public class AttackManager : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            attacker.transform.SetPositionAndRotation(attacker.transform.position + new Vector3(offset, 0), attacker.transform.rotation);
+            attacker.transform.localPosition = attacker.transform.localPosition + new Vector3(offset, 0);
             yield return null;
         }
 
         for (int i = 0; i < 5; i++)
         {
-            attacker.transform.SetPositionAndRotation(attacker.transform.position - new Vector3(offset, 0), attacker.transform.rotation);
+            attacker.transform.localPosition = attacker.transform.localPosition - new Vector3(offset, 0);
             yield return null;
         }
     }
