@@ -11,6 +11,8 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public Ingredient ingredient;
     public IngredientSelector selector;
 
+    Entity player;
+
     bool selected;
     Image image;
     Coroutine fade = null;
@@ -28,13 +30,13 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         Image image2 = obj.AddComponent<Image>();
         image2.sprite = ingredient.sprite;
         image2.SetNativeSize();
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
     }
 
     void Update()
     {
-        Stats stats = Entity.playerStats;
-
-        float attack = stats.attack;
+        float attack = player.GetEffectiveAttack();
 
         string tooltip = ingredient.foodName;
 
@@ -48,6 +50,8 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 break;
         }
 
+        Stats stats = player.stats;
+
         switch (ingredient.attribute)
         {
             case Ingredient.Attribute.burn:
@@ -60,13 +64,13 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 tooltip += string.Format("\nEffect: {0}% Lifesteal", Mathf.RoundToInt(stats.lifesteal * 100));
                 break;
             case Ingredient.Attribute.atkup:
-                tooltip += string.Format("\nEffect: {0}% Attack Boost", Mathf.RoundToInt(stats.atkboost * 100));
+                tooltip += string.Format("\nEffect: {0}% Attack boost", Mathf.RoundToInt(stats.atkboost * 100));
                 break;
             case Ingredient.Attribute.atkdown:
-                tooltip += string.Format("\nEffect: {0}% Attack Boost", Mathf.RoundToInt(stats.atkdebuff * 100));
+                tooltip += string.Format("\nEffect: {0}% Attack debuff", Mathf.RoundToInt(stats.atkdebuff * 100));
                 break;
             case Ingredient.Attribute.stun:
-                tooltip += string.Format("\nEffect: {0}% Attack Boost", Mathf.RoundToInt(stats.stun * 100));
+                tooltip += string.Format("\nEffect: {0}% Stun chance", Mathf.RoundToInt(stats.stun * 100));
                 break;
         }
 

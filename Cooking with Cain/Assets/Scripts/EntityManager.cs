@@ -12,7 +12,7 @@ public class EntityManager : MonoBehaviour
 
     AttackManager attackManager;
 
-    public GameObject targetIndicator;
+    public Image targetIndicator;
 
     public List<Entity> queue = new List<Entity>();
 
@@ -35,9 +35,8 @@ public class EntityManager : MonoBehaviour
         if (playerTurn)
         {
             ingredientMenu.SetActive(false);
-            targetIndicator.SetActive(false);
-            // replace null with target
-            attackManager.PerformAttack(player, targeted, enemies, ingredients);
+            targetIndicator.gameObject.SetActive(false);
+            attackManager.ProcessAttack(player, targeted, enemies, ingredients);
             playerTurn = false;
         }
     }
@@ -108,7 +107,13 @@ public class EntityManager : MonoBehaviour
                     yield return null;
 
                 targetIndicator.transform.position = targeted.transform.position;
-                targetIndicator.SetActive(true);
+                targetIndicator.gameObject.SetActive(true);
+
+                for (int i = 0; i < 10; i++)
+                {
+                    targetIndicator.color = new Color(1, 1, 1, (i + 1) / 10f);
+                    yield return null;
+                }
 
                 yield return new WaitUntil(() => !playerTurn);
 
@@ -125,12 +130,11 @@ public class EntityManager : MonoBehaviour
             {
                 if (enemy != null && enemy.stats.health > 0)
                 {
-                    enemy.UpdateStart();
-                }
+                    if (enemy.UpdateStart())
+                    {
+                        attackManager.ProcessAttack(enemy, player, new Entity[] { player }, enemy.GetComponent<EnemyAction>().ingredients);
+                    }
 
-                if (enemy != null && enemy.stats.health > 0)
-                {
-                    attackManager.PerformAttack(enemy, player, new Entity[] { player }, enemy.GetComponent<EnemyAction>().ingredients);
                     enemy.UpdateEnd();
 
                     for (int i = 0; i < 90; i++)

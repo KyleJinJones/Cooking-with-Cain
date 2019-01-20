@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class Entity : MonoBehaviour
 {
     public static Stats playerStats = null;
+    public string entityName = "";
     public Stats stats;
-    public List<StatusInstance> statuses = new List<StatusInstance>();
+
+    List<StatusInstance> statuses = new List<StatusInstance>();
 
     void Start()
     {
@@ -35,14 +39,77 @@ public class Entity : MonoBehaviour
         return false;
     }
 
-    public void UpdateStart()
+    public bool UpdateStart()
     {
-        ;
+        StatusInstance burn = statuses.Find(status => status.status == StatusInstance.Status.burn);
+
+        if (burn != null)
+        {
+            ModifyHealth(-stats.health * burn.potency);
+        }
+
+        return statuses.Find(status => status.status == StatusInstance.Status.stun) == null;
     }
 
     public void UpdateEnd()
     {
-        ;
+        foreach (StatusInstance status in statuses)
+        {
+            status.duration--;
+        }
+
+        statuses.RemoveAll(status => status.duration <= 0);
+    }
+
+    public float GetEffectiveAttack()
+    {
+        float attack = stats.attack;
+
+        StatusInstance atkboost = statuses.Find(status => status.status == StatusInstance.Status.atkup);
+        StatusInstance atkdebuff = statuses.Find(status => status.status == StatusInstance.Status.atkdown);
+
+        return attack + (atkboost == null ? 0 : attack * atkboost.potency) - (atkdebuff == null ? 0 : attack * atkdebuff.potency);
+    }
+
+    public void ModifyHealth(float health)
+    {
+        stats.health += health;
+
+        if (stats.health > stats.maxHealth)
+        {
+            stats.health = stats.maxHealth;
+        }
+        else if (stats.health < 0)
+        {
+            stats.health = 0;
+            StartCoroutine(Die());
+        }
+    }
+
+    IEnumerator Die()
+    {
+        if (gameObject.tag == "Player")
+        {
+            for (int i = 60; i > 0; i--)
+            {
+                GetComponent<Image>().color = new Color(1, 1, 1, i / 30f);
+                transform.Rotate(0, 0, 15);
+                transform.position = transform.position + new Vector3(-5, i - 40);
+                yield return null;
+            }
+        }
+        else
+        {
+            for (int i = 30; i > 0; i--)
+            {
+                GetComponent<Image>().color = new Color(1, 1, 1, i / 30f);
+                transform.Rotate(0, 0, 15);
+                transform.position = transform.position + new Vector3(30, 10);
+                yield return null;
+            }
+        }
+
+        Destroy(gameObject);
     }
 }
 

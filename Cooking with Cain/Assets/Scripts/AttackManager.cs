@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackManager : MonoBehaviour
 {
-    public void PerformAttack(Entity attacker, Entity target, Entity[] targetTeam, Ingredient[] ingredients)
+    public void ProcessAttack(Entity attacker, Entity target, Entity[] targetTeam, Ingredient[] ingredients)
     {
-        StartCoroutine(AttackAnimation(attacker.gameObject));
-
-        float attack = attacker.stats.attack;
+        float attack = attacker.GetEffectiveAttack();
 
         int damageMin = 0;
         int damageMax = 0;
@@ -32,6 +31,74 @@ public class AttackManager : MonoBehaviour
             if (ingredient.attribute != Ingredient.Attribute.none)
             {
                 attributes.Add(ingredient.attribute);
+            }
+        }
+
+        StartCoroutine(PerformAttack(attacker, target, targetTeam, damageMin, damageMax, attributes));
+    }
+
+    IEnumerator PerformAttack(Entity attacker, Entity target, Entity[] targetTeam, int damageMin, int damageMax, List<Ingredient.Attribute> attributes)
+    {
+        StartCoroutine(AttackAnimation(attacker.gameObject));
+        int total = Random.Range(damageMin, damageMax);
+        int number = 1;
+
+        if (attributes.Contains(Ingredient.Attribute.splash))
+        {
+            DealDamage(attacker, target, Mathf.RoundToInt(total * attacker.stats.splash), attributes);
+
+            foreach (Entity enemy in targetTeam)
+            {
+                if (enemy != null && enemy != target)
+                {
+                    for (int i = 0; i < 5; i++)
+                        yield return null;
+
+                    int damage = Random.Range(damageMin, damageMax);
+                    total += damage;
+
+                    number++;
+                    DealDamage(attacker, enemy, Mathf.RoundToInt(damage * attacker.stats.splash), attributes);
+                }
+            }
+        }
+        else
+        {
+            DealDamage(attacker, target, total, attributes);
+        }
+
+        foreach (Ingredient.Attribute attribute in attributes)
+        {
+            switch (attribute)
+            {
+                case Ingredient.Attribute.leech:
+                    attacker.ModifyHealth(Mathf.RoundToInt(total / number));
+                    break;
+                case Ingredient.Attribute.atkup:
+                    attacker.AddStatus(StatusInstance.Status.atkup, attacker.stats.atkboost, 2);
+                    break;
+            }
+        }
+    }
+
+    void DealDamage(Entity attacker, Entity target, int damage, List<Ingredient.Attribute> attributes)
+    {
+        target.ModifyHealth(-damage);
+
+        foreach (Ingredient.Attribute attribute in attributes)
+        {
+            switch (attribute)
+            {
+                case Ingredient.Attribute.burn:
+                    target.AddStatus(StatusInstance.Status.burn, attacker.stats.burn, 3);
+                    break;
+                case Ingredient.Attribute.atkdown:
+                    target.AddStatus(StatusInstance.Status.atkdown, attacker.stats.atkdebuff, 3);
+                    break;
+                case Ingredient.Attribute.stun:
+                    if (Random.value < attacker.stats.stun)
+                        target.AddStatus(StatusInstance.Status.stun, 0, 1);
+                    break;
             }
         }
     }
