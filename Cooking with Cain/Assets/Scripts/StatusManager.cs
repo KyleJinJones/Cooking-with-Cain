@@ -102,6 +102,15 @@ public class StatusManager : MonoBehaviour
 
                 icons[j].RemoveAll(icon => icon == null);
             }
+            else
+            {
+                foreach (GameObject obj in icons[j])
+                {
+                    Destroy(obj);
+                }
+
+                icons[j].Clear();
+            }
         }
     }
 
