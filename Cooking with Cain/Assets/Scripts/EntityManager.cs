@@ -22,6 +22,8 @@ public class EntityManager : MonoBehaviour
 
     public Vector3[] positions = new Vector3[3];
 
+    public Text enemyRemaining;
+
     void Awake()
     {
         attackManager = GetComponent<AttackManager>();
@@ -31,6 +33,11 @@ public class EntityManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(Run());
+    }
+
+    void Update()
+    {
+        enemyRemaining.text = string.Format("Enemy Remaining: {0}", GetEnemyRemaining());
     }
 
     public void PlayerAction(Ingredient[] ingredients)
