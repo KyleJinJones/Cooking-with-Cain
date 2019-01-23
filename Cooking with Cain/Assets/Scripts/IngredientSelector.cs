@@ -10,6 +10,8 @@ public class IngredientSelector : MonoBehaviour
     public Image[] images = new Image[3];
     public Button attackButton;
 
+    public GameObject spamWarningIcon;
+
     new AudioSource audio = null;
 
     List<IngredientButton> selected = new List<IngredientButton>();
@@ -92,6 +94,7 @@ public class IngredientSelector : MonoBehaviour
         {
             attackButton.interactable = false;
             results.text = null;
+            spamWarningIcon.SetActive(false);
         }
 
         for (int i = 0; i < 3; i++)
@@ -132,9 +135,10 @@ public class IngredientSelector : MonoBehaviour
 
         if (same)
         {
-            tooltip = "Using the same ingredients will reduce damage dealt by 20%\nTotal damage: ";
             attack *= 0.8f;
         }
+
+        spamWarningIcon.SetActive(same);
 
         int damageMin = 0;
         int damageMax = 0;

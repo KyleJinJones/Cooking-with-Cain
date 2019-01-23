@@ -40,8 +40,7 @@ public class HealthDisplayManager : MonoBehaviour
             playerHealthBar.nameText.text = player.entityName;
 
             renderHealth[3] += (player.stats.health / player.stats.maxHealth - renderHealth[3]) / 5;
-
-            playerHealthBar.healthBar.fillAmount = renderHealth[3];
+            
             playerHealthBar.healthText.text = string.Format("{0}/{1}", Mathf.RoundToInt(renderHealth[3] * player.stats.maxHealth), Mathf.RoundToInt(player.stats.maxHealth));
             lastMaxHealth[3] = player.stats.maxHealth;
             
@@ -72,6 +71,7 @@ public class HealthDisplayManager : MonoBehaviour
                 renderHealth[i] += (enemies[i].stats.health / enemies[i].stats.maxHealth - renderHealth[i]) / 5;
                 
                 enemyHealthBars[i].healthText.text = string.Format("{0}/{1}", Mathf.RoundToInt(renderHealth[i] * enemies[i].stats.maxHealth), Mathf.RoundToInt(enemies[i].stats.maxHealth));
+                lastMaxHealth[i] = enemies[i].stats.maxHealth;
 
                 colorText[i] += 0.1f;
                 if (colorText[i] > 1)

@@ -57,10 +57,19 @@ public class Entity : MonoBehaviour
 
         if (burn != null)
         {
-            ModifyHealth(-stats.health * burn.potency);
+            int damage = Mathf.Max(Mathf.RoundToInt(stats.health * burn.potency), 1);
+            ModifyHealth(-damage);
+
+            ResultText.lines.Add(string.Format("{0} takes {1} damage from burn", entityName, damage));
         }
 
         stunnedLastTurn = statuses.Find(status => status.status == StatusInstance.Status.stun) != null;
+
+        if (stunnedLastTurn)
+        {
+            ResultText.lines.Add(string.Format("{0} cannot act", entityName));
+        }
+
         return !stunnedLastTurn;
     }
 
@@ -84,7 +93,7 @@ public class Entity : MonoBehaviour
         return attack + (atkboost == null ? 0 : attack * atkboost.potency) - (atkdebuff == null ? 0 : attack * atkdebuff.potency);
     }
 
-    public void ModifyHealth(float health)
+    public void ModifyHealth(int health)
     {
         stats.health += health;
 
@@ -102,6 +111,8 @@ public class Entity : MonoBehaviour
 
     IEnumerator Die()
     {
+        ResultText.lines.Add(string.Format("{0} is defeated", entityName));
+
         if (gameObject.tag == "Player")
         {
             for (int i = 60; i > 0; i--)
@@ -144,7 +155,7 @@ public class Stats
     public float health = 100;
     public float maxHealth = 100;
 
-    public float burn = 0.1f;
+    public float burn = 0.07f;
     public float splash = 0.5f;
     public float lifesteal = 0.5f;
     public float atkboost = 0.2f;

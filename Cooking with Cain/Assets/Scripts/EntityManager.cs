@@ -22,6 +22,8 @@ public class EntityManager : MonoBehaviour
 
     public Vector3[] positions = new Vector3[3];
 
+    public Text enemyRemaining;
+
     void Awake()
     {
         attackManager = GetComponent<AttackManager>();
@@ -31,6 +33,11 @@ public class EntityManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(Run());
+    }
+
+    void Update()
+    {
+        enemyRemaining.text = string.Format("Enemy Remaining: {0}", GetEnemyRemaining());
     }
 
     public void PlayerAction(Ingredient[] ingredients)
@@ -104,6 +111,17 @@ public class EntityManager : MonoBehaviour
             {
                 StartPlayerTurn();
 
+                if (player.statuses.Find(status => status.status == StatusInstance.Status.burn) != null)
+                {
+                    for (int i = 0; i < 45; i++)
+                        yield return null;
+
+                    ResultText.FadeReset();
+
+                    for (int i = 0; i < 30; i++)
+                        yield return null;
+                }
+
                 ingredientMenu.SetActive(true);
 
                 for (int i = 0; i < 10; i++)
@@ -119,11 +137,15 @@ public class EntityManager : MonoBehaviour
                 }
 
                 yield return new WaitUntil(() => !playerTurn);
-
                 player.UpdateEnd();
             }
 
-            for (int i = 0; i < 90; i++)
+            for (int i = 0; i < 45; i++)
+                yield return null;
+
+            ResultText.FadeReset();
+
+            for (int i = 0; i < 30; i++)
                 yield return null;
 
             if (CheckState())
@@ -133,14 +155,25 @@ public class EntityManager : MonoBehaviour
             {
                 if (enemy != null && enemy.stats.health > 0)
                 {
-                    if (enemy.UpdateStart())
+                    bool canAct = enemy.UpdateStart();
+
+                    for (int i = 0; i < 15; i++)
+                        yield return null;
+
+                    if (enemy.stats.health > 0)
                     {
-                        attackManager.ProcessAttack(enemy, player, new Entity[] { player }, enemy.GetComponent<EnemyAction>().ingredients);
+                        if (canAct)
+                            attackManager.ProcessAttack(enemy, player, new Entity[] { player }, enemy.GetComponent<EnemyAction>().ingredients);
+
+                        enemy.UpdateEnd();
                     }
 
-                    enemy.UpdateEnd();
+                    for (int i = 0; i < 45; i++)
+                        yield return null;
 
-                    for (int i = 0; i < 90; i++)
+                    ResultText.FadeReset();
+
+                    for (int i = 0; i < 30; i++)
                         yield return null;
 
                     if (CheckState())
