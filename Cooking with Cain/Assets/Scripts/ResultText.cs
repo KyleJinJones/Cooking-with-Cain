@@ -10,6 +10,8 @@ public class ResultText : MonoBehaviour
     public static List<string> lines = new List<string>();
     static ResultText instance;
 
+    public Slider slider;
+
     void Awake()
     {
         instance = this;
@@ -17,36 +19,33 @@ public class ResultText : MonoBehaviour
         text = GetComponent<Text>();
         text.text = "";
         text.color = Color.black;
+        
+        slider.gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         string str = "";
 
-        for (int i = Mathf.Max(0, lines.Count - 10); i < lines.Count; i++)
+        if (lines.Count > 10)
         {
-            str += lines[i] + "\n";
+            slider.gameObject.SetActive(true);
+            slider.value += Input.GetAxisRaw("Mouse ScrollWheel") * 10;
+            slider.maxValue = lines.Count - 10;
+
+            for (int i = lines.Count - Mathf.RoundToInt(slider.value) - 10; i < lines.Count - Mathf.RoundToInt(slider.value); i++)
+            {
+                str += lines[i] + "\n";
+            }
+        }
+        else
+        {
+            for (int i = 0; i < lines.Count; i++)
+            {
+                str += lines[i] + "\n";
+            }
         }
 
         text.text = str;
-    }
-
-    public static void FadeReset()
-    {
-        instance.StartCoroutine(instance.Fade());
-    }
-
-    IEnumerator Fade()
-    {
-        for(int i = 0; i < 15; i++)
-        {
-            text.color = new Color(0, 0, 0, 1 - i / 15f);
-            yield return null;
-        }
-
-        lines.Clear();
-        text.text = "";
-        text.color = Color.black;
     }
 }
