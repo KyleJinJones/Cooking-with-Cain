@@ -24,6 +24,8 @@ public class EntityManager : MonoBehaviour
 
     public Text enemyRemaining;
 
+    int turnCount = 0;
+
     void Awake()
     {
         attackManager = GetComponent<AttackManager>();
@@ -44,7 +46,7 @@ public class EntityManager : MonoBehaviour
     {
         if (playerTurn)
         {
-            ingredientMenu.SetActive(false);
+            //ingredientMenu.SetActive(false);
             targetIndicator.gameObject.SetActive(false);
             attackManager.ProcessAttack(player, targeted, enemies, ingredients);
             playerTurn = false;
@@ -70,6 +72,7 @@ public class EntityManager : MonoBehaviour
                         targetIndicator.transform.position = enemy.transform.position;
                     });
 
+                    ResultText.lines.Add(string.Format("{0} spawns", enemy.entityName));
                     StartCoroutine(EnemyAppear(enemy.gameObject, positions[i]));
                     queue.RemoveAt(0);
 
@@ -109,20 +112,16 @@ public class EntityManager : MonoBehaviour
 
             if (player != null && player.stats.health > 0)
             {
-                StartPlayerTurn();
-
-                if (player.statuses.Find(status => status.status == StatusInstance.Status.burn) != null)
+                if (turnCount > 0)
                 {
-                    for (int i = 0; i < 45; i++)
-                        yield return null;
-
-                    ResultText.FadeReset();
-
-                    for (int i = 0; i < 30; i++)
-                        yield return null;
+                    ResultText.lines.Add("");
                 }
 
-                ingredientMenu.SetActive(true);
+                ResultText.lines.Add(string.Format("=============== Turn {0} ===============", ++turnCount));
+
+                StartPlayerTurn();
+
+                //ingredientMenu.SetActive(true);
 
                 for (int i = 0; i < 10; i++)
                     yield return null;
@@ -140,12 +139,7 @@ public class EntityManager : MonoBehaviour
                 player.UpdateEnd();
             }
 
-            for (int i = 0; i < 45; i++)
-                yield return null;
-
-            ResultText.FadeReset();
-
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 75; i++)
                 yield return null;
 
             if (CheckState())
@@ -168,12 +162,7 @@ public class EntityManager : MonoBehaviour
                         enemy.UpdateEnd();
                     }
 
-                    for (int i = 0; i < 45; i++)
-                        yield return null;
-
-                    ResultText.FadeReset();
-
-                    for (int i = 0; i < 30; i++)
+                    for (int i = 0; i < 75; i++)
                         yield return null;
 
                     if (CheckState())
