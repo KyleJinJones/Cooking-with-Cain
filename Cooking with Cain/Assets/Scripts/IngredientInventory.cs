@@ -19,7 +19,7 @@ public class IngredientInventory : MonoBehaviour
     // Start is called before the first frame update
    public void Start()
     {
-        Debug.Log("Happens");
+        
         if (ing != null)
         {
             i.sprite = ing.sprite;

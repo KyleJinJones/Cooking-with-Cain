@@ -12,45 +12,59 @@ public class IngredientManager : MonoBehaviour
     public static List<IngredientInventory> loadoutsaved=null;
     public static List<IngredientInventory> sparesaved=null;
     public List<Ingredient> ingredients;
+    public List<Ingredient> equipped;
 
 
     // Start is called before the first frame update
     private void Awake()
     {
-        Debug.Log(loadout[0].gameObject.name);
-        if (PlayerPrefs.HasKey(loadout[0].gameObject.name))
-        {
-            Debug.Log("Extracting");
-            for (int i = 0; i < loadout.Count; i++)
+        if (loadout.Count == 0) {
+            
+            for(int i = 1; i < 7; i++)
             {
-                int ind = PlayerPrefs.GetInt(loadout[i].gameObject.name);
-                if (ind != -1)
-                {
-                    loadout[i].ing = ingredients[ind];
-                }
-                else
-                {
-                    loadout[i].ing = null;
-                }
-                Debug.Log(ind);
-                loadout[i].index = ind;
-               
+                equipped.Add(ingredients[PlayerPrefs.GetInt("Loadout" + i)]);
             }
 
-            for (int i = 0; i < spare.Count; i++)
+        }
+
+        else if (PlayerPrefs.HasKey(loadout[0].gameObject.name))
             {
-                int ind = PlayerPrefs.GetInt(spare[i].gameObject.name);
-                if (ind != -1)
+
+                for (int i = 0; i < loadout.Count; i++)
                 {
-                    spare[i].ing = ingredients[ind];
+                    int ind = PlayerPrefs.GetInt(loadout[i].gameObject.name);
+                    if (ind != -1)
+                    {
+                        loadout[i].ing = ingredients[ind];
+                    }
+                    else
+                    {
+                        loadout[i].ing = null;
+                    }
+
+                    loadout[i].index = ind;
+
                 }
-                else
+
+                for (int i = 0; i < spare.Count; i++)
                 {
-                    spare[i].ing = null;
+                    int ind = PlayerPrefs.GetInt(spare[i].gameObject.name);
+                    if (ind != -1)
+                    {
+                        spare[i].ing = ingredients[ind];
+                    }
+                    else
+                    {
+                        spare[i].ing = null;
+                    }
+                    spare[i].index = ind;
+
                 }
-                spare[i].index = ind;
-                
-            }
+            
+        }
+        else
+        {
+            saveing();
         }
 
     }
@@ -85,7 +99,7 @@ public class IngredientManager : MonoBehaviour
 
     public void saveing()
     {
-        Debug.Log("saving");
+        
         for(int i = 0; i < loadout.Count; i++)
         {
           
@@ -95,7 +109,7 @@ public class IngredientManager : MonoBehaviour
 
         for (int i = 0; i < spare.Count; i++)
         {
-                Debug.Log(spare[i].index);
+                
                 PlayerPrefs.SetInt(spare[i].gameObject.name, spare[i].index);
             
         }
