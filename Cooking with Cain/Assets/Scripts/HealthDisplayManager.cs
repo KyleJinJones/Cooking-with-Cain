@@ -50,6 +50,7 @@ public class HealthDisplayManager : MonoBehaviour
         }
 
         playerHealthBar.healthBar.fillAmount = renderHealth[3];
+        playerHealthBar.healthBar.color = Color.HSVToRGB(renderHealth[3] / 3f, 1, 1);
         playerHealthBar.SetTextColor(new Color(0, 0, 0, colorText[3]));
 
         for (int i = 0; i < 3; i++)
@@ -79,6 +80,7 @@ public class HealthDisplayManager : MonoBehaviour
             }
 
             enemyHealthBars[i].healthBar.fillAmount = renderHealth[i];
+            enemyHealthBars[i].healthBar.color = Color.HSVToRGB(renderHealth[i] / 3f, 1, 1);
             enemyHealthBars[i].SetTextColor(new Color(0, 0, 0, colorText[i]));
         }
     }

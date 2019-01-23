@@ -8,14 +8,11 @@ public class ResultText : MonoBehaviour
 {
     Text text;
     public static List<string> lines = new List<string>();
-    static ResultText instance;
 
     public Slider slider;
 
     void Awake()
     {
-        instance = this;
-
         text = GetComponent<Text>();
         text.text = "";
         text.color = Color.black;
