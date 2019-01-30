@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class ResultText : MonoBehaviour
 {
-    Text text;
+    TextMeshProUGUI text;
     public static List<string> lines = new List<string>();
 
     public Slider slider;
 
     void Awake()
     {
-        text = GetComponent<Text>();
+        text = GetComponent<TextMeshProUGUI>();
         text.text = "";
         text.color = Color.black;
         

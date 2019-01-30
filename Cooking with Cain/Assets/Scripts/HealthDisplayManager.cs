@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -90,8 +91,8 @@ public class HealthDisplayManager : MonoBehaviour
 public class HealthFields
 {
     public Image healthBar;
-    public Text healthText;
-    public Text nameText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI nameText;
 
     public void SetTextColor(Color color)
     {
