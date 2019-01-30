@@ -18,7 +18,8 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    // Muhammad 1/30/2019: Don't use FixedUpdate. It limits to 50 fps
+    void Update()
     {
         GetInput();
         transform.Translate(direction * speed * Time.deltaTime);
