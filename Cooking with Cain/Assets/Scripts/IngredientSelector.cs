@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class IngredientSelector : MonoBehaviour
 {
+    public static Ingredient[] equipped = new Ingredient[6];
+
     public EntityManager manager;
     public Image[] images = new Image[3];
     public Button attackButton;
@@ -40,6 +42,11 @@ public class IngredientSelector : MonoBehaviour
         }
 
         UpdateImages();
+    }
+
+    void Update()
+    {
+        attackButton.interactable = selected.Count == 3 && manager.playerTurn;
     }
 
     public bool Select(IngredientButton button)
@@ -87,12 +94,10 @@ public class IngredientSelector : MonoBehaviour
     {
         if (selected.Count == 3)
         {
-            attackButton.interactable = true;
             results.text = GetIngredientResult();
         }
         else
         {
-            attackButton.interactable = false;
             results.text = null;
             spamWarningIcon.SetActive(false);
         }
