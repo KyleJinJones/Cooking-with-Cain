@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Tooltip : MonoBehaviour
 {
     Image image = null;
-    Text text = null;
+    TextMeshProUGUI text = null;
 
     void Awake()
     {
         image = GetComponentInChildren<Image>();
-        text = GetComponentInChildren<Text>();
+        text = GetComponentInChildren<TextMeshProUGUI>();
 
         image.raycastTarget = false;
         text.raycastTarget = false;
