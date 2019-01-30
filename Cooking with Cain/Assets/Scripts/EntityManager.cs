@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class EntityManager : MonoBehaviour
 {
     Entity player;
     public Entity[] enemies = new Entity[3];
-    bool playerTurn = false;
+    public bool playerTurn { get; private set; }
 
     AttackManager attackManager;
 
@@ -22,12 +23,13 @@ public class EntityManager : MonoBehaviour
 
     public Vector3[] positions = new Vector3[3];
 
-    public Text enemyRemaining;
+    public TextMeshProUGUI enemyRemaining;
 
     int turnCount = 0;
 
     void Awake()
     {
+        playerTurn = false;
         attackManager = GetComponent<AttackManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
     }

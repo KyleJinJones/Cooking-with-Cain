@@ -42,6 +42,11 @@ public class IngredientSelector : MonoBehaviour
         UpdateImages();
     }
 
+    void Update()
+    {
+        attackButton.interactable = selected.Count == 3 && manager.playerTurn;
+    }
+
     public bool Select(IngredientButton button)
     {
         audio.clip = button.ingredient.audioClip;
@@ -87,12 +92,10 @@ public class IngredientSelector : MonoBehaviour
     {
         if (selected.Count == 3)
         {
-            attackButton.interactable = true;
             results.text = GetIngredientResult();
         }
         else
         {
-            attackButton.interactable = false;
             results.text = null;
             spamWarningIcon.SetActive(false);
         }
