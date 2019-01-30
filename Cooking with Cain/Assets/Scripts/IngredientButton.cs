@@ -10,6 +10,7 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     public Ingredient ingredient;
     public IngredientSelector selector;
+    public int buttonPosition;
 
     Entity player;
 
@@ -22,63 +23,73 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     
     void Awake()
     {
+        ingredient = IngredientSelector.equipped[buttonPosition];
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
+    }
+
+    void Start()
+    {
         image = GetComponent<Image>();
 
         GameObject obj = new GameObject("Icon");
         obj.transform.SetParent(transform, false);
 
-        Image image2 = obj.AddComponent<Image>();
-        image2.sprite = ingredient.sprite;
-        image2.SetNativeSize();
-
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
+        if (ingredient != null)
+        {
+            Image image2 = obj.AddComponent<Image>();
+            image2.sprite = ingredient.sprite;
+            image2.SetNativeSize();
+        }
     }
 
     void Update()
     {
-        float attack = player.GetEffectiveAttack();
-
-        string tooltip = ingredient.foodName;
-
-        switch (ingredient.damageType)
+        if (ingredient != null)
         {
-            case Ingredient.DamageType.flat:
-                tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ingredient.multiplier));
-                break;
-            case Ingredient.DamageType.range:
-                tooltip += string.Format("\n+{0}~{1} damage", Mathf.RoundToInt(attack * ingredient.multiplierMin), Mathf.RoundToInt(attack * ingredient.multiplierMax));
-                break;
+            float attack = player.GetEffectiveAttack();
+
+            string tooltip = ingredient.foodName;
+
+            switch (ingredient.damageType)
+            {
+                case Ingredient.DamageType.flat:
+                    tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ingredient.multiplier));
+                    break;
+                case Ingredient.DamageType.range:
+                    tooltip += string.Format("\n+{0}~{1} damage", Mathf.RoundToInt(attack * ingredient.multiplierMin), Mathf.RoundToInt(attack * ingredient.multiplierMax));
+                    break;
+            }
+
+            Stats stats = player.stats;
+
+            switch (ingredient.attribute)
+            {
+                case Ingredient.Attribute.burn:
+                    tooltip += string.Format("\nEffect: {0}% Burn", Mathf.RoundToInt(stats.burn * 100));
+                    break;
+                case Ingredient.Attribute.splash:
+                    tooltip += string.Format("\nEffect: {0}% Splash", Mathf.RoundToInt(stats.splash * 100));
+                    break;
+                case Ingredient.Attribute.leech:
+                    tooltip += string.Format("\nEffect: {0}% Lifesteal", Mathf.RoundToInt(stats.lifesteal * 100));
+                    break;
+                case Ingredient.Attribute.atkup:
+                    tooltip += string.Format("\nEffect: {0}% Attack boost", Mathf.RoundToInt(stats.atkboost * 100));
+                    break;
+                case Ingredient.Attribute.atkdown:
+                    tooltip += string.Format("\nEffect: {0}% Attack debuff", Mathf.RoundToInt(stats.atkdebuff * 100));
+                    break;
+                case Ingredient.Attribute.stun:
+                    tooltip += string.Format("\nEffect: {0}% Stun chance", Mathf.RoundToInt(stats.stun * 100));
+                    break;
+            }
+
+            TooltipText tooltipText = gameObject.GetComponent<TooltipText>();
+            if (tooltipText == null)
+                tooltipText = gameObject.AddComponent<TooltipText>();
+
+            tooltipText.text = tooltip;
         }
-
-        Stats stats = player.stats;
-
-        switch (ingredient.attribute)
-        {
-            case Ingredient.Attribute.burn:
-                tooltip += string.Format("\nEffect: {0}% Burn", Mathf.RoundToInt(stats.burn * 100));
-                break;
-            case Ingredient.Attribute.splash:
-                tooltip += string.Format("\nEffect: {0}% Splash", Mathf.RoundToInt(stats.splash * 100));
-                break;
-            case Ingredient.Attribute.leech:
-                tooltip += string.Format("\nEffect: {0}% Lifesteal", Mathf.RoundToInt(stats.lifesteal * 100));
-                break;
-            case Ingredient.Attribute.atkup:
-                tooltip += string.Format("\nEffect: {0}% Attack boost", Mathf.RoundToInt(stats.atkboost * 100));
-                break;
-            case Ingredient.Attribute.atkdown:
-                tooltip += string.Format("\nEffect: {0}% Attack debuff", Mathf.RoundToInt(stats.atkdebuff * 100));
-                break;
-            case Ingredient.Attribute.stun:
-                tooltip += string.Format("\nEffect: {0}% Stun chance", Mathf.RoundToInt(stats.stun * 100));
-                break;
-        }
-
-        TooltipText tooltipText = gameObject.GetComponent<TooltipText>();
-        if (tooltipText == null)
-            tooltipText = gameObject.AddComponent<TooltipText>();
-
-        tooltipText.text = tooltip;
     }
 
     public void Deselect()
@@ -108,7 +119,8 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        selected = selector.Select(this);
+        if (ingredient != null)
+            selected = selector.Select(this);
     }
 
     IEnumerator FadeColor(Color color)

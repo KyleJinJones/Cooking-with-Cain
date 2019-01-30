@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class IngredientSelector : MonoBehaviour
 {
+    public static Ingredient[] equipped = new Ingredient[6];
+
     public EntityManager manager;
     public Image[] images = new Image[3];
     public Button attackButton;
