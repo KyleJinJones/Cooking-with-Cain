@@ -11,6 +11,14 @@ public class HPpotion : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey(this.name))
+        {
+            amtowned = PlayerPrefs.GetInt(this.name);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(this.name, amtowned);
+        }
         ownedtxt = GetComponentInChildren<TextMeshProUGUI>();
         UpdateAmtOwned();
     }
@@ -27,5 +35,10 @@ public class HPpotion : MonoBehaviour
     private void UpdateAmtOwned()
     {
         ownedtxt.text = amtowned.ToString();
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt(this.name, amtowned);
     }
 }
