@@ -23,12 +23,12 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     
     void Awake()
     {
-        ingredient = IngredientSelector.equipped[buttonPosition];
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
     }
 
     void Start()
     {
+        ingredient = IngredientSelector.equipped[buttonPosition];
         image = GetComponent<Image>();
 
         GameObject obj = new GameObject("Icon");

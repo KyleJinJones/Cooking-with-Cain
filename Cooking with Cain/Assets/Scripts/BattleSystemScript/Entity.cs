@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Entity : MonoBehaviour
 {
-    public static Stats playerStats = null;
+    public static Stats playerStats = new Stats();
     public string entityName = "";
     public Stats stats;
 
@@ -18,9 +18,6 @@ public class Entity : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
-            if (playerStats == null)
-                playerStats = new Stats();
-
             stats = playerStats;
         }
     }
@@ -141,7 +138,7 @@ public class Entity : MonoBehaviour
 [System.Serializable]
 public class StatusInstance
 {
-    public enum Status { burn, atkup, atkdown, stun };
+    public enum Status { burn, atkup, atkdown, stun, defup, defdown, reflect, cleanse };
 
     public Status status;
     public float potency;
