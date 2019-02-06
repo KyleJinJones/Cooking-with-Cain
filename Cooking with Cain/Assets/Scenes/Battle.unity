@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &123047540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,6 +635,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &123047541
@@ -1350,6 +1355,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &515466629
@@ -1638,6 +1648,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &681065620
@@ -2039,6 +2054,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &742701771
@@ -2054,7 +2074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &742701772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3679,7 +3699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &1450572203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3703,6 +3723,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &1450572204
@@ -6321,7 +6346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &2114560790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6345,6 +6370,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &2114560791

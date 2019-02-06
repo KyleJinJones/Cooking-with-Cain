@@ -67,12 +67,19 @@ public class Entity : MonoBehaviour
             ResultText.lines.Add(string.Format("{0} cannot act", entityName));
         }
 
+        foreach (StatusInstance status in statuses.FindAll(instance => instance.updateOnStart()))
+        {
+            status.duration--;
+        }
+
+        statuses.RemoveAll(status => status.duration <= 0);
+
         return !stunnedLastTurn;
     }
 
     public void UpdateEnd()
     {
-        foreach (StatusInstance status in statuses)
+        foreach (StatusInstance status in statuses.FindAll(instance => !instance.updateOnStart()))
         {
             status.duration--;
         }
@@ -151,6 +158,11 @@ public class StatusInstance
     public Status status;
     public float potency;
     public int duration;
+
+    public bool updateOnStart()
+    {
+        return status == Status.defup || status == Status.defdown || status == Status.reflect || status == Status.cleanse;
+    }
 }
 
 [System.Serializable]
