@@ -11,23 +11,31 @@ public class OverworldHP : MonoBehaviour
     public float currenthp=100;
     public float maxhp=100;
 
-    // Start is called before the first frame update
+    // Loads Playerhp from prefs or sets it if it has not been set, and updates the ui display
     void Start()
     {
         hptext.GetComponentInChildren<TextMeshProUGUI>();
 
         if (PlayerPrefs.HasKey("MaxHP"))
         {
-            maxhp = PlayerPrefs.GetInt("MaxHP");
+            maxhp = PlayerPrefs.GetFloat("MaxHP");
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("MaxHP", 100);
         }
         if (PlayerPrefs.HasKey("CurrentHP"))
         {
-            currenthp = PlayerPrefs.GetInt("CurrentHP");
+            currenthp = PlayerPrefs.GetFloat("CurrentHP");
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("CurrentHP", 100);
         }
         UpdateDisplay();
     }
 
-    // Update is called once per frame
+    // Used to changehp, autosaves player hp to avoid exploits
     public void ChangeHP(float val)
     {
         currenthp += val;
@@ -40,8 +48,10 @@ public class OverworldHP : MonoBehaviour
             currenthp = 0;
         }
         UpdateDisplay();
+        PlayerPrefs.SetFloat("CurrentHP", currenthp);
     }
 
+    //Updates the displayed HP in the UI
     void UpdateDisplay()
     {
         hptext.text = currenthp.ToString();
