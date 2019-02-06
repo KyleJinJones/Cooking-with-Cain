@@ -90,6 +90,14 @@ public class Entity : MonoBehaviour
         return attack + (atkboost == null ? 0 : attack * atkboost.potency) - (atkdebuff == null ? 0 : attack * atkdebuff.potency);
     }
 
+    public float FactorDefense(float damage)
+    {
+        StatusInstance defboost = statuses.Find(status => status.status == StatusInstance.Status.defup);
+        StatusInstance defdebuff = statuses.Find(status => status.status == StatusInstance.Status.defdown);
+
+        return damage - (defboost == null ? 0 : damage * defboost.potency) + (defdebuff == null ? 0 : damage * defdebuff.potency);
+    }
+
     public void ModifyHealth(int health)
     {
         stats.health += health;
@@ -98,7 +106,7 @@ public class Entity : MonoBehaviour
         {
             stats.health = stats.maxHealth;
         }
-        else if (stats.health < 0)
+        else if (Mathf.RoundToInt(stats.health) <= 0)
         {
             stats.health = 0;
             statuses.Clear();
@@ -158,4 +166,9 @@ public class Stats
     public float atkboost = 0.2f;
     public float atkdebuff = 0.2f;
     public float stun = 0.6f;
+    public float defboost = 0.2f;
+    public float defdebuff = 0.4f;
+    public float reflect = 0.3f;
+    public float selfdmg = 0.1f;
+    public float miss = 0.4f;
 }

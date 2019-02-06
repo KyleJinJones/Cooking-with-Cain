@@ -6,7 +6,7 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "Ingredient.asset", menuName = "Custom/Ingredient")]
 public class Ingredient : ScriptableObject
 {
-    public enum Attribute { none, burn, splash, atkup, leech, atkdown, stun, shield, defup, selfdmg, special, miss, cleanse, reflect };
+    public enum Attribute { none, burn, splash, atkup, leech, atkdown, stun, defup, defdown, selfdmg, miss, cleanse, reflect };
     public enum DamageType { flat, range };
 
     public string foodName;
