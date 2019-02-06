@@ -24,7 +24,7 @@ public class HPpotion : MonoBehaviour
     }
     public void OnUse()
     {
-        if (amtowned > 0)
+        if (amtowned > 0&& hp.currenthp<hp.maxhp)
         {
             hp.ChangeHP(healamt);
             amtowned -= 1;
