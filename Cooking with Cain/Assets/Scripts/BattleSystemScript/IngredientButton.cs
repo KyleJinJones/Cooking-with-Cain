@@ -82,6 +82,24 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 case Ingredient.Attribute.stun:
                     tooltip += string.Format("\nEffect: {0}% Stun chance", Mathf.RoundToInt(stats.stun * 100));
                     break;
+                case Ingredient.Attribute.defup:
+                    tooltip += string.Format("\nEffect: {0}% Defense boost", Mathf.RoundToInt(stats.defboost * 100));
+                    break;
+                case Ingredient.Attribute.defdown:
+                    tooltip += string.Format("\nEffect: {0}% Defense debuff", Mathf.RoundToInt(stats.defdebuff * 100));
+                    break;
+                case Ingredient.Attribute.reflect:
+                    tooltip += string.Format("\nEffect: {0}% Reflect", Mathf.RoundToInt(stats.reflect * 100));
+                    break;
+                case Ingredient.Attribute.cleanse:
+                    tooltip += string.Format("\nEffect: Debuff cleanse");
+                    break;
+                case Ingredient.Attribute.selfdmg:
+                    tooltip += string.Format("\nEffect: {0}% Self damage", Mathf.RoundToInt(stats.selfdmg * 100));
+                    break;
+                case Ingredient.Attribute.miss:
+                    tooltip += string.Format("\nEffect: {0}% Miss chance", Mathf.RoundToInt(stats.miss * 100));
+                    break;
             }
 
             TooltipText tooltipText = gameObject.GetComponent<TooltipText>();
