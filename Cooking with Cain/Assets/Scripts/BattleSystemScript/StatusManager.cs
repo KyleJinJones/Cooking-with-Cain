@@ -126,6 +126,14 @@ public class StatusManager : MonoBehaviour
                 return string.Format("Attack Debuff\nDeal {0}% less damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
             case StatusInstance.Status.stun:
                 return string.Format("Stunned\nCannot move next turn");
+            case StatusInstance.Status.defup:
+                return string.Format("Defense Boost\nTake {0}% less damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+            case StatusInstance.Status.defdown:
+                return string.Format("Defense Debuff\nTake {0}% more damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+            case StatusInstance.Status.reflect:
+                return string.Format("Reflect\nDeal {0}% of damage taken back to the attacker\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+            case StatusInstance.Status.cleanse:
+                return string.Format("Debuff Cleanse\nImmune to debuffs\n{0} turns remaining", status.duration);
         }
         return null;
     }

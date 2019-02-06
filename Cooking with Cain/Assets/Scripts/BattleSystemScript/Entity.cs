@@ -138,7 +138,7 @@ public class Entity : MonoBehaviour
 [System.Serializable]
 public class StatusInstance
 {
-    public enum Status { burn, atkup, atkdown, stun };
+    public enum Status { burn, atkup, atkdown, stun, defup, defdown, reflect, cleanse };
 
     public Status status;
     public float potency;
