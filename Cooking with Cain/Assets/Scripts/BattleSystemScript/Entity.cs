@@ -213,4 +213,27 @@ public class Stats
     public float reflect = 0.3f;
     public float selfdmg = 0.1f;
     public float miss = 0.4f;
+
+    public Stats copy
+    {
+        get
+        {
+            Stats stats = new Stats();
+            stats.attack = attack;
+            stats.health = health;
+            stats.maxHealth = maxHealth;
+            stats.burn = burn;
+            stats.splash = splash;
+            stats.lifesteal = lifesteal;
+            stats.atkboost = atkboost;
+            stats.atkdebuff = atkdebuff;
+            stats.stun = stun;
+            stats.defboost = defboost;
+            stats.defdebuff = defdebuff;
+            stats.reflect = reflect;
+            stats.selfdmg = selfdmg;
+            stats.miss = miss;
+            return stats;
+        }
+    }
 }
