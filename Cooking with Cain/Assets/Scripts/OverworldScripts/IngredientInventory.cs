@@ -15,8 +15,7 @@ public class IngredientInventory : MonoBehaviour
     public Sprite def;
     public int index=-1;
 
-
-    // Start is called before the first frame update
+    //Sets the image for the ingredient
    public void Start()
     {
         
@@ -28,12 +27,7 @@ public class IngredientInventory : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Handles selections, and indicators, as well as the logic behind how ingredients are allowed to be selected
     public void Selected()
     {
         if (igm.ing1 ==null)

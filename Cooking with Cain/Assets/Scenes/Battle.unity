@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fa971e35fea524397bac39b2494f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
+  ingredient: {fileID: 11400000, guid: 534e4c62403d1ee408c00454e2905418, type: 2}
   selector: {fileID: 1946401053}
   buttonPosition: 1
 --- !u!114 &76189038
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &123047540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,6 +635,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &123047541
@@ -1086,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fa971e35fea524397bac39b2494f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: 9b86f2db889ab564abffeec56ea7264a, type: 2}
+  ingredient: {fileID: 11400000, guid: f7fae825df7cd95499c1b84fe14924af, type: 2}
   selector: {fileID: 1946401053}
   buttonPosition: 2
 --- !u!114 &401238503
@@ -1350,6 +1355,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &515466629
@@ -1638,6 +1648,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &681065620
@@ -1804,9 +1819,6 @@ MonoBehaviour:
   targetIndicator: {fileID: 704626956}
   queue:
   - {fileID: 2114560790}
-  - {fileID: 1450572203}
-  - {fileID: 123047540}
-  - {fileID: 742701770}
   targeted: {fileID: 0}
   ingredientMenu: {fileID: 1278217776}
   positions:
@@ -1915,7 +1927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fa971e35fea524397bac39b2494f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: 2f032144a67d0c5458bf3657df15c726, type: 2}
+  ingredient: {fileID: 11400000, guid: 97f62d7f17aaad6449431c4b359db237, type: 2}
   selector: {fileID: 1946401053}
   buttonPosition: 4
 --- !u!114 &719878669
@@ -2039,6 +2051,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &742701771
@@ -2054,7 +2071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &742701772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2789,7 +2806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fa971e35fea524397bac39b2494f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: 72b91d131b1494e49b36add61848da15, type: 2}
+  ingredient: {fileID: 11400000, guid: e5fe4774552ab9a44ae25257594258e5, type: 2}
   selector: {fileID: 1946401053}
   buttonPosition: 0
 --- !u!114 &1102497329
@@ -3679,7 +3696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &1450572203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3703,6 +3720,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &1450572204
@@ -4627,7 +4649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fa971e35fea524397bac39b2494f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: 3c39a2ea195728549a0ca8291632d3a0, type: 2}
+  ingredient: {fileID: 11400000, guid: 0c29c8ad4ebdc4a438bad0769244eb5f, type: 2}
   selector: {fileID: 1946401053}
   buttonPosition: 5
 --- !u!114 &1629632593
@@ -5909,7 +5931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fa971e35fea524397bac39b2494f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: 3a584235598dad143aaa2e8538451a1d, type: 2}
+  ingredient: {fileID: 11400000, guid: 49d9b76a7113f004ba9483bea97bde4c, type: 2}
   selector: {fileID: 1946401053}
   buttonPosition: 3
 --- !u!114 &2037105491
@@ -6321,7 +6343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
 --- !u!114 &2114560790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6345,6 +6367,11 @@ MonoBehaviour:
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &2114560791

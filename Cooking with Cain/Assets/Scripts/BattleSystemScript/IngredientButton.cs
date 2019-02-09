@@ -15,7 +15,8 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     Entity player;
 
     bool selected;
-    Image image;
+    Image buttonImage;
+    Image foodImage;
     Coroutine fade = null;
 
     Color lightGray = new Color(0.8f, 0.8f, 0.8f);
@@ -29,16 +30,14 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     void Start()
     {
         ingredient = IngredientSelector.equipped[buttonPosition];
-        image = GetComponent<Image>();
+        buttonImage = GetComponent<Image>();
 
         GameObject obj = new GameObject("Icon");
         obj.transform.SetParent(transform, false);
 
         if (ingredient != null)
         {
-            Image image2 = obj.AddComponent<Image>();
-            image2.sprite = ingredient.sprite;
-            image2.SetNativeSize();
+            foodImage = obj.AddComponent<Image>();
         }
     }
 
@@ -46,6 +45,9 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (ingredient != null)
         {
+            foodImage.sprite = ingredient.sprite;
+            foodImage.SetNativeSize();
+
             float attack = player.GetEffectiveAttack();
 
             string tooltip = ingredient.foodName;
@@ -82,6 +84,24 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 case Ingredient.Attribute.stun:
                     tooltip += string.Format("\nEffect: {0}% Stun chance", Mathf.RoundToInt(stats.stun * 100));
                     break;
+                case Ingredient.Attribute.defup:
+                    tooltip += string.Format("\nEffect: {0}% Defense boost", Mathf.RoundToInt(stats.defboost * 100));
+                    break;
+                case Ingredient.Attribute.defdown:
+                    tooltip += string.Format("\nEffect: {0}% Defense debuff", Mathf.RoundToInt(stats.defdebuff * 100));
+                    break;
+                case Ingredient.Attribute.reflect:
+                    tooltip += string.Format("\nEffect: {0}% Reflect", Mathf.RoundToInt(stats.reflect * 100));
+                    break;
+                case Ingredient.Attribute.cleanse:
+                    tooltip += string.Format("\nEffect: Debuff cleanse");
+                    break;
+                case Ingredient.Attribute.selfdmg:
+                    tooltip += string.Format("\nEffect: {0}% Self damage", Mathf.RoundToInt(stats.selfdmg * 100));
+                    break;
+                case Ingredient.Attribute.miss:
+                    tooltip += string.Format("\nEffect: {0}% Miss chance", Mathf.RoundToInt(stats.miss * 100));
+                    break;
             }
 
             TooltipText tooltipText = gameObject.GetComponent<TooltipText>();
@@ -95,7 +115,7 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void Deselect()
     {
         selected = false;
-        image.color = Color.white;
+        buttonImage.color = Color.white;
     }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
@@ -125,11 +145,11 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     IEnumerator FadeColor(Color color)
     {
-        Color current = image.color;
+        Color current = buttonImage.color;
 
         for (int i = 0; i < 10; i++)
         {
-            image.color = Color.Lerp(current, color, (i + 1) / 10f);
+            buttonImage.color = Color.Lerp(current, color, (i + 1) / 10f);
             yield return null;
         }
     }

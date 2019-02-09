@@ -8,8 +8,8 @@ public class GetLoadout : MonoBehaviour
     public Ingredient[] equipped;
     public List<Ingredient> ingredients;
 
-
-    // Start is called before the first frame update
+    //KJ
+    //Currently compiles a list from player prefs, will be changed to a static variable once battle transitions are available, should still work in current state
     private void Awake()
     {
         equipped = new Ingredient[6];

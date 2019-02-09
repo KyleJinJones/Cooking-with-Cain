@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238b96afcef185442acf8746e808c13b, type: 3}
+  m_Name: Vampire Pea
+  m_EditorClassIdentifier: 
+  enemyName: Vampire Pea
+  sprite: {fileID: 21300000, guid: 34a08ab5e2d32c04aa13426b2a54903c, type: 3}
+  stats:
+    attack: 6
+    health: 100
+    maxHealth: 100
+    burn: 0.07
+    splash: 0.5
+    lifesteal: 0.5
+    atkboost: 0.2
+    atkdebuff: 0.2
+    stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
+  ingredients:
+  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 2f032144a67d0c5458bf3657df15c726, type: 2}

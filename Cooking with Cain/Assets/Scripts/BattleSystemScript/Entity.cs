@@ -20,6 +20,36 @@ public class Entity : MonoBehaviour
         {
             stats = playerStats;
         }
+        LoadPlayerStats();
+    }
+
+    //Loads each individual player stat KJ
+    private void LoadPlayerStats()
+    {
+        playerStats.maxHealth = getStat("MaxHP", playerStats.maxHealth);
+        playerStats.health = getStat("CurrentHP", playerStats.health);
+        playerStats.lifesteal = getStat("LifeSteal", playerStats.lifesteal);
+        playerStats.atkboost = getStat("AtkBoost", playerStats.atkboost);
+        playerStats.atkdebuff = getStat("LifeSteal", playerStats.atkdebuff);
+        playerStats.attack = getStat("Attack", playerStats.attack);
+        playerStats.burn = getStat("Burn", playerStats.burn);
+        playerStats.splash = getStat("Splash", playerStats.splash);
+        playerStats.stun = getStat("Stun", playerStats.stun);
+    }
+
+    //Tries to get a Playerpref value for the stat, otherwise sets it to the base value and returns the base value KJ
+    private float getStat(string stat, float baseStat)
+    {
+        if (PlayerPrefs.HasKey(stat))
+        {
+            return PlayerPrefs.GetFloat(stat);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(stat,baseStat);
+            return baseStat;
+        }
+        
     }
 
     public bool AddStatus(StatusInstance.Status status, float potency, int duration)
@@ -67,12 +97,19 @@ public class Entity : MonoBehaviour
             ResultText.lines.Add(string.Format("{0} cannot act", entityName));
         }
 
+        foreach (StatusInstance status in statuses.FindAll(instance => instance.updateOnStart()))
+        {
+            status.duration--;
+        }
+
+        statuses.RemoveAll(status => status.duration <= 0);
+
         return !stunnedLastTurn;
     }
 
     public void UpdateEnd()
     {
-        foreach (StatusInstance status in statuses)
+        foreach (StatusInstance status in statuses.FindAll(instance => !instance.updateOnStart()))
         {
             status.duration--;
         }
@@ -90,6 +127,14 @@ public class Entity : MonoBehaviour
         return attack + (atkboost == null ? 0 : attack * atkboost.potency) - (atkdebuff == null ? 0 : attack * atkdebuff.potency);
     }
 
+    public float FactorDefense(float damage)
+    {
+        StatusInstance defboost = statuses.Find(status => status.status == StatusInstance.Status.defup);
+        StatusInstance defdebuff = statuses.Find(status => status.status == StatusInstance.Status.defdown);
+
+        return damage - (defboost == null ? 0 : damage * defboost.potency) + (defdebuff == null ? 0 : damage * defdebuff.potency);
+    }
+
     public void ModifyHealth(int health)
     {
         stats.health += health;
@@ -98,7 +143,7 @@ public class Entity : MonoBehaviour
         {
             stats.health = stats.maxHealth;
         }
-        else if (stats.health < 0)
+        else if (Mathf.RoundToInt(stats.health) <= 0)
         {
             stats.health = 0;
             statuses.Clear();
@@ -143,6 +188,11 @@ public class StatusInstance
     public Status status;
     public float potency;
     public int duration;
+
+    public bool updateOnStart()
+    {
+        return status == Status.defup || status == Status.defdown || status == Status.reflect || status == Status.cleanse;
+    }
 }
 
 [System.Serializable]
@@ -158,4 +208,32 @@ public class Stats
     public float atkboost = 0.2f;
     public float atkdebuff = 0.2f;
     public float stun = 0.6f;
+    public float defboost = 0.2f;
+    public float defdebuff = 0.4f;
+    public float reflect = 0.3f;
+    public float selfdmg = 0.1f;
+    public float miss = 0.4f;
+
+    public Stats copy
+    {
+        get
+        {
+            Stats stats = new Stats();
+            stats.attack = attack;
+            stats.health = health;
+            stats.maxHealth = maxHealth;
+            stats.burn = burn;
+            stats.splash = splash;
+            stats.lifesteal = lifesteal;
+            stats.atkboost = atkboost;
+            stats.atkdebuff = atkdebuff;
+            stats.stun = stun;
+            stats.defboost = defboost;
+            stats.defdebuff = defdebuff;
+            stats.reflect = reflect;
+            stats.selfdmg = selfdmg;
+            stats.miss = miss;
+            return stats;
+        }
+    }
 }

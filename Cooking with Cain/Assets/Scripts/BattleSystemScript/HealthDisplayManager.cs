@@ -30,7 +30,7 @@ public class HealthDisplayManager : MonoBehaviour
         {
             renderHealth[3] /= 5;
 
-            playerHealthBar.healthText.text = string.Format("{0}/{1}", Mathf.RoundToInt(renderHealth[3] * player.stats.maxHealth), Mathf.RoundToInt(lastMaxHealth[3]));
+            playerHealthBar.healthText.text = string.Format("{0}/{1}", Mathf.RoundToInt(renderHealth[3] * lastMaxHealth[3]), Mathf.RoundToInt(lastMaxHealth[3]));
             
             colorText[3] -= 0.1f;
             if (colorText[3] < 0)
@@ -60,7 +60,7 @@ public class HealthDisplayManager : MonoBehaviour
             {
                 renderHealth[i] /= 5;
 
-                enemyHealthBars[i].healthText.text = string.Format("{0}/{1}", Mathf.RoundToInt(renderHealth[i] * enemies[i].stats.maxHealth), Mathf.RoundToInt(lastMaxHealth[i]));
+                enemyHealthBars[i].healthText.text = string.Format("{0}/{1}", Mathf.RoundToInt(renderHealth[i] * lastMaxHealth[i]), Mathf.RoundToInt(lastMaxHealth[i]));
 
                 colorText[i] -= 0.1f;
                 if (colorText[i] < 0)
