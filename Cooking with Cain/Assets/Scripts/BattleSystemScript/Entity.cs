@@ -18,9 +18,9 @@ public class Entity : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
+            LoadPlayerStats();
             stats = playerStats;
         }
-        LoadPlayerStats();
     }
 
     //Loads each individual player stat KJ
