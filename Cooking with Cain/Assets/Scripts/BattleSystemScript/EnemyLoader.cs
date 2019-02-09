@@ -28,6 +28,7 @@ public class EnemyLoader : MonoBehaviour
             entity.stats = enemy.stats.copy;
             image.sprite = enemy.sprite;
             enemyAction.ingredients = enemy.ingredients;
+            entity.goldValue = enemy.goldValue;
 
             manager.AddEnemyToQueue(entity);
         }

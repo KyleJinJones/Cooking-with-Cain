@@ -14,9 +14,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro CS.unity
     guid: 3280257f34c30c541a6c4a37b5c0e797
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/BossfightCS.unity
     guid: 14800d2854e76ce4fa1ecf07383f992c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/EndCS.unity
     guid: 60564249e22a8f74481d724725f8f9bd
@@ -29,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 3bc402dea406b1342bca95c307b63749
+  - enabled: 1
+    path: Assets/Scenes/Battle.unity
+    guid: ed0b30e7ab1508d4391988063f70724f
   m_configObjects: {}

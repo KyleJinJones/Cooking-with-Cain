@@ -7,10 +7,11 @@ public class PlayerMovementFixed : MonoBehaviour
     [SerializeField]
     private float speed;
     private Vector2 direction;
+    public static Vector2 spawnPosition;
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position = spawnPosition;
     }
 
     void Update()
