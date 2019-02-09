@@ -10,6 +10,8 @@ public class Entity : MonoBehaviour
     public string entityName = "";
     public Stats stats;
 
+    public int goldValue;
+
     public bool stunnedLastTurn;
 
     public List<StatusInstance> statuses = new List<StatusInstance>();
@@ -23,6 +25,25 @@ public class Entity : MonoBehaviour
         }
     }
 
+    // Saves player stats to PlayerPrefs. CT
+    public static void SavePlayerStats()
+    {
+        PlayerPrefs.SetFloat("MaxHP", playerStats.maxHealth);
+        PlayerPrefs.SetFloat("CurrentHP", playerStats.health);
+        PlayerPrefs.SetFloat("LifeSteal", playerStats.lifesteal);
+        PlayerPrefs.SetFloat("AtkBoost", playerStats.atkboost);
+        PlayerPrefs.SetFloat("AtkDebuff", playerStats.atkdebuff);
+        PlayerPrefs.SetFloat("Attack", playerStats.attack);
+        PlayerPrefs.SetFloat("Burn", playerStats.burn);
+        PlayerPrefs.SetFloat("Splash", playerStats.splash);
+        PlayerPrefs.SetFloat("Stun", playerStats.stun);
+        PlayerPrefs.SetFloat("DefBoost", playerStats.defboost);
+        PlayerPrefs.SetFloat("DefDebuff", playerStats.defdebuff);
+        PlayerPrefs.SetFloat("Reflect", playerStats.reflect);
+        PlayerPrefs.SetFloat("Selfdmg", playerStats.selfdmg);
+        PlayerPrefs.SetFloat("Miss", playerStats.miss);
+    }
+
     //Loads each individual player stat KJ
     private void LoadPlayerStats()
     {
@@ -30,11 +51,16 @@ public class Entity : MonoBehaviour
         playerStats.health = getStat("CurrentHP", playerStats.health);
         playerStats.lifesteal = getStat("LifeSteal", playerStats.lifesteal);
         playerStats.atkboost = getStat("AtkBoost", playerStats.atkboost);
-        playerStats.atkdebuff = getStat("LifeSteal", playerStats.atkdebuff);
+        playerStats.atkdebuff = getStat("AtkDebuff", playerStats.atkdebuff);
         playerStats.attack = getStat("Attack", playerStats.attack);
         playerStats.burn = getStat("Burn", playerStats.burn);
         playerStats.splash = getStat("Splash", playerStats.splash);
         playerStats.stun = getStat("Stun", playerStats.stun);
+        playerStats.defboost = getStat("DefBoost", playerStats.defboost);
+        playerStats.defdebuff = getStat("DefDebuff", playerStats.defdebuff);
+        playerStats.reflect = getStat("Reflect", playerStats.reflect);
+        playerStats.selfdmg = getStat("Selfdmg", playerStats.selfdmg);
+        playerStats.miss = getStat("Miss", playerStats.miss);
     }
 
     //Tries to get a Playerpref value for the stat, otherwise sets it to the base value and returns the base value KJ
@@ -154,6 +180,12 @@ public class Entity : MonoBehaviour
     IEnumerator Die()
     {
         ResultText.lines.Add(string.Format("{0} is defeated", entityName));
+
+        if (goldValue > 0)
+        {
+            PlayerPrefs.SetInt("gold", (PlayerPrefs.HasKey("gold") ? PlayerPrefs.GetInt("gold") : 0) + goldValue);
+            ResultText.lines.Add(string.Format("{0} gold gained", goldValue));
+        }
 
         if (gameObject.tag == "Player")
         {
