@@ -15,29 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro CS.unity
     guid: 3280257f34c30c541a6c4a37b5c0e797
   - enabled: 1
-    path: Assets/Scenes/lvl1.unity
-    guid: 15bfaf15592af654e98bcd387e8d832f
-  - enabled: 1
-    path: Assets/Scenes/lvl2.unity
-    guid: 9cc8481d60fc9df41b4a7e6807735121
-  - enabled: 1
-    path: Assets/Scenes/lvl3.unity
-    guid: e9c6827ad7addec488d80aebbf9c8706
-  - enabled: 1
-    path: Assets/Scenes/lvl4.unity
-    guid: c9e6b1eb89399fb44b881cce9d82144b
-  - enabled: 1
-    path: Assets/Scenes/lvl5.unity
-    guid: 66530d09cbe05a34292c1f6ab55cedee
-  - enabled: 1
-    path: Assets/Scenes/lvl6.unity
-    guid: b473a904754040343abf62e386d820dd
-  - enabled: 1
     path: Assets/Scenes/BossfightCS.unity
     guid: 14800d2854e76ce4fa1ecf07383f992c
-  - enabled: 1
-    path: Assets/Scenes/lvl7.unity
-    guid: 94996f85d91ab844b8b33def058b438c
   - enabled: 1
     path: Assets/Scenes/EndCS.unity
     guid: 60564249e22a8f74481d724725f8f9bd

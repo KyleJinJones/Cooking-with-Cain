@@ -7,7 +7,7 @@ using TMPro;
 public class Gold : MonoBehaviour
 {
     //Used to keep track of gold, saves whenever the player's gold amt changes to prevent exploits
-    public int gold=0;
+    public static int gold=100;
     private TextMeshProUGUI goldtext;
     void Start()
     {
