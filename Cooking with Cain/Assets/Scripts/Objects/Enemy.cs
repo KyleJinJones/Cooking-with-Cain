@@ -9,4 +9,5 @@ public class Enemy : ScriptableObject
     public Sprite sprite;
     public Stats stats;
     public Ingredient[] ingredients;
+    public int goldValue;
 }
