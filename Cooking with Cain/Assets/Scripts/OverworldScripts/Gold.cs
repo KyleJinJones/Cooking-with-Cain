@@ -23,6 +23,7 @@ public class Gold : MonoBehaviour
         goldtext.text = string.Format("Gold:{0}", gold);
     }
 
+    //Used to change the amt of gold available, automatically saves the amt of gold the player has whenever it changes
     public void UpdateGold(int amt)
     {
         gold += amt;

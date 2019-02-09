@@ -20,6 +20,36 @@ public class Entity : MonoBehaviour
         {
             stats = playerStats;
         }
+        LoadPlayerStats();
+    }
+
+    //Loads each individual player stat KJ
+    private void LoadPlayerStats()
+    {
+        playerStats.maxHealth = getStat("MaxHP", playerStats.maxHealth);
+        playerStats.health = getStat("CurrentHP", playerStats.health);
+        playerStats.lifesteal = getStat("LifeSteal", playerStats.lifesteal);
+        playerStats.atkboost = getStat("AtkBoost", playerStats.atkboost);
+        playerStats.atkdebuff = getStat("LifeSteal", playerStats.atkdebuff);
+        playerStats.attack = getStat("Attack", playerStats.attack);
+        playerStats.burn = getStat("Burn", playerStats.burn);
+        playerStats.splash = getStat("Splash", playerStats.splash);
+        playerStats.stun = getStat("Stun", playerStats.stun);
+    }
+
+    //Tries to get a Playerpref value for the stat, otherwise sets it to the base value and returns the base value KJ
+    private float getStat(string stat, float baseStat)
+    {
+        if (PlayerPrefs.HasKey(stat))
+        {
+            return PlayerPrefs.GetFloat(stat);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(stat,baseStat);
+            return baseStat;
+        }
+        
     }
 
     public bool AddStatus(StatusInstance.Status status, float potency, int duration)

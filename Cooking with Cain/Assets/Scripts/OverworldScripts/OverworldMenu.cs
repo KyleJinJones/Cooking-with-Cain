@@ -8,7 +8,7 @@ public class OverworldMenu : MonoBehaviour
     public GameObject inventory;
     public bool menuopen=false;
     public GameObject activemenu;
-
+    //Handles menu swapping, and closing
     private void Start()
     {
         imenu.SetActive(false);
