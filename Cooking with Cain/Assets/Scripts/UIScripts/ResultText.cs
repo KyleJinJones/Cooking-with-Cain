@@ -14,6 +14,7 @@ public class ResultText : MonoBehaviour
 
     void Awake()
     {
+        lines.Clear();
         text = GetComponent<TextMeshProUGUI>();
         text.text = "";
         text.color = Color.black;

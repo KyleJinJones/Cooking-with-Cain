@@ -27,6 +27,9 @@ public class EntityManager : MonoBehaviour
 
     int turnCount = 0;
 
+    // Scene to transition to if the battle is won. CT
+    public static string overworldScene;
+
     void Awake()
     {
         playerTurn = false;
@@ -199,7 +202,8 @@ public class EntityManager : MonoBehaviour
 
         if (GetEnemyRemaining() == 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            Entity.SavePlayerStats();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene);
             return true;
         }
 

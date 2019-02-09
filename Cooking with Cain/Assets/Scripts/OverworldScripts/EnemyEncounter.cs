@@ -5,29 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class EnemyEncounter : MonoBehaviour
 {
-    // The enemies that spawn in the battle scene
-    // Waiting for the enemy scritable object to be created
+    // The enemies that spawn in the battle scene. CT
     public List<Enemy> enemies = new List<Enemy>();
 
-    // In case we have battles that don't start from colliding with an enemy
-    public bool encounterOnCollision;
-    
-    void OnTriggerEnter2D(Collider2D collision)
+    public void StartEncounter(GameObject player)
     {
-        // [need change the tag to the tag used for the player]
-        if (encounterOnCollision && collision.tag == "")
-        {
-            // collision.transform.position;
-            StartEncounter();
-        }
-    }
-
-    public void StartEncounter()
-    {
-        // Sets the enemy loader enemy list to this script's enemy list
+        // Sets the enemy loader enemy list to this script's enemy list. CT
         EnemyLoader.enemies = enemies;
-
-        // Loads the battle scene
+        // Sets the player spawn position when the scene transitions back. CT
+        PlayerMovementFixed.spawnPosition = player.transform.position;
+        // Sets the scene to transition back to after the battle. CT
+        EntityManager.overworldScene = SceneManager.GetActiveScene().name;
+        // Adds the enemy to the list of despawned enemies. CT
+        EnemyDespawner despawner;
+        if ((despawner = GetComponent<EnemyDespawner>()) != null)
+            EnemyDespawner.despawned.Add(despawner.enemyID);
+        // Loads the battle scene. CT
         SceneManager.LoadScene("Battle");
     }
 }
