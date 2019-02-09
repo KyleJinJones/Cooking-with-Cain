@@ -1819,9 +1819,6 @@ MonoBehaviour:
   targetIndicator: {fileID: 704626956}
   queue:
   - {fileID: 2114560790}
-  - {fileID: 1450572203}
-  - {fileID: 123047540}
-  - {fileID: 742701770}
   targeted: {fileID: 0}
   ingredientMenu: {fileID: 1278217776}
   positions:

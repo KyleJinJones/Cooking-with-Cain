@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "Ingredient.asset", menuName = "Custom/Ingredient")]
+[CreateAssetMenu(fileName = "Ingredient.asset", menuName = "Cooking with Cain/Ingredient")]
 public class Ingredient : ScriptableObject
 {
     public enum Attribute { none, burn, splash, atkup, leech, atkdown, stun, defup, defdown, selfdmg, miss, cleanse, reflect };
