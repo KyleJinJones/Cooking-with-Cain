@@ -196,7 +196,11 @@ public class EntityManager : MonoBehaviour
     {
         if (player == null)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            Entity.playerStats.health = Entity.playerStats.maxHealth;
+            Entity.SavePlayerStats();
+            PlayerMovementFixed.spawnPosition = PlayerMovementFixed.checkpointPosition;
+            EnemyDespawner.despawned.Clear();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene);
             return true;
         }
 

@@ -96,9 +96,11 @@ public class peaMovement : MonoBehaviour
     }
     
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Player") {
-            Debug.Log("Make something happen here. - peaMovement.cs");
+        if (collision.gameObject.tag == "Player")
+        {
+            EnemyEncounter encounter;
+            if ((encounter = GetComponent<EnemyEncounter>()) != null)
+                encounter.StartEncounter(collision.gameObject);
         }
     }
-    
 }

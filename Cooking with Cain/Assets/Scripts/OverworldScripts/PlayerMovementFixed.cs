@@ -8,6 +8,7 @@ public class PlayerMovementFixed : MonoBehaviour
     private float speed;
     private Vector2 direction;
     public static Vector2 spawnPosition;
+    public static Vector2 checkpointPosition;
     // Start is called before the first frame update
     void Start()
     {
