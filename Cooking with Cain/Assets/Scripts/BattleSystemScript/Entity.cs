@@ -189,6 +189,10 @@ public class Entity : MonoBehaviour
 
         if (gameObject.tag == "Player")
         {
+            int lost = Mathf.RoundToInt(PlayerPrefs.GetInt("gold") * 0.2f);
+            PlayerPrefs.SetInt("gold", (PlayerPrefs.HasKey("gold") ? PlayerPrefs.GetInt("gold") : 0) - lost);
+            ResultText.lines.Add(string.Format("{0} gold gained", lost));
+
             for (int i = 60; i > 0; i--)
             {
                 GetComponent<Image>().color = new Color(1, 1, 1, i / 60f);
