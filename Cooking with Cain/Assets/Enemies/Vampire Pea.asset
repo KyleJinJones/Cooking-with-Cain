@@ -32,3 +32,4 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
   - {fileID: 11400000, guid: 2f032144a67d0c5458bf3657df15c726, type: 2}
+  goldValue: 25
