@@ -14,7 +14,7 @@ public class UpgradeHover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnMouseEnter () {
-        uimanager.GetComponent<UpgradeUI>().Displayui(line);
+        //uimanager.GetComponent<UpgradeUI>().Displayui(line);
 	}
     void OnMouseDown()
     {

@@ -15076,7 +15076,7 @@ GameObject:
   - component: {fileID: 36845251}
   - component: {fileID: 36845248}
   m_Layer: 0
-  m_Name: hppotionbig
+  m_Name: PotionHPL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15936,7 +15936,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc03ffd1c3f55284d9bdac8391c0d49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
 --- !u!114 &327110131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17446,6 +17445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  dontMoveToSpawn: 0
 --- !u!212 &588534760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17707,7 +17707,7 @@ GameObject:
   - component: {fileID: 773520368}
   - component: {fileID: 773520369}
   m_Layer: 0
-  m_Name: hppotionsmall
+  m_Name: PotionHPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19359,6 +19359,7 @@ MonoBehaviour:
     reflect: 0.3
     selfdmg: 0.1
     miss: 0.4
+  goldValue: 0
   stunnedLastTurn: 0
   statuses: []
 --- !u!114 &1169951114
@@ -22240,7 +22241,7 @@ GameObject:
   - component: {fileID: 1962305783}
   - component: {fileID: 1962305780}
   m_Layer: 0
-  m_Name: hppotionmed
+  m_Name: PotionHPM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

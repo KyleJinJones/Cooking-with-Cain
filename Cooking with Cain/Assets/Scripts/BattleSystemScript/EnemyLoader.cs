@@ -11,6 +11,9 @@ public class EnemyLoader : MonoBehaviour
 
     public GameObject enemyBaseObject;
 
+    // Spawns in enemies when loading the battle scene directly for testing purposes. CT
+    public List<Enemy> testEnemies = new List<Enemy>();
+
     void Awake()
     {
         EntityManager manager = GetComponent<EntityManager>();
@@ -29,6 +32,34 @@ public class EnemyLoader : MonoBehaviour
             image.sprite = enemy.sprite;
             enemyAction.ingredients = enemy.ingredients;
             entity.goldValue = enemy.goldValue;
+
+            TooltipTextWithIngredients tooltip = clone.AddComponent<TooltipTextWithIngredients>();
+            tooltip.text = "Ingredients:";
+            List<Ingredient> ingredients = new List<Ingredient>();
+            ingredients.AddRange(enemy.ingredients);
+            tooltip.sprites = ingredients.ConvertAll(ingredient => ingredient.sprite);
+
+            manager.AddEnemyToQueue(entity);
+        }
+
+        foreach (Enemy enemy in testEnemies)
+        {
+            GameObject clone = Instantiate(enemyBaseObject, enemyBaseObject.transform.parent);
+            Entity entity = clone.GetComponent<Entity>();
+            Image image = clone.GetComponent<Image>();
+            EnemyAction enemyAction = clone.GetComponent<EnemyAction>();
+
+            entity.entityName = enemy.enemyName;
+            entity.stats = enemy.stats.copy;
+            image.sprite = enemy.sprite;
+            enemyAction.ingredients = enemy.ingredients;
+            entity.goldValue = enemy.goldValue;
+
+            TooltipTextWithIngredients tooltip = clone.AddComponent<TooltipTextWithIngredients>();
+            tooltip.text = "Ingredients:";
+            List<Ingredient> ingredients = new List<Ingredient>();
+            ingredients.AddRange(enemy.ingredients);
+            tooltip.sprites = ingredients.ConvertAll(ingredient => ingredient.sprite);
 
             manager.AddEnemyToQueue(entity);
         }
