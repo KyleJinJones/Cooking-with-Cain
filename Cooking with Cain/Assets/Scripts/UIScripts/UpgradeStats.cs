@@ -1,18 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeStats : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public GameObject uimanager;
+    public UpgradeInfo upgrade;
+    private Image i;
+    
+    
+
     void Start()
     {
-        
+        i = this.GetComponent<Image>();
+        i.sprite = upgrade.upgradeimage;
     }
 
     // Update is called once per frame
-    void Update()
+    void OnMouseEnter()
     {
-        
+        uimanager.GetComponent<UpgradeUI>().Displayui(upgrade.infotext,upgrade.goldcost);
+    }
+
+    void OnMouseDown()
+    {
+        if (upgrade.attributetype == "f"&&Gold.gold>=upgrade.goldcost)
+        {
+            uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
+            uimanager.GetComponent<AddIng>().adding((int)upgrade.upgradeamt);
+            
+        }
+        else if(Gold.gold >= upgrade.goldcost&& upgrade.attributetype == "i")
+        {
+            uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
+            PlayerPrefs.SetInt(upgrade.attributename, PlayerPrefs.GetInt(upgrade.attributename) + (int)upgrade.upgradeamt);
+        }
+        else if (Gold.gold >= upgrade.goldcost)
+        {
+            uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
+            PlayerPrefs.SetFloat(upgrade.attributename, (PlayerPrefs.GetFloat(upgrade.attributename) + upgrade.upgradeamt));
+        }
+
+    }
+
+    public void SwitchUpgrade(UpgradeInfo u)
+    {
+        upgrade = u;
+        i.sprite = u.upgradeimage;
     }
 }

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class AddIng : MonoBehaviour
 {
-
-    public IngredientManager im;
-    public int ingindex;
-    public void adding()
+    
+    public void adding(int ingindex)
     {
         for(int i=1; i < 13; i++)
         {
