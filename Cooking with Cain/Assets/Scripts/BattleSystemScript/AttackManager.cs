@@ -56,6 +56,7 @@ public class AttackManager : MonoBehaviour
 
     IEnumerator PerformAttack(Entity attacker, Entity target, Entity[] targetTeam, int damageMin, int damageMax, List<Ingredient.Attribute> attributes)
     {
+        attacker.StatusBlink(StatusInstance.Status.atkup, StatusInstance.Status.atkdown);
         ResultText.lines.Add(string.Format("{0} attacks", attacker.entityName));
 
         StartCoroutine(AttackAnimation(attacker.gameObject));
@@ -178,6 +179,7 @@ public class AttackManager : MonoBehaviour
 
     void DealDamage(Entity attacker, Entity target, float damage, List<Ingredient.Attribute> attributes)
     {
+        target.StatusBlink(StatusInstance.Status.defup, StatusInstance.Status.defdown, StatusInstance.Status.reflect);
         int effectiveDamage = Mathf.RoundToInt(target.FactorDefense(damage));
         target.ModifyHealth(-effectiveDamage);
         ResultText.lines.Add(string.Format("{0} takes {1} damage", target.entityName, effectiveDamage));
@@ -191,7 +193,18 @@ public class AttackManager : MonoBehaviour
             ResultText.lines.Add(string.Format("{0} damage is reflected back to {1}", spike, attacker.entityName));
         }
 
-        if (!target.statuses.Exists(status => status.status == StatusInstance.Status.cleanse))
+        if (target.statuses.Exists(status => status.status == StatusInstance.Status.cleanse))
+        {
+            if (attributes.FindAll(attribute =>
+            attribute == Ingredient.Attribute.burn ||
+            attribute == Ingredient.Attribute.atkdown ||
+            attribute == Ingredient.Attribute.stun ||
+            attribute == Ingredient.Attribute.defdown).Count > 0)
+            {
+                target.StatusBlink(StatusInstance.Status.cleanse);
+            }
+        }
+        else
         {
             foreach (Ingredient.Attribute attribute in attributes)
             {

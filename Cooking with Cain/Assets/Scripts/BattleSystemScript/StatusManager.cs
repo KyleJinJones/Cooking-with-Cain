@@ -12,6 +12,7 @@ public class StatusManager : MonoBehaviour
     public List<StatusIcon> statusIcons = new List<StatusIcon>();
 
     Vector3 playerPosition;
+    int blink = 0;
 
     void Start()
     {
@@ -31,6 +32,8 @@ public class StatusManager : MonoBehaviour
                 Image image = icons[3][i].GetComponent<Image>();
                 image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
                 image.SetNativeSize();
+                image.color = new Color(1, 1, 1, (1 - status.fade / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
 
                 TooltipText tooltip = icons[3][i].GetComponent<TooltipText>();
                 tooltip.text = GetStatusTooltip(status);
@@ -41,6 +44,8 @@ public class StatusManager : MonoBehaviour
                 Image image = obj.AddComponent<Image>();
                 image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
                 image.SetNativeSize();
+                image.color = new Color(1, 1, 1, (1 - status.fade / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
 
                 TooltipText tooltip = obj.AddComponent<TooltipText>();
                 tooltip.text = GetStatusTooltip(status);
@@ -74,6 +79,8 @@ public class StatusManager : MonoBehaviour
                         Image image = icons[j][i].GetComponent<Image>();
                         image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
                         image.SetNativeSize();
+                        image.color = new Color(1, 1, 1, (1 - status.fade / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                        image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
 
                         TooltipText tooltip = icons[j][i].GetComponent<TooltipText>();
                         tooltip.text = GetStatusTooltip(status);
@@ -84,6 +91,8 @@ public class StatusManager : MonoBehaviour
                         Image image = obj.AddComponent<Image>();
                         image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
                         image.SetNativeSize();
+                        image.color = new Color(1, 1, 1, (1 - status.fade / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                        image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
 
                         TooltipText tooltip = obj.AddComponent<TooltipText>();
                         tooltip.text = GetStatusTooltip(status);
@@ -112,6 +121,8 @@ public class StatusManager : MonoBehaviour
                 icons[j].Clear();
             }
         }
+
+        blink++;
     }
 
     string GetStatusTooltip(StatusInstance status)

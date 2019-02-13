@@ -25,6 +25,22 @@ public class Entity : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        foreach (StatusInstance status in statuses)
+        {
+            if (status.blink > 0)
+            {
+                status.blink--;
+            }
+
+            if (status.fade > 0)
+            {
+                status.fade--;
+            }
+        }
+    }
+
     // Saves player stats to PlayerPrefs. CT
     public static void SavePlayerStats()
     {
@@ -106,6 +122,8 @@ public class Entity : MonoBehaviour
 
     public bool UpdateStart()
     {
+        StatusBlink(StatusInstance.Status.burn, StatusInstance.Status.stun);
+
         StatusInstance burn = statuses.Find(status => status.status == StatusInstance.Status.burn);
 
         if (burn != null)
@@ -214,6 +232,17 @@ public class Entity : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    public void StatusBlink(params StatusInstance.Status[] types)
+    {
+        List<StatusInstance.Status> statusTypes = new List<StatusInstance.Status>();
+        statusTypes.AddRange(types);
+
+        foreach (StatusInstance status in statuses.FindAll(instance => statusTypes.Contains(instance.status)))
+        {
+            status.blink = 15;
+        }
+    }
 }
 
 [System.Serializable]
@@ -224,6 +253,9 @@ public class StatusInstance
     public Status status;
     public float potency;
     public int duration;
+    
+    public int blink = 0;
+    public int fade = 15;
 
     public bool updateOnStart()
     {
