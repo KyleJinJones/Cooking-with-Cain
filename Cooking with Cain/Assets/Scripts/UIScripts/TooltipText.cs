@@ -20,3 +20,8 @@ public class TooltipText : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         hovered = null;
     }
 }
+
+public class TooltipTextWithIngredients : TooltipText
+{
+    public List<Sprite> sprites = new List<Sprite>();
+}
