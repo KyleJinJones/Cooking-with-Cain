@@ -9,10 +9,14 @@ public class PlayerMovementFixed : MonoBehaviour
     private Vector2 direction;
     public static Vector2 spawnPosition;
     public static Vector2 checkpointPosition;
+
+    // For testing purposes. CT
+    public bool dontMoveToSpawn = false;
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = spawnPosition;
+        if (!dontMoveToSpawn)
+            transform.position = spawnPosition;
     }
 
     void Update()
