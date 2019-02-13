@@ -161,11 +161,14 @@ public class AttackManager : MonoBehaviour
                         }
                     }
 
-                    attacker.statuses.RemoveAll(status =>
+                    foreach (StatusInstance status in attacker.statuses.FindAll(status =>
                     status.status == StatusInstance.Status.burn ||
                     status.status == StatusInstance.Status.atkdown ||
                     status.status == StatusInstance.Status.stun ||
-                    status.status == StatusInstance.Status.defdown);
+                    status.status == StatusInstance.Status.defdown))
+                    {
+                        status.duration = 0;
+                    }
 
                     break;
                 case Ingredient.Attribute.selfdmg:

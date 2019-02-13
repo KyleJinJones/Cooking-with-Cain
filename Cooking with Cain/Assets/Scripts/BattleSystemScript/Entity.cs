@@ -43,11 +43,11 @@ public class Entity : MonoBehaviour
             }
             else
             {
-                status.fade++;
+                status.fade--;
             }
         }
 
-        statuses.RemoveAll(status => status.duration <= 0 && status.fade > 15);
+        statuses.RemoveAll(status => status.duration <= 0 && status.fade < -15);
     }
 
     // Saves player stats to PlayerPrefs. CT
