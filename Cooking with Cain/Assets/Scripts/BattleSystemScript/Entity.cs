@@ -34,11 +34,20 @@ public class Entity : MonoBehaviour
                 status.blink--;
             }
 
-            if (status.fade > 0)
+            if (status.duration > 0)
             {
-                status.fade--;
+                if (status.fade > 0)
+                {
+                    status.fade--;
+                }
+            }
+            else
+            {
+                status.fade++;
             }
         }
+
+        statuses.RemoveAll(status => status.duration <= 0 && status.fade > 15);
     }
 
     // Saves player stats to PlayerPrefs. CT
@@ -91,7 +100,6 @@ public class Entity : MonoBehaviour
             PlayerPrefs.SetFloat(stat,baseStat);
             return baseStat;
         }
-        
     }
 
     public bool AddStatus(StatusInstance.Status status, float potency, int duration)
@@ -146,8 +154,6 @@ public class Entity : MonoBehaviour
             status.duration--;
         }
 
-        statuses.RemoveAll(status => status.duration <= 0);
-
         return !stunnedLastTurn;
     }
 
@@ -157,8 +163,6 @@ public class Entity : MonoBehaviour
         {
             status.duration--;
         }
-
-        statuses.RemoveAll(status => status.duration <= 0);
     }
 
     public float GetEffectiveAttack()
@@ -193,6 +197,25 @@ public class Entity : MonoBehaviour
             statuses.Clear();
             StartCoroutine(Die());
         }
+        else if (health < 0)
+        {
+            StartCoroutine(Damage());
+        }
+    }
+
+    IEnumerator Damage()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 1 - i / 5f);
+            yield return null;
+        }
+
+        for (int i = 1; i <= 5; i++)
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, i / 5f);
+            yield return null;
+        }
     }
 
     IEnumerator Die()
@@ -209,7 +232,7 @@ public class Entity : MonoBehaviour
         {
             int lost = Mathf.RoundToInt(PlayerPrefs.GetInt("gold") * 0.2f);
             PlayerPrefs.SetInt("gold", (PlayerPrefs.HasKey("gold") ? PlayerPrefs.GetInt("gold") : 0) - lost);
-            ResultText.lines.Add(string.Format("{0} gold gained", lost));
+            ResultText.lines.Add(string.Format("{0} gold lost", lost));
 
             for (int i = 60; i > 0; i--)
             {
