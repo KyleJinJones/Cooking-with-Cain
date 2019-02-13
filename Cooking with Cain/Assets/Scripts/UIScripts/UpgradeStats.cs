@@ -23,16 +23,24 @@ public class UpgradeStats : MonoBehaviour
     {
         uimanager.GetComponent<UpgradeUI>().Displayui(upgrade.infotext,upgrade.goldcost);
     }
+
     void OnMouseDown()
     {
         if (upgrade.attributetype == "f"&&Gold.gold>=upgrade.goldcost)
         {
             uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
-            GetComponent<EnableIngredient>().Enableing();
+            uimanager.GetComponent<AddIng>().adding((int)upgrade.upgradeamt);
+            
         }
-        else
+        else if(Gold.gold >= upgrade.goldcost&& upgrade.attributetype == "i")
         {
-            PlayerPrefs.SetFloat(upgrade.attributename, PlayerPrefs.GetFloat(upgrade.attributename) + upgrade.upgradeamt);
+            uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
+            PlayerPrefs.SetInt(upgrade.attributename, PlayerPrefs.GetInt(upgrade.attributename) + (int)upgrade.upgradeamt);
+        }
+        else if (Gold.gold >= upgrade.goldcost)
+        {
+            uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
+            PlayerPrefs.SetFloat(upgrade.attributename, (PlayerPrefs.GetFloat(upgrade.attributename) + upgrade.upgradeamt));
         }
 
     }
