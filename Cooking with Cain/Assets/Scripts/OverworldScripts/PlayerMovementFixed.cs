@@ -12,11 +12,15 @@ public class PlayerMovementFixed : MonoBehaviour
 
     // For testing purposes. CT
     public bool dontMoveToSpawn = false;
+    private static bool spawned = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (!dontMoveToSpawn)
+        if (!dontMoveToSpawn && !spawned)
             transform.position = spawnPosition;
+
+        spawned = true;
     }
 
     void Update()
