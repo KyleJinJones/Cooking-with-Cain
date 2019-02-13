@@ -17,4 +17,4 @@ MonoBehaviour:
   infotext: A leftover lemon with a fancy for flesh. Known for its stunning effects.
   goldcost: 100
   upgradeamt: 4
-  upgradeimage: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d, type: 3}
+  upgradeimage: {fileID: 21300000, guid: 770b2d02ee3d79d4b8918370d7ed7c95, type: 3}

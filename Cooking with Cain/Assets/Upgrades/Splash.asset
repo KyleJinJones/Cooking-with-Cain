@@ -17,4 +17,4 @@ MonoBehaviour:
   infotext: For some reason, eggs, tend to blow up. This will make them blow up better.
   goldcost: 100
   upgradeamt: 0.1
-  upgradeimage: {fileID: 21300000, guid: d5e323d3c4da1e447b00ba4639242d5b, type: 3}
+  upgradeimage: {fileID: 21300000, guid: 4c7b6a60b71b08945b771eb453a0b7f4, type: 3}
