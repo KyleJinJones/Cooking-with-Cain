@@ -36,4 +36,10 @@ public class UpgradeStats : MonoBehaviour
         }
 
     }
+
+    public void SwitchUpgrade(UpgradeInfo u)
+    {
+        upgrade = u;
+        i.sprite = u.upgradeimage;
+    }
 }
