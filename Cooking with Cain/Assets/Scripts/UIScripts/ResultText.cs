@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
-public class ResultText : MonoBehaviour
+public class ResultText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     TextMeshProUGUI text;
     public static List<string> lines = new List<string>();
 
     public Slider slider;
+
+    bool mouseOver = false;
 
     void Awake()
     {
@@ -29,7 +32,8 @@ public class ResultText : MonoBehaviour
         if (lines.Count > 10)
         {
             slider.gameObject.SetActive(true);
-            slider.value += Input.GetAxisRaw("Mouse ScrollWheel") * 10;
+            if (mouseOver)
+                slider.value += Input.GetAxisRaw("Mouse ScrollWheel") * 10;
             slider.maxValue = lines.Count - 10;
 
             for (int i = lines.Count - Mathf.RoundToInt(slider.value) - 10; i < lines.Count - Mathf.RoundToInt(slider.value); i++)
@@ -46,5 +50,15 @@ public class ResultText : MonoBehaviour
         }
 
         text.text = str;
+    }
+
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
+    {
+        mouseOver = true;
+    }
+
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    {
+        mouseOver = false;
     }
 }
