@@ -25,6 +25,31 @@ public class Entity : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        foreach (StatusInstance status in statuses)
+        {
+            if (status.blink > 0)
+            {
+                status.blink--;
+            }
+
+            if (status.duration > 0)
+            {
+                if (status.fade > 0)
+                {
+                    status.fade--;
+                }
+            }
+            else
+            {
+                status.fade--;
+            }
+        }
+
+        statuses.RemoveAll(status => status.duration <= 0 && status.fade < -15);
+    }
+
     // Saves player stats to PlayerPrefs. CT
     public static void SavePlayerStats()
     {
@@ -75,7 +100,6 @@ public class Entity : MonoBehaviour
             PlayerPrefs.SetFloat(stat,baseStat);
             return baseStat;
         }
-        
     }
 
     public bool AddStatus(StatusInstance.Status status, float potency, int duration)
@@ -106,6 +130,8 @@ public class Entity : MonoBehaviour
 
     public bool UpdateStart()
     {
+        StatusBlink(StatusInstance.Status.burn, StatusInstance.Status.stun);
+
         StatusInstance burn = statuses.Find(status => status.status == StatusInstance.Status.burn);
 
         if (burn != null)
@@ -128,8 +154,6 @@ public class Entity : MonoBehaviour
             status.duration--;
         }
 
-        statuses.RemoveAll(status => status.duration <= 0);
-
         return !stunnedLastTurn;
     }
 
@@ -139,8 +163,6 @@ public class Entity : MonoBehaviour
         {
             status.duration--;
         }
-
-        statuses.RemoveAll(status => status.duration <= 0);
     }
 
     public float GetEffectiveAttack()
@@ -175,6 +197,25 @@ public class Entity : MonoBehaviour
             statuses.Clear();
             StartCoroutine(Die());
         }
+        else if (health < 0)
+        {
+            StartCoroutine(Damage());
+        }
+    }
+
+    IEnumerator Damage()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 1 - i / 5f);
+            yield return null;
+        }
+
+        for (int i = 1; i <= 5; i++)
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, i / 5f);
+            yield return null;
+        }
     }
 
     IEnumerator Die()
@@ -191,7 +232,7 @@ public class Entity : MonoBehaviour
         {
             int lost = Mathf.RoundToInt(PlayerPrefs.GetInt("gold") * 0.2f);
             PlayerPrefs.SetInt("gold", (PlayerPrefs.HasKey("gold") ? PlayerPrefs.GetInt("gold") : 0) - lost);
-            ResultText.lines.Add(string.Format("{0} gold gained", lost));
+            ResultText.lines.Add(string.Format("{0} gold lost", lost));
 
             for (int i = 60; i > 0; i--)
             {
@@ -214,6 +255,17 @@ public class Entity : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    public void StatusBlink(params StatusInstance.Status[] types)
+    {
+        List<StatusInstance.Status> statusTypes = new List<StatusInstance.Status>();
+        statusTypes.AddRange(types);
+
+        foreach (StatusInstance status in statuses.FindAll(instance => statusTypes.Contains(instance.status)))
+        {
+            status.blink = 15;
+        }
+    }
 }
 
 [System.Serializable]
@@ -224,6 +276,9 @@ public class StatusInstance
     public Status status;
     public float potency;
     public int duration;
+    
+    public int blink = 0;
+    public int fade = 15;
 
     public bool updateOnStart()
     {
