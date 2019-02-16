@@ -17,7 +17,7 @@ public class PlayerMovementFixed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!dontMoveToSpawn && !spawned)
+        if (!dontMoveToSpawn || spawned)
             transform.position = spawnPosition;
 
         spawned = true;
