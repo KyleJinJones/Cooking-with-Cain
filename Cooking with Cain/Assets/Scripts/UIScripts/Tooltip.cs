@@ -60,7 +60,7 @@ public class Tooltip : MonoBehaviour
                     }
                     else
                     {
-                        GameObject obj = new GameObject("Ingredient");
+                        GameObject obj = new GameObject("Ingredient Icon");
                         Image image = obj.AddComponent<Image>();
                         image.sprite = hovered2.sprites[i];
                         image.rectTransform.sizeDelta = new Vector2(60, 60);

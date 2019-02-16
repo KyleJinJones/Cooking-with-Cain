@@ -12,6 +12,7 @@ public class StatusManager : MonoBehaviour
     public List<StatusIcon> statusIcons = new List<StatusIcon>();
 
     Vector3 playerPosition;
+    int blink = 0;
 
     void Start()
     {
@@ -20,50 +21,67 @@ public class StatusManager : MonoBehaviour
 
     void Update()
     {
-        List<StatusInstance> statuses = manager.GetPlayer().statuses;
-
-        for (int i = 0; i < statuses.Count; i++)
         {
-            StatusInstance status = statuses[i];
+            List<StatusInstance> statuses = manager.GetPlayer().statuses;
 
-            if (icons[3].Count > i)
+            int fall = 0;
+
+            for (int i = 0; i < statuses.Count; i++)
             {
-                Image image = icons[3][i].GetComponent<Image>();
-                image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
-                image.SetNativeSize();
+                StatusInstance status = statuses[i];
 
-                TooltipText tooltip = icons[3][i].GetComponent<TooltipText>();
-                tooltip.text = GetStatusTooltip(status);
+                if (icons[3].Count > i)
+                {
+                    Image image = icons[3][i].GetComponent<Image>();
+                    image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
+                    image.SetNativeSize();
+                    image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                    image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
+
+                    image.transform.localPosition = playerPosition + new Vector3(-200, -120 + i * 60 + fall * 4);
+
+                    TooltipText tooltip = icons[3][i].GetComponent<TooltipText>();
+                    tooltip.text = GetStatusTooltip(status);
+                }
+                else
+                {
+                    GameObject obj = new GameObject("Status Icon");
+                    Image image = obj.AddComponent<Image>();
+                    image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
+                    image.SetNativeSize();
+                    image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                    image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
+
+                    TooltipText tooltip = obj.AddComponent<TooltipText>();
+                    tooltip.text = GetStatusTooltip(status);
+
+                    obj.transform.SetParent(transform);
+                    obj.transform.localPosition = playerPosition + new Vector3(-200, -120 + i * 80 + fall * 4);
+
+                    icons[3].Add(obj);
+                }
+
+                if (status.duration <= 0)
+                {
+                    fall += status.fade;
+                }
             }
-            else
+
+            for (int i = statuses.Count; i < icons[3].Count; i++)
             {
-                GameObject obj = new GameObject("Status Icon");
-                Image image = obj.AddComponent<Image>();
-                image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
-                image.SetNativeSize();
-
-                TooltipText tooltip = obj.AddComponent<TooltipText>();
-                tooltip.text = GetStatusTooltip(status);
-
-                obj.transform.SetParent(transform);
-                obj.transform.localPosition = playerPosition + new Vector3(-200, -120 + i * 80);
-
-                icons[3].Add(obj);
+                Destroy(icons[3][i]);
             }
-        }
 
-        for (int i = statuses.Count; i < icons[3].Count; i++)
-        {
-            Destroy(icons[3][i]);
+            icons[3].RemoveAll(icon => icon == null);
         }
-
-        icons[3].RemoveAll(icon => icon == null);
 
         for (int j = 0; j < 3; j++)
         {
             if (manager.GetEnemies()[j] != null && manager.GetEnemies()[j].stats.health > 0)
             {
-                statuses = manager.GetEnemies()[j].statuses;
+                List<StatusInstance> statuses = manager.GetEnemies()[j].statuses;
+
+                int fall = 0;
 
                 for (int i = 0; i < statuses.Count; i++)
                 {
@@ -74,6 +92,10 @@ public class StatusManager : MonoBehaviour
                         Image image = icons[j][i].GetComponent<Image>();
                         image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
                         image.SetNativeSize();
+                        image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                        image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
+
+                        image.transform.localPosition = manager.positions[j] + new Vector3(120, -120 + i * 60 + fall * 4);
 
                         TooltipText tooltip = icons[j][i].GetComponent<TooltipText>();
                         tooltip.text = GetStatusTooltip(status);
@@ -84,14 +106,21 @@ public class StatusManager : MonoBehaviour
                         Image image = obj.AddComponent<Image>();
                         image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
                         image.SetNativeSize();
+                        image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
+                        image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
 
                         TooltipText tooltip = obj.AddComponent<TooltipText>();
                         tooltip.text = GetStatusTooltip(status);
                         
                         obj.transform.SetParent(transform);
-                        obj.transform.localPosition = manager.positions[j] + new Vector3(120, -120 + i * 80);
+                        obj.transform.localPosition = manager.positions[j] + new Vector3(120, -120 + i * 60 + fall * 4);
 
                         icons[j].Add(obj);
+                    }
+
+                    if (status.duration <= 0)
+                    {
+                        fall += status.fade;
                     }
                 }
 
@@ -112,6 +141,8 @@ public class StatusManager : MonoBehaviour
                 icons[j].Clear();
             }
         }
+
+        blink++;
     }
 
     string GetStatusTooltip(StatusInstance status)
