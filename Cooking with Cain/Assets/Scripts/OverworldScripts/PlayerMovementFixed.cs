@@ -6,7 +6,8 @@ public class PlayerMovementFixed : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-    private Vector2 direction;
+    private static Vector2 direction;
+
     public static Vector2 spawnPosition;
     public static Vector2 checkpointPosition;
 
@@ -23,6 +24,8 @@ public class PlayerMovementFixed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
+
         if (!dontMoveToSpawn || spawned)
             transform.position = spawnPosition;
 
