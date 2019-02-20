@@ -18,7 +18,7 @@ public class GetLoadout : MonoBehaviour
             equipped[i-1]=ingredients[PlayerPrefs.GetInt("Loadout" + i)];
         }
         IngredientSelector.equipped = equipped;
-        Debug.Log(IngredientSelector.equipped[4].foodName);
+
     }
 
     
