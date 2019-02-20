@@ -10,9 +10,15 @@ public class PlayerMovementFixed : MonoBehaviour
     public static Vector2 spawnPosition;
     public static Vector2 checkpointPosition;
 
+    public Sprite[] movingFrames;
+    public Sprite[] idleFrames;
+
     // For testing purposes. CT
     public bool dontMoveToSpawn = false;
     private static bool spawned = false;
+
+    private int frames = 0;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +27,25 @@ public class PlayerMovementFixed : MonoBehaviour
             transform.position = spawnPosition;
 
         spawned = true;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         GetInput();
-        transform.Translate(direction * speed * Time.deltaTime);
+
+        if (direction.sqrMagnitude > 0)
+        {
+            spriteRenderer.sprite = movingFrames[Mathf.FloorToInt(frames / 5f) % movingFrames.Length];
+            transform.position += (Vector3) direction * speed * Time.deltaTime;
+            transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
+        }
+        else
+        {
+            spriteRenderer.sprite = idleFrames[Mathf.FloorToInt(frames / 5f) % idleFrames.Length];
+        }
+
+        frames++;
     }
 
     private void GetInput()
@@ -49,5 +68,7 @@ public class PlayerMovementFixed : MonoBehaviour
         {
             direction += Vector2.right;
         }
+
+        direction.Normalize();
     }
 }
