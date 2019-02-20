@@ -6,6 +6,7 @@ public class BossTest : Entity
 {
     public EnemyLoader loader;
     public Enemy pea;
+    public Sprite defUpIcon;
 
     StatusInstance defense = null;
     int cooldown = 0;
@@ -34,6 +35,7 @@ public class BossTest : Entity
             else
             {
                 defense = AddStatus(StatusInstance.Status.defup, 0.5f, 100);
+                defense.customSprite = defUpIcon;
                 defense.customMessage = "Damage taken reduced by half until all peas are defeated";
 
                 manager.AddEnemyToQueue(loader.GenerateEnemy(pea));

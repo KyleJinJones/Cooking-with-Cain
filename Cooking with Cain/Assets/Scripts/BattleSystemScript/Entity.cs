@@ -291,6 +291,7 @@ public class StatusInstance
     public int fade = 15;
 
     public string customMessage = null;
+    public Sprite customSprite = null;
 
     public bool updateOnStart()
     {

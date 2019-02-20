@@ -33,7 +33,7 @@ public class StatusManager : MonoBehaviour
                 if (icons[3].Count > i)
                 {
                     Image image = icons[3][i].GetComponent<Image>();
-                    image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
+                    image.sprite = status.customSprite == null ? statusIcons.Find(matcher => matcher.status == status.status).sprite : status.customSprite;
                     image.SetNativeSize();
                     image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
                     image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
@@ -47,7 +47,7 @@ public class StatusManager : MonoBehaviour
                 {
                     GameObject obj = new GameObject("Status Icon");
                     Image image = obj.AddComponent<Image>();
-                    image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
+                    image.sprite = status.customSprite == null ? statusIcons.Find(matcher => matcher.status == status.status).sprite : status.customSprite;
                     image.SetNativeSize();
                     image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
                     image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
@@ -90,7 +90,7 @@ public class StatusManager : MonoBehaviour
                     if (icons[j].Count > i)
                     {
                         Image image = icons[j][i].GetComponent<Image>();
-                        image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
+                        image.sprite = status.customSprite == null ? statusIcons.Find(matcher => matcher.status == status.status).sprite : status.customSprite;
                         image.SetNativeSize();
                         image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
                         image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
@@ -104,7 +104,7 @@ public class StatusManager : MonoBehaviour
                     {
                         GameObject obj = new GameObject("Status Icon");
                         Image image = obj.AddComponent<Image>();
-                        image.sprite = statusIcons.Find(matcher => matcher.status == status.status).sprite;
+                        image.sprite = status.customSprite == null ? statusIcons.Find(matcher => matcher.status == status.status).sprite : status.customSprite;
                         image.SetNativeSize();
                         image.color = new Color(1, 1, 1, (1 - Mathf.Abs(status.fade) / 15f) * (1 - Mathf.FloorToInt(status.blink / 3) % 2));
                         image.rectTransform.localScale = Vector2.one * (1 + status.fade / 15f);
