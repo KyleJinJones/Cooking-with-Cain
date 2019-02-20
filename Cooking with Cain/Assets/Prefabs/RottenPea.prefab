@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4489572396547870112}
   - component: {fileID: 4489572396547870113}
   - component: {fileID: 4489572396547870126}
-  - component: {fileID: 4489572396547870127}
   - component: {fileID: 4489572396547870124}
   - component: {fileID: 7999170386883114941}
   - component: {fileID: 8579018911965191973}
+  - component: {fileID: 8414809418828247142}
   m_Layer: 0
-  m_Name: FirePea 1
+  m_Name: RottenPea
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,32 +100,6 @@ MonoBehaviour:
   detectRadius: 3
   type: 1
   patrolLength: 1
---- !u!61 &4489572396547870127
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4489572396547870125}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0.026542664, y: -0.49575365}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.82, y: 3.84}
-    newSize: {x: 3.85, y: 3.85}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.6289673, y: 2.8584926}
-  m_EdgeRadius: 0
 --- !u!50 &4489572396547870124
 Rigidbody2D:
   serializedVersion: 4
@@ -176,3 +150,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyID: 0
+--- !u!58 &8414809418828247142
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489572396547870125}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.6}
+  serializedVersion: 2
+  m_Radius: 1.2
