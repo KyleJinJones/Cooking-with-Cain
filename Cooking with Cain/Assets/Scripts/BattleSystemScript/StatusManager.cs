@@ -147,26 +147,30 @@ public class StatusManager : MonoBehaviour
 
     string GetStatusTooltip(StatusInstance status)
     {
-        switch (status.status)
+        if (status.customMessage == null)
         {
-            case StatusInstance.Status.burn:
-                return string.Format("Burn\nTake {0}% damage at the start of turn\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
-            case StatusInstance.Status.atkup:
-                return string.Format("Attack Boost\nDeal {0}% more damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
-            case StatusInstance.Status.atkdown:
-                return string.Format("Attack Debuff\nDeal {0}% less damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
-            case StatusInstance.Status.stun:
-                return string.Format("Stunned\nCannot move next turn");
-            case StatusInstance.Status.defup:
-                return string.Format("Defense Boost\nTake {0}% less damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
-            case StatusInstance.Status.defdown:
-                return string.Format("Defense Debuff\nTake {0}% more damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
-            case StatusInstance.Status.reflect:
-                return string.Format("Reflect\nDeal {0}% of damage taken back to the attacker\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
-            case StatusInstance.Status.cleanse:
-                return string.Format("Debuff Cleanse\nImmune to debuffs\n{0} turns remaining", status.duration);
+            switch (status.status)
+            {
+                case StatusInstance.Status.burn:
+                    return string.Format("Burn\nTake {0}% damage at the start of turn\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+                case StatusInstance.Status.atkup:
+                    return string.Format("Attack Boost\nDeal {0}% more damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+                case StatusInstance.Status.atkdown:
+                    return string.Format("Attack Debuff\nDeal {0}% less damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+                case StatusInstance.Status.stun:
+                    return string.Format("Stunned\nCannot move next turn");
+                case StatusInstance.Status.defup:
+                    return string.Format("Defense Boost\nTake {0}% less damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+                case StatusInstance.Status.defdown:
+                    return string.Format("Defense Debuff\nTake {0}% more damage\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+                case StatusInstance.Status.reflect:
+                    return string.Format("Reflect\nDeal {0}% of damage taken back to the attacker\n{1} turns remaining", Mathf.RoundToInt(status.potency * 100), status.duration);
+                case StatusInstance.Status.cleanse:
+                    return string.Format("Debuff Cleanse\nImmune to debuffs\n{0} turns remaining", status.duration);
+            }
         }
-        return null;
+
+        return status.customMessage;
     }
 }
 
