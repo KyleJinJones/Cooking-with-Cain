@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class Entity : MonoBehaviour
 {
     public static Stats playerStats = new Stats();
+
+    public EntityManager manager;
+
     public string entityName = "";
     public Stats stats;
 
@@ -102,7 +105,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public bool AddStatus(StatusInstance.Status status, float potency, int duration)
+    public StatusInstance AddStatus(StatusInstance.Status status, float potency, int duration)
     {
         if (stats.health > 0)
         {
@@ -115,20 +118,27 @@ public class Entity : MonoBehaviour
                 instance.potency = potency;
                 instance.duration = duration;
                 statuses.Add(instance);
+
+                return instance;
             }
             else
             {
                 exist.potency = potency;
                 exist.duration = duration;
-            }
+                exist.fade = 0;
 
-            return true;
+                return exist;
+            }
         }
 
-        return false;
+        return null;
     }
 
-    public bool UpdateStart()
+    public virtual void UpdateStartPlayerTurn()
+    {
+    }
+
+    public virtual bool UpdateStart()
     {
         StatusBlink(StatusInstance.Status.burn, StatusInstance.Status.stun);
 
@@ -157,7 +167,7 @@ public class Entity : MonoBehaviour
         return !stunnedLastTurn;
     }
 
-    public void UpdateEnd()
+    public virtual void UpdateEnd()
     {
         foreach (StatusInstance status in statuses.FindAll(instance => !instance.updateOnStart()))
         {
@@ -175,7 +185,7 @@ public class Entity : MonoBehaviour
         return attack + (atkboost == null ? 0 : attack * atkboost.potency) - (atkdebuff == null ? 0 : attack * atkdebuff.potency);
     }
 
-    public float FactorDefense(float damage)
+    public virtual float FactorDefense(float damage)
     {
         StatusInstance defboost = statuses.Find(status => status.status == StatusInstance.Status.defup);
         StatusInstance defdebuff = statuses.Find(status => status.status == StatusInstance.Status.defdown);
@@ -183,7 +193,7 @@ public class Entity : MonoBehaviour
         return damage - (defboost == null ? 0 : damage * defboost.potency) + (defdebuff == null ? 0 : damage * defdebuff.potency);
     }
 
-    public void ModifyHealth(int health)
+    public virtual void ModifyHealth(int health)
     {
         stats.health += health;
 
@@ -279,6 +289,8 @@ public class StatusInstance
     
     public int blink = 0;
     public int fade = 15;
+
+    public string customMessage = null;
 
     public bool updateOnStart()
     {

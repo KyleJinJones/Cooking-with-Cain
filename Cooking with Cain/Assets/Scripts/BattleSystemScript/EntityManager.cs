@@ -25,7 +25,7 @@ public class EntityManager : MonoBehaviour
 
     public TextMeshProUGUI enemyRemaining;
 
-    int turnCount = 0;
+    public int turnCount { get; private set; }
 
     // Scene to transition to if the battle is won. CT
     public static string overworldScene;
@@ -89,6 +89,8 @@ public class EntityManager : MonoBehaviour
             }
             else
             {
+                enemies[i].UpdateStartPlayerTurn();
+
                 if (targeted == null || targeted.stats.health == 0)
                 {
                     targeted = enemies[i];
