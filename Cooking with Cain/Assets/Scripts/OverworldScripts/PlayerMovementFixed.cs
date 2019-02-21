@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,13 +15,15 @@ public class PlayerMovementFixed : MonoBehaviour
     public Sprite[] idleFrames;
 
     // For testing purposes. CT
-    public bool dontMoveToSpawn = false;
+    public static bool dontMoveToSpawn = false;
     private static bool spawned = false;
 
     private int frames = 0;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
+    
+    // Changed !dontMoveToSpawn && !spawned. WH
     void Start()
     {
         transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +9,9 @@ public class UpgradeStats : MonoBehaviour
     public GameObject uimanager;
     public UpgradeInfo upgrade;
     private Image i;
+    //f = food (ingredient)
+    //i == item
+    //a == attribute (upgrade)
     
     
 
@@ -28,8 +31,12 @@ public class UpgradeStats : MonoBehaviour
     {
         if (upgrade.attributetype == "f"&&Gold.gold>=upgrade.goldcost)
         {
-            uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
-            uimanager.GetComponent<AddIng>().adding((int)upgrade.upgradeamt);
+            ///Change picture to default and unclickable
+            if (!upgrade.inInventory) {
+                uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
+                uimanager.GetComponent<AddIng>().adding((int)upgrade.upgradeamt);
+                upgrade.inInventory = true;
+            }
             
         }
         else if(Gold.gold >= upgrade.goldcost&& upgrade.attributetype == "i")

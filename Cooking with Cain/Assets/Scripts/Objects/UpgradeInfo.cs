@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,4 +11,5 @@ public class UpgradeInfo : ScriptableObject
     public int goldcost;
     public float upgradeamt;
     public Sprite upgradeimage;
+    public bool inInventory;
 }

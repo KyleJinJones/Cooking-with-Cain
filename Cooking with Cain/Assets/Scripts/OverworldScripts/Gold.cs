@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -7,14 +7,14 @@ using TMPro;
 public class Gold : MonoBehaviour
 {
     //Used to keep track of gold, saves whenever the player's gold amt changes to prevent exploits
-    public static int gold=100;
+    public static int gold = 100;
     private TextMeshProUGUI goldtext;
     void Start()
     {
         goldtext= GetComponent<TextMeshProUGUI>();
         if (PlayerPrefs.HasKey("gold"))
         {
-            gold = PlayerPrefs.GetInt("gold");
+            gold = PlayerPrefs.GetInt("gold");//PlayerPrefs.GetInt("gold")
         }
         else
         {
