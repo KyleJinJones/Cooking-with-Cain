@@ -17,4 +17,4 @@ MonoBehaviour:
   infotext: 50 Gold
   goldcost: 50
   upgradeamt: 50
-  upgradeimage: {fileID: 21300000, guid: 0da4c3c55cffd9f4aae1106b9db01873, type: 3}
+  upgradeimage: {fileID: 21300000, guid: 41271728d7a797c4baa6f6b0f72c725c, type: 3}
