@@ -16,7 +16,7 @@ public class OverworldHP : MonoBehaviour
     {
         hptext.GetComponentInChildren<TextMeshProUGUI>();
 
-        if (PlayerPrefs.HasKey("MaxHP"))
+        /*if (PlayerPrefs.HasKey("MaxHP"))
         {
             maxhp = PlayerPrefs.GetFloat("MaxHP");
         }
@@ -31,7 +31,9 @@ public class OverworldHP : MonoBehaviour
         else
         {
             PlayerPrefs.SetFloat("CurrentHP", 100);
-        }
+        }*/
+        maxhp = Entity.playerStats.maxHealth;
+        currenthp = Entity.playerStats.health;
         UpdateDisplay();
     }
 
@@ -48,7 +50,7 @@ public class OverworldHP : MonoBehaviour
             currenthp = 0;
         }
         UpdateDisplay();
-        PlayerPrefs.SetFloat("CurrentHP", currenthp);
+        Entity.playerStats.health = currenthp;
     }
 
     //Updates the displayed HP in the UI

@@ -13,13 +13,17 @@ public class IngredientInventory : MonoBehaviour
     public Image selected;
     public Sprite select;
     public Sprite def;
-    public int index=-1;
+    //public int index=-1;
 
     //Sets the image for the ingredient
    public void Start()
     {
         
-        if (ing != null)
+        if (ing == null)
+        {
+            i.sprite = null;
+        }
+        else
         {
             i.sprite = ing.sprite;
         }
@@ -28,33 +32,40 @@ public class IngredientInventory : MonoBehaviour
     }
 
     //Handles selections, and indicators, as well as the logic behind how ingredients are allowed to be selected
+    // Modified so you can only swap if there is an ingredient. CT
     public void Selected()
     {
-        if (igm.ing1 ==null)
+        if (ing != null)
         {
-            selected.sprite = select;
-            igm.ing1 = this;
-        }
-        else if (igm.ing2 == null)
-        {
-            igm.ing2 = this;
-        }
-        else if (igm.ing1 == this)
-        {
-            selected.sprite = def;
-            igm.ing1 = null;
-        }
-        else
-        {
-            selected.sprite = select;
-            igm.ing1.selected.sprite = def;
-            igm.ing1 = this;
-        }
+            if (igm.ing1 == null)
+            {
+                selected.sprite = select;
+                igm.ing1 = this;
+            }
+            else if (igm.ing2 == null)
+            {
+                igm.ing2 = this;
+            }
+            else if (igm.ing1 == this)
+            {
+                selected.sprite = def;
+                igm.ing1 = null;
+            }
+            else
+            {
+                selected.sprite = select;
+                igm.ing1.selected.sprite = def;
+                igm.ing1 = this;
+            }
 
-        if (igm.ing1 != null&&igm.ing2!=null)
-        {
-            igm.ing1.selected.sprite = def;
-            igm.swapingredients();
+            if (igm.ing1 != null && igm.ing2 != null)
+            {
+                if (igm.ing1.ing != null && igm.ing2.ing != null)
+                {
+                    igm.ing1.selected.sprite = def;
+                    igm.swapingredients();
+                }
+            }
         }
     }
 }

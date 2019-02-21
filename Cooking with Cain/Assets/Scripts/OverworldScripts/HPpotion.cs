@@ -8,18 +8,28 @@ public class HPpotion : MonoBehaviour
     public OverworldHP hp;
     public int amtowned = 0;
     public TextMeshProUGUI ownedtxt;
+
+    public int potionIndex;
+    public static int[] potions
+    {
+        get
+        {
+            return SaveDataManager.currentData.potions;
+        }
+    }
     //KJ
     //Onstart, checks how many of the hp potion the player has in prefs and loads it, otherwise sets it to a default of 0
     private void Start()
     {
-        if (PlayerPrefs.HasKey(this.name))
+        /*if (PlayerPrefs.HasKey(this.name))
         {
             amtowned = PlayerPrefs.GetInt(this.name);
         }
         else
         {
             PlayerPrefs.SetInt(this.name, amtowned);
-        }
+        }*/
+        amtowned = potions[potionIndex];
         ownedtxt = GetComponentInChildren<TextMeshProUGUI>();
         UpdateAmtOwned();
     }
@@ -42,6 +52,7 @@ public class HPpotion : MonoBehaviour
 
     public void Save()
     {
+        potions[potionIndex] = amtowned;
         PlayerPrefs.SetInt(this.name, amtowned);
     }
 }

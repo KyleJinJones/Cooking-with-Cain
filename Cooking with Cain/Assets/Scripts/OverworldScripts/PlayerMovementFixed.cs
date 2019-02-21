@@ -6,10 +6,21 @@ public class PlayerMovementFixed : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-    private static Vector2 direction;
+    private Vector2 direction;
 
     public static Vector2 spawnPosition;
-    public static Vector2 checkpointPosition;
+    public static Vector2 checkpointPosition
+    {
+        get
+        {
+            return SaveDataManager.currentData.checkpointPosition;
+        }
+
+        set
+        {
+            SaveDataManager.currentData.checkpointPosition = value;
+        }
+    }
 
     public Sprite[] movingFrames;
     public Sprite[] idleFrames;
@@ -26,7 +37,7 @@ public class PlayerMovementFixed : MonoBehaviour
     // Changed !dontMoveToSpawn && !spawned. WH
     void Start()
     {
-        transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
+        transform.rotation = Quaternion.FromToRotation(Vector3.right, Vector3.down);
 
         if (!dontMoveToSpawn || spawned)
             transform.position = spawnPosition;
@@ -50,6 +61,7 @@ public class PlayerMovementFixed : MonoBehaviour
             spriteRenderer.sprite = idleFrames[Mathf.FloorToInt(frames / 5f) % idleFrames.Length];
         }
 
+        SaveDataManager.currentData.currentPosition = transform.position;
         frames++;
     }
 
