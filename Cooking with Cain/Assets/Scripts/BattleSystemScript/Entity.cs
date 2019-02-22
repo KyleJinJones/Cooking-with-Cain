@@ -6,7 +6,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Entity : MonoBehaviour
 {
-    public static Stats playerStats = new Stats();
+    public static Stats playerStats
+    {
+        get
+        {
+            return SaveDataManager.currentData.playerStats;
+        }
+    }
 
     public EntityManager manager;
 

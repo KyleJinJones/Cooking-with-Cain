@@ -61,7 +61,6 @@ public class PlayerMovementFixed : MonoBehaviour
             spriteRenderer.sprite = idleFrames[Mathf.FloorToInt(frames / 5f) % idleFrames.Length];
         }
 
-        SaveDataManager.currentData.currentPosition = transform.position;
         frames++;
     }
 

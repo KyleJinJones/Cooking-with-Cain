@@ -10,6 +10,9 @@ public class SaveDataManager : MonoBehaviour
     public SaveData data;
 
     static SaveDataManager instance = null;
+
+    public string dataPath;
+
     public static SaveData currentData
     {
         get
@@ -20,29 +23,53 @@ public class SaveDataManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
+        dataPath = Path.Combine(Application.persistentDataPath, "save.json");
+
+        DontDestroyOnLoad(gameObject);
+
+        if (instance == null)
         {
-            Destroy(gameObject);
-            return;
+            if (loadSaveData)
+            {
+                LoadDataFromFile();
+            }
+        }
+        else
+        {
+            data = instance.data;
+            Destroy(instance.gameObject);
         }
 
         instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        if (loadSaveData)
-        {
-            LoadDataFromFile();
-        }
     }
 
     void LoadDataFromFile()
     {
-        ;
+        data = Load(dataPath);
     }
 
     public void SaveDataToFile()
     {
-        ;
+        Save(data, dataPath);
+    }
+
+    static void Save(SaveData data, string path)
+    {
+        string jsonString = JsonUtility.ToJson(data);
+
+        using (StreamWriter streamWriter = File.CreateText(path))
+        {
+            streamWriter.Write(jsonString);
+        }
+    }
+
+    static SaveData Load(string path)
+    {
+        using (StreamReader streamReader = File.OpenText(path))
+        {
+            string jsonString = streamReader.ReadToEnd();
+            return JsonUtility.FromJson<SaveData>(jsonString);
+        }
     }
 }
 
@@ -51,11 +78,14 @@ public class SaveDataManagerEditor : Editor
 {
     SerializedProperty loadSaveData;
     SerializedProperty data;
+    string dataPath;
 
     void OnEnable()
     {
         loadSaveData = serializedObject.FindProperty("loadSaveData");
         data = serializedObject.FindProperty("data");
+
+        dataPath = Path.Combine(Application.persistentDataPath, "save.json");
     }
 
     public override void OnInspectorGUI()
@@ -69,6 +99,11 @@ public class SaveDataManagerEditor : Editor
         }
 
         serializedObject.ApplyModifiedProperties();
+
+        if (GUILayout.Button("Delete Save File"))
+        {
+            File.Delete(dataPath);
+        }
     }
 }
 
