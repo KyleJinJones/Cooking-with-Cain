@@ -8,11 +8,13 @@ public class EnemyLoader : MonoBehaviour
 {
     // Sets the emeies that will spawn in
     public static List<Enemy> enemies = new List<Enemy>();
+    public static List<GameObject> bosses = new List<GameObject>();
 
     public GameObject enemyBaseObject;
 
     // Spawns in enemies when loading the battle scene directly for testing purposes. CT
     public List<Enemy> testEnemies = new List<Enemy>();
+    public List<GameObject> testBosses = new List<GameObject>();
 
     EntityManager manager;
 
@@ -20,7 +22,18 @@ public class EnemyLoader : MonoBehaviour
     {
         manager = GetComponent<EntityManager>();
 
+        foreach (GameObject prefab in bosses)
+        {
+            manager.AddEnemyToQueue(GenerateBoss(prefab));
+        }
+
+        foreach (GameObject prefab in testBosses)
+        {
+            manager.AddEnemyToQueue(GenerateBoss(prefab));
+        }
+
         // Clones the enemy base and sets its data based on the enemy data present in the static list
+
 
         foreach (Enemy enemy in enemies)
         {
@@ -31,6 +44,16 @@ public class EnemyLoader : MonoBehaviour
         {
             manager.AddEnemyToQueue(GenerateEnemy(enemy));
         }
+    }
+
+    public Entity GenerateBoss(GameObject prefab)
+    {
+        GameObject clone = Instantiate(prefab, enemyBaseObject.transform.parent);
+        Entity entity = clone.GetComponent<Entity>();
+        entity.manager = manager;
+        entity.loader = this;
+
+        return entity;
     }
 
     public Entity GenerateEnemy(Enemy enemy)
@@ -53,6 +76,7 @@ public class EnemyLoader : MonoBehaviour
         tooltip.sprites = ingredients.ConvertAll(ingredient => ingredient.sprite);
 
         entity.manager = manager;
+        entity.loader = this;
 
         return entity;
     }

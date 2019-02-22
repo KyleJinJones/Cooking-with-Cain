@@ -8,7 +8,7 @@ public class EnemyEncounter : MonoBehaviour
     // The enemies that spawn in the battle scene. CT
     public List<Enemy> enemies = new List<Enemy>();
 
-    public void StartEncounter(GameObject player)
+    public virtual void StartEncounter(GameObject player)
     {
         // Sets the enemy loader enemy list to this script's enemy list. CT
         EnemyLoader.enemies = enemies;

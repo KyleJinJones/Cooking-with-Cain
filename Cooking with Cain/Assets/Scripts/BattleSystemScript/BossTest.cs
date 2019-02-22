@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BossTest : Entity
 {
-    public EnemyLoader loader;
     public Enemy pea;
     public Sprite defUpIcon;
 
@@ -24,7 +23,9 @@ public class BossTest : Entity
     {
         if (manager.GetEnemyRemaining() > 1)
         {
-            defense.duration = 100;
+            defense = AddStatus(StatusInstance.Status.defup, 0.5f, 100);
+            defense.customSprite = defUpIcon;
+            defense.customMessage = "Damage taken reduced by half until all peas are defeated";
         }
         else
         {

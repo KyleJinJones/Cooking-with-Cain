@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
     }
 
     public EntityManager manager;
+    public EnemyLoader loader;
 
     public string entityName = "";
     public Stats stats;
