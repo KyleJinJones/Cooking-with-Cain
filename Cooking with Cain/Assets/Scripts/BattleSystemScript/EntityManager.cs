@@ -44,7 +44,7 @@ public class EntityManager : MonoBehaviour
 
     void Update()
     {
-        enemyRemaining.text = string.Format("Enemy Remaining: {0}", GetEnemyRemaining());
+        enemyRemaining.text = string.Format("Enemy Remaining: {0}", queue.Count);
     }
 
     public void PlayerAction(Ingredient[] ingredients)
