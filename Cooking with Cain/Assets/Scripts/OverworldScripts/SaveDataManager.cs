@@ -119,4 +119,6 @@ public class SaveData
     public Ingredient[] spare = new Ingredient[12];
     public int[] potions = new int[3];
     public string sceneName;
+    public List<ChestId> openedChests = new List<ChestId>();
+    public List<UpgradeInfo> shopBought = new List<UpgradeInfo>();
 }

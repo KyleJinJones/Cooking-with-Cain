@@ -2,18 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
-
-public class shopChange : MonoBehaviour
+public class shopChange : MonoBehaviour, IPointerClickHandler
 {
     public bool right;
-    
-    private static string currentShop;
-    private string nextShop;
-    private TextMeshProUGUI shopText;
+
+    /* private static string currentShop;
+     private string nextShop;*/
+    public shopScript shop;
+    public TextMeshProUGUI shopText;
+
+    void Update()
+    {
+        if (right)
+        {
+            shopText.text = string.Format("Next: {0}", shop.panels[(shop.currentPanel + 1) % shop.panels.Count].name);
+        }
+        else
+        {
+            shopText.text = string.Format("Previous: {0}", shop.panels[(shop.currentPanel + shop.panels.Count - 1) % shop.panels.Count].name);
+        }
+    }
+
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    {
+        shop.currentPanel += right ? 1 : -1;
+        shop.currentPanel %= shop.panels.Count;
+    }
+
     //Order of Shop Screens: Upgrades, Ingredients, Potions/Items
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         currentShop = "Upgrades";
     }
@@ -68,5 +88,5 @@ public class shopChange : MonoBehaviour
             }
         }
         shopChange.currentShop = currentShop;
-    }
+    }*/
 }

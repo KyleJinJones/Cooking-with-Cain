@@ -13,7 +13,7 @@ public class UpgradeUI : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        ui.SetActive(false);
+        //ui.SetActive(false);
 	}
 
     public void Displayui(string attrinfo, int goldcost)

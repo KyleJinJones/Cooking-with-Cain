@@ -12,9 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfec3f4c11adea4480eb67f6962e86f, type: 3}
   m_Name: MedPotion
   m_EditorClassIdentifier: 
-  attributetype: i
-  attributename: PotionHPM
-  infotext: A decent sized hp potion
+  attributeType: 3
   goldcost: 10
-  upgradeamt: 1
   upgradeimage: {fileID: 21300004, guid: 73eadc5dcefa26b47a7291330741afc4, type: 3}
+  infotext: A decent sized hp potion
+  statsModification:
+    attack: 10
+    health: 100
+    maxHealth: 100
+    burn: 0.07
+    splash: 0.5
+    lifesteal: 0.5
+    atkboost: 0.2
+    atkdebuff: 0.2
+    stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
+  ingredient: {fileID: 0}
+  potionType: 1
+  amount: 1

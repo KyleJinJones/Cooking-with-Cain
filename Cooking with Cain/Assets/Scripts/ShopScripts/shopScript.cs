@@ -1,37 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
 public class shopScript : MonoBehaviour
 {
     public static string currentScene;
-    public static int gold;
+    /*public static int gold;
     public static List<UpgradeInfo> items = new List<UpgradeInfo>();
-    public GameObject[] panels;
+    //public GameObject[] panels;
     public static string currentShop;
     
-    private List<GameObject> children = new List<GameObject>();
+    private List<GameObject> children = new List<GameObject>();*/
     
-    public void Start() {
-        panels = GameObject.FindGameObjectsWithTag("ShopPanels");
+    public List<ShopPanel> panels = new List<ShopPanel>();
+    public Image[] slots = new Image[6];
+    public int currentPanel = 0;
 
-        
-        foreach (GameObject panel in panels) {
-            foreach (UpgradeInfo item in items) {
-                if (panel.name == item.attributename) {
-                    panel.gameObject.SetActive(true);
-                    break;
-                } else {
-                    panel.gameObject.SetActive(false);
+    private void Update() {
+        ShopPanel panel = panels[currentPanel % panels.Count];
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i < panel.items.Length)
+            {
+                slots[i].sprite = panel.items[i].upgradeimage;
+                slots[i].GetComponent<ShopItem>().upgrade = panel.items[i];
+
+                if (Gold.gold >= panel.items[i].goldcost && !SaveDataManager.currentData.shopBought.Contains(panel.items[i]))
+                {
+                    slots[i].color = Color.white;
                 }
+                else
+                {
+                    slots[i].color = Color.gray;
+                }
+
+                slots[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                slots[i].GetComponent<ShopItem>().upgrade = null;
+                slots[i].gameObject.SetActive(false);
             }
         }
-    }
-    
-    public void Update() {
-        if (currentShop == "Upgrades") {
+        /*if (currentShop == "Upgrades") {
             foreach(GameObject panel in panels) {
                 foreach(UpgradeInfo item in items) {
                     if (panel.name == item.attributename) {
@@ -75,17 +90,24 @@ public class shopScript : MonoBehaviour
                 }
             }
             
-        }
+        }*/
     }
-    
+
     // Start is called before the first frame update
     public void changeScene() {
-        float xposition = PlayerPrefs.GetFloat("X") + 1.0f;
+        /*float xposition = PlayerPrefs.GetFloat("X") + 1.0f;
         float yposition = PlayerPrefs.GetFloat("Y");
         
-        PlayerMovementFixed.spawnPosition = new Vector2(xposition, yposition);
+        PlayerMovementFixed.spawnPosition = new Vector2(xposition, yposition);*/
         
         SceneManager.LoadScene(currentScene);
     }
     
+}
+
+[System.Serializable]
+public class ShopPanel
+{
+    public string name;
+    public UpgradeInfo[] items = new UpgradeInfo[6];
 }

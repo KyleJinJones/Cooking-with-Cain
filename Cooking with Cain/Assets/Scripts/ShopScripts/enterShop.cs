@@ -11,12 +11,10 @@ public class enterShop : MonoBehaviour
     public GameObject shopEnterPanel;
     
     private bool changeShop;
-    private GameObject player;
     
     private void Start() {
         shopEnterPanel.gameObject.SetActive(false);
         changeShop = false;
-        player = GameObject.FindGameObjectWithTag("Player");
     }
     
     
@@ -26,19 +24,32 @@ public class enterShop : MonoBehaviour
         {
             shopEnterPanel.gameObject.SetActive(true);
             changeShop = true;
+
             
         }
     }
-    
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            shopScript.currentScene = SceneManager.GetActiveScene().name;
+
+            PlayerMovementFixed.spawnPosition = collision.transform.position;
+
+            SceneManager.LoadScene("Shop");
+        }
+    }
+
     public void OnTriggerExit2D(Collider2D collision) {
         shopEnterPanel.gameObject.SetActive(false);
         changeShop = false;
     }
     
-    private void Update() {
+    /*private void Update() {
         if (changeShop) {
             if (Input.GetKeyDown(KeyCode.E)) {
-                shopEnterPanel.gameObject.SetActive(false);
+                /*shopEnterPanel.gameObject.SetActive(false);
                 PlayerPrefs.SetFloat("X",player.transform.position.x);
                 PlayerPrefs.SetFloat("Y",player.transform.position.y);
 
@@ -47,8 +58,10 @@ public class enterShop : MonoBehaviour
 
                 shopScript.currentScene = SceneManager.GetActiveScene().name;
 
+                PlayerMovementFixed.spawnPosition = player.transform.position;
+
                 SceneManager.LoadScene("Shop");
             }
         }
-    }
+    }*/
 }

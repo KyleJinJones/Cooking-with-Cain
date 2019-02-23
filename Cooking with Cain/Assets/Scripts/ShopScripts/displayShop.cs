@@ -5,13 +5,13 @@ using TMPro;
 
 public class displayShop : MonoBehaviour
 {
-    public static string currentShop;
-    private TextMeshProUGUI shopText;
-
+    //public static string currentShop;
+    public TextMeshProUGUI shopText;
+    public shopScript shop;
     // Update is called once per frame
     void Update()
     {
         shopText = this.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        shopText.text = string.Format("Current Shop: {0}", currentShop);
+        shopText.text = string.Format("Current Shop: {0}", shop.panels[shop.currentPanel % shop.panels.Count].name);
     }
 }

@@ -29,7 +29,7 @@ public class UpgradeStats : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (upgrade.attributetype == "f"&&Gold.gold>=upgrade.goldcost)
+        /*if (upgrade.attributetype == "f"&&Gold.gold>=upgrade.goldcost)
         {
             ///Change picture to default and unclickable
             if (!upgrade.inInventory) {
@@ -48,7 +48,7 @@ public class UpgradeStats : MonoBehaviour
         {
             uimanager.GetComponent<UpgradeUI>().paycost(upgrade.goldcost);
             PlayerPrefs.SetFloat(upgrade.attributename, (PlayerPrefs.GetFloat(upgrade.attributename) + upgrade.upgradeamt));
-        }
+        }*/
 
     }
 

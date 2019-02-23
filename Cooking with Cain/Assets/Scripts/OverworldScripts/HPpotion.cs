@@ -9,7 +9,9 @@ public class HPpotion : MonoBehaviour
     public int amtowned = 0;
     public TextMeshProUGUI ownedtxt;
 
-    public int potionIndex;
+    public enum PotionType { SMALL, MEDIUM, LARGE };
+
+    public PotionType potionType;
     public static int[] potions
     {
         get
@@ -29,7 +31,7 @@ public class HPpotion : MonoBehaviour
         {
             PlayerPrefs.SetInt(this.name, amtowned);
         }*/
-        amtowned = potions[potionIndex];
+        amtowned = potions[(int) potionType];
         ownedtxt = GetComponentInChildren<TextMeshProUGUI>();
         UpdateAmtOwned();
     }
@@ -52,7 +54,7 @@ public class HPpotion : MonoBehaviour
 
     public void Save()
     {
-        potions[potionIndex] = amtowned;
-        PlayerPrefs.SetInt(this.name, amtowned);
+        potions[(int)potionType] = amtowned;
+        //PlayerPrefs.SetInt(this.name, amtowned);
     }
 }

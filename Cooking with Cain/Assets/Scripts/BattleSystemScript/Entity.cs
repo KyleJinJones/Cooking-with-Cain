@@ -333,4 +333,45 @@ public class Stats
             return stats;
         }
     }
+
+    public static Stats zero
+    {
+        get
+        {
+            Stats stats = new Stats();
+            stats.attack = 0;
+            stats.health = 0;
+            stats.maxHealth = 0;
+            stats.burn = 0;
+            stats.splash = 0;
+            stats.lifesteal = 0;
+            stats.atkboost = 0;
+            stats.atkdebuff = 0;
+            stats.stun = 0;
+            stats.defboost = 0;
+            stats.defdebuff = 0;
+            stats.reflect = 0;
+            stats.selfdmg = 0;
+            stats.miss = 0;
+            return stats;
+        }
+    }
+
+    public void Add(Stats stats)
+    {
+        attack += stats.attack;
+        health += stats.health;
+        maxHealth += stats.maxHealth;
+        burn += stats.burn;
+        splash += stats.splash;
+        lifesteal += stats.lifesteal;
+        atkboost += stats.atkboost;
+        atkdebuff += stats.atkdebuff;
+        stun += stats.stun;
+        defboost += stats.defboost;
+        defdebuff += stats.defdebuff;
+        reflect += stats.reflect;
+        selfdmg += stats.selfdmg;
+        miss += stats.miss;
+    }
 }
