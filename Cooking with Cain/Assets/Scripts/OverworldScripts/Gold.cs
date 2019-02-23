@@ -6,20 +6,38 @@ using TMPro;
 
 public class Gold : MonoBehaviour
 {
+    // Removed player prefs. Accessing player prefs should only occur when saving or loading. CT
+
     //Used to keep track of gold, saves whenever the player's gold amt changes to prevent exploits
-    public static int gold = 100;
+    public static int gold
+    {
+        get
+        {
+            return SaveDataManager.currentData.gold;
+        }
+
+        set
+        {
+            SaveDataManager.currentData.gold = value;
+        }
+    }
     private TextMeshProUGUI goldtext;
     void Start()
     {
         goldtext= GetComponent<TextMeshProUGUI>();
-        if (PlayerPrefs.HasKey("gold"))
+        /*if (PlayerPrefs.HasKey("gold"))
         {
             gold = PlayerPrefs.GetInt("gold");//PlayerPrefs.GetInt("gold")
         }
         else
         {
             PlayerPrefs.SetInt("gold", gold);
-        }
+        }*/
+        goldtext.text = string.Format("Gold:{0}", gold);
+    }
+
+    private void Update()
+    {
         goldtext.text = string.Format("Gold:{0}", gold);
     }
 
@@ -28,7 +46,7 @@ public class Gold : MonoBehaviour
     {
         gold += amt;
         goldtext.text = string.Format("Gold:{0}", gold);
-        PlayerPrefs.SetInt("gold", gold);
+        //PlayerPrefs.SetInt("gold", gold);
     }
 
 }

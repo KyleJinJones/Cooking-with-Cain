@@ -6,9 +6,16 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Entity : MonoBehaviour
 {
-    public static Stats playerStats = new Stats();
+    public static Stats playerStats
+    {
+        get
+        {
+            return SaveDataManager.currentData.playerStats;
+        }
+    }
 
     public EntityManager manager;
+    public EnemyLoader loader;
 
     public string entityName = "";
     public Stats stats;
@@ -23,7 +30,6 @@ public class Entity : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
-            LoadPlayerStats();
             stats = playerStats;
         }
     }
@@ -72,37 +78,24 @@ public class Entity : MonoBehaviour
         PlayerPrefs.SetFloat("Miss", playerStats.miss);
     }
 
-    //Loads each individual player stat KJ
-    private void LoadPlayerStats()
+    // Loads each individual player stat KJ
+    // Modified to only load when the game starts. CT
+    public static void LoadPlayerStats()
     {
-        playerStats.maxHealth = getStat("MaxHP", playerStats.maxHealth);
-        playerStats.health = getStat("CurrentHP", playerStats.health);
-        playerStats.lifesteal = getStat("LifeSteal", playerStats.lifesteal);
-        playerStats.atkboost = getStat("AtkBoost", playerStats.atkboost);
-        playerStats.atkdebuff = getStat("AtkDebuff", playerStats.atkdebuff);
-        playerStats.attack = getStat("Attack", playerStats.attack);
-        playerStats.burn = getStat("Burn", playerStats.burn);
-        playerStats.splash = getStat("Splash", playerStats.splash);
-        playerStats.stun = getStat("Stun", playerStats.stun);
-        playerStats.defboost = getStat("DefBoost", playerStats.defboost);
-        playerStats.defdebuff = getStat("DefDebuff", playerStats.defdebuff);
-        playerStats.reflect = getStat("Reflect", playerStats.reflect);
-        playerStats.selfdmg = getStat("Selfdmg", playerStats.selfdmg);
-        playerStats.miss = getStat("Miss", playerStats.miss);
-    }
-
-    //Tries to get a Playerpref value for the stat, otherwise sets it to the base value and returns the base value KJ
-    private float getStat(string stat, float baseStat)
-    {
-        if (PlayerPrefs.HasKey(stat))
-        {
-            return PlayerPrefs.GetFloat(stat);
-        }
-        else
-        {
-            PlayerPrefs.SetFloat(stat,baseStat);
-            return baseStat;
-        }
+        playerStats.maxHealth = PlayerPrefs.GetFloat("MaxHP", playerStats.maxHealth);
+        playerStats.health = PlayerPrefs.GetFloat("CurrentHP", playerStats.health);
+        playerStats.lifesteal = PlayerPrefs.GetFloat("LifeSteal", playerStats.lifesteal);
+        playerStats.atkboost = PlayerPrefs.GetFloat("AtkBoost", playerStats.atkboost);
+        playerStats.atkdebuff = PlayerPrefs.GetFloat("AtkDebuff", playerStats.atkdebuff);
+        playerStats.attack = PlayerPrefs.GetFloat("Attack", playerStats.attack);
+        playerStats.burn = PlayerPrefs.GetFloat("Burn", playerStats.burn);
+        playerStats.splash = PlayerPrefs.GetFloat("Splash", playerStats.splash);
+        playerStats.stun = PlayerPrefs.GetFloat("Stun", playerStats.stun);
+        playerStats.defboost = PlayerPrefs.GetFloat("DefBoost", playerStats.defboost);
+        playerStats.defdebuff = PlayerPrefs.GetFloat("DefDebuff", playerStats.defdebuff);
+        playerStats.reflect = PlayerPrefs.GetFloat("Reflect", playerStats.reflect);
+        playerStats.selfdmg = PlayerPrefs.GetFloat("Selfdmg", playerStats.selfdmg);
+        playerStats.miss = PlayerPrefs.GetFloat("Miss", playerStats.miss);
     }
 
     public StatusInstance AddStatus(StatusInstance.Status status, float potency, int duration)
@@ -234,14 +227,14 @@ public class Entity : MonoBehaviour
 
         if (goldValue > 0)
         {
-            PlayerPrefs.SetInt("gold", (PlayerPrefs.HasKey("gold") ? PlayerPrefs.GetInt("gold") : 0) + goldValue);
+            Gold.gold += goldValue;
             ResultText.lines.Add(string.Format("{0} gold gained", goldValue));
         }
 
         if (gameObject.tag == "Player")
         {
-            int lost = Mathf.RoundToInt(PlayerPrefs.GetInt("gold") * 0.2f);
-            PlayerPrefs.SetInt("gold", (PlayerPrefs.HasKey("gold") ? PlayerPrefs.GetInt("gold") : 0) - lost);
+            int lost = Mathf.RoundToInt(Gold.gold * 0.2f);
+            Gold.gold -= lost;
             ResultText.lines.Add(string.Format("{0} gold lost", lost));
 
             for (int i = 60; i > 0; i--)

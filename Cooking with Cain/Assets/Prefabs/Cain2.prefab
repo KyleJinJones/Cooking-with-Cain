@@ -96,13 +96,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   movingFrames:
-  - {fileID: 21300000, guid: 238b5ba7cf45b8d4ba3691ed3c282dbc, type: 3}
-  - {fileID: 21300002, guid: 238b5ba7cf45b8d4ba3691ed3c282dbc, type: 3}
-  - {fileID: 21300004, guid: 238b5ba7cf45b8d4ba3691ed3c282dbc, type: 3}
-  - {fileID: 21300006, guid: 238b5ba7cf45b8d4ba3691ed3c282dbc, type: 3}
+  - {fileID: 21300000, guid: 9bd6003e8509b5f459e02b705b510085, type: 3}
+  - {fileID: 21300002, guid: 9bd6003e8509b5f459e02b705b510085, type: 3}
+  - {fileID: 21300004, guid: 9bd6003e8509b5f459e02b705b510085, type: 3}
+  - {fileID: 21300006, guid: 9bd6003e8509b5f459e02b705b510085, type: 3}
   idleFrames:
   - {fileID: 21300000, guid: e6cdb46c38dc11148b499742d423ba98, type: 3}
-  dontMoveToSpawn: 0
 --- !u!50 &8549312761367037540
 Rigidbody2D:
   serializedVersion: 4

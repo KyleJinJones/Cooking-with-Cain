@@ -44,7 +44,7 @@ public class EntityManager : MonoBehaviour
 
     void Update()
     {
-        enemyRemaining.text = string.Format("Enemy Remaining: {0}", GetEnemyRemaining());
+        enemyRemaining.text = string.Format("Enemy Remaining: {0}", queue.Count);
     }
 
     public void PlayerAction(Ingredient[] ingredients)
@@ -199,7 +199,6 @@ public class EntityManager : MonoBehaviour
         if (player == null)
         {
             Entity.playerStats.health = Entity.playerStats.maxHealth;
-            Entity.SavePlayerStats();
             PlayerMovementFixed.spawnPosition = PlayerMovementFixed.checkpointPosition;
             EnemyDespawner.despawned.Clear();
             UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene);
@@ -208,7 +207,6 @@ public class EntityManager : MonoBehaviour
 
         if (GetEnemyRemaining() == 0)
         {
-            Entity.SavePlayerStats();
             UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene);
             return true;
         }
