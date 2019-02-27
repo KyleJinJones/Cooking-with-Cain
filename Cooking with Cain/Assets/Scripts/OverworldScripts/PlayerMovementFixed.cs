@@ -53,11 +53,12 @@ public class PlayerMovementFixed : MonoBehaviour
         if (direction.sqrMagnitude > 0)
         {
             spriteRenderer.sprite = movingFrames[Mathf.FloorToInt(frames / 5f) % movingFrames.Length];
-            transform.position += (Vector3) direction * speed * Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity = (Vector3) direction * speed;
             transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
         }
         else
         {
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             spriteRenderer.sprite = idleFrames[Mathf.FloorToInt(frames / 5f) % idleFrames.Length];
         }
 
