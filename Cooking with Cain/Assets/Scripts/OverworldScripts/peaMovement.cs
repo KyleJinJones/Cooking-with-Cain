@@ -18,12 +18,15 @@ public class peaMovement : MonoBehaviour
 
     private Vector2 spawn;
     private Vector2 playerLocation;
+    private Transform playertransform;
     private Vector2 currentLocation;
     private Vector2 [] patrolArea = new Vector2[4];
     
     
+    
     void Start()
     {
+        playertransform = GameObject.FindGameObjectWithTag("Player").transform;
         RB = GetComponent<Rigidbody2D>();
         spawn = transform.position;
         
@@ -63,9 +66,8 @@ public class peaMovement : MonoBehaviour
     }
 
     void Update() {
-        playerLocation = GameObject.FindGameObjectWithTag("Player").transform.position;
         currentLocation = transform.position;
-
+        playerLocation = playertransform.position;
         float distance = Vector2.Distance(playerLocation, spawn);
         
         if (type == 2) {
