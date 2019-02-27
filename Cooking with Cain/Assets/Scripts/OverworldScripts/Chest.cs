@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -35,6 +36,10 @@ public class Chest : MonoBehaviour
     private void Awake()
     {
         chestId = new ChestId(SceneManager.GetActiveScene().name, id);
+        if (open)
+        {
+            GetComponent<SpriteRenderer>().sprite = openview;
+        }
     }
 
     // Provides the Player with an item upon them opening it.
@@ -79,7 +84,7 @@ public class Chest : MonoBehaviour
 }
 
 [System.Serializable]
-public class ChestId
+public class ChestId : System.IEquatable<ChestId>
 {
     public string scene;
     public int id;
@@ -88,6 +93,11 @@ public class ChestId
     {
         this.scene = scene;
         this.id = id;
+    }
+
+    bool IEquatable<ChestId>.Equals(ChestId other)
+    {
+        return scene == other.scene && id == other.id;
     }
 }
 
