@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Chest : MonoBehaviour
 {
     public UpgradeInfo reward;
+    public UpgradeInfo altReward;
     public Gold playergold;
     private bool open
     {
@@ -60,7 +61,20 @@ public class Chest : MonoBehaviour
             {
                 playergold.UpdateGold((int)reward.upgradeamt);
             }*/
-            reward.obtain();
+            if (SaveDataManager.currentData.shopBought.Contains(reward))
+            {
+                altReward.obtain();
+            }
+            else
+            {
+                reward.obtain();
+
+                if (reward.attributeType == UpgradeInfo.AttributeType.INGREDIENT)
+                {
+                    SaveDataManager.currentData.shopBought.Add(reward);
+                }
+            }
+
             open = true;
             treasurewindow.SetActive(true);
             treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = reward.upgradeimage;
