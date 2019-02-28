@@ -36,6 +36,13 @@ public class OverworldMenu : MonoBehaviour
         }
     }
 
+    public void closeMenu()
+    {
+        imenu.SetActive(false);
+        inventory.SetActive(false);
+        menuopen = false;
+    }
+
   public void openinventory()
     {
         if (!menuopen)
