@@ -25,6 +25,8 @@ public class EntityManager : MonoBehaviour
 
     public TextMeshProUGUI enemyRemaining;
 
+    public GameObject rewardsPopup;
+
     public int turnCount { get; private set; }
 
     // Scene to transition to if the battle is won. CT
@@ -35,10 +37,25 @@ public class EntityManager : MonoBehaviour
         playerTurn = false;
         attackManager = GetComponent<AttackManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
+
+        rewardsPopup.SetActive(false);
+        rewardsPopup.GetComponentInChildren<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene));
     }
 
     void Start()
     {
+        int totalGold = 0;
+
+        foreach (Entity entity in queue)
+        {
+            totalGold += entity.goldValue;
+        }
+
+        foreach (TextMeshProUGUI text in rewardsPopup.GetComponentsInChildren<TextMeshProUGUI>())
+        {
+            text.text = string.Format(text.text, totalGold);
+        }
+
         StartCoroutine(Run());
     }
 
@@ -207,7 +224,7 @@ public class EntityManager : MonoBehaviour
 
         if (GetEnemyRemaining() == 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene);
+            rewardsPopup.SetActive(true);
             return true;
         }
 
