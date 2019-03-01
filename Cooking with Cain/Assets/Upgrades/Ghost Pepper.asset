@@ -15,7 +15,9 @@ MonoBehaviour:
   attributeType: 1
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 167982e5ca76fbb40ab31a9e5834e34b, type: 3}
-  infotext: 
+  infotext: A pepper so spicy that it transcends the living plane. Will scorch my
+    enemies, but it might scorch me as well.
+  rewardname: Ghost Pepper
   statsModification:
     attack: 10
     health: 100

@@ -16,6 +16,7 @@ MonoBehaviour:
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: f96479299e18f9542aa010537725210a, type: 3}
   infotext: An abstract concept of a chicken foot. Hits hard but doesn't hit often.
+  rewardname: Chicken Feet
   statsModification:
     attack: 10
     health: 100

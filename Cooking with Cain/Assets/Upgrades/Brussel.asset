@@ -17,6 +17,7 @@ MonoBehaviour:
   upgradeimage: {fileID: 21300000, guid: b156e98c16a815b4095e9687b527032b, type: 3}
   infotext: Spare Brussel Sprouts, hopefully these ones won't turn on me. They're
     good for decreasing my opponent's attack.
+  rewardname: Brussel Sprouts
   statsModification:
     attack: 10
     health: 100

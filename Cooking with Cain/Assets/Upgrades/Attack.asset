@@ -16,6 +16,7 @@ MonoBehaviour:
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: d5e323d3c4da1e447b00ba4639242d5b, type: 3}
   infotext: An unsettling brew that will increase my attack.
+  rewardname: Attack
   statsModification:
     attack: 2
     health: 0

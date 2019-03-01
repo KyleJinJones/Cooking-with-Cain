@@ -16,6 +16,7 @@ MonoBehaviour:
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 0da4c3c55cffd9f4aae1106b9db01873, type: 3}
   infotext: An apple a day squashes a pea everyday. Its acidity lowers defense.
+  rewardname: Acidic Apple
   statsModification:
     attack: 10
     health: 100

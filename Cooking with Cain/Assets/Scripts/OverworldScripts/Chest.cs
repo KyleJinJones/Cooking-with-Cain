@@ -48,19 +48,6 @@ public class Chest : MonoBehaviour
     {
         if (!open&&collision.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
-            /*if (reward.attributetype == "f")
-            {
-                GetComponent<AddIng>().adding((int)reward.upgradeamt);
-
-            }
-            else if (reward.attributetype == "i")
-            { 
-                PlayerPrefs.SetInt(reward.attributename, PlayerPrefs.GetInt(reward.attributename) + (int)reward.upgradeamt);
-            }
-            else if (reward.attributetype=="g")
-            {
-                playergold.UpdateGold((int)reward.upgradeamt);
-            }*/
             if (SaveDataManager.currentData.shopBought.Contains(reward))
             {
                 altReward.obtain();
@@ -78,7 +65,7 @@ public class Chest : MonoBehaviour
             open = true;
             treasurewindow.SetActive(true);
             treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = reward.upgradeimage;
-            treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", reward.infotext);
+            treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", reward.rewardname);
             this.GetComponent<SpriteRenderer>().sprite = openview;
 
         }

@@ -12,6 +12,7 @@ public class UpgradeInfo : ScriptableObject
     public int goldcost;
     public Sprite upgradeimage;
     public string infotext;
+    public string rewardname;
 
     public Stats statsModification = Stats.zero;
 
@@ -54,6 +55,7 @@ public class UpgradeInfoEditor : Editor
     SerializedProperty goldcost;
     SerializedProperty upgradeimage;
     SerializedProperty infotext;
+    SerializedProperty rewardname;
 
     SerializedProperty statsModification;
 
@@ -68,6 +70,7 @@ public class UpgradeInfoEditor : Editor
         goldcost = serializedObject.FindProperty("goldcost");
         upgradeimage = serializedObject.FindProperty("upgradeimage");
         infotext = serializedObject.FindProperty("infotext");
+        rewardname = serializedObject.FindProperty("rewardname");
 
         statsModification = serializedObject.FindProperty("statsModification");
 
@@ -84,6 +87,8 @@ public class UpgradeInfoEditor : Editor
         EditorGUILayout.PropertyField(goldcost);
         EditorGUILayout.PropertyField(upgradeimage);
         EditorGUILayout.PropertyField(infotext);
+        EditorGUILayout.PropertyField(rewardname);
+
 
         switch (attributeType.enumValueIndex)
         {
