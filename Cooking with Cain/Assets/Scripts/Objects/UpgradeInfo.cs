@@ -31,7 +31,10 @@ public class UpgradeInfo : ScriptableObject
                 for (int i = 0; i < 12; i++)
                 {
                     if (IngredientManager.spareIngredients[i] == null)
+                    {
                         IngredientManager.spareIngredients[i] = ingredient;
+                        break;
+                    }
                 }
                 break;
             case AttributeType.GOLD:
