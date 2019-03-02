@@ -28,7 +28,11 @@ public class IngredientInventory : MonoBehaviour
             i.sprite = ing.sprite;
         }
         selected.sprite = def;
+        
+    }
 
+    private void Update()
+    {
         UpdateTooltip();
     }
 
@@ -136,8 +140,6 @@ public class IngredientInventory : MonoBehaviour
                     igm.swapingredients();
                 }
             }
-
-            UpdateTooltip();
         }
     }
 }
