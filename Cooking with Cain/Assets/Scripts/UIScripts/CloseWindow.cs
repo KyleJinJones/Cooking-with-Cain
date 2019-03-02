@@ -16,5 +16,6 @@ public class CloseWindow : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+        Time.timeScale = 1;
     }
 }

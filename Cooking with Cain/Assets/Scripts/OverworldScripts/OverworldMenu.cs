@@ -23,16 +23,19 @@ public class OverworldMenu : MonoBehaviour
             menuopen = true;
             imenu.GetComponent<IngredientManager>().Load();
             activemenu = imenu;
+            Time.timeScale = 0;
         }
         else if(imenu.activeSelf){
             imenu.SetActive(false);
             menuopen = false;
+            Time.timeScale = 1;
         }
         else
         {
             activemenu.SetActive(false);
             imenu.SetActive(true);
             activemenu = imenu;
+            Time.timeScale = 0;
         }
     }
 
@@ -41,6 +44,7 @@ public class OverworldMenu : MonoBehaviour
         imenu.SetActive(false);
         inventory.SetActive(false);
         menuopen = false;
+        Time.timeScale = 1;
     }
 
   public void openinventory()
@@ -50,16 +54,19 @@ public class OverworldMenu : MonoBehaviour
             inventory.SetActive(true);
             menuopen = true;
             activemenu = inventory;
+            Time.timeScale = 0;
         }
         else if(inventory.activeSelf){
             inventory.SetActive(false);
             menuopen = false;
+            Time.timeScale = 1;
         }
         else
         {
             activemenu.SetActive(false);
             inventory.SetActive(true);
             activemenu = inventory;
+            Time.timeScale = 0;
         }
     }
 
