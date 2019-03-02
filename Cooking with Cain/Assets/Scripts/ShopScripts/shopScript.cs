@@ -17,7 +17,7 @@ public class shopScript : MonoBehaviour
     
     public List<ShopPanel> panels = new List<ShopPanel>();
     public Image[] slots = new Image[6];
-    public int currentPanel = 0;
+    public int currentPanel = 1;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class shopScript : MonoBehaviour
     }
 
     private void Update() {
-        ShopPanel panel = panels[currentPanel % panels.Count];
+        ShopPanel panel = panels[Mathf.Abs(currentPanel) % panels.Count];
 
         for (int i = 0; i < slots.Length; i++)
         {
