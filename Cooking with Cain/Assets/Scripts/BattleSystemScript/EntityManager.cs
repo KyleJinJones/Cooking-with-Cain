@@ -26,6 +26,7 @@ public class EntityManager : MonoBehaviour
     public TextMeshProUGUI enemyRemaining;
 
     public GameObject rewardsPopup;
+    int goldValue;
 
     public int turnCount { get; private set; }
 
@@ -44,16 +45,9 @@ public class EntityManager : MonoBehaviour
 
     void Start()
     {
-        int totalGold = 0;
-
         foreach (Entity entity in queue)
         {
-            totalGold += entity.goldValue;
-        }
-
-        foreach (TextMeshProUGUI text in rewardsPopup.GetComponentsInChildren<TextMeshProUGUI>())
-        {
-            text.text = string.Format(text.text, totalGold);
+            goldValue += entity.goldValue;
         }
 
         StartCoroutine(Run());
@@ -218,12 +212,19 @@ public class EntityManager : MonoBehaviour
             Entity.playerStats.health = Entity.playerStats.maxHealth;
             PlayerMovementFixed.spawnPosition = PlayerMovementFixed.checkpointPosition;
             EnemyDespawner.despawned.Clear();
-            UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene);
+			
+			int lost = Mathf.RoundToInt(Gold.gold * 0.2f);
+            Gold.gold -= lost;
+			
+            rewardsPopup.GetComponentInChildren<TextMeshProUGUI>().text = string.Format("Oh no\nYou have lost {0} gold", lost);
+            rewardsPopup.SetActive(true);
             return true;
         }
 
         if (GetEnemyRemaining() == 0)
         {
+            Gold.gold += goldValue;
+            rewardsPopup.GetComponentInChildren<TextMeshProUGUI>().text = string.Format("Congratulations\nYou have obtained {0} gold", goldValue);
             rewardsPopup.SetActive(true);
             return true;
         }

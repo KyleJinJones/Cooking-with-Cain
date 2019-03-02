@@ -104,7 +104,7 @@ public class shopScript : MonoBehaviour
         float yposition = PlayerPrefs.GetFloat("Y");
         
         PlayerMovementFixed.spawnPosition = new Vector2(xposition, yposition);*/
-        
+        PlayerMovementFixed.checkpointPosition = PlayerMovementFixed.spawnPosition;
         SceneManager.LoadScene(currentScene);
     }
     
