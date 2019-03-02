@@ -120,5 +120,6 @@ public class SaveData
     public int[] potions = new int[3];
     public string sceneName;
     public List<ChestId> openedChests = new List<ChestId>();
+    public List<LeverId> activatedLevers = new List<LeverId>();
     public List<UpgradeInfo> shopBought = new List<UpgradeInfo>();
 }
