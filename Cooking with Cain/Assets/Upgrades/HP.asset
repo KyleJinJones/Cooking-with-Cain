@@ -20,7 +20,7 @@ MonoBehaviour:
   statsModification:
     attack: 0
     health: 25
-    maxHealth: 0
+    maxHealth: 25
     burn: 0
     splash: 0
     lifesteal: 0
