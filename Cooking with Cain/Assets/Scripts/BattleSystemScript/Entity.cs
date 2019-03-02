@@ -225,18 +225,8 @@ public class Entity : MonoBehaviour
     {
         ResultText.lines.Add(string.Format("{0} is defeated", entityName));
 
-        if (goldValue > 0)
-        {
-            Gold.gold += goldValue;
-            ResultText.lines.Add(string.Format("{0} gold gained", goldValue));
-        }
-
         if (gameObject.tag == "Player")
         {
-            int lost = Mathf.RoundToInt(Gold.gold * 0.2f);
-            Gold.gold -= lost;
-            ResultText.lines.Add(string.Format("{0} gold lost", lost));
-
             for (int i = 60; i > 0; i--)
             {
                 GetComponent<Image>().color = new Color(1, 1, 1, i / 60f);
