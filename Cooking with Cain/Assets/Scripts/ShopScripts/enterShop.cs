@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class enterShop : MonoBehaviour
 {
     public static int gold;
-    public List<UpgradeInfo> items = new List<UpgradeInfo>();
+    public List<ShopPanel> items ;
     public GameObject shopEnterPanel;
     
     private bool changeShop;
@@ -36,8 +36,9 @@ public class enterShop : MonoBehaviour
             shopScript.currentScene = SceneManager.GetActiveScene().name;
 
             PlayerMovementFixed.spawnPosition = collision.transform.position;
-
+            PanelHolder.setpanels = items;
             SceneManager.LoadScene("Shop");
+
         }
     }
 

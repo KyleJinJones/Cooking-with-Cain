@@ -19,6 +19,11 @@ public class shopScript : MonoBehaviour
     public Image[] slots = new Image[6];
     public int currentPanel = 0;
 
+    private void Start()
+    {
+        panels = PanelHolder.setpanels;
+    }
+
     private void Update() {
         ShopPanel panel = panels[currentPanel % panels.Count];
 

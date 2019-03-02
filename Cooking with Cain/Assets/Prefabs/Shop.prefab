@@ -120,9 +120,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: 84e9409651934594080b0578443865fd, type: 2}
-  - {fileID: 11400000, guid: df64570760154334db46cd8dfc4f0789, type: 2}
-  - {fileID: 11400000, guid: 96a6286ce8e955545a14a26517212aa9, type: 2}
-  - {fileID: 11400000, guid: cb9ecd4b2bec5224cb976cb0f71079db, type: 2}
-  - {fileID: 11400000, guid: eff3cd966c223294381b087aff32bd46, type: 2}
+  - name: Upgrades
+    items:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - name: Items
+    items: []
+  - name: Ingredients
+    items: []
   shopEnterPanel: {fileID: 0}
