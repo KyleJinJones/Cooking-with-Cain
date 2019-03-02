@@ -9,13 +9,31 @@ public class MapTransition : MonoBehaviour
     public string sceneName;
     // Sets spawn position in the new scene. CT
     public Vector2 spawnPosition;
-    
-    // When the collider is entered but only if it is a trigger. CT
+
+    public GameObject interactPopup;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            interactPopup.SetActive(true);
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
+        {
             TransitionScene();
+
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            interactPopup.SetActive(false);
         }
     }
 
