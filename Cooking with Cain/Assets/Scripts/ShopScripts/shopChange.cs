@@ -17,17 +17,28 @@ public class shopChange : MonoBehaviour, IPointerClickHandler
     {
         if (right)
         {
+            print((shop.currentPanel + 1) % shop.panels.Count);
             shopText.text = string.Format("Next: {0}", shop.panels[(shop.currentPanel + 1) % shop.panels.Count].name);
         }
         else
         {
-            shopText.text = string.Format("Previous: {0}", shop.panels[(shop.currentPanel + shop.panels.Count - 1) % shop.panels.Count].name);
+            string panelname;
+            if (shop.currentPanel == 0)
+            {
+                panelname = shop.panels[shop.panels.Count-1].name;
+            }
+            else
+            {
+                panelname = shop.panels[(shop.currentPanel + shop.panels.Count - 1) % shop.panels.Count].name;
+            }
+            shopText.text = string.Format("Previous: {0}", panelname);
         }
     }
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
         shop.currentPanel += right ? 1 : -1;
+        
         shop.currentPanel %= shop.panels.Count;
     }
 
