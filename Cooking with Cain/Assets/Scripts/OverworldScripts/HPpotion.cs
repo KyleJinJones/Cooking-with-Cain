@@ -34,6 +34,9 @@ public class HPpotion : MonoBehaviour
         amtowned = potions[(int) potionType];
         ownedtxt = GetComponentInChildren<TextMeshProUGUI>();
         UpdateAmtOwned();
+
+        TooltipText tooltipText = gameObject.AddComponent<TooltipText>();
+        tooltipText.text = string.Format("Heals {0} HP", healamt);
     }
 
     //Adds to player hp when used, but cannot be used at max hp. Auto saves the number of potions remaining
