@@ -31,7 +31,7 @@ public class enterShop : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
         {
             shopScript.currentScene = SceneManager.GetActiveScene().name;
 
