@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -33,14 +33,27 @@ public class Chest : MonoBehaviour
     [SerializeField] private Sprite openview;
     public int id;
     private ChestId chestId;
+    
+    public GameObject chestOpenPanel;
 
     private void Awake()
     {
         chestId = new ChestId(SceneManager.GetActiveScene().name, id);
+        chestOpenPanel.gameObject.SetActive(false);
         if (open)
         {
             GetComponent<SpriteRenderer>().sprite = openview;
         }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if ((collision.gameObject.tag == "Player") && (!open)) {
+            chestOpenPanel.gameObject.SetActive(true);
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D collision) {
+        chestOpenPanel.gameObject.SetActive(false);
     }
 
     // Provides the Player with an item upon them opening it.
@@ -48,6 +61,7 @@ public class Chest : MonoBehaviour
     {
         if (!open&&collision.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
+            chestOpenPanel.gameObject.SetActive(false);
             if (SaveDataManager.currentData.shopBought.Contains(reward))
             {
                 altReward.obtain();
