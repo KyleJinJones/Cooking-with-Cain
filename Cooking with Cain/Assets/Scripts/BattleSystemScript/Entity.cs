@@ -57,7 +57,10 @@ public class Entity : MonoBehaviour
         }
 
         statuses.RemoveAll(status => status.duration <= 0 && status.fade < -15);
+        OnUpdate();
     }
+
+    public virtual void OnUpdate() {}
 
     // Saves player stats to PlayerPrefs. CT
     public static void SavePlayerStats()
