@@ -15271,7 +15271,7 @@ MonoBehaviour:
   hp: {fileID: 1661658816}
   amtowned: 0
   ownedtxt: {fileID: 0}
-  potionIndex: 2
+  potionType: 0
 --- !u!1 &37418288
 GameObject:
   m_ObjectHideFlags: 0
@@ -15477,12 +15477,12 @@ PrefabInstance:
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.543801
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7793086
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -15561,9 +15561,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65d34b761c67d94780c03921f9970cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
-  bosses:
-  - {fileID: 7323366248267807545, guid: ada52ed69454f3844b198ac5e6a085ce, type: 3}
+  enemies:
+  - {fileID: 11400000, guid: ed585c24e19af5e418a094ca0280f53e, type: 2}
+  bosses: []
+  winScene: Winner
 --- !u!1001 &136512410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15728,12 +15729,12 @@ PrefabInstance:
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.87
+      value: 11.41
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3
+      value: -2.91
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -17862,7 +17863,7 @@ MonoBehaviour:
   hp: {fileID: 1661658816}
   amtowned: 0
   ownedtxt: {fileID: 0}
-  potionIndex: 0
+  potionType: 0
 --- !u!114 &773520369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22487,7 +22488,7 @@ MonoBehaviour:
   hp: {fileID: 1661658816}
   amtowned: 2
   ownedtxt: {fileID: 0}
-  potionIndex: 1
+  potionType: 0
 --- !u!1 &2047213031
 GameObject:
   m_ObjectHideFlags: 0
@@ -61614,11 +61615,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Data Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
-        type: 3}
-      propertyPath: loadSaveData
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5207366547924449524, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61672,6 +61668,11 @@ PrefabInstance:
     - target: {fileID: 5207366547924449524, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
+        type: 3}
+      propertyPath: loadSaveData
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -13,5 +13,6 @@ public class BossEncounter : EnemyEncounter
         EnemyLoader.bosses = bosses;
         base.StartEncounter(player);
         EntityManager.overworldScene = winScene;
+        WinScene.lastScene = SceneManager.GetActiveScene().name;
     }
 }
