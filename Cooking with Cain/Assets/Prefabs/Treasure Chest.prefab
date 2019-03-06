@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009438813, y: -0.09431338}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.75, y: 1.5}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &2548003376887998960
 MonoBehaviour:
@@ -153,6 +153,7 @@ MonoBehaviour:
   treasurewindow: {fileID: 0}
   openview: {fileID: 21300000, guid: 2960d19cc3ba99547b827b774dd53409, type: 3}
   id: 0
+  chestOpenPanel: {fileID: 0}
 --- !u!114 &2548003376887998965
 MonoBehaviour:
   m_ObjectHideFlags: 0
