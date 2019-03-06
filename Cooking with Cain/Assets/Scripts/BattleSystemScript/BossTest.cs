@@ -19,6 +19,11 @@ public class BossTest : Entity
         tooltip.sprites = ingredients.ConvertAll(ingredient => ingredient.sprite);
     }
 
+    public override void OnUpdate()
+    {
+        manager.enemyRemaining.text = "Enemy Remaining: ??";
+    }
+
     public override void UpdateStartPlayerTurn()
     {
         if (manager.GetEnemyRemaining() > 1)

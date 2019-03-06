@@ -161,7 +161,7 @@ public class EntityManager : MonoBehaviour
                 yield return null;
 
             if (CheckState())
-                break;
+                yield break;
 
             foreach (Entity enemy in enemies)
             {
@@ -184,7 +184,7 @@ public class EntityManager : MonoBehaviour
                         yield return null;
 
                     if (CheckState())
-                        break;
+                        yield break;
                 }
             }
         }

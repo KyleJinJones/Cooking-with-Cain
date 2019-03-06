@@ -49,6 +49,9 @@ public class Levers : MonoBehaviour
             objectToDelete.SetActive(false);
             interactPopup.SetActive(false);
             this.GetComponent<SpriteRenderer>().sprite = pulled;
+
+            if (GetComponent<AudioSource>() != null)
+                GetComponent<AudioSource>().Play();
         }
     }
 
