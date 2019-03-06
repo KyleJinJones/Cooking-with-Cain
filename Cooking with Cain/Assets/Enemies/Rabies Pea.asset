@@ -31,4 +31,4 @@ MonoBehaviour:
     miss: 0.4
   ingredients:
   - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
-  goldValue: 10
+  goldValue: 30
