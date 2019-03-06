@@ -7,6 +7,7 @@ public class Levers : MonoBehaviour
 {
     public GameObject objectToDelete;
     public GameObject interactPopup;
+   [SerializeField]private Sprite pulled;
 
     bool activated
     {
@@ -27,6 +28,7 @@ public class Levers : MonoBehaviour
         if (activated)
         {
             objectToDelete.SetActive(false);
+            this.GetComponent<SpriteRenderer>().sprite = pulled;
         }
     }
 
@@ -46,6 +48,7 @@ public class Levers : MonoBehaviour
             SaveDataManager.currentData.activatedLevers.Add(leverId);
             objectToDelete.SetActive(false);
             interactPopup.SetActive(false);
+            this.GetComponent<SpriteRenderer>().sprite = pulled;
         }
     }
 
