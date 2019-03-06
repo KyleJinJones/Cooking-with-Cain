@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Kyle_Level.unity
     guid: b4b16f6acddd286408ece24cfd7ed843
   - enabled: 1
-    path: Assets/Scenes/Molina.unity
-    guid: bfb31d081b692174782e44535c0e186e
-  - enabled: 1
     path: Assets/Scenes/Intro CS.unity
     guid: 3280257f34c30c541a6c4a37b5c0e797
   - enabled: 1
@@ -26,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Winner.unity
     guid: 6dc9f80aa1599bc4da6bcee4b5ffc580
-  - enabled: 1
-    path: Assets/Scenes/UpgradeCS.unity
-    guid: 9da0e3e8bcf4c6e4084de2f132bb3f40
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: ef4dc89cd85ce8547ac382d6594b5433
