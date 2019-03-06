@@ -83,6 +83,8 @@ public class Chest : MonoBehaviour
             treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", reward.rewardname);
             this.GetComponent<SpriteRenderer>().sprite = openview;
 
+            if (GetComponent<AudioSource>() != null)
+                GetComponent<AudioSource>().Play();
         }
     }
 
