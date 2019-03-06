@@ -93,8 +93,8 @@ MonoBehaviour:
   entityName: Buffel Sprout
   stats:
     attack: 2
-    health: 500
-    maxHealth: 500
+    health: 1000
+    maxHealth: 1000
     burn: 0.07
     splash: 0.5
     lifesteal: 0.5
