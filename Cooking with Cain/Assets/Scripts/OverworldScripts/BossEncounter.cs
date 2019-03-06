@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class BossEncounter : EnemyEncounter
 {
     public List<GameObject> bosses = new List<GameObject>();
+    public string winScene;
 
     public override void StartEncounter(GameObject player)
     {
         EnemyLoader.bosses = bosses;
         base.StartEncounter(player);
+        EntityManager.overworldScene = winScene;
     }
 }
