@@ -5,26 +5,27 @@ using UnityEngine.SceneManagement;
 
 
 
-public class StartMenuScript : MonoBehaviour {
-
-
-    public void gotoscene(int scene)
+public class StartMenuScript : MonoBehaviour
+{
+    public void StartGame()
     {
-        PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(scene);
+        SaveDataManager.currentData = new SaveData();
+        SceneManager.LoadScene("Gilbert");
     }
 
-    public void contgame()
+    public void Continue()
     {
-        if (PlayerPrefs.HasKey("level"))
-        {
-            SceneManager.LoadScene(PlayerPrefs.GetInt("level"));
-        }
-        else
-        {
-            SceneManager.LoadScene(2);
-        }
+        PlayerMovementFixed.spawnPosition = SaveDataManager.currentData.currentPosition;
+        SceneManager.LoadScene(SaveDataManager.currentData.sceneName);
     }
     
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 
+    public void SceneTransition(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }

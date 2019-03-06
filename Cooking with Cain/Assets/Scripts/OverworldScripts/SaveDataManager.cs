@@ -19,6 +19,11 @@ public class SaveDataManager : MonoBehaviour
         {
             return instance.data;
         }
+
+        set
+        {
+            instance.data = value;
+        }
     }
 
     void Awake()
@@ -110,7 +115,7 @@ public class SaveDataManagerEditor : Editor
 [System.Serializable]
 public class SaveData
 {
-    public Stats playerStats;
+    public Stats playerStats = new Stats();
     public List<int> despawnedEnemies;
     public Vector2 currentPosition;
     public Vector2 checkpointPosition;
