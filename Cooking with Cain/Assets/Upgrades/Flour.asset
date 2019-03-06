@@ -15,7 +15,7 @@ MonoBehaviour:
   attributeType: 1
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: b3efb450597e60f489170c25eb127108, type: 3}
-  infotext: 'A sack of hard flour. Raises your defense on using. '
+  infotext: 'A sack of hard flour. Raises your defense on usage. '
   rewardname: Flour
   statsModification:
     attack: 10
