@@ -6,12 +6,11 @@ using UnityEditor;
 
 public class SaveDataManager : MonoBehaviour
 {
-    public bool loadSaveData = false;
     public SaveData data;
 
     static SaveDataManager instance = null;
 
-    public string dataPath;
+    string dataPath;
 
     public static SaveData currentData
     {
@@ -32,14 +31,7 @@ public class SaveDataManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        if (instance == null)
-        {
-            if (loadSaveData)
-            {
-                LoadDataFromFile();
-            }
-        }
-        else
+        if (instance != null)
         {
             data = instance.data;
             Destroy(instance.gameObject);
@@ -48,7 +40,7 @@ public class SaveDataManager : MonoBehaviour
         instance = this;
     }
 
-    void LoadDataFromFile()
+    public void LoadDataFromFile()
     {
         data = Load(dataPath);
     }
@@ -81,29 +73,16 @@ public class SaveDataManager : MonoBehaviour
 [CustomEditor(typeof(SaveDataManager))]
 public class SaveDataManagerEditor : Editor
 {
-    SerializedProperty loadSaveData;
-    SerializedProperty data;
     string dataPath;
 
     void OnEnable()
     {
-        loadSaveData = serializedObject.FindProperty("loadSaveData");
-        data = serializedObject.FindProperty("data");
-
         dataPath = Path.Combine(Application.persistentDataPath, "save.json");
     }
 
     public override void OnInspectorGUI()
     {
-        serializedObject.Update();
-        EditorGUILayout.PropertyField(loadSaveData);
-
-        if (!(target as SaveDataManager).loadSaveData)
-        {
-            EditorGUILayout.PropertyField(data, true);
-        }
-
-        serializedObject.ApplyModifiedProperties();
+        DrawDefaultInspector();
 
         if (GUILayout.Button("Delete Save File"))
         {

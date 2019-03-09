@@ -9,7 +9,6 @@ public class StartMenuScript : MonoBehaviour
 {
     public void StartGame()
     {
-        SaveDataManager.currentData = new SaveData();
         SceneManager.LoadScene("Gilbert");
     }
 
