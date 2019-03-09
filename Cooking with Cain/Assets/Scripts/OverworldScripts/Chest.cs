@@ -84,6 +84,7 @@ public class Chest : MonoBehaviour
             this.GetComponent<SpriteRenderer>().sprite = openview;
 
             if (GetComponent<AudioSource>() != null)
+                
                 GetComponent<AudioSource>().Play();
         }
     }
