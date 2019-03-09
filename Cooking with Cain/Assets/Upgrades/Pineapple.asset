@@ -15,8 +15,8 @@ MonoBehaviour:
   attributeType: 1
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: ea1701bc4f9be7241921ac38a5560181, type: 3}
-  infotext: A Pineapple that pokes the heck out of me every time I touch it. Probably
-    would be painful for enemies too.
+  infotext: A Prickly Pineapple that pokes the heck out of me every time I touch it.
+    Probably would be painful for enemies too.
   rewardname: Prickly Pineapple
   statsModification:
     attack: 10
