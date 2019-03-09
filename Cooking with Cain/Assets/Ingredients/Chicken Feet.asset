@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: Chicken Feet
   sprite: {fileID: 21300000, guid: f96479299e18f9542aa010537725210a, type: 3}
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: efd99fc9ee0c5224397b5a4afd53daec, type: 3}
   damageType: 0
   multiplier: 5
   multiplierMin: 0
