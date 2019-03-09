@@ -303,7 +303,7 @@ public class Stats
 
     public float burn = 0.1f;
     public float splash = 0.5f;
-    public float lifesteal = 0.5f;
+    public float lifesteal = 0.25f;
     public float atkboost = 0.2f;
     public float atkdebuff = 0.2f;
     public float stun = 0.6f;
