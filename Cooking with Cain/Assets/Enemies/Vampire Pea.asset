@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238b96afcef185442acf8746e808c13b, type: 3}
   m_Name: Vampire Pea
   m_EditorClassIdentifier: 
-  enemyName: Vampire Pea
+  enemyName: Vampea
   sprite: {fileID: 21300000, guid: 34a08ab5e2d32c04aa13426b2a54903c, type: 3}
   stats:
     attack: 6
