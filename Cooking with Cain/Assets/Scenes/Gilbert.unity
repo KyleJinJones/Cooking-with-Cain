@@ -52314,6 +52314,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5270639984563180484, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5270639984563180484, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5270639984563180490, guid: c07236d2f9cf9894dae3eb544d4e415b,
         type: 3}
       propertyPath: m_havePropertiesChanged
