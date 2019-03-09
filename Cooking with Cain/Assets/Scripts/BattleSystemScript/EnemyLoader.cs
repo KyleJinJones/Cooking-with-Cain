@@ -62,12 +62,15 @@ public class EnemyLoader : MonoBehaviour
         Entity entity = clone.GetComponent<Entity>();
         Image image = clone.GetComponent<Image>();
         EnemyAction enemyAction = clone.GetComponent<EnemyAction>();
+        clone.AddComponent<AudioSource>();
 
         entity.entityName = enemy.enemyName;
         entity.stats = enemy.stats.copy;
         image.sprite = enemy.sprite;
         enemyAction.ingredients = enemy.ingredients;
         entity.goldValue = enemy.goldValue;
+        entity.attackSound = enemy.attackSound;
+        entity.deathSound = enemy.deathSound;
 
         TooltipTextWithIngredients tooltip = clone.AddComponent<TooltipTextWithIngredients>();
         tooltip.text = "Ingredients:";

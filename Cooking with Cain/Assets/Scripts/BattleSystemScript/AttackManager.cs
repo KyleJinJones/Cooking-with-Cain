@@ -57,6 +57,7 @@ public class AttackManager : MonoBehaviour
     IEnumerator PerformAttack(Entity attacker, Entity target, Entity[] targetTeam, int damageMin, int damageMax, List<Ingredient.Attribute> attributes)
     {
         attacker.StatusBlink(StatusInstance.Status.atkup, StatusInstance.Status.atkdown);
+        attacker.PlayAttackSound();
         ResultText.lines.Add(string.Format("{0} attacks", attacker.entityName));
 
         StartCoroutine(AttackAnimation(attacker.gameObject));

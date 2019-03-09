@@ -26,6 +26,9 @@ public class Entity : MonoBehaviour
 
     public List<StatusInstance> statuses = new List<StatusInstance>();
 
+    public AudioClip attackSound;
+    public AudioClip deathSound;
+
     void Start()
     {
         if (gameObject.tag == "Player")
@@ -224,8 +227,14 @@ public class Entity : MonoBehaviour
         }
     }
 
+    public void PlayAttackSound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(attackSound);
+    }
+
     IEnumerator Die()
     {
+        GetComponent<AudioSource>().PlayOneShot(deathSound);
         ResultText.lines.Add(string.Format("{0} is defeated", entityName));
 
         if (gameObject.tag == "Player")
