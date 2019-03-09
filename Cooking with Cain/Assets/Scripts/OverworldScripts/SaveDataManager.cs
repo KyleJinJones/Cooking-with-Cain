@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEditor;
 
 public class SaveDataManager : MonoBehaviour
 {
@@ -66,27 +65,6 @@ public class SaveDataManager : MonoBehaviour
         {
             string jsonString = streamReader.ReadToEnd();
             return JsonUtility.FromJson<SaveData>(jsonString);
-        }
-    }
-}
-
-[CustomEditor(typeof(SaveDataManager))]
-public class SaveDataManagerEditor : Editor
-{
-    string dataPath;
-
-    void OnEnable()
-    {
-        dataPath = Path.Combine(Application.persistentDataPath, "save.json");
-    }
-
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        if (GUILayout.Button("Delete Save File"))
-        {
-            File.Delete(dataPath);
         }
     }
 }

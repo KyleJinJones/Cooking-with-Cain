@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -95,7 +94,6 @@ public class Chest : MonoBehaviour
 
         foreach (Chest despawner in FindObjectsOfType<Chest>())
         {
-            Undo.RecordObject(despawner, "Auto Assign ID");
             despawner.id = nextId;
             nextId++;
         }
@@ -117,19 +115,5 @@ public class ChestId : System.IEquatable<ChestId>
     bool IEquatable<ChestId>.Equals(ChestId other)
     {
         return scene == other.scene && id == other.id;
-    }
-}
-
-[CustomEditor(typeof(Chest))]
-public class ChestEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        if (GUILayout.Button("Auto Assign All Chest ID"))
-        {
-            ((Chest)target).AutoAssignAllChestId();
-        }
     }
 }

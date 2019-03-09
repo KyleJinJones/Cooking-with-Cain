@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 [CreateAssetMenu(fileName = "UpgradeInfo.asset", menuName = "Cooking with Cain/UpgradeInfo")]
 public class UpgradeInfo : ScriptableObject
@@ -45,67 +44,5 @@ public class UpgradeInfo : ScriptableObject
                 HPpotion.potions[(int)potionType] += amount;
                 break;
         }
-    }
-}
-
-[CustomEditor(typeof(UpgradeInfo))]
-public class UpgradeInfoEditor : Editor
-{
-    SerializedProperty attributeType;
-    SerializedProperty goldcost;
-    SerializedProperty upgradeimage;
-    SerializedProperty infotext;
-    SerializedProperty rewardname;
-
-    SerializedProperty statsModification;
-
-    SerializedProperty ingredient;
-
-    SerializedProperty potionType;
-    SerializedProperty amount;
-
-    void OnEnable()
-    {
-        attributeType = serializedObject.FindProperty("attributeType");
-        goldcost = serializedObject.FindProperty("goldcost");
-        upgradeimage = serializedObject.FindProperty("upgradeimage");
-        infotext = serializedObject.FindProperty("infotext");
-        rewardname = serializedObject.FindProperty("rewardname");
-
-        statsModification = serializedObject.FindProperty("statsModification");
-
-        ingredient = serializedObject.FindProperty("ingredient");
-
-        potionType = serializedObject.FindProperty("potionType");
-        amount = serializedObject.FindProperty("amount");
-    }
-
-    public override void OnInspectorGUI()
-    {
-        serializedObject.Update();
-        EditorGUILayout.PropertyField(attributeType);
-        EditorGUILayout.PropertyField(goldcost);
-        EditorGUILayout.PropertyField(upgradeimage);
-        EditorGUILayout.PropertyField(infotext);
-        EditorGUILayout.PropertyField(rewardname);
-
-
-        switch (attributeType.enumValueIndex)
-        {
-            case (int) UpgradeInfo.AttributeType.STAT:
-                EditorGUILayout.PropertyField(statsModification, true);
-                break;
-            case (int)UpgradeInfo.AttributeType.INGREDIENT:
-                EditorGUILayout.PropertyField(ingredient);
-                break;
-            case (int)UpgradeInfo.AttributeType.GOLD:
-                EditorGUILayout.PropertyField(amount);
-                break;
-            case (int)UpgradeInfo.AttributeType.POTION:
-                EditorGUILayout.PropertyField(potionType);
-                EditorGUILayout.PropertyField(amount);
-                break;
-        }
-        serializedObject.ApplyModifiedProperties();
     }
 }

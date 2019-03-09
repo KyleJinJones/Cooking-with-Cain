@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 
 public class EnemyDespawner : MonoBehaviour
 {
@@ -25,7 +23,6 @@ public class EnemyDespawner : MonoBehaviour
 
         foreach (EnemyDespawner despawner in FindObjectsOfType<EnemyDespawner>())
         {
-            Undo.RecordObject(despawner, "Auto Assign ID");
             despawner.enemyID = nextId;
             nextId++;
         }
@@ -36,20 +33,6 @@ public class EnemyDespawner : MonoBehaviour
         if (despawned.Contains(enemyID))
         {
             Destroy(gameObject);
-        }
-    }
-}
-
-[CustomEditor(typeof(EnemyDespawner))]
-public class EnemyDespawnerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        if (GUILayout.Button("Auto Assign All Enemy ID"))
-        {
-            ((EnemyDespawner)target).AutoAssignAllEnemyId();
         }
     }
 }
