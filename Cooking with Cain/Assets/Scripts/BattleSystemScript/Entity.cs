@@ -301,15 +301,15 @@ public class Stats
     public float health = 100;
     public float maxHealth = 100;
 
-    public float burn = 0.07f;
+    public float burn = 0.1f;
     public float splash = 0.5f;
     public float lifesteal = 0.5f;
     public float atkboost = 0.2f;
     public float atkdebuff = 0.2f;
     public float stun = 0.6f;
-    public float defboost = 0.2f;
+    public float defboost = 0.25f;
     public float defdebuff = 0.4f;
-    public float reflect = 0.3f;
+    public float reflect = 0.5f;
     public float selfdmg = 0.1f;
     public float miss = 0.4f;
 
