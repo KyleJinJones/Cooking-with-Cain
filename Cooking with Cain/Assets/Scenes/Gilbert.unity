@@ -103545,7 +103545,7 @@ PrefabInstance:
         type: 3}
       propertyPath: reward
       value: 
-      objectReference: {fileID: 11400000, guid: 5fe347d3a5d55fb4dbdd53c1baa22638,
+      objectReference: {fileID: 11400000, guid: fad23ae8359f4614a85743e2a748f88a,
         type: 2}
     - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
