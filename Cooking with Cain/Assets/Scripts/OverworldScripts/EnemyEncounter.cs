@@ -16,6 +16,7 @@ public class EnemyEncounter : MonoBehaviour
         PlayerMovementFixed.spawnPosition = player.transform.position;
         // Sets the scene to transition back to after the battle. CT
         EntityManager.overworldScene = SceneManager.GetActiveScene().name;
+        EntityManager.overworldSceneLose = SceneManager.GetActiveScene().name;
         // Adds the enemy to the list of despawned enemies. CT
         EnemyDespawner despawner;
         if ((despawner = GetComponent<EnemyDespawner>()) != null)

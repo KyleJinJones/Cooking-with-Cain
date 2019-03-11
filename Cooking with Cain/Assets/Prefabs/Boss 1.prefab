@@ -93,7 +93,7 @@ MonoBehaviour:
   loader: {fileID: 0}
   entityName: Buffel Sprout
   stats:
-    attack: 2
+    attack: 5
     health: 1000
     maxHealth: 1000
     burn: 0.07
@@ -114,6 +114,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   pea: {fileID: 11400000, guid: ed585c24e19af5e418a094ca0280f53e, type: 2}
   defUpIcon: {fileID: 21300000, guid: 8ce2f3fd845e0a440aa500286a6b1199, type: 3}
+  reflectIcon: {fileID: 21300000, guid: 482df2887fbac154489ce7f0762d31e1, type: 3}
 --- !u!114 &7323366248267807547
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,6 +32,7 @@ public class EntityManager : MonoBehaviour
 
     // Scene to transition to if the battle is won. CT
     public static string overworldScene;
+    public static string overworldSceneLose;
 
     void Awake()
     {
@@ -40,7 +41,6 @@ public class EntityManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Entity>();
 
         rewardsPopup.SetActive(false);
-        rewardsPopup.GetComponentInChildren<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene));
     }
 
     void Start()
@@ -215,7 +215,8 @@ public class EntityManager : MonoBehaviour
 			
 			int lost = Mathf.RoundToInt(Gold.gold * 0.2f);
             Gold.gold -= lost;
-			
+
+            rewardsPopup.GetComponentInChildren<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene(overworldSceneLose));
             rewardsPopup.GetComponentInChildren<TextMeshProUGUI>().text = string.Format("Oh no\nYou have lost {0} gold", lost);
             rewardsPopup.SetActive(true);
             return true;
@@ -224,6 +225,7 @@ public class EntityManager : MonoBehaviour
         if (GetEnemyRemaining() == 0)
         {
             Gold.gold += goldValue;
+            rewardsPopup.GetComponentInChildren<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene));
             rewardsPopup.GetComponentInChildren<TextMeshProUGUI>().text = string.Format("Congratulations\nYou have obtained {0} gold", goldValue);
             rewardsPopup.SetActive(true);
             return true;
