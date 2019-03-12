@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7aeef658e16b9c43a4f91d186ca01e5, type: 3}
   m_Name: Flour
   m_EditorClassIdentifier: 
-  foodName: Flour
-  sprite: {fileID: 21300000, guid: b3efb450597e60f489170c25eb127108, type: 3}
+  foodName: Coconut
+  sprite: {fileID: 21300034, guid: b2f3b046274c65546afcf238e1c4179d, type: 3}
   audioClip: {fileID: 8300000, guid: 1157aa2d098b95e42a84784d1428c761, type: 3}
   damageType: 0
   multiplier: 1
