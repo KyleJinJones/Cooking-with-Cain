@@ -306,7 +306,7 @@ public class Stats
     public float lifesteal = 0.25f;
     public float atkboost = 0.2f;
     public float atkdebuff = 0.2f;
-    public float stun = 0.6f;
+    public float stun = 0.75f;
     public float defboost = 0.25f;
     public float defdebuff = 0.4f;
     public float reflect = 0.5f;

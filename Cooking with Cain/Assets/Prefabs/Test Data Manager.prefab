@@ -43,21 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d22b68170cb12c40818b2b4a2ad2cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadSaveData: 0
   data:
     playerStats:
       attack: 10
       health: 100
       maxHealth: 100
-      burn: 0.07
+      burn: 0.1
       splash: 0.5
-      lifesteal: 0.5
+      lifesteal: 0.25
       atkboost: 0.2
       atkdebuff: 0.2
-      stun: 0.6
-      defboost: 0.2
+      stun: 0.75
+      defboost: 0.25
       defdebuff: 0.4
-      reflect: 0.3
+      reflect: 0.5
       selfdmg: 0.1
       miss: 0.4
     despawnedEnemies: 
@@ -86,3 +85,6 @@ MonoBehaviour:
     - {fileID: 0}
     potions: 020000000200000002000000
     sceneName: 
+    openedChests: []
+    activatedLevers: []
+    shopBought: []
