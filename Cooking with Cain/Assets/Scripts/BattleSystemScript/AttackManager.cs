@@ -62,7 +62,6 @@ public class AttackManager : MonoBehaviour
 
         StartCoroutine(AttackAnimation(attacker.gameObject));
         int total = 0;
-        int number = 0;
 
         float miss = attributes.Contains(Ingredient.Attribute.miss) ? attacker.stats.miss : 0;
 
@@ -73,9 +72,8 @@ public class AttackManager : MonoBehaviour
             else
             {
                 int damage = Random.Range(damageMin, damageMax);
-                total += damage;
-
-                number++;
+                total += Mathf.FloorToInt(Mathf.Min(damage * attacker.stats.splash, target.stats.health));
+                
                 DealDamage(attacker, target, damage * attacker.stats.splash, attributes);
             }
 
@@ -91,9 +89,8 @@ public class AttackManager : MonoBehaviour
                     else
                     {
                         int damage = Random.Range(damageMin, damageMax);
-                        total += damage;
-
-                        number++;
+                        total += Mathf.FloorToInt(Mathf.Min(damage * attacker.stats.splash, enemy.stats.health));
+                        
                         DealDamage(attacker, enemy, damage * attacker.stats.splash, attributes);
                     }
                 }
@@ -106,9 +103,8 @@ public class AttackManager : MonoBehaviour
             else
             {
                 int damage = Random.Range(damageMin, damageMax);
-                total += damage;
+                total += Mathf.FloorToInt(Mathf.Min(damage, target.stats.health));
 
-                number++;
                 DealDamage(attacker, target, damage, attributes);
             }
         }
@@ -120,15 +116,15 @@ public class AttackManager : MonoBehaviour
             switch (attribute)
             {
                 case Ingredient.Attribute.leech:
-                    if (number > 0)
+                    if (total > 0)
                     {
-                        value = Mathf.RoundToInt(total / number * attacker.stats.lifesteal);
+                        value = Mathf.RoundToInt(total * attacker.stats.lifesteal);
                         attacker.ModifyHealth(value);
                         ResultText.lines.Add(string.Format("{0} gains {1} health", attacker.entityName, value));
                     }
                     break;
                 case Ingredient.Attribute.atkup:
-                    attacker.AddStatus(StatusInstance.Status.atkup, attacker.stats.atkboost, 2);
+                    attacker.AddStatus(StatusInstance.Status.atkup, attacker.stats.atkboost, 3);
                     ResultText.lines.Add(string.Format("{0} gains {1}% attack boost", attacker.entityName, Mathf.RoundToInt(attacker.stats.atkboost * 100)));
                     break;
                 case Ingredient.Attribute.defup:
@@ -136,7 +132,7 @@ public class AttackManager : MonoBehaviour
                     ResultText.lines.Add(string.Format("{0} gains {1}% defense boost", attacker.entityName, Mathf.RoundToInt(attacker.stats.defboost * 100)));
                     break;
                 case Ingredient.Attribute.reflect:
-                    attacker.AddStatus(StatusInstance.Status.reflect, attacker.stats.reflect, 1);
+                    attacker.AddStatus(StatusInstance.Status.reflect, attacker.stats.reflect, 2);
                     ResultText.lines.Add(string.Format("{0} gains {1}% reflect", attacker.entityName, Mathf.RoundToInt(attacker.stats.reflect * 100)));
                     break;
                 case Ingredient.Attribute.cleanse:
