@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour {
     public void closePMenu()
     {
         pausemenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void ExitGame()
@@ -25,12 +26,19 @@ public class PauseMenu : MonoBehaviour {
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 
     }
+
+    public void OpenPMenu()
+    {
+        pausemenu.SetActive(true);
+        Time.timeScale = 0;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pausemenu.SetActive(true);
+
+            OpenPMenu();
         }
 	}
 }

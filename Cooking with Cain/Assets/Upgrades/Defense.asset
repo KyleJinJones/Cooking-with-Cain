@@ -15,7 +15,8 @@ MonoBehaviour:
   attributeType: 0
   goldcost: 100
   upgradeimage: {fileID: 21300034, guid: b2f3b046274c65546afcf238e1c4179d, type: 3}
-  infotext: Fortified Flour, it will help my flour block even more damage.
+  infotext: 'A hardening for my Coarse Coconut''s thick shell will make it even better
+    at protecting me. '
   rewardname: Defense
   statsModification:
     attack: 0
