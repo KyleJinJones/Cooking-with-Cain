@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Ghost Pea
   sprite: {fileID: 21300000, guid: cfc58a752fcd42d4eb11ae98ba0c6fc2, type: 3}
   stats:
-    attack: 5
+    attack: 3
     health: 66
     maxHealth: 66
     burn: 0.07

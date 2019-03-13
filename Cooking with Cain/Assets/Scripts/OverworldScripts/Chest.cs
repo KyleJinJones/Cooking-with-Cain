@@ -78,8 +78,12 @@ public class Chest : MonoBehaviour
             open = true;
             treasurewindow.SetActive(true);
             Time.timeScale = 0;
-            treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = reward.upgradeimage;
-            treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", reward.rewardname);
+            
+            if(reward.rewardname != " ") {
+                treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = reward.upgradeimage;
+                treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", reward.rewardname);
+            }
+            
             this.GetComponent<SpriteRenderer>().sprite = openview;
 
             if (GetComponent<AudioSource>() != null)
