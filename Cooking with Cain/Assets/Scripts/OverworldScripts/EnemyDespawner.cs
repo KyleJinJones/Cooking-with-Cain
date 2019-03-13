@@ -16,17 +16,6 @@ public class EnemyDespawner : MonoBehaviour
     
     // ID of the enemy. CT
     public int enemyID;
-    
-    public void AutoAssignAllEnemyId()
-    {
-        int nextId = 0;
-
-        foreach (EnemyDespawner despawner in FindObjectsOfType<EnemyDespawner>())
-        {
-            despawner.enemyID = nextId;
-            nextId++;
-        }
-    }
 
     void Start()
     {

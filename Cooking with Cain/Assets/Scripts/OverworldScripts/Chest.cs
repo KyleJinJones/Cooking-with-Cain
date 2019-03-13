@@ -87,17 +87,6 @@ public class Chest : MonoBehaviour
                 GetComponent<AudioSource>().Play();
         }
     }
-
-    public void AutoAssignAllChestId()
-    {
-        int nextId = 0;
-
-        foreach (Chest despawner in FindObjectsOfType<Chest>())
-        {
-            despawner.id = nextId;
-            nextId++;
-        }
-    }
 }
 
 [System.Serializable]
