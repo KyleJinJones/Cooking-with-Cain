@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour {
     {
         if (pausemenu.activeSelf)
         {
-            pausemenu.SetActive(false);
+            closePMenu();
         }
         else
         {

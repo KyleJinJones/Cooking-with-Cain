@@ -16,7 +16,7 @@ MonoBehaviour:
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 4100b9dcfa8c51e47a4c7c8db0998886, type: 3}
   infotext: A nice bit of fire that when combined with my Perilous Pepper will cause
-    it to doe even more burn damage.
+    it to do even more burn damage.
   rewardname: Burn
   statsModification:
     attack: 0

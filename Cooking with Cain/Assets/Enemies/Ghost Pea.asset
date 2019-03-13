@@ -32,3 +32,5 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 49d9b76a7113f004ba9483bea97bde4c, type: 2}
   goldValue: 13
+  attackSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: f1c793a4e1e0d5f4ba9ae3a122c37663, type: 3}
