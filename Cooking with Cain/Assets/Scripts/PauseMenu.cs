@@ -29,8 +29,15 @@ public class PauseMenu : MonoBehaviour {
 
     public void OpenPMenu()
     {
-        pausemenu.SetActive(true);
-        Time.timeScale = 0;
+        if (pausemenu.activeSelf)
+        {
+            pausemenu.SetActive(false);
+        }
+        else
+        {
+            pausemenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 	
 	// Update is called once per frame
