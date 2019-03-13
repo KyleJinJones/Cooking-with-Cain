@@ -24,7 +24,7 @@ public class UpgradeStats : MonoBehaviour
     // Update is called once per frame
     void OnMouseEnter()
     {
-        uimanager.GetComponent<UpgradeUI>().Displayui(upgrade.infotext,upgrade.goldcost);
+        uimanager.GetComponent<UpgradeUI>().Displayui(upgrade.infotext,upgrade.totalGoldCost);
     }
 
     void OnMouseDown()

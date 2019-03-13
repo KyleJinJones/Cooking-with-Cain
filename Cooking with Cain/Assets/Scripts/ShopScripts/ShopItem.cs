@@ -12,7 +12,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
         if (upgrade != null)
-            infoText.text = upgrade.infotext + "\n" + "Cost: " + upgrade.goldcost;
+            UpdateInfoText();
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
@@ -22,15 +22,44 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        if (Gold.gold >= upgrade.goldcost && !SaveDataManager.currentData.shopBought.Contains(upgrade))
+        if (upgrade.attributeType == UpgradeInfo.AttributeType.STAT && upgrade.limit > 0 && upgrade.boughtAmount >= upgrade.limit)
+        {
+            return;
+        }
+
+        if (Gold.gold >= upgrade.totalGoldCost && !SaveDataManager.currentData.shopBoughtIngredient.Contains(upgrade))
         {
             upgrade.obtain();
-            Gold.gold -= upgrade.goldcost;
+            Gold.gold -= upgrade.totalGoldCost;
 
             if (upgrade.attributeType == UpgradeInfo.AttributeType.INGREDIENT)
             {
-                SaveDataManager.currentData.shopBought.Add(upgrade);
+                SaveDataManager.currentData.shopBoughtIngredient.Add(upgrade);
             }
+            else if (upgrade.attributeType == UpgradeInfo.AttributeType.STAT)
+            {
+                upgrade.boughtAmount++;
+            }
+        }
+
+        UpdateInfoText();
+    }
+
+    public void UpdateInfoText()
+    {
+        string text = upgrade.infotext + "\n";
+        
+        if (SaveDataManager.currentData.shopBoughtIngredient.Contains(upgrade))
+        {
+            infoText.text = text + "You already have this ingredient.";
+        }
+        else if (upgrade.attributeType == UpgradeInfo.AttributeType.STAT && upgrade.limit > 0 && upgrade.boughtAmount >= upgrade.limit)
+        {
+            infoText.text = text + "Sold out";
+        }
+        else
+        {
+            infoText.text = text + "Cost: " + upgrade.totalGoldCost;
         }
     }
 }

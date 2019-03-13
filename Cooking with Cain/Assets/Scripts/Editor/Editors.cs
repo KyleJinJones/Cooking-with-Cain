@@ -13,6 +13,8 @@ public class UpgradeInfoEditor : Editor
     SerializedProperty infotext;
     SerializedProperty rewardname;
 
+    SerializedProperty limit;
+    SerializedProperty costIncrease;
     SerializedProperty statsModification;
 
     SerializedProperty ingredient;
@@ -28,6 +30,8 @@ public class UpgradeInfoEditor : Editor
         infotext = serializedObject.FindProperty("infotext");
         rewardname = serializedObject.FindProperty("rewardname");
 
+        limit = serializedObject.FindProperty("limit");
+        costIncrease = serializedObject.FindProperty("costIncrease");
         statsModification = serializedObject.FindProperty("statsModification");
 
         ingredient = serializedObject.FindProperty("ingredient");
@@ -49,6 +53,8 @@ public class UpgradeInfoEditor : Editor
         switch (attributeType.enumValueIndex)
         {
             case (int)UpgradeInfo.AttributeType.STAT:
+                EditorGUILayout.PropertyField(limit);
+                EditorGUILayout.PropertyField(costIncrease);
                 EditorGUILayout.PropertyField(statsModification, true);
                 break;
             case (int)UpgradeInfo.AttributeType.INGREDIENT:

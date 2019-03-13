@@ -61,7 +61,7 @@ public class Chest : MonoBehaviour
         if (!open&&collision.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
             chestOpenPanel.gameObject.SetActive(false);
-            if (SaveDataManager.currentData.shopBought.Contains(reward))
+            if (SaveDataManager.currentData.shopBoughtIngredient.Contains(reward))
             {
                 altReward.obtain();
             }
@@ -71,7 +71,7 @@ public class Chest : MonoBehaviour
 
                 if (reward.attributeType == UpgradeInfo.AttributeType.INGREDIENT)
                 {
-                    SaveDataManager.currentData.shopBought.Add(reward);
+                    SaveDataManager.currentData.shopBoughtIngredient.Add(reward);
                 }
             }
 
