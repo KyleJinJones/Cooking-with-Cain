@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeType: 0
   goldcost: 100
-  upgradeimage: {fileID: 21300000, guid: b3efb450597e60f489170c25eb127108, type: 3}
+  upgradeimage: {fileID: 21300034, guid: b2f3b046274c65546afcf238e1c4179d, type: 3}
   infotext: Fortified Flour, it will help my flour block even more damage.
   rewardname: Defense
   statsModification:
@@ -27,7 +27,7 @@ MonoBehaviour:
     atkboost: 0
     atkdebuff: 0
     stun: 0
-    defboost: 0.1
+    defboost: 0.05
     defdebuff: 0
     reflect: 0
     selfdmg: 0

@@ -1,0 +1,657 @@
+fileFormatVersion: 2
+guid: b2f3b046274c65546afcf238e1c4179d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Food Pack Sprite Sheet InkMammoth 800x800 _0
+    21300002: Food Pack Sprite Sheet InkMammoth 800x800 _1
+    21300004: Food Pack Sprite Sheet InkMammoth 800x800 _2
+    21300006: Food Pack Sprite Sheet InkMammoth 800x800 _3
+    21300008: Food Pack Sprite Sheet InkMammoth 800x800 _4
+    21300010: Food Pack Sprite Sheet InkMammoth 800x800 _5
+    21300012: Food Pack Sprite Sheet InkMammoth 800x800 _6
+    21300014: Food Pack Sprite Sheet InkMammoth 800x800 _7
+    21300016: Food Pack Sprite Sheet InkMammoth 800x800 _8
+    21300018: Food Pack Sprite Sheet InkMammoth 800x800 _9
+    21300020: Food Pack Sprite Sheet InkMammoth 800x800 _10
+    21300022: Food Pack Sprite Sheet InkMammoth 800x800 _11
+    21300024: Food Pack Sprite Sheet InkMammoth 800x800 _12
+    21300026: Food Pack Sprite Sheet InkMammoth 800x800 _13
+    21300028: Food Pack Sprite Sheet InkMammoth 800x800 _14
+    21300030: Food Pack Sprite Sheet InkMammoth 800x800 _15
+    21300032: Food Pack Sprite Sheet InkMammoth 800x800 _16
+    21300034: Food Pack Sprite Sheet InkMammoth 800x800 _17
+    21300036: Food Pack Sprite Sheet InkMammoth 800x800 _18
+    21300038: Food Pack Sprite Sheet InkMammoth 800x800 _19
+    21300040: Food Pack Sprite Sheet InkMammoth 800x800 _20
+    21300042: Food Pack Sprite Sheet InkMammoth 800x800 _21
+    21300044: Food Pack Sprite Sheet InkMammoth 800x800 _22
+    21300046: Food Pack Sprite Sheet InkMammoth 800x800 _23
+    21300048: Food Pack Sprite Sheet InkMammoth 800x800 _24
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 655
+        width: 135
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc609ba49386714392bae1940c106b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 655
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73a9e215b8c0634fba10a9b36a4bb73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _2
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 650
+        width: 140
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8c68c77dc7e0e44b80350a782275e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _3
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 645
+        width: 115
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1cf62b6604a744ea6e13295c1e8afb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _4
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 645
+        width: 120
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b126b1e866bc8f4aa04da7196e9b85d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 485
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada2f0166cdb687468bdaced96ef07ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 485
+        width: 120
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306d56c2560002c47ba12d76a8b73948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _7
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 495
+        width: 140
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8856714c0e3067042a1c4b0baaf2890e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _8
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 505
+        width: 145
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb906111a4a6904eacef52f0c434efb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _9
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 485
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209e6f81c3f131b4ea2da6a2c7811ef9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 330
+        width: 150
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b86987721b092468ad718729bd7c0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _11
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 330
+        width: 150
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099b045835b90ef4795ec1d13f609368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _12
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 330
+        width: 130
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50c6e6610e749e46842ca7ae143b5c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _13
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 330
+        width: 130
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08b84913c389864789d8aa8b832a4a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _14
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 330
+        width: 150
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3618ab32112141b418c041a897566b06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 170
+        width: 155
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a701aeb11f974459f1c1facf227799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _16
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 165
+        width: 140
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba98064420f6fb4380f353b9412da3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _17
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 170
+        width: 150
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5beea2306c9904c41ab92424b1f1fea3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _18
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 170
+        width: 145
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5d11b4948b5c04db49fa6054b89381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _19
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 170
+        width: 120
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60efacf070fbfce4d984dd6557217e5c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _20
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 20
+        width: 140
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1057cc0a7c5e96f49a1f0c2d45be053b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _21
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 10
+        width: 135
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24192f553b47a8c4489e1b32c7b1cdf7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _22
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 10
+        width: 125
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3db21a51e890244a69d6dae0649159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _23
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 5
+        width: 160
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba35dd6d0f7d9d46adc1ab9dad78302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Food Pack Sprite Sheet InkMammoth 800x800 _24
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 25
+        width: 140
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd7fe9d9f6d38241900bf1e3f2d69d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8c1cf949f37a7dc49afa425ee8251872
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
