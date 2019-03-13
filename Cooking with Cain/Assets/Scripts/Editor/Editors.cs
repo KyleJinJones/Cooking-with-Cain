@@ -75,7 +75,14 @@ public class EnemyDespawnerEditor : Editor
 
         if (GUILayout.Button("Auto Assign All Enemy ID"))
         {
-            ((EnemyDespawner)target).AutoAssignAllEnemyId();
+            int nextId = 0;
+            
+            foreach (EnemyDespawner despawner in FindObjectsOfType<EnemyDespawner>())
+            {
+                Undo.RecordObject(despawner, "Auto assign id");
+                despawner.enemyID = nextId;
+                nextId++;
+            }
         }
     }
 }
@@ -110,7 +117,14 @@ public class ChestEditor : Editor
 
         if (GUILayout.Button("Auto Assign All Chest ID"))
         {
-            ((Chest)target).AutoAssignAllChestId();
+            int nextId = 0;
+
+            foreach (Chest despawner in FindObjectsOfType<Chest>())
+            {
+                Undo.RecordObject(despawner, "Auto assign id");
+                despawner.id = nextId;
+                nextId++;
+            }
         }
     }
 }
