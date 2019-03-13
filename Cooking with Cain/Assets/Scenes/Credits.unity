@@ -366,15 +366,15 @@ RectTransform:
   m_GameObject: {fileID: 556343655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.334375, y: 1.3506446, z: 1}
   m_Children: []
   m_Father: {fileID: 1895603372}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 142.5}
-  m_SizeDelta: {x: 810, y: 795}
+  m_AnchoredPosition: {x: 0, y: 19}
+  m_SizeDelta: {x: 810, y: 846.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556343657
 MonoBehaviour:
@@ -450,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -400}
+  m_AnchoredPosition: {x: -790, y: 451}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565096519
@@ -663,8 +663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: 142.5}
-  m_SizeDelta: {x: 810, y: 795.01}
+  m_AnchoredPosition: {x: -0.000030518, y: 3}
+  m_SizeDelta: {x: 1085.6, y: 1065.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025913762
 MonoBehaviour:
@@ -686,10 +686,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Credits\r\nAnthony - Art\r\nConan - Programming, Art\r\nDaniel - Art\r\nDiellza
-    - Art\r\nGilbert - Design\r\nKyle - Design, Programming, Writing\r\nLyndon - Music\r\nMolina
-    - Art, Programming\r\nMuhammad - Producer\r\nOllie - Art\r\nRami - Art\r\nTheo
-    - Programming\r\nWill - Programming, Art"
+  m_text: "Credits\r\nAlejandra Gonzalez - Art\nAnthony - Art\r\nConan Truong - Programming,
+    Art\r\nDaniel Cheng- Art\r\nDiellza Sopi - Art\r\nGilbert Indrajaya - Design\r\nKyle
+    Jones - Design, Programming, Writing\r\nLyndon De La Torre - Music\r\nMolina Mey
+    - Art, Programming\r\nMuhammad H. Albayati- Production\nOllie - Art\r\nRami -
+    Art\r\nTheo Espiritu - Programming\r\nWill Hartono - Programming, Art"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1420f3bf39eb5ac49a8b6efa6f670916, type: 2}
   m_sharedMaterial: {fileID: 21898374212068438, guid: 1420f3bf39eb5ac49a8b6efa6f670916,
@@ -727,16 +728,16 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_characterSpacing: 4.91
+  m_wordSpacing: -0
+  m_lineSpacing: 18.85
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 2.35
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 243
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -759,12 +760,12 @@ MonoBehaviour:
   m_margin: {x: 10, y: 30, z: 10, w: 10}
   m_textInfo:
     textComponent: {fileID: 1025913762}
-    characterCount: 266
+    characterCount: 369
     spriteCount: 0
-    spaceCount: 44
-    wordCount: 45
+    spaceCount: 59
+    wordCount: 60
     linkCount: 0
-    lineCount: 14
+    lineCount: 15
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
