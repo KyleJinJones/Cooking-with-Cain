@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void MainMenu()
     {
+        Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 
     }
