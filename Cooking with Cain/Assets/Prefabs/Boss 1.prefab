@@ -93,12 +93,12 @@ MonoBehaviour:
   loader: {fileID: 0}
   entityName: Buffel Sprout
   stats:
-    attack: 5
+    attack: 3
     health: 1000
     maxHealth: 1000
     burn: 0.07
     splash: 0.5
-    lifesteal: 0.5
+    lifesteal: 0.8
     atkboost: 0.2
     atkdebuff: 0.2
     stun: 0.6
