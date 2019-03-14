@@ -9,7 +9,7 @@ public class StartMenuScript : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Gilbert");
+        SceneManager.LoadScene("Intro CS");
     }
 
     public void Continue()
