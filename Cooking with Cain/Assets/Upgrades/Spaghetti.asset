@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bfec3f4c11adea4480eb67f6962e86f, type: 3}
-  m_Name: Chicken Feet
+  m_Name: Spaghetti
   m_EditorClassIdentifier: 
   attributeType: 1
   goldcost: 100
