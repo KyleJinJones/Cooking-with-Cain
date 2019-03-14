@@ -17,6 +17,7 @@ public class UpgradeInfo : ScriptableObject
     // stats
     public int limit;
     public int costIncrease;
+    public UpgradeInfo required;
     public Stats statsModification = Stats.zero;
 
     // ingredients

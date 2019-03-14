@@ -34,7 +34,8 @@ public class shopScript : MonoBehaviour
                 slots[i].sprite = panel.items[i].upgradeimage;
                 slots[i].GetComponent<ShopItem>().upgrade = panel.items[i];
                 if (Gold.gold >= panel.items[i].totalGoldCost && !SaveDataManager.currentData.shopBoughtIngredient.Contains(panel.items[i]) &&
-                    (panel.items[i].attributeType != UpgradeInfo.AttributeType.STAT || panel.items[i].limit <= 0 || panel.items[i].boughtAmount < panel.items[i].limit)
+                    (panel.items[i].attributeType != UpgradeInfo.AttributeType.STAT || panel.items[i].limit <= 0 || panel.items[i].boughtAmount < panel.items[i].limit) &&
+                    (panel.items[i].attributeType != UpgradeInfo.AttributeType.STAT || panel.items[i].required == null || SaveDataManager.currentData.shopBoughtIngredient.Contains(panel.items[i].required))
                     )
                 {
                     slots[i].color = Color.white;

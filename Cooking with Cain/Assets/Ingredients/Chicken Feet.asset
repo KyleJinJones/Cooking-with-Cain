@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7aeef658e16b9c43a4f91d186ca01e5, type: 3}
   m_Name: Chicken Feet
   m_EditorClassIdentifier: 
-  foodName: Chicken Feet
+  foodName: Spaghetti
   sprite: {fileID: 21300000, guid: 335e61bbba7b88c4f9eeb4c96771818e, type: 3}
   audioClip: {fileID: 8300000, guid: efd99fc9ee0c5224397b5a4afd53daec, type: 3}
   damageType: 0

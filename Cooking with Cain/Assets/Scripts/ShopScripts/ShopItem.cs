@@ -27,6 +27,11 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             return;
         }
 
+        if (upgrade.attributeType == UpgradeInfo.AttributeType.STAT && upgrade.required != null && !SaveDataManager.currentData.shopBoughtIngredient.Contains(upgrade.required))
+        {
+            return;
+        }
+
         if (Gold.gold >= upgrade.totalGoldCost && !SaveDataManager.currentData.shopBoughtIngredient.Contains(upgrade))
         {
             upgrade.obtain();
@@ -56,6 +61,10 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         else if (upgrade.attributeType == UpgradeInfo.AttributeType.STAT && upgrade.limit > 0 && upgrade.boughtAmount >= upgrade.limit)
         {
             infoText.text = text + "Sold out";
+        }
+        else if (upgrade.attributeType == UpgradeInfo.AttributeType.STAT && upgrade.required != null && !SaveDataManager.currentData.shopBoughtIngredient.Contains(upgrade.required))
+        {
+            infoText.text = text + "You don't have this ingredient.";
         }
         else
         {

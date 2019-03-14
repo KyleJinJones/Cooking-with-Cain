@@ -15,6 +15,7 @@ public class UpgradeInfoEditor : Editor
 
     SerializedProperty limit;
     SerializedProperty costIncrease;
+    SerializedProperty required;
     SerializedProperty statsModification;
 
     SerializedProperty ingredient;
@@ -32,6 +33,7 @@ public class UpgradeInfoEditor : Editor
 
         limit = serializedObject.FindProperty("limit");
         costIncrease = serializedObject.FindProperty("costIncrease");
+        required = serializedObject.FindProperty("required");
         statsModification = serializedObject.FindProperty("statsModification");
 
         ingredient = serializedObject.FindProperty("ingredient");
@@ -55,6 +57,7 @@ public class UpgradeInfoEditor : Editor
             case (int)UpgradeInfo.AttributeType.STAT:
                 EditorGUILayout.PropertyField(limit);
                 EditorGUILayout.PropertyField(costIncrease);
+                EditorGUILayout.PropertyField(required);
                 EditorGUILayout.PropertyField(statsModification, true);
                 break;
             case (int)UpgradeInfo.AttributeType.INGREDIENT:

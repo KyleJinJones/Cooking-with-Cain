@@ -20,6 +20,7 @@ MonoBehaviour:
   rewardname: Defense
   limit: 0
   costIncrease: 0
+  required: {fileID: 11400000, guid: 5ffc26798b9afc64d867b03f7ef9a564, type: 2}
   statsModification:
     attack: 0
     health: 0

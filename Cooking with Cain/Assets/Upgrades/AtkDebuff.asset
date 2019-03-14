@@ -18,6 +18,9 @@ MonoBehaviour:
   infotext: Even more harrowing, Brussel Sprouts will debuff enemies' attack even
     more.
   rewardname: Attack Debuff
+  limit: 0
+  costIncrease: 0
+  required: {fileID: 11400000, guid: fad23ae8359f4614a85743e2a748f88a, type: 2}
   statsModification:
     attack: 0
     health: 0
