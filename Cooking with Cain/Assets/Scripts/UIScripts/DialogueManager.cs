@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
-    public Text nameText;
-    public Text dialogueText;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
     public int scene;
 
     public Queue<string> sentences;
@@ -15,6 +16,14 @@ public class DialogueManager : MonoBehaviour {
     void Start()
     {
         sentences = new Queue<string>();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            DisplayNextSentence();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
