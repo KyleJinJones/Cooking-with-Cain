@@ -64,6 +64,12 @@ public class Chest : MonoBehaviour
             if (SaveDataManager.currentData.shopBoughtIngredient.Contains(reward))
             {
                 altReward.obtain();
+
+                if (altReward.rewardname != " ")
+                {
+                    treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = altReward.upgradeimage;
+                    treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", altReward.rewardname);
+                }
             }
             else
             {
@@ -73,16 +79,19 @@ public class Chest : MonoBehaviour
                 {
                     SaveDataManager.currentData.shopBoughtIngredient.Add(reward);
                 }
+
+                if (reward.rewardname != " ")
+                {
+                    treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = reward.upgradeimage;
+                    treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", reward.rewardname);
+                }
             }
 
             open = true;
             treasurewindow.SetActive(true);
             Time.timeScale = 0;
             
-            if(reward.rewardname != " ") {
-                treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = reward.upgradeimage;
-                treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", reward.rewardname);
-            }
+            
             
             this.GetComponent<SpriteRenderer>().sprite = openview;
 

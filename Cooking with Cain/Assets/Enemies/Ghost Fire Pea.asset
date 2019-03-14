@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ghost Fire Pea
   m_EditorClassIdentifier: 
   enemyName: Ghost Fire Pea
-  sprite: {fileID: 21300000, guid: 168a9e206392ece43be6327a8ca52094, type: 3}
+  sprite: {fileID: 21300000, guid: 0a64e1f680e6d454895a9f2d3e71a44a, type: 3}
   stats:
     attack: 4
     health: 70
