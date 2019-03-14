@@ -53,7 +53,7 @@ MonoBehaviour:
       lifesteal: 0.25
       atkboost: 0.2
       atkdebuff: 0.2
-      stun: 0.75
+      stun: 0.5
       defboost: 0.25
       defdebuff: 0.4
       reflect: 0.5
@@ -87,4 +87,5 @@ MonoBehaviour:
     sceneName: 
     openedChests: []
     activatedLevers: []
-    shopBought: []
+    shopBoughtIngredient: []
+    shopBoughtStats: []

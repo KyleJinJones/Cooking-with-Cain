@@ -18,8 +18,8 @@ MonoBehaviour:
   infotext: Arsenic will make my Acidic Apples abbreviate my assailants resistance
     to death even further.
   rewardname: Acid
-  limit: 0
-  costIncrease: 0
+  limit: 10
+  costIncrease: 20
   required: {fileID: 11400000, guid: 13e2a351ee4633a4486e21da9cb5d25a, type: 2}
   statsModification:
     attack: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
     atkdebuff: 0
     stun: 0
     defboost: 0
-    defdebuff: 0.1
+    defdebuff: 0.05
     reflect: 0
     selfdmg: 0
     miss: 0

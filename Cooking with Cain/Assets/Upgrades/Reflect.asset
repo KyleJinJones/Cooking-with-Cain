@@ -18,8 +18,8 @@ MonoBehaviour:
   infotext: Prickly Pineapples pointed pines will now reflect even more damage to
     my flabbergasted foes.
   rewardname: Reflect
-  limit: 0
-  costIncrease: 0
+  limit: 10
+  costIncrease: 15
   required: {fileID: 11400000, guid: 400932f533ce3224d94c35e2021b59da, type: 2}
   statsModification:
     attack: 0
