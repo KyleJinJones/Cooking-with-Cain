@@ -83,5 +83,6 @@ public class SaveData
     public string sceneName;
     public List<ChestId> openedChests = new List<ChestId>();
     public List<LeverId> activatedLevers = new List<LeverId>();
-    public List<UpgradeInfo> shopBought = new List<UpgradeInfo>();
+    public List<UpgradeInfo> shopBoughtIngredient = new List<UpgradeInfo>();
+    public List<UpgradeBoughtAmount> shopBoughtStats = new List<UpgradeBoughtAmount>();
 }
