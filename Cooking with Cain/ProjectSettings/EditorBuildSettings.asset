@@ -30,11 +30,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Kyle_Level.unity
     guid: b4b16f6acddd286408ece24cfd7ed843
   - enabled: 1
-    path: Assets/Scenes/BossfightCS.unity
-    guid: 14800d2854e76ce4fa1ecf07383f992c
-  - enabled: 1
-    path: Assets/Scenes/EndCS.unity
-    guid: 60564249e22a8f74481d724725f8f9bd
+    path: Assets/Scenes/Ending.unity
+    guid: 79db4ca3f92262145a84e3874169717e
   - enabled: 1
     path: Assets/Scenes/Winner.unity
     guid: 6dc9f80aa1599bc4da6bcee4b5ffc580
