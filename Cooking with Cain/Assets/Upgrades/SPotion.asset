@@ -15,8 +15,11 @@ MonoBehaviour:
   attributeType: 3
   goldcost: 10
   upgradeimage: {fileID: 21300006, guid: 73eadc5dcefa26b47a7291330741afc4, type: 3}
-  infotext: A decent sized hp potion
+  infotext: A small hp potion, heals 25 hp.
   rewardname: Small HP Potion
+  limit: 0
+  costIncrease: 0
+  required: {fileID: 0}
   statsModification:
     attack: 10
     health: 100
@@ -33,5 +36,5 @@ MonoBehaviour:
     selfdmg: 0.1
     miss: 0.4
   ingredient: {fileID: 0}
-  potionType: 1
+  potionType: 0
   amount: 1

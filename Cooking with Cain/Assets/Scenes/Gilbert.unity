@@ -52476,13 +52476,19 @@ PrefabInstance:
         type: 3}
       propertyPath: reward
       value: 
-      objectReference: {fileID: 11400000, guid: eff3cd966c223294381b087aff32bd46,
+      objectReference: {fileID: 11400000, guid: fad23ae8359f4614a85743e2a748f88a,
         type: 2}
     - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: chestOpenPanel
       value: 
       objectReference: {fileID: 1252547794}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: altReward
+      value: 
+      objectReference: {fileID: 11400000, guid: 407136d08c583574088c0a3ed688db21,
+        type: 2}
     - target: {fileID: 2548003376887998958, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_SortingOrder
