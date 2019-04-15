@@ -22,4 +22,9 @@ public class WinScene : MonoBehaviour
         PlayerMovementFixed.spawnPosition = PlayerMovementFixed.checkpointPosition;
         SceneManager.LoadScene(lastScene);
     }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
