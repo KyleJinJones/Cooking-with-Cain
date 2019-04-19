@@ -10,6 +10,7 @@ public class Enemy : ScriptableObject
     public Stats stats;
     public Ingredient[] ingredients;
     public int goldValue;
+    public UpgradeInfo ingreward;
 
     public AudioClip attackSound;
     public AudioClip deathSound;
