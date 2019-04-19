@@ -21,6 +21,7 @@ public class Entity : MonoBehaviour
     public Stats stats;
 
     public int goldValue;
+    public UpgradeInfo ingreward;
 
     public bool stunnedLastTurn;
 

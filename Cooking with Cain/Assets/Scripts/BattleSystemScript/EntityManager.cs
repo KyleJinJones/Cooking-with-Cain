@@ -27,6 +27,7 @@ public class EntityManager : MonoBehaviour
 
     public GameObject rewardsPopup;
     int goldValue;
+    UpgradeInfo ingrew;
 
     public int turnCount { get; private set; }
 
@@ -48,6 +49,10 @@ public class EntityManager : MonoBehaviour
         foreach (Entity entity in queue)
         {
             goldValue += entity.goldValue;
+            if (entity.ingreward != null)
+            {
+                ingrew = entity.ingreward;
+            }
         }
 
         StartCoroutine(Run());
@@ -225,8 +230,15 @@ public class EntityManager : MonoBehaviour
         if (GetEnemyRemaining() == 0)
         {
             Gold.gold += goldValue;
+            
             rewardsPopup.GetComponentInChildren<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene));
             rewardsPopup.GetComponentInChildren<TextMeshProUGUI>().text = string.Format("Congratulations\nYou have obtained {0} gold", goldValue);
+            if (ingrew != null)
+            {
+                SaveDataManager.currentData.shopBoughtIngredient.Add(ingrew);
+                ingrew.obtain();
+                rewardsPopup.GetComponentInChildren<TextMeshProUGUI>().text += string.Format("\nAnd you found some {0}", ingrew.name);
+            }
             rewardsPopup.SetActive(true);
             return true;
         }

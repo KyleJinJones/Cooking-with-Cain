@@ -68,6 +68,7 @@ public class EnemyLoader : MonoBehaviour
         image.sprite = enemy.sprite;
         enemyAction.ingredients = enemy.ingredients;
         entity.goldValue = enemy.goldValue;
+        entity.ingreward = enemy.ingreward;
         entity.attackSound = enemy.attackSound;
         entity.deathSound = enemy.deathSound;
 
