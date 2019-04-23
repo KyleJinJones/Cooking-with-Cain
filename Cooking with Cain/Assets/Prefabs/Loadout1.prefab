@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 328610112}
   - component: {fileID: 328610115}
   - component: {fileID: 328610114}
+  - component: {fileID: 8466693128295388071}
   - component: {fileID: 328610113}
   m_Layer: 5
   m_Name: ING1 (1)
@@ -75,6 +76,19 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &8466693128295388071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328610111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7f0d6e8b3cf0647a283f8bba05b66f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 8954402344681285434}
 --- !u!114 &328610113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +132,10 @@ GameObject:
   - component: {fileID: 8954402344681285439}
   - component: {fileID: 8954402344681285436}
   - component: {fileID: 8954402344681285438}
+  - component: {fileID: 895152694411448566}
   - component: {fileID: 8954402344681285825}
+  - component: {fileID: 4605518300758514974}
+  - component: {fileID: 3775145616762779195}
   m_Layer: 5
   m_Name: Loadout1
   m_TagString: Untagged
@@ -202,6 +219,18 @@ MonoBehaviour:
   selected: {fileID: 328610114}
   select: {fileID: 21300000, guid: 5af3cc316806a3c479bba4b05417134a, type: 3}
   def: {fileID: 21300000, guid: 90830b938e6539c4091b8ac0c1f227c6, type: 3}
+--- !u!114 &895152694411448566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954402344681285434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169ab56e2e0a36c42a5354101755c6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8954402344681285825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +262,38 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &4605518300758514974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954402344681285434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 240
+  m_PreferredHeight: 180
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!225 &3775145616762779195
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954402344681285434}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8954402344831437640
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +305,7 @@ GameObject:
   - component: {fileID: 8954402344831437645}
   - component: {fileID: 8954402344831437642}
   - component: {fileID: 8954402344831437643}
+  - component: {fileID: 2826301790751067295}
   - component: {fileID: 8954402344831437644}
   m_Layer: 5
   m_Name: ING1
@@ -308,6 +370,19 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &2826301790751067295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954402344831437640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7f0d6e8b3cf0647a283f8bba05b66f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 8954402344681285434}
 --- !u!114 &8954402344831437644
 MonoBehaviour:
   m_ObjectHideFlags: 0
