@@ -1,27 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1090501497576604}
-  m_IsPrefabAsset: 1
 --- !u!1 &1090501497576604
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224333477103831892}
   - component: {fileID: 222290429009908332}
   - component: {fileID: 114430625887457150}
-  - component: {fileID: 114699259122129446}
+  - component: {fileID: 7408874464518138862}
   m_Layer: 5
   m_Name: ingredient1
   m_TagString: PlayerUI
@@ -29,11 +19,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!224 &224333477103831892
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090501497576604}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 146, y: -345}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &222290429009908332
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090501497576604}
+  m_CullTransparentMesh: 0
 --- !u!114 &114430625887457150
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090501497576604}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -56,52 +74,16 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114699259122129446
+  m_UseSpriteMesh: 0
+--- !u!114 &7408874464518138862
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090501497576604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba8cec192d12cb42a1e9519ace81143, type: 3}
+  m_Script: {fileID: 11500000, guid: 169ab56e2e0a36c42a5354101755c6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  i: {fileID: 0}
-  def: {fileID: 0}
-  Chicken: {fileID: 21300000, guid: 1bbb952f263f9a64eb7025db5a4e4761, type: 3}
-  Beef: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
-  Egg: {fileID: 21300000, guid: 271b4f022b1f98249ac7b87f41e94c68, type: 3}
-  Pepper: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
-  Wine: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
-  Rice: {fileID: 21300000, guid: 488b1d7bb9d401f4196e4a3a016c0750, type: 3}
-  Lemon: {fileID: 21300000, guid: edb13b906cd07ac4a90fd721069420ec, type: 3}
-  Licorice: {fileID: 21300000, guid: edddcf7cdbc839343983d320a5266d84, type: 3}
-  cmbnum: 1
-  n: 
---- !u!222 &222290429009908332
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1090501497576604}
-  m_CullTransparentMesh: 0
---- !u!224 &224333477103831892
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1090501497576604}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146, y: -345}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
