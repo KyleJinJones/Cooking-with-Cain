@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238b96afcef185442acf8746e808c13b, type: 3}
+  m_Name: Blueberry
+  m_EditorClassIdentifier: 
+  enemyName: 
+  sprite: {fileID: 21300000, guid: 88f8a2d68f0e856478069f8611383bba, type: 3}
+  stats:
+    attack: 1
+    health: 25
+    maxHealth: 30
+    burn: 0.1
+    splash: 0.5
+    lifesteal: 0.25
+    atkboost: 0.2
+    atkdebuff: 0.2
+    stun: 0.75
+    defboost: 0.25
+    defdebuff: 0.4
+    reflect: 0.5
+    selfdmg: 0.1
+    miss: 0.4
+  ingredients:
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
+  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  goldValue: 200
+  ingreward: {fileID: 0}
+  attackSound: {fileID: 0}
+  deathSound: {fileID: 0}
