@@ -2065,10 +2065,12 @@ MonoBehaviour:
     selfdmg: 0.1
     miss: 0.4
   goldValue: 0
+  ingreward: {fileID: 0}
   stunnedLastTurn: 0
   statuses: []
   attackSound: {fileID: 0}
   deathSound: {fileID: 0}
+  damageCount: {fileID: 0}
 --- !u!114 &515466629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2608,10 +2610,13 @@ MonoBehaviour:
     selfdmg: 0.1
     miss: 0.4
   goldValue: 0
+  ingreward: {fileID: 0}
   stunnedLastTurn: 0
   statuses: []
   attackSound: {fileID: 8300000, guid: 72b68f8cb88d05d45ac51e74ddc7c3a7, type: 3}
   deathSound: {fileID: 8300000, guid: eb1531e3918ed7b46a188ebf848de081, type: 3}
+  damageCount: {fileID: 6509100001148549287, guid: d93db37be395a3e40b70faeb8d8de793,
+    type: 3}
 --- !u!114 &681065620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7357,16 +7362,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2304414910854277467, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2304414910854277467, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2304414910854277461, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -7376,6 +7371,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304414910854277467, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304414910854277467, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ba7c17d299dfe4dbaf20da42dbfb70, type: 3}

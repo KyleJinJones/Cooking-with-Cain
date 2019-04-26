@@ -30,8 +30,13 @@ public class Entity : MonoBehaviour
     public AudioClip attackSound;
     public AudioClip deathSound;
 
+    public GameObject damageCount;
+    //public GameObject EnemyBase;
+
+
     void Start()
     {
+        //damageCount = (GameObject)Resources.Load("CountDamage", typeof(GameObject));
         if (gameObject.tag == "Player")
         {
             stats = playerStats;
@@ -209,12 +214,42 @@ public class Entity : MonoBehaviour
         }
         else if (health < 0)
         {
-            StartCoroutine(Damage());
+            GameObject damageText = null;
+            if (damageCount != null)
+            {
+                damageText = Instantiate(damageCount, new Vector3(transform.position.x, transform.position.y + 300, transform.position.z), Quaternion.identity);
+                damageText.GetComponent<Text>().text = health.ToString();
+                if (health < 0)
+                    damageText.GetComponent<Text>().color = new Color(1, 0, 0, 1);
+                else if (health > 0)
+                    damageText.GetComponent<Text>().color = new Color(0,1,0,1);
+                damageText.transform.parent = FindObjectOfType<Canvas>().transform;
+            }
+            StartCoroutine(Damage(damageText));
         }
     }
 
-    IEnumerator Damage()
+    IEnumerator Damage(GameObject damageText)
     {
+        float timeOfTravel = 5;
+        float currentTime = 0;
+        float normalizedValue;
+
+        if (damageText != null)
+            Destroy(damageText, 0.7f);
+
+        while (currentTime <= timeOfTravel) {
+            currentTime += Time.deltaTime;
+            normalizedValue = currentTime / timeOfTravel;
+            if (damageText)
+                damageText.GetComponent<RectTransform>().position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y + 250, 0),
+                    new Vector3(transform.position.x, transform.position.y + 2400, 0), normalizedValue);
+            else
+                break;
+            yield return null;
+        }
+
+
         for (int i = 0; i < 5; i++)
         {
             GetComponent<Image>().color = new Color(1, 1, 1, 1 - i / 5f);
@@ -226,6 +261,7 @@ public class Entity : MonoBehaviour
             GetComponent<Image>().color = new Color(1, 1, 1, i / 5f);
             yield return null;
         }
+
     }
 
     public void PlayAttackSound()
