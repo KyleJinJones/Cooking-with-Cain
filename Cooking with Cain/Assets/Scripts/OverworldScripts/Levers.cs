@@ -46,7 +46,7 @@ public class Levers : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
         {
             SaveDataManager.currentData.activatedLevers.Add(leverId);
-            objectToDelete.SetActive(false);
+            objectToDelete.SetActive(!objectToDelete.activeSelf);
             interactPopup.SetActive(false);
             this.GetComponent<SpriteRenderer>().sprite = pulled;
 
