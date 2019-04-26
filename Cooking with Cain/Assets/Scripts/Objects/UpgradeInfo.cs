@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "UpgradeInfo.asset", menuName = "Cooking with Cain/UpgradeInfo")]
 public class UpgradeInfo : ScriptableObject
 {
-    public enum AttributeType { STAT, INGREDIENT, GOLD, POTION }
+    public enum AttributeType { STAT, INGREDIENT, GOLD, POTION, TEXT }
 
     // all types
     public AttributeType attributeType;
@@ -83,6 +83,7 @@ public class UpgradeInfo : ScriptableObject
             case AttributeType.POTION:
                 HPpotion.potions[(int)potionType] += amount;
                 break;
+            
         }
     }
 }
