@@ -65,11 +65,17 @@ public class Chest : MonoBehaviour
             {
                 altReward.obtain();
 
+                
                 if (altReward.rewardname != " ")
                 {
                     treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = altReward.upgradeimage;
                     treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = string.Format("Nice, You got {0}.", altReward.rewardname);
                 }
+            }
+            else if (reward.attributeType==UpgradeInfo.AttributeType.TEXT)
+            {
+                treasurewindow.GetComponent<TreasureWindow>().treasureimage.sprite = reward.upgradeimage;
+                treasurewindow.GetComponent<TreasureWindow>().treasuretext.text = reward.infotext;
             }
             else
             {
@@ -87,7 +93,10 @@ public class Chest : MonoBehaviour
                 }
             }
 
-            open = true;
+            if (reward.attributeType != UpgradeInfo.AttributeType.TEXT)
+            {
+                open = true;
+            }
             treasurewindow.SetActive(true);
             Time.timeScale = 0;
             
