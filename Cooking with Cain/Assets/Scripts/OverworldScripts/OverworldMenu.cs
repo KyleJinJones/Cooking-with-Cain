@@ -5,36 +5,57 @@ using UnityEngine;
 public class OverworldMenu : MonoBehaviour
 {
     public GameObject imenu;
-    public GameObject inventory;
-    public bool menuopen=false;
-    public GameObject activemenu;
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject settingsMenu;
+    public bool menuOpen = false;
+    public GameObject activeMenu;
     //Handles menu swapping, and closing
     private void Start()
     {
+        settingsMenu.SetActive(false);
         imenu.SetActive(false);
         inventory.SetActive(false);
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!menuOpen)
+            {
+                if (activeMenu == null) { activeMenu = settingsMenu; }
+                activeMenu.SetActive(true);
+                menuOpen = true;
+                Time.timeScale = 0;
+            }
+            else
+            {
+                closeMenu();
+            }
+        }
+    }
+
     public void openimenu()
     {
-        if (!menuopen)
+        if (!menuOpen)
         {
             imenu.SetActive(true);
-            menuopen = true;
+            menuOpen = true;
             imenu.GetComponent<IngredientManager>().Load();
-            activemenu = imenu;
+            activeMenu = imenu;
             Time.timeScale = 0;
         }
-        else if(imenu.activeSelf){
+        else if (imenu.activeSelf)
+        {
             imenu.SetActive(false);
-            menuopen = false;
+            menuOpen = false;
             Time.timeScale = 1;
         }
         else
         {
-            activemenu.SetActive(false);
+            activeMenu.SetActive(false);
             imenu.SetActive(true);
-            activemenu = imenu;
+            activeMenu = imenu;
             Time.timeScale = 0;
         }
     }
@@ -43,34 +64,56 @@ public class OverworldMenu : MonoBehaviour
     {
         imenu.SetActive(false);
         inventory.SetActive(false);
-        menuopen = false;
+        settingsMenu.SetActive(false);
+        menuOpen = false;
         Time.timeScale = 1;
     }
 
-  public void openinventory()
+    public void openinventory()
     {
-        if (!menuopen)
+        if (!menuOpen)
         {
             inventory.SetActive(true);
-            menuopen = true;
-            activemenu = inventory;
+            menuOpen = true;
+            activeMenu = inventory;
             Time.timeScale = 0;
         }
-        else if(inventory.activeSelf){
+        else if (inventory.activeSelf)
+        {
             inventory.SetActive(false);
-            menuopen = false;
+            menuOpen = false;
             Time.timeScale = 1;
         }
         else
         {
-            activemenu.SetActive(false);
+            activeMenu.SetActive(false);
             inventory.SetActive(true);
-            activemenu = inventory;
+            activeMenu = inventory;
             Time.timeScale = 0;
         }
     }
 
-    
-
-    
+    public void openSettings()
+    {
+        if (!menuOpen)
+        {
+            settingsMenu.SetActive(true);
+            menuOpen = true;
+            activeMenu = settingsMenu;
+            Time.timeScale = 0;
+        }
+        else if (settingsMenu.activeSelf)
+        {
+            settingsMenu.SetActive(false);
+            menuOpen = false;
+            Time.timeScale = 1;
+        }
+        else
+        {
+            activeMenu.SetActive(false);
+            settingsMenu.SetActive(true);
+            activeMenu = settingsMenu;
+            Time.timeScale = 0;
+        }
+    }
 }
