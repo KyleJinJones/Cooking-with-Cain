@@ -832,7 +832,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870125, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_Name
-      value: Enemy2
+      value: B1
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870125, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -877,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -959,7 +959,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870125, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_Name
-      value: Enemy1
+      value: R1
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870125, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -1287,7 +1287,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -13951,7 +13951,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -17093,7 +17093,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -17349,7 +17349,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870125, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_Name
-      value: Enemy3
+      value: R2
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870125, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -17394,7 +17394,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -123472,10 +123472,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2051721556}
+  - {fileID: 1315895765}
   - {fileID: 1127859829}
   - {fileID: 726534583}
   - {fileID: 1272283458}
-  - {fileID: 1315895765}
   - {fileID: 1879218799}
   m_Father: {fileID: 0}
   m_RootOrder: 5
