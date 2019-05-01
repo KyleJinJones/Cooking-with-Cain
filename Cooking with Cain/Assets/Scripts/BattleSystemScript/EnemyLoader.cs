@@ -73,10 +73,11 @@ public class EnemyLoader : MonoBehaviour
         entity.deathSound = enemy.deathSound;
 
         TooltipTextWithIngredients tooltip = clone.AddComponent<TooltipTextWithIngredients>();
-        tooltip.text = "Ingredients:";
+        tooltip.text = entity.entityName;
+        //tooltip.text = "Ingredients:";
         List<Ingredient> ingredients = new List<Ingredient>();
         ingredients.AddRange(enemy.ingredients);
-        tooltip.sprites = ingredients.ConvertAll(ingredient => ingredient.sprite);
+        //tooltip.sprites = ingredients.ConvertAll(ingredient => ingredient.sprite);
 
         entity.manager = manager;
         entity.loader = this;

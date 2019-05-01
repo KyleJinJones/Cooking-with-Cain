@@ -222,7 +222,7 @@ public class Entity : MonoBehaviour
                 if (health < 0)
                     damageText.GetComponent<Text>().color = new Color(1, 0, 0, 1);
                 else if (health > 0)
-                    damageText.GetComponent<Text>().color = new Color(0,1,0,1);
+                    damageText.GetComponent<Text>().color = new Color(0, 1, 0, 1);
                 damageText.transform.parent = FindObjectOfType<Canvas>().transform;
             }
             StartCoroutine(Damage(damageText));
