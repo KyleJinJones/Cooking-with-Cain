@@ -212,8 +212,8 @@ public class Entity : MonoBehaviour
             statuses.Clear();
             StartCoroutine(Die());
         }
-        else if (health < 0)
-        {
+        //else if (health < 0)
+        //{
             GameObject damageText = null;
             if (damageCount != null)
             {
@@ -226,7 +226,7 @@ public class Entity : MonoBehaviour
                 damageText.transform.parent = FindObjectOfType<Canvas>().transform;
             }
             StartCoroutine(Damage(damageText));
-        }
+        //}
     }
 
     IEnumerator Damage(GameObject damageText)
