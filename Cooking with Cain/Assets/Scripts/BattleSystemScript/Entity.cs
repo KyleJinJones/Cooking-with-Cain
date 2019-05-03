@@ -202,6 +202,23 @@ public class Entity : MonoBehaviour
     {
         stats.health += health;
 
+        if (health != 0)
+        {
+            GameObject damageText = null;
+            if (damageCount != null)
+            {
+                damageText = Instantiate(damageCount, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                damageText.GetComponent<Text>().text = health.ToString();
+                if (health < 0)
+                    damageText.GetComponent<Text>().color = new Color(1, 0, 0, 1);
+                else if (health > 0)
+                    damageText.GetComponent<Text>().color = new Color(0, 1, 0, 1);
+                damageText.transform.parent = FindObjectOfType<Canvas>().transform;
+            }
+            StartCoroutine(Damage(damageText));
+            StartCoroutine(Dtext(damageText));
+        }
+
         if (stats.health > stats.maxHealth)
         {
             stats.health = stats.maxHealth;
@@ -212,24 +229,11 @@ public class Entity : MonoBehaviour
             statuses.Clear();
             StartCoroutine(Die());
         }
-        //else if (health < 0)
-        //{
-            GameObject damageText = null;
-            if (damageCount != null)
-            {
-                damageText = Instantiate(damageCount, new Vector3(transform.position.x, transform.position.y + 300, transform.position.z), Quaternion.identity);
-                damageText.GetComponent<Text>().text = health.ToString();
-                if (health < 0)
-                    damageText.GetComponent<Text>().color = new Color(1, 0, 0, 1);
-                else if (health > 0)
-                    damageText.GetComponent<Text>().color = new Color(0, 1, 0, 1);
-                damageText.transform.parent = FindObjectOfType<Canvas>().transform;
-            }
-            StartCoroutine(Damage(damageText));
-        //}
+
+        
     }
 
-    IEnumerator Damage(GameObject damageText)
+    IEnumerator Dtext(GameObject damageText)
     {
         float timeOfTravel = 5;
         float currentTime = 0;
@@ -238,17 +242,23 @@ public class Entity : MonoBehaviour
         if (damageText != null)
             Destroy(damageText, 0.7f);
 
-        while (currentTime <= timeOfTravel) {
+        while (currentTime <= timeOfTravel)
+        {
             currentTime += Time.deltaTime;
             normalizedValue = currentTime / timeOfTravel;
             if (damageText)
-                damageText.GetComponent<RectTransform>().position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y + 250, 0),
-                    new Vector3(transform.position.x, transform.position.y + 2400, 0), normalizedValue);
+                damageText.GetComponent<RectTransform>().position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y +100, 0),
+                    new Vector3(transform.position.x, transform.position.y + 500, 0), normalizedValue);
             else
                 break;
             yield return null;
         }
 
+    }
+
+    IEnumerator Damage(GameObject damageText)
+    {
+        
 
         for (int i = 0; i < 5; i++)
         {
