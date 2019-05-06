@@ -2070,7 +2070,8 @@ MonoBehaviour:
   statuses: []
   attackSound: {fileID: 0}
   deathSound: {fileID: 0}
-  damageCount: {fileID: 0}
+  damageCount: {fileID: 6509100001148549287, guid: d93db37be395a3e40b70faeb8d8de793,
+    type: 3}
 --- !u!114 &515466629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7362,16 +7363,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2304414910854277461, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2304414910854277461, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2304414910854277467, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -7381,6 +7372,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304414910854277461, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304414910854277461, guid: f8ba7c17d299dfe4dbaf20da42dbfb70,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ba7c17d299dfe4dbaf20da42dbfb70, type: 3}

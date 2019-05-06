@@ -26,7 +26,6 @@ public class Checkpoint : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        print("asdf");
         PlayerMovementFixed.checkpointPosition = collision.transform.position;
     }
 
