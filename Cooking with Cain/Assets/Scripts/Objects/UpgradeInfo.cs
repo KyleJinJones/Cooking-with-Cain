@@ -11,6 +11,7 @@ public class UpgradeInfo : ScriptableObject
     public AttributeType attributeType;
     [SerializeField] int goldcost;
     public Sprite upgradeimage;
+    [TextArea(3, 100)]
     public string infotext;
     public string rewardname;
 

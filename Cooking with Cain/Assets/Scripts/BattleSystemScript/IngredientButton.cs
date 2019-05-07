@@ -29,7 +29,10 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     void Start()
     {
-        ingredient = IngredientSelector.equipped[buttonPosition];
+        if (IngredientSelector.equipped.Length > buttonPosition)
+        {
+            ingredient = IngredientSelector.equipped[buttonPosition];
+        }
         buttonImage = GetComponent<Image>();
 
         GameObject obj = new GameObject("Icon");
