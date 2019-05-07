@@ -12,10 +12,12 @@ public class DialogueManager : MonoBehaviour {
     public int scene;
 
     public Queue<string> sentences;
+    public Queue<string> names;
 
     void Start()
     {
         sentences = new Queue<string>();
+        names = new Queue<string>();
     }
 
     private void Update()
@@ -28,13 +30,18 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(Dialogue dialogue)
     {
-        nameText.text = dialogue.name;
+        //nameText.text = dialogue.name;
 
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+        }
+
+        foreach (string name in dialogue.names)
+        {
+            names.Enqueue(name);
         }
         DisplayNextSentence();
     }
@@ -46,14 +53,20 @@ public class DialogueManager : MonoBehaviour {
             EndDialogue();
             return;
         }
-
+        string name = names.Dequeue();
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(name, sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    public void DisplayNextName()
     {
+        string name = names.Dequeue();
+    }
+
+    IEnumerator TypeSentence (string name, string sentence)
+    {
+        nameText.text = name;
         dialogueText.text = "";
         char[] carray = sentence.ToCharArray();
         for(int i=0;i<carray.Length;i++)
