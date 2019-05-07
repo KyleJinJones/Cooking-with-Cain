@@ -10,6 +10,9 @@ public class MapTransition : MonoBehaviour
     // Sets spawn position in the new scene. CT
     public Vector2 spawnPosition;
 
+    public bool ClearEnemies = true;
+
+
     public GameObject interactPopup;
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +45,10 @@ public class MapTransition : MonoBehaviour
     {
         PlayerMovementFixed.spawnPosition = spawnPosition;
         PlayerMovementFixed.checkpointPosition = spawnPosition;
-        EnemyDespawner.despawned.Clear();
+        if (ClearEnemies)
+        {
+            EnemyDespawner.despawned.Clear();
+        }
         SceneManager.LoadScene(sceneName);
     }
 }
