@@ -1099,12 +1099,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    names:
+    - ' '
+    - ' '
+    - ' '
     sentences:
-    - "\n\tAnd so Cain defeated Buffel Sprouts, and went on to complete his daily
-      cooking show in peace with his chopped up Brussel Sprouts."
-    - "\n\tCain lived in peace until his cooking show the next day, when he made banana
-      fritters."
+    - And so Cain defeated Buffel Sprouts, and went on to complete his daily cooking
+      show in peace with his chopped up Brussel Sprouts.
+    - Cain lived in peace until his cooking show the next day, when he made banana
+      fritters.
     - "\tThe End."
 --- !u!114 &1017235710
 MonoBehaviour:

@@ -37,28 +37,28 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (placeholder.transform.parent != placeholderParent)
         {
-            //  print();
-            //int index =
+            print("CHANGE");
             placeholder.transform.SetParent(placeholderParent);
-            
         }
 
-        int newSiblingIndex = placeholderParent.childCount-4;
+        int newSiblingIndex = placeholderParent.childCount - 4;
 
-        parent.transform.position = eventData.position;
-        for (int i = 0; i < placeholderParent.childCount; i++) {
-            
-            if (parent.transform.position.x < placeholderParent.GetChild(i).position.x) {
+        for (int i = 0; i < placeholderParent.childCount; i++)
+        {
+            if (parent.transform.position.x < placeholderParent.GetChild(i).position.x)
+            {
                 newSiblingIndex = i;
 
                 if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
                     newSiblingIndex--;
-
                 break;
             }
-            if (parent.transform.position.y < placeholderParent.GetChild(i).position.y) {
-                newSiblingIndex = i + 4;
-                print(placeholderParent.GetChild(i));
+            if (parent.transform.position.y < placeholderParent.GetChild(i).position.y && placeholderParent.transform.GetSiblingIndex() == i % 3)
+            {
+                newSiblingIndex += 3;
+                print(newSiblingIndex);
+                placeholderParent.GetChild(newSiblingIndex).SetSiblingIndex(newSiblingIndex - 3);
+
                 break;
             }
         }
@@ -72,5 +72,26 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         parent.GetComponent<CanvasGroup>().blocksRaycasts = true;
         parent.transform.position = placeholder.transform.position;
         Destroy(placeholder);
+    }
+
+    public void checkRows(PointerEventData eventData, int newSiblingIndex, int index) {
+        parent.transform.position = eventData.position;
+
+        newSiblingIndex = index;
+
+        if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
+            newSiblingIndex--;
+
+        placeholder.transform.SetSiblingIndex(newSiblingIndex);
+    }
+
+    public void checkColumns(PointerEventData eventData, int newSiblingIndex) {
+        parent.transform.position = eventData.position;
+
+        newSiblingIndex += 3;
+
+        placeholderParent.GetChild(newSiblingIndex).SetSiblingIndex(newSiblingIndex - 3);
+
+
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public int maxOfIngredients;
     public void OnPointerEnter(PointerEventData eventData) {
         if (eventData.pointerDrag == null)
             return;
@@ -12,9 +13,14 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Draggable2 draggable = eventData.pointerDrag.GetComponent<Draggable2>();
 
         if (draggable != null) {
+
+            if (transform.childCount > maxOfIngredients) {
+                print(draggable);
+                //draggable.transform.GetChild(1).SetParent(draggable.parentToReturnTo);
+            }
             transform.GetChild(0).SetParent(draggable.parentToReturnTo);
             draggable.placeholderParent = this.transform;
-            draggable.transform.SetSiblingIndex(5);
+            //draggable.transform.SetSiblingIndex(5);
         }
     }
 
