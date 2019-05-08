@@ -69,6 +69,14 @@ public class UpgradeInfo : ScriptableObject
                 Entity.playerStats.Add(statsModification);
                 break;
             case AttributeType.INGREDIENT:
+                for(int i = 0; i< 6; i++)
+                {
+                    if (IngredientManager.currentIngredients[i] == null)
+                    {
+                        IngredientManager.currentIngredients[i] = ingredient;
+                        return;
+                    }
+                }
                 for (int i = 0; i < 12; i++)
                 {
                     if (IngredientManager.spareIngredients[i] == null)

@@ -37,6 +37,8 @@ public class Chest : MonoBehaviour
 
     private void Awake()
     {
+        treasurewindow = GameObject.FindGameObjectWithTag("Popup");
+        chestOpenPanel = GameObject.FindGameObjectWithTag("Interact");
         chestId = new ChestId(SceneManager.GetActiveScene().name, id);
         chestOpenPanel.gameObject.SetActive(false);
         if (open)

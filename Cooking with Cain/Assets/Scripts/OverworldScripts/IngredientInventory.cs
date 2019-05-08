@@ -34,6 +34,10 @@ public class IngredientInventory : MonoBehaviour
     private void Update()
     {
         UpdateTooltip();
+        if (ing != null)
+        {
+            i.sprite = ing.sprite;
+        }
     }
 
     void UpdateTooltip()

@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Manager
   - PlayerUI
+  - Interact
+  - Popup
   layers:
   - Default
   - TransparentFX
