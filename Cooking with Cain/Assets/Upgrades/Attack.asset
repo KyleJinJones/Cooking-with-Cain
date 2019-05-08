@@ -15,7 +15,9 @@ MonoBehaviour:
   attributeType: 0
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: d5e323d3c4da1e447b00ba4639242d5b, type: 3}
-  infotext: An unsettling brew that will increase my attack.
+  infotext: 'An unsettling brew that will increase my attack.
+
+    Effect: + 2 hit points to Cain''s attacks.'
   rewardname: Attack
   limit: 10
   costIncrease: 25

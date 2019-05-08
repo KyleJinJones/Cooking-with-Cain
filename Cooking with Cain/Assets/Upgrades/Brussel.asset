@@ -15,9 +15,9 @@ MonoBehaviour:
   attributeType: 1
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: b156e98c16a815b4095e9687b527032b, type: 3}
-  infotext: 'Spare Brussel Sprouts, hopefully these ones won''t turn on me. They''re
-    good for decreasing my opponent''s attack. Effect: 100% of Cain''s attack + debuff
-    enemy 20% the next 2 turns.'
+  infotext: "Spare Brussel Sprouts, hopefully these ones won't turn on me. They're
+    good for decreasing my opponent's attack. \nEffect: 100% of Cain's attack + debuff
+    enemy 20% the next 2 turns."
   rewardname: Brussel Sprouts
   limit: 0
   costIncrease: 0
