@@ -41,6 +41,7 @@ public class Chest : MonoBehaviour
         chestOpenPanel = GameObject.FindGameObjectWithTag("Interact");
         chestId = new ChestId(SceneManager.GetActiveScene().name, id);
         chestOpenPanel.gameObject.SetActive(false);
+        treasurewindow.gameObject.SetActive(false);
         if (open)
         {
             GetComponent<SpriteRenderer>().sprite = openview;

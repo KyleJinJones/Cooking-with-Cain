@@ -17,7 +17,7 @@ MonoBehaviour:
   stats:
     attack: 1
     health: 25
-    maxHealth: 30
+    maxHealth: 25
     burn: 0.1
     splash: 0.5
     lifesteal: 0.25
