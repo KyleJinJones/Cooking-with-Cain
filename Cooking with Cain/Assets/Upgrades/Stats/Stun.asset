@@ -17,7 +17,7 @@ MonoBehaviour:
   upgradeimage: {fileID: 21300000, guid: 7fbe74c349e2bad4b8c41e00995b329d, type: 3}
   infotext: Stunning! Stunning with Carnivorous lemons will be even more likely!
   rewardname: Stun
-  limit: 10
+  limit: 4
   costIncrease: 25
   required: {fileID: 11400000, guid: 96a6286ce8e955545a14a26517212aa9, type: 2}
   statsModification:
@@ -29,7 +29,7 @@ MonoBehaviour:
     lifesteal: 0
     atkboost: 0
     atkdebuff: 0
-    stun: 0.03
+    stun: 0.1
     defboost: 0
     defdebuff: 0
     reflect: 0
