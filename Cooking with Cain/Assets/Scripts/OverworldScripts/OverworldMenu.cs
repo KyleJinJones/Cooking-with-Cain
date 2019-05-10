@@ -13,7 +13,7 @@ public class OverworldMenu : MonoBehaviour
     private void Start()
     {
         settingsMenu.SetActive(false);
-        imenu.SetActive(false);
+        //imenu.SetActive(false);
         inventory.SetActive(false);
     }
 

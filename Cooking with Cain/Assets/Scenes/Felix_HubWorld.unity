@@ -1326,7 +1326,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c44bfe5440e0ce74d87be7d904cc0c9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3265,7 +3265,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c44bfe5440e0ce74d87be7d904cc0c9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9952,7 +9952,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c44bfe5440e0ce74d87be7d904cc0c9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12382,37 +12382,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: playergold
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: treasurewindow
-      value: 
-      objectReference: {fileID: 1972453542}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: id
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: chestOpenPanel
-      value: 
-      objectReference: {fileID: 1972453542}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: reward
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: openview
-      value: 
-      objectReference: {fileID: 21300000, guid: fd4b22bf095337a45bcb12726c923502,
-        type: 3}
     - target: {fileID: 2548003376887998958, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_Sprite
@@ -12499,6 +12468,37 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: playergold
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: treasurewindow
+      value: 
+      objectReference: {fileID: 1972453542}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: id
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: chestOpenPanel
+      value: 
+      objectReference: {fileID: 1972453542}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: reward
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: openview
+      value: 
+      objectReference: {fileID: 21300000, guid: fd4b22bf095337a45bcb12726c923502,
+        type: 3}
     - target: {fileID: 2770018017286568638, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_Enabled
