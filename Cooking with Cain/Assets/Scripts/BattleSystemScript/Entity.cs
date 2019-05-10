@@ -29,6 +29,7 @@ public class Entity : MonoBehaviour
 
     public AudioClip attackSound;
     public AudioClip deathSound;
+    public AudioManager audioManager;
 
     public GameObject damageCount;
     //public GameObject EnemyBase;
@@ -41,6 +42,8 @@ public class Entity : MonoBehaviour
         {
             stats = playerStats;
         }
+
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -65,6 +68,7 @@ public class Entity : MonoBehaviour
             }
         }
 
+        this.GetComponent<AudioSource>().volume = audioManager.audioValue;
         statuses.RemoveAll(status => status.duration <= 0 && status.fade < -15);
         OnUpdate();
     }
