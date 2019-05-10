@@ -1981,6 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c36c19f6c02e4d468e0ae2c57a58a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxOfIngredients: 0
 --- !u!1 &4653908384293143106
 GameObject:
   m_ObjectHideFlags: 0
@@ -8249,6 +8250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c36c19f6c02e4d468e0ae2c57a58a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxOfIngredients: 0
 --- !u!1 &8833787671967003065
 GameObject:
   m_ObjectHideFlags: 0
@@ -11482,17 +11484,17 @@ PrefabInstance:
     - target: {fileID: 8954402344831437643, guid: 8ac2f874e6489cd48be3dc1fda3aa00f,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.0754717
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8954402344831437643, guid: 8ac2f874e6489cd48be3dc1fda3aa00f,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.05731577
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8954402344831437643, guid: 8ac2f874e6489cd48be3dc1fda3aa00f,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.05731577
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac2f874e6489cd48be3dc1fda3aa00f, type: 3}

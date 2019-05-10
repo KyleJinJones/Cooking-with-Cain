@@ -7,6 +7,8 @@ public class Levers : MonoBehaviour
 {
     public GameObject objectToDelete;
     public GameObject interactPopup;
+    public GameObject txtwindow;
+    public UpgradeInfo txt;
    [SerializeField]private Sprite pulled;
 
     bool activated
@@ -23,6 +25,7 @@ public class Levers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        txtwindow = GameObject.FindGameObjectWithTag("Popup");
         leverId = new LeverId(SceneManager.GetActiveScene().name, id);
 
         if (activated)
@@ -48,6 +51,9 @@ public class Levers : MonoBehaviour
             SaveDataManager.currentData.activatedLevers.Add(leverId);
             objectToDelete.SetActive(!objectToDelete.activeSelf);
             interactPopup.SetActive(false);
+            txtwindow.SetActive(true);
+            txtwindow.GetComponent<TreasureWindow>().treasureimage.sprite = txt.upgradeimage;
+            txtwindow.GetComponent<TreasureWindow>().treasuretext.text = txt.infotext;
             this.GetComponent<SpriteRenderer>().sprite = pulled;
 
             if (GetComponent<AudioSource>() != null)

@@ -22543,6 +22543,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6260001294176176262, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5270639984563180484, guid: c07236d2f9cf9894dae3eb544d4e415b,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -23394,6 +23399,56 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4100009926337444316, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681646606899864474, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8681646606899864474, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791022595522309571, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260001294052352418, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260001295116170010, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260001295116170010, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260001294123087760, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260001294123087760, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260001295633643062, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260001295633643062, guid: c07236d2f9cf9894dae3eb544d4e415b,
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -24985,6 +25040,37 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: playergold
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: treasurewindow
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: id
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: chestOpenPanel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: reward
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b48aa4ef46eff448b4a689a86ca56bd,
+        type: 2}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: openview
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2548003376887998958, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_Sprite
@@ -25071,37 +25157,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: playergold
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: treasurewindow
-      value: 
-      objectReference: {fileID: 1972453542}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: id
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: chestOpenPanel
-      value: 
-      objectReference: {fileID: 1972453542}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: reward
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
-        type: 3}
-      propertyPath: openview
-      value: 
-      objectReference: {fileID: 21300000, guid: fd4b22bf095337a45bcb12726c923502,
-        type: 3}
     - target: {fileID: 2770018017286568638, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_Enabled
@@ -92056,7 +92111,7 @@ Tilemap:
   - first: {x: 30, y: 15, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -93127,7 +93182,7 @@ Tilemap:
   - first: {x: 30, y: 16, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -94189,7 +94244,7 @@ Tilemap:
   - first: {x: 30, y: 17, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -129446,7 +129501,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 316
+  - m_RefCount: 313
     m_Data: {fileID: 21300010, guid: 38fa27636c7d0014e8a33408e6674557, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -129464,7 +129519,7 @@ Tilemap:
     m_Data: {fileID: 21300002, guid: 38fa27636c7d0014e8a33408e6674557, type: 3}
   - m_RefCount: 50
     m_Data: {fileID: 21300004, guid: 38fa27636c7d0014e8a33408e6674557, type: 3}
-  - m_RefCount: 66
+  - m_RefCount: 69
     m_Data: {fileID: 21300012, guid: 38fa27636c7d0014e8a33408e6674557, type: 3}
   - m_RefCount: 66
     m_Data: {fileID: 21300000, guid: 38fa27636c7d0014e8a33408e6674557, type: 3}
@@ -129819,13 +129874,19 @@ PrefabInstance:
         type: 3}
       propertyPath: interactPopup
       value: 
-      objectReference: {fileID: 1863166789}
+      objectReference: {fileID: 143464108}
     - target: {fileID: 506359196102817340, guid: c8cc2eaac8f0d8f4490902d24e51b663,
         type: 3}
       propertyPath: pulled
       value: 
       objectReference: {fileID: 21300000, guid: 6d6e5c6f4de4a2348aad06c2623f1e33,
         type: 3}
+    - target: {fileID: 506359196102817340, guid: c8cc2eaac8f0d8f4490902d24e51b663,
+        type: 3}
+      propertyPath: txt
+      value: 
+      objectReference: {fileID: 11400000, guid: 80a6fea40118dd84d89931cd21853461,
+        type: 2}
     - target: {fileID: 506359196102817343, guid: c8cc2eaac8f0d8f4490902d24e51b663,
         type: 3}
       propertyPath: m_Offset.x
