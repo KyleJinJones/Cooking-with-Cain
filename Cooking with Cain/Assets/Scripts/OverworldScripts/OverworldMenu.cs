@@ -9,16 +9,19 @@ public class OverworldMenu : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     public bool menuOpen = false;
     public GameObject activeMenu;
+    public AudioManager audioManager;
     //Handles menu swapping, and closing
     private void Start()
     {
         settingsMenu.SetActive(false);
         //imenu.SetActive(false);
         inventory.SetActive(false);
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     public void Update()
     {
+        this.GetComponent<AudioSource>().volume = audioManager.audioValue;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!menuOpen)
