@@ -4380,7 +4380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Demo1
-  spawnPosition: {x: 0.68, y: -11.4}
+  spawnPosition: {x: 0, y: 0}
   ClearEnemies: 1
   interactPopup: {fileID: 1776366361}
 --- !u!58 &495922242
@@ -10180,6 +10180,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 0}
   menuOpen: 0
   activeMenu: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!82 &806862775
 AudioSource:
   m_ObjectHideFlags: 0
