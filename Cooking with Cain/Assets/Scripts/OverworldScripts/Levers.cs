@@ -24,9 +24,14 @@ public class Levers : MonoBehaviour
     private LeverId leverId;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         txtwindow = GameObject.FindGameObjectWithTag("Popup");
+    }
+
+    void Start()
+    {
+        
         leverId = new LeverId(SceneManager.GetActiveScene().name, id);
 
         if (activated)
