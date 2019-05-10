@@ -28,7 +28,7 @@ MonoBehaviour:
     burn: 0
     splash: 0
     lifesteal: 0
-    atkboost: 0.15
+    atkboost: 0.1
     atkdebuff: 0
     stun: 0
     defboost: 0
