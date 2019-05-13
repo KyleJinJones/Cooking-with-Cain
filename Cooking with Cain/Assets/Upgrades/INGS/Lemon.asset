@@ -15,7 +15,9 @@ MonoBehaviour:
   attributeType: 1
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 770b2d02ee3d79d4b8918370d7ed7c95, type: 3}
-  infotext: A leftover lemon with a fancy for flesh. Known for its stunning effects.
+  infotext: 'A leftover lemon with a fancy for flesh. Known for its stunning effects.
+
+    Effect: 100% of Cain''s attack + 60% chance '
   rewardname: Carnivorous Lemon
   limit: 0
   costIncrease: 0

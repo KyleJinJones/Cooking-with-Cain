@@ -15,8 +15,10 @@ MonoBehaviour:
   attributeType: 0
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 0da4c3c55cffd9f4aae1106b9db01873, type: 3}
-  infotext: Arsenic will make my Acidic Apples abbreviate my assailants resistance
+  infotext: 'Arsenic will make my Acidic Apples abbreviate my assailants resistance
     to death even further.
+
+    Effect: +5% defense debuff.'
   rewardname: Acid
   limit: 10
   costIncrease: 20
