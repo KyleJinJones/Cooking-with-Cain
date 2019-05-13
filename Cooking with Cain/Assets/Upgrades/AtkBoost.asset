@@ -15,8 +15,10 @@ MonoBehaviour:
   attributeType: 0
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: de8ab0933677ce443a7d5a89f6249120, type: 3}
-  infotext: A Boost to the boost, my attack will increase even more when using Bloody
+  infotext: 'A Boost to the boost, my attack will increase even more when using Bloody
     Beef.
+
+    Effect: Increase Beef''s attack boost by 15%'
   rewardname: Attack Boost
   limit: 10
   costIncrease: 25
