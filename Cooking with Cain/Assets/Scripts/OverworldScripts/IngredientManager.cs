@@ -22,6 +22,14 @@ public class IngredientManager : MonoBehaviour
         }
     }
 
+    public static Ingredient[] currentIngredients
+    {
+        get
+        {
+            return SaveDataManager.currentData.equipped;
+        }
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -32,8 +40,12 @@ public class IngredientManager : MonoBehaviour
     {
         for (int i = 0; i < IngredientSelector.equipped.Length; i++)
         {
-            loadout[i].ing = IngredientSelector.equipped[i];
-            loadout[i].Start();
+            if (IngredientSelector.equipped[i] != null)
+            {
+                Debug.Log(IngredientSelector.equipped[i].name);
+                loadout[i].ing = IngredientSelector.equipped[i];
+                loadout[i].Start();
+            }
             //loadout[i].index = i;
         }
 

@@ -1473,10 +1473,10 @@ RectTransform:
   m_Father: {fileID: 1476668729}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 521, y: 182.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 521.5, y: 182.5}
+  m_SizeDelta: {x: -1821, y: -982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &600750064
 GameObject:
@@ -1928,10 +1928,10 @@ RectTransform:
   m_Father: {fileID: 1476668729}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 521, y: 182.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 521, y: 182}
+  m_SizeDelta: {x: -1822, y: -981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &828277846
 GameObject:
@@ -2213,6 +2213,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Data Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
+        type: 3}
+      propertyPath: data.gold
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5207366547924449524, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2267,11 +2272,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
-        type: 3}
-      propertyPath: data.gold
-      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ac1a7704c99f40409d24c66e1e46a0e, type: 3}
@@ -2417,10 +2417,10 @@ RectTransform:
   m_Father: {fileID: 1476668729}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 521, y: 182.5}
-  m_SizeDelta: {x: 736.4, y: 308.2}
+  m_AnchorMin: {x: 0.57960415, y: 0.536}
+  m_AnchorMax: {x: 0.9620001, y: 0.8087038}
+  m_AnchoredPosition: {x: 0, y: -4}
+  m_SizeDelta: {x: 0.4000244, y: 13.200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226404618
 MonoBehaviour:
@@ -2732,10 +2732,12 @@ MonoBehaviour:
     selfdmg: 0.1
     miss: 0.4
   goldValue: 0
+  ingreward: {fileID: 0}
   stunnedLastTurn: 0
   statuses: []
   attackSound: {fileID: 0}
   deathSound: {fileID: 0}
+  damageCount: {fileID: 0}
 --- !u!1 &1261009033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,10 +3484,10 @@ RectTransform:
   m_Father: {fileID: 1476668729}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 521, y: 182.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 521.5, y: 182}
+  m_SizeDelta: {x: -1821, y: -981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1675536700
 GameObject:
@@ -3593,10 +3595,10 @@ RectTransform:
   m_Father: {fileID: 1476668729}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 521, y: 182.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -1824, y: -982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1713129536
 GameObject:

@@ -5,12 +5,33 @@ using UnityEngine.EventSystems;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public int maxOfIngredients;
     public void OnPointerEnter(PointerEventData eventData) {
-        Debug.Log("OnPointerEnter");
+        if (eventData.pointerDrag == null)
+            return;
+
+        Draggable2 draggable = eventData.pointerDrag.GetComponent<Draggable2>();
+
+        if (draggable != null) {
+
+            if (transform.childCount > maxOfIngredients) {
+                print(draggable);
+                //draggable.transform.GetChild(1).SetParent(draggable.parentToReturnTo);
+            }
+            transform.GetChild(0).SetParent(draggable.parentToReturnTo);
+            draggable.placeholderParent = this.transform;
+            //draggable.transform.SetSiblingIndex(5);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-        Debug.Log("OnPointerExit");
+        if (eventData.pointerDrag == null)
+            return;
+        Draggable2 draggable = eventData.pointerDrag.GetComponent<Draggable2>();
+        if (draggable != null && draggable.placeholderParent == this.transform)
+        {
+            draggable.placeholderParent = draggable.parentToReturnTo;
+        }
     }
 
     public void OnDrop(PointerEventData eventData) {

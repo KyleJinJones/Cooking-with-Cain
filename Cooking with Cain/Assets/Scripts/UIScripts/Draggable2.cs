@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Transform parentToReturnTo = null;
+    public Transform placeholderParent = null;
     public GameObject parent;
 
     public enum Slot {  };
@@ -25,6 +26,7 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         placeholder.transform.SetSiblingIndex(parent.transform.GetSiblingIndex());
 
         parentToReturnTo = parent.transform.parent;
+        placeholderParent = parentToReturnTo;
         parent.transform.SetParent(parent.transform.parent.parent);
         parent.GetComponent<CanvasGroup>().blocksRaycasts = false; 
     }
@@ -33,29 +35,32 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         parent.transform.position = eventData.position;
 
-        int newSiblingIndex = parentToReturnTo.childCount-4;
+        if (placeholder.transform.parent != placeholderParent)
+        {
+            print("CHANGE");
+            placeholder.transform.SetParent(placeholderParent);
+        }
 
-        parent.transform.position = eventData.position;
-        for (int i = 0; i < parentToReturnTo.childCount; i++) {
+        int newSiblingIndex = placeholderParent.childCount - 4;
 
-            if (parent.transform.position.x < parentToReturnTo.GetChild(i).position.x) {
+        for (int i = 0; i < placeholderParent.childCount; i++)
+        {
+            if (parent.transform.position.x < placeholderParent.GetChild(i).position.x)
+            {
                 newSiblingIndex = i;
-                if (parent.transform.position.y < parentToReturnTo.GetChild(i).position.y)
-                {
-                    newSiblingIndex += 4;
-                }
+
                 if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
                     newSiblingIndex--;
-
                 break;
-
-            }/*
-
-            if (parent.transform.position.y > parentToReturnTo.GetChild(i).position.y)
+            }
+            if (parent.transform.position.y < placeholderParent.GetChild(i).position.y && placeholderParent.transform.GetSiblingIndex() == i % 3)
             {
-                newSiblingIndex = i - 3;
+                newSiblingIndex += 3;
+                print(newSiblingIndex);
+                placeholderParent.GetChild(newSiblingIndex).SetSiblingIndex(newSiblingIndex - 3);
+
                 break;
-            }*/
+            }
         }
         placeholder.transform.SetSiblingIndex(newSiblingIndex);
     }
@@ -67,5 +72,26 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         parent.GetComponent<CanvasGroup>().blocksRaycasts = true;
         parent.transform.position = placeholder.transform.position;
         Destroy(placeholder);
+    }
+
+    public void checkRows(PointerEventData eventData, int newSiblingIndex, int index) {
+        parent.transform.position = eventData.position;
+
+        newSiblingIndex = index;
+
+        if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
+            newSiblingIndex--;
+
+        placeholder.transform.SetSiblingIndex(newSiblingIndex);
+    }
+
+    public void checkColumns(PointerEventData eventData, int newSiblingIndex) {
+        parent.transform.position = eventData.position;
+
+        newSiblingIndex += 3;
+
+        placeholderParent.GetChild(newSiblingIndex).SetSiblingIndex(newSiblingIndex - 3);
+
+
     }
 }

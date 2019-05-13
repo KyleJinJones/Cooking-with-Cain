@@ -9,6 +9,7 @@ public class Chest : MonoBehaviour
     public UpgradeInfo reward;
     public UpgradeInfo altReward;
     public Gold playergold;
+    public AudioManager audioManager;
     private bool open
     {
         get
@@ -37,12 +38,16 @@ public class Chest : MonoBehaviour
 
     private void Awake()
     {
+        treasurewindow = GameObject.FindGameObjectWithTag("Popup");
+        chestOpenPanel = GameObject.FindGameObjectWithTag("Interact");
         chestId = new ChestId(SceneManager.GetActiveScene().name, id);
         chestOpenPanel.gameObject.SetActive(false);
+        treasurewindow.gameObject.SetActive(false);
         if (open)
         {
             GetComponent<SpriteRenderer>().sprite = openview;
         }
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
     
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -104,9 +109,10 @@ public class Chest : MonoBehaviour
             
             this.GetComponent<SpriteRenderer>().sprite = openview;
 
-            if (GetComponent<AudioSource>() != null)
-                
+            if (GetComponent<AudioSource>() != null) {
+                this.GetComponent<AudioSource>().volume = audioManager.audioValue;
                 GetComponent<AudioSource>().Play();
+            }
         }
     }
 }

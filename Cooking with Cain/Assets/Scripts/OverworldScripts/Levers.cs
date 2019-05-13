@@ -7,6 +7,9 @@ public class Levers : MonoBehaviour
 {
     public GameObject objectToDelete;
     public GameObject interactPopup;
+    public GameObject txtwindow;
+    public UpgradeInfo txt;
+    public AudioManager audioManager;
    [SerializeField]private Sprite pulled;
 
     bool activated
@@ -21,13 +24,19 @@ public class Levers : MonoBehaviour
     private LeverId leverId;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        txtwindow = GameObject.FindGameObjectWithTag("Popup");
+    }
+
     void Start()
     {
+        
         leverId = new LeverId(SceneManager.GetActiveScene().name, id);
 
         if (activated)
         {
-            objectToDelete.SetActive(false);
+            objectToDelete.SetActive(!objectToDelete.activeSelf);
             this.GetComponent<SpriteRenderer>().sprite = pulled;
         }
     }
@@ -48,10 +57,15 @@ public class Levers : MonoBehaviour
             SaveDataManager.currentData.activatedLevers.Add(leverId);
             objectToDelete.SetActive(!objectToDelete.activeSelf);
             interactPopup.SetActive(false);
+            txtwindow.SetActive(true);
+            txtwindow.GetComponent<TreasureWindow>().treasureimage.sprite = txt.upgradeimage;
+            txtwindow.GetComponent<TreasureWindow>().treasuretext.text = txt.infotext;
             this.GetComponent<SpriteRenderer>().sprite = pulled;
 
-            if (GetComponent<AudioSource>() != null)
+            if (GetComponent<AudioSource>() != null) {
+                GetComponent<AudioSource>().volume = audioManager.audioValue;
                 GetComponent<AudioSource>().Play();
+            }
         }
     }
 

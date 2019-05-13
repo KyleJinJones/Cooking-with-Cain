@@ -210,8 +210,9 @@ public class AttackManager : MonoBehaviour
             {
                 switch (attribute)
                 {
+
                     case Ingredient.Attribute.burn:
-                        target.AddStatus(StatusInstance.Status.burn, attacker.stats.burn, 3);
+                        target.AddStatus(StatusInstance.Status.burn, attacker.stats.burn, 3, damage);
                         ResultText.lines.Add(string.Format("{0} gets {1}% burned", target.entityName, Mathf.RoundToInt(attacker.stats.burn * 100)));
                         break;
                     case Ingredient.Attribute.atkdown:

@@ -29,6 +29,7 @@ public class Entity : MonoBehaviour
 
     public AudioClip attackSound;
     public AudioClip deathSound;
+    public AudioManager audioManager;
 
     public GameObject damageCount;
     //public GameObject EnemyBase;
@@ -41,6 +42,8 @@ public class Entity : MonoBehaviour
         {
             stats = playerStats;
         }
+
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -65,6 +68,7 @@ public class Entity : MonoBehaviour
             }
         }
 
+        this.GetComponent<AudioSource>().volume = audioManager.audioValue;
         statuses.RemoveAll(status => status.duration <= 0 && status.fade < -15);
         OnUpdate();
     }
@@ -110,7 +114,7 @@ public class Entity : MonoBehaviour
         playerStats.miss = PlayerPrefs.GetFloat("Miss", playerStats.miss);
     }
 
-    public StatusInstance AddStatus(StatusInstance.Status status, float potency, int duration)
+    public StatusInstance AddStatus(StatusInstance.Status status, float potency, int duration, float damage= 0f)
     {
         if (stats.health > 0)
         {
@@ -122,6 +126,7 @@ public class Entity : MonoBehaviour
                 instance.status = status;
                 instance.potency = potency;
                 instance.duration = duration;
+                instance.attkpow = damage;
                 statuses.Add(instance);
 
                 return instance;
@@ -151,7 +156,7 @@ public class Entity : MonoBehaviour
 
         if (burn != null)
         {
-            int damage = Mathf.Max(Mathf.RoundToInt(stats.health * burn.potency), 1);
+            int damage = Mathf.Max(Mathf.RoundToInt(burn.attkpow * burn.potency), 1);
             ModifyHealth(-damage);
 
             ResultText.lines.Add(string.Format("{0} takes {1} damage from burn", entityName, damage));
@@ -328,6 +333,7 @@ public class StatusInstance
     public Status status;
     public float potency;
     public int duration;
+    public float attkpow;
     
     public int blink = 0;
     public int fade = 15;
