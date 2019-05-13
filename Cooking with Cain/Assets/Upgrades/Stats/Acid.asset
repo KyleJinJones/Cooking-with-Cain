@@ -18,7 +18,7 @@ MonoBehaviour:
   infotext: 'Arsenic will make my Acidic Apples abbreviate my assailants resistance
     to death even further.
 
-    Effect: +5% defense debuff.'
+    Effect: Increase Apple''s defense debuff by 5%.'
   rewardname: Acid
   limit: 10
   costIncrease: 20

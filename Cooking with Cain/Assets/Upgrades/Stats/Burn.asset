@@ -18,7 +18,7 @@ MonoBehaviour:
   infotext: 'A nice bit of fire that when combined with my Perilous Pepper will cause
     it to do even more burn damage.
 
-    Effect: +4% burn.'
+    Effect: Increase the Pepper''s burn by 4%.'
   rewardname: Burn
   limit: 10
   costIncrease: 10

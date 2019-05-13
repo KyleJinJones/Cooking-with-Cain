@@ -16,7 +16,7 @@ MonoBehaviour:
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 8d3ac05482e3788448c9c3a9fa50771e, type: 3}
   infotext: "A hardening for my Coarse Coconut's thick shell will make it even better
-    at protecting me. \nEffect: +5% defense."
+    at protecting me. \nEffect: Increase the Coconut's defense by 5%."
   rewardname: Defense
   limit: 10
   costIncrease: 20

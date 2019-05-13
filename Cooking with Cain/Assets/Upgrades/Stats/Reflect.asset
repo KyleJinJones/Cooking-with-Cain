@@ -18,7 +18,7 @@ MonoBehaviour:
   infotext: 'Prickly Pineapples pointed pines will now reflect even more damage to
     my flabbergasted foes.
 
-    Effect: +1% damage reflect.'
+    Effect: Increase the Pineapple''s reflect by 1%.'
   rewardname: Reflect
   limit: 10
   costIncrease: 15
