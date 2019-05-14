@@ -2393,6 +2393,7 @@ MonoBehaviour:
   statuses: []
   attackSound: {fileID: 0}
   deathSound: {fileID: 0}
+  audioManager: {fileID: 0}
   damageCount: {fileID: 6509100001148549287, guid: d93db37be395a3e40b70faeb8d8de793,
     type: 3}
 --- !u!114 &515466629
@@ -2939,6 +2940,7 @@ MonoBehaviour:
   statuses: []
   attackSound: {fileID: 8300000, guid: 72b68f8cb88d05d45ac51e74ddc7c3a7, type: 3}
   deathSound: {fileID: 8300000, guid: eb1531e3918ed7b46a188ebf848de081, type: 3}
+  audioManager: {fileID: 0}
   damageCount: {fileID: 6509100001148549287, guid: d93db37be395a3e40b70faeb8d8de793,
     type: 3}
 --- !u!114 &681065620
@@ -6245,10 +6247,10 @@ RectTransform:
   m_Father: {fileID: 9685772}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74.1, y: -6.2886}
-  m_SizeDelta: {x: 2068.3, y: 1091.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 72.599976, y: -6.788574}
+  m_SizeDelta: {x: 145.30005, y: 10.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632960533
 MonoBehaviour:
@@ -6543,7 +6545,7 @@ RectTransform:
   m_GameObject: {fileID: 1666069556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000009, y: 1.000009, z: 1.000009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 919833275}
   m_Father: {fileID: 1668263642}
@@ -6671,15 +6673,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1668263642
-Transform:
+--- !u!224 &1668263642
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668263641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.19558, y: -96.943985, z: 24.482676}
+  m_LocalPosition: {x: 0, y: 0, z: 24.482676}
   m_LocalScale: {x: 0.37968746, y: 0.37968746, z: 0.37968746}
   m_Children:
   - {fileID: 1597477841}
@@ -6691,6 +6693,11 @@ Transform:
   m_Father: {fileID: 2088426945}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 70.19558, y: -96.943985}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1687027448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6719,7 +6726,7 @@ RectTransform:
   m_GameObject: {fileID: 1687027448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000009, y: 1.000009, z: 1.000009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1837920000}
   m_Father: {fileID: 1668263642}
@@ -8174,7 +8181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredients:
   - {fileID: 11400000, guid: 72b91d131b1494e49b36add61848da15, type: 2}
-  - {fileID: 11400000, guid: 3c39a2ea195728549a0ca8291632d3a0, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
   - {fileID: 11400000, guid: 3a584235598dad143aaa2e8538451a1d, type: 2}
   - {fileID: 11400000, guid: 9b86f2db889ab564abffeec56ea7264a, type: 2}
@@ -8795,21 +8802,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2088426945
-Transform:
+--- !u!224 &2088426945
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088426944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -184.87732, y: 63.042664, z: -64.481125}
+  m_LocalPosition: {x: 0, y: 0, z: -64.481125}
   m_LocalScale: {x: 2.63375, y: 2.63375, z: 2.63375}
   m_Children:
   - {fileID: 1668263642}
   m_Father: {fileID: 9685772}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -184.87732, y: 63.042664}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2088426946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8823,6 +8835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausemenu: {fileID: 1668263641}
+  soundmenu: {fileID: 0}
+  buttons: []
 --- !u!1001 &2304414909708819805
 PrefabInstance:
   m_ObjectHideFlags: 0
