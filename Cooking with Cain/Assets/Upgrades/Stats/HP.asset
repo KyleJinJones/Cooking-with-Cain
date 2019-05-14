@@ -17,7 +17,7 @@ MonoBehaviour:
   upgradeimage: {fileID: 21300000, guid: 49d9faa876ee1a946a602b18d506dfee, type: 3}
   infotext: 'A delicious soup that will improve my health.
 
-    Effect: + 20 HP to max health.'
+    Effect: + 25 HP to max health.'
   rewardname: HP
   limit: 10
   costIncrease: 10

@@ -15,7 +15,9 @@ MonoBehaviour:
   attributeType: 0
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 4c7b6a60b71b08945b771eb453a0b7f4, type: 3}
-  infotext: For some reason, eggs, tend to blow up. This will make them blow up better.
+  infotext: 'For some reason, eggs, tend to blow up. This will make them blow up better.
+
+    Effect: Increase the Egg''s splash by 5%.'
   rewardname: Splash
   limit: 10
   costIncrease: 15

@@ -15,8 +15,10 @@ MonoBehaviour:
   attributeType: 0
   goldcost: 100
   upgradeimage: {fileID: 21300000, guid: 4100b9dcfa8c51e47a4c7c8db0998886, type: 3}
-  infotext: A nice bit of fire that when combined with my Perilous Pepper will cause
+  infotext: 'A nice bit of fire that when combined with my Perilous Pepper will cause
     it to do even more burn damage.
+
+    Effect: Increase the Pepper''s burn by 4%.'
   rewardname: Burn
   limit: 10
   costIncrease: 10
