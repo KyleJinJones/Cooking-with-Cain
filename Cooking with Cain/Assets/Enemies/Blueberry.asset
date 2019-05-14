@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238b96afcef185442acf8746e808c13b, type: 3}
   m_Name: Blueberry
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Booberry
   sprite: {fileID: 21300000, guid: 88f8a2d68f0e856478069f8611383bba, type: 3}
   stats:
     attack: 1
