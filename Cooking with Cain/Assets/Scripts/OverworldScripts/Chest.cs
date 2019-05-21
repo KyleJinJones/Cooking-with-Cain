@@ -41,15 +41,19 @@ public class Chest : MonoBehaviour
         treasurewindow = GameObject.FindGameObjectWithTag("Popup");
         chestOpenPanel = GameObject.FindGameObjectWithTag("Interact");
         chestId = new ChestId(SceneManager.GetActiveScene().name, id);
-        chestOpenPanel.gameObject.SetActive(false);
-        treasurewindow.gameObject.SetActive(false);
         if (open)
         {
             GetComponent<SpriteRenderer>().sprite = openview;
         }
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
-    
+
+    private void Start()
+    {
+        chestOpenPanel.gameObject.SetActive(false);
+        treasurewindow.gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if ((collision.gameObject.tag == "Player") && (!open)) {
             chestOpenPanel.gameObject.SetActive(true);
