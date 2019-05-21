@@ -12,6 +12,6 @@ public class Enemy : ScriptableObject
     public int goldValue;
     public UpgradeInfo ingreward;
 
-    public AudioClip attackSound;
-    public AudioClip deathSound;
+    public AudioClip[] attackSound;
+    public AudioClip[] deathSound;
 }
