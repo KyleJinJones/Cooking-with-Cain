@@ -15,7 +15,7 @@ MonoBehaviour:
   attributeType: 0
   goldcost: 0
   upgradeimage: {fileID: 0}
-  infotext: 
+  infotext: The wall slides away, leaving the way forward open to traversal.
   rewardname: 
   limit: 0
   costIncrease: 0

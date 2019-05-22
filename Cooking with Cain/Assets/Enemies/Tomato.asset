@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 238b96afcef185442acf8746e808c13b, type: 3}
-  m_Name: Ghost Pea
+  m_Name: Tomato
   m_EditorClassIdentifier: 
-  enemyName: Ghost Pea
-  sprite: {fileID: 21300000, guid: cfc58a752fcd42d4eb11ae98ba0c6fc2, type: 3}
+  enemyName: Tomighto
+  sprite: {fileID: 21300000, guid: ab04a853f55829d4096ac4482dac3046, type: 3}
   stats:
-    attack: 3
-    health: 66
-    maxHealth: 66
-    burn: 0.07
+    attack: 15
+    health: 50
+    maxHealth: 50
+    burn: 0.5
     splash: 0.5
-    lifesteal: 0.5
+    lifesteal: 0.25
     atkboost: 0.2
     atkdebuff: 0.2
-    stun: 0.6
-    defboost: 0.2
+    stun: 0.75
+    defboost: 0.25
     defdebuff: 0.4
-    reflect: 0.3
+    reflect: 0.5
     selfdmg: 0.1
     miss: 0.4
   ingredients:
-  - {fileID: 11400000, guid: 49d9b76a7113f004ba9483bea97bde4c, type: 2}
-  goldValue: 13
+  - {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
+  goldValue: 0
   ingreward: {fileID: 0}
   attackSound:
   - {fileID: 8300000, guid: 661e7670a8591bb469d0a293f5b366fc, type: 3}
