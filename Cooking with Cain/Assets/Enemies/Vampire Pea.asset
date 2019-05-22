@@ -35,9 +35,7 @@ MonoBehaviour:
   goldValue: 25
   ingreward: {fileID: 0}
   attackSound:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: f1c793a4e1e0d5f4ba9ae3a122c37663, type: 3}
   deathSound:
   - {fileID: 8300000, guid: 00e1aff22bce7e44c8abdf0757833e24, type: 3}
   - {fileID: 8300000, guid: ec71dc0541fecd74a86666fd08abb487, type: 3}

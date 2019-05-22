@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource audioSource;
-    static AudioManager instance  = null;
-    public int audioValue;
+    public AudioSource sfxaudio;
+    public AudioSource bgaudio;
+    public static AudioManager instance  = null;
+    public float bgvol=.5f;
+    public float sfxvol=1.0f;
+
 
     // Start is called before the first frame update
-    private void Awake()
+     void Awake()
     {
         DontDestroyOnLoad(gameObject);
 
@@ -20,7 +23,26 @@ public class AudioManager : MonoBehaviour
 
         instance = this;
 
-        audioSource = this.GetComponent<AudioSource>();
         //audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>(); ;
     }
+
+    public void PlayBG(AudioClip a)
+    {
+        bgaudio.loop = true;
+        bgaudio.volume = bgvol;
+        bgaudio.clip = a;
+        bgaudio.Play();
+    }
+
+    public void PlaySFX(AudioClip a)
+    {
+        sfxaudio.volume = sfxvol;
+        sfxaudio.PlayOneShot(a);
+    }
+
+  
+        
+    
+
+    
 }

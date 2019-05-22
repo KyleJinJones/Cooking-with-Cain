@@ -9,7 +9,8 @@ public class Chest : MonoBehaviour
     public UpgradeInfo reward;
     public UpgradeInfo altReward;
     public Gold playergold;
-    public AudioManager audioManager;
+    public AudioClip opensound;
+    //public AudioManager audioManager;
     private bool open
     {
         get
@@ -45,7 +46,7 @@ public class Chest : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = openview;
         }
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        
     }
 
     private void Start()
@@ -109,14 +110,10 @@ public class Chest : MonoBehaviour
             treasurewindow.SetActive(true);
             Time.timeScale = 0;
             
-            
-            
             this.GetComponent<SpriteRenderer>().sprite = openview;
 
-            if (GetComponent<AudioSource>() != null) {
-                this.GetComponent<AudioSource>().volume = audioManager.audioValue;
-                GetComponent<AudioSource>().Play();
-            }
+            AudioManager.instance.PlaySFX(opensound);
+            
         }
     }
 }

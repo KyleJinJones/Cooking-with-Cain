@@ -19,6 +19,7 @@ public class SoundMenu : MonoBehaviour
     void Update()
     {
         sfxValue.text = sfxSlider.value.ToString() + " :";
-        audioManager.audioValue = (int)sfxSlider.value;
+        audioManager.bgvol = (float)sfxSlider.value/2.0f;
+        audioManager.sfxvol = (float)sfxSlider.value;
     }
 }

@@ -29,7 +29,6 @@ public class Entity : MonoBehaviour
 
     public AudioClip attackSound;
     public AudioClip deathSound;
-    public AudioManager audioManager;
 
     public GameObject damageCount;
     //public GameObject EnemyBase;
@@ -43,7 +42,7 @@ public class Entity : MonoBehaviour
             stats = playerStats;
         }
 
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+       
     }
 
     void Update()
@@ -68,7 +67,6 @@ public class Entity : MonoBehaviour
             }
         }
 
-        this.GetComponent<AudioSource>().volume = audioManager.audioValue;
         statuses.RemoveAll(status => status.duration <= 0 && status.fade < -15);
         OnUpdate();
     }
@@ -281,12 +279,12 @@ public class Entity : MonoBehaviour
 
     public void PlayAttackSound()
     {
-        GetComponent<AudioSource>().PlayOneShot(attackSound);
+       AudioManager.instance.PlaySFX(attackSound);
     }
 
     IEnumerator Die()
     {
-        GetComponent<AudioSource>().PlayOneShot(deathSound);
+        AudioManager.instance.PlaySFX(deathSound);
         ResultText.lines.Add(string.Format("{0} is defeated", entityName));
 
         if (gameObject.tag == "Player")

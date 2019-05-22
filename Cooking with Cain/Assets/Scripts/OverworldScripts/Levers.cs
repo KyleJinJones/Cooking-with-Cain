@@ -9,7 +9,7 @@ public class Levers : MonoBehaviour
     public GameObject interactPopup;
     public GameObject txtwindow;
     public UpgradeInfo txt;
-    public AudioManager audioManager;
+    public AudioClip pullsound;
    [SerializeField]private Sprite pulled;
 
     bool activated
@@ -62,10 +62,9 @@ public class Levers : MonoBehaviour
             txtwindow.GetComponent<TreasureWindow>().treasuretext.text = txt.infotext;
             this.GetComponent<SpriteRenderer>().sprite = pulled;
 
-            if (GetComponent<AudioSource>() != null) {
-                GetComponent<AudioSource>().volume = audioManager.audioValue;
-                GetComponent<AudioSource>().Play();
-            }
+            AudioManager.instance.PlaySFX(pullsound);
+           
+            
         }
     }
 

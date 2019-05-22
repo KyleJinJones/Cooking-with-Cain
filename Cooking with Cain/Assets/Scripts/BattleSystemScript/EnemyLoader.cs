@@ -69,8 +69,8 @@ public class EnemyLoader : MonoBehaviour
         enemyAction.ingredients = enemy.ingredients;
         entity.goldValue = enemy.goldValue;
         entity.ingreward = enemy.ingreward;
-        entity.attackSound = enemy.attackSound[Random.Range(0, enemy.deathSound.Length-1)];
-        entity.deathSound = enemy.deathSound[Random.Range(0,enemy.deathSound.Length-1)];
+        entity.attackSound = enemy.attackSound[Random.Range(0, enemy.attackSound.Length)];
+        entity.deathSound = enemy.deathSound[Random.Range(0,enemy.deathSound.Length)];
 
         TooltipTextWithIngredients tooltip = clone.AddComponent<TooltipTextWithIngredients>();
         tooltip.text = entity.entityName;
