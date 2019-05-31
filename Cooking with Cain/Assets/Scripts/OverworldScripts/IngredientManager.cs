@@ -42,7 +42,7 @@ public class IngredientManager : MonoBehaviour
         {
             if (IngredientSelector.equipped[i] != null)
             {
-                Debug.Log(IngredientSelector.equipped[i].name);
+
                 loadout[i].ing = IngredientSelector.equipped[i];
                 loadout[i].Start();
             }
