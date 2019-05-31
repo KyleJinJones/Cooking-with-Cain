@@ -31,7 +31,7 @@ MonoBehaviour:
     miss: 0.4
   ingredients:
   - {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
-  goldValue: 0
+  goldValue: 30
   ingreward: {fileID: 0}
   attackSound:
   - {fileID: 8300000, guid: 696aa9de82c6440418d324fc0a6b1c12, type: 3}

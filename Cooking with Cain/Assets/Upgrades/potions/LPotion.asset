@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeType: 3
   goldcost: 50
-  upgradeimage: {fileID: 21300000, guid: 73eadc5dcefa26b47a7291330741afc4, type: 3}
+  upgradeimage: {fileID: 21300000, guid: 77c6df681d29748b7b53d3cb03915421, type: 3}
   infotext: A huge hp potion, heals 100 hp.
   rewardname: Large HP Potion
   limit: 0

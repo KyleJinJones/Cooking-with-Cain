@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeType: 3
   goldcost: 10
-  upgradeimage: {fileID: 21300006, guid: 73eadc5dcefa26b47a7291330741afc4, type: 3}
+  upgradeimage: {fileID: 21300000, guid: 4ab56a34e9f6b4f33ae0641f874a25d2, type: 3}
   infotext: A small hp potion, heals 25 hp.
   rewardname: Small HP Potion
   limit: 0
