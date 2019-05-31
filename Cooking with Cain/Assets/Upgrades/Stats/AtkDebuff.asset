@@ -20,9 +20,9 @@ MonoBehaviour:
 
     Effect: Increase Brussel Sprout''s attack debuff by 5%.'
   rewardname: Attack Debuff
-  limit: 10
-  costIncrease: 20
-  required: {fileID: 11400000, guid: fad23ae8359f4614a85743e2a748f88a, type: 2}
+  limit: 5
+  costIncrease: 25
+  required: {fileID: 11400000, guid: c91d5afdbd2f9384690c22d12df54282, type: 2}
   statsModification:
     attack: 0
     health: 0

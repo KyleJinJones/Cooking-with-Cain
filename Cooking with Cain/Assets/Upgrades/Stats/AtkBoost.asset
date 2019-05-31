@@ -18,9 +18,9 @@ MonoBehaviour:
   infotext: 'A Boost to the boost, my attack will increase even more when using Bloody
     Beef.
 
-    Effect: Increase Beef''s attack boost by 15%'
+    Effect: Increase Beef''s attack boost by 10%'
   rewardname: Attack Boost
-  limit: 10
+  limit: 5
   costIncrease: 25
   required: {fileID: 0}
   statsModification:

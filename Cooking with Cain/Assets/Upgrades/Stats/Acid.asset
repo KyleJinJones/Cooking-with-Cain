@@ -20,8 +20,8 @@ MonoBehaviour:
 
     Effect: Increase Apple''s defense debuff by 5%.'
   rewardname: Acid
-  limit: 10
-  costIncrease: 20
+  limit: 5
+  costIncrease: 25
   required: {fileID: 11400000, guid: 13e2a351ee4633a4486e21da9cb5d25a, type: 2}
   statsModification:
     attack: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 77e7b31f903b4ba47856849a6331025c, type: 3}
   audioClip: {fileID: 8300000, guid: 5cdbb90f06228374286ae71c7e9ced66, type: 3}
   damageType: 0
-  multiplier: 0.25
+  multiplier: -0.3
   multiplierMin: 0
   multiplierMax: 0
   attribute: 4

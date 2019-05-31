@@ -15,10 +15,10 @@ MonoBehaviour:
   enemyName: Fire Pea
   sprite: {fileID: 21300000, guid: 168a9e206392ece43be6327a8ca52094, type: 3}
   stats:
-    attack: 10
+    attack: 5
     health: 70
     maxHealth: 70
-    burn: 0.2
+    burn: 1
     splash: 0.5
     lifesteal: 0.5
     atkboost: 0.2

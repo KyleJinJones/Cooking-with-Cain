@@ -21,7 +21,7 @@ MonoBehaviour:
   rewardname: Lifesteal
   limit: 10
   costIncrease: 15
-  required: {fileID: 0}
+  required: {fileID: 11400000, guid: 397c2b3590f208443aaa87c98a10a9d9, type: 2}
   statsModification:
     attack: 0
     health: 0
