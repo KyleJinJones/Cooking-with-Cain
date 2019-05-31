@@ -2824,17 +2824,17 @@ MonoBehaviour:
     attack: 10
     health: 100
     maxHealth: 100
-    burn: 0.1
+    burn: 0.25
     splash: 0.5
     lifesteal: 0.5
     atkboost: 0.2
     atkdebuff: 0.2
-    stun: 0.6
-    defboost: 0.2
+    stun: 0.75
+    defboost: 0.4
     defdebuff: 0.4
-    reflect: 0.3
+    reflect: 0.5
     selfdmg: 0.1
-    miss: 0.4
+    miss: 0.5
   goldValue: 0
   ingreward: {fileID: 0}
   stunnedLastTurn: 0
