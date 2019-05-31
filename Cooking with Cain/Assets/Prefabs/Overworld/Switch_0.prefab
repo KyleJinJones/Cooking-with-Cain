@@ -149,7 +149,7 @@ MonoBehaviour:
   objectToDelete: {fileID: 0}
   interactPopup: {fileID: 0}
   txtwindow: {fileID: 0}
-  txt: {fileID: 0}
+  txt: {fileID: 11400000, guid: 8124c21a415431f44bf117e27b759368, type: 2}
   pullsound: {fileID: 8300000, guid: e6d928f6882e9214b88c24ac15f68747, type: 3}
   pulled: {fileID: 21300004, guid: 66aebb4ae7876f047aa4d31efd6c262c, type: 3}
   id: 0
