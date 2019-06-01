@@ -74,6 +74,11 @@ public class UpgradeInfo : ScriptableObject
                     if (IngredientManager.currentIngredients[i] == null)
                     {
                         IngredientManager.currentIngredients[i] = ingredient;
+                        IngredientManager t =GameObject.FindObjectOfType<IngredientManager>();
+                        if (t != null)
+                        {
+                            t.Load();
+                        }
                         return;
                     }
                 }

@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Felix_Level2.unity
     guid: 015f05bd4833e39469772bb9f4bbfea6
+  - enabled: 1
+    path: Assets/Scenes/Demo1.unity
+    guid: 4288bf7b3043e484783ed44f3f43dbf3
   m_configObjects: {}
