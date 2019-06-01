@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class Levers : MonoBehaviour
 {
     public GameObject objectToDelete;
+    public GameObject optionalobj = null;
     public GameObject interactPopup;
     public GameObject txtwindow;
     public UpgradeInfo txt;
     public AudioClip pullsound;
+    public bool reversable;
    [SerializeField]private Sprite pulled;
 
     bool activated
@@ -54,7 +56,14 @@ public class Levers : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
         {
-            SaveDataManager.currentData.activatedLevers.Add(leverId);
+            if (!reversable)
+            {
+                SaveDataManager.currentData.activatedLevers.Add(leverId);
+            }
+            if (optionalobj != null)
+            {
+                optionalobj.SetActive(!optionalobj.activeSelf);
+            }
             objectToDelete.SetActive(!objectToDelete.activeSelf);
             interactPopup.SetActive(false);
             txtwindow.SetActive(true);
@@ -70,7 +79,7 @@ public class Levers : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !activated)
+        if (collision.gameObject.tag == "Player" &&!activated)
         {
             interactPopup.SetActive(false);
         }
