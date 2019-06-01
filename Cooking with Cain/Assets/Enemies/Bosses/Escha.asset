@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238b96afcef185442acf8746e808c13b, type: 3}
+  m_Name: Escha
+  m_EditorClassIdentifier: 
+  enemyName: Escha, Last Alchemist
+  sprite: {fileID: 21300000, guid: c1a22bcdebc9f0b4891ba7e90a74403b, type: 3}
+  stats:
+    attack: 6
+    health: 150
+    maxHealth: 150
+    burn: 0.07
+    splash: 0.5
+    lifesteal: 0.5
+    atkboost: 0.2
+    atkdebuff: 0.2
+    stun: 0.6
+    defboost: 0.2
+    defdebuff: 0.4
+    reflect: 0.3
+    selfdmg: 0.1
+    miss: 0.4
+  ingredients:
+  - {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
+  - {fileID: 11400000, guid: e5fe4774552ab9a44ae25257594258e5, type: 2}
+  goldValue: 50
+  ingreward: {fileID: 0}
+  attackSound:
+  - {fileID: 8300000, guid: 696aa9de82c6440418d324fc0a6b1c12, type: 3}
+  - {fileID: 8300000, guid: 86b239eec1bc3254fb181ab89c0163c3, type: 3}
+  - {fileID: 8300000, guid: 359396756f5f3da4eb3eb4f32b651200, type: 3}
+  - {fileID: 8300000, guid: c6a0493f5e018c64ba3e9d0e8de20125, type: 3}
+  - {fileID: 8300000, guid: f6559be8790db6547bddb3572808dbfa, type: 3}
+  deathSound:
+  - {fileID: 8300000, guid: 00e1aff22bce7e44c8abdf0757833e24, type: 3}
+  - {fileID: 8300000, guid: ec71dc0541fecd74a86666fd08abb487, type: 3}
+  - {fileID: 8300000, guid: 27bbedb7ce9299a4c8a24370db42f940, type: 3}
+  - {fileID: 8300000, guid: 01cf39e98649ab74288d156faac894ae, type: 3}
+  - {fileID: 8300000, guid: 661e7670a8591bb469d0a293f5b366fc, type: 3}
