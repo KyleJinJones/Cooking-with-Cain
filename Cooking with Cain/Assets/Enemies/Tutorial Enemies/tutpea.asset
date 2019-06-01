@@ -16,8 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 9c8ea1d4f4b0b3a41a9aa22189ca5d9a, type: 3}
   stats:
     attack: 1.5
-    health: 30
-    maxHealth: 30
+    health: 40
+    maxHealth: 40
     burn: 0.07
     splash: 0.5
     lifesteal: 0.5

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 238b96afcef185442acf8746e808c13b, type: 3}
-  m_Name: Tomato
+  m_Name: Blueberry super
   m_EditorClassIdentifier: 
-  enemyName: Tomighto
-  sprite: {fileID: 21300000, guid: ab04a853f55829d4096ac4482dac3046, type: 3}
+  enemyName: Super Booberry
+  sprite: {fileID: 21300000, guid: e8ac0385c60c21945801aee1d8fcd659, type: 3}
   stats:
-    attack: 10
+    attack: 3
     health: 50
     maxHealth: 50
-    burn: 0.25
+    burn: 0.1
     splash: 0.5
     lifesteal: 0.25
     atkboost: 0.2
@@ -30,8 +30,9 @@ MonoBehaviour:
     selfdmg: 0.1
     miss: 0.4
   ingredients:
-  - {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
-  goldValue: 30
+  - {fileID: 11400000, guid: 48089c93fe8dcee4a9d452f5cb6101fe, type: 2}
+  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  goldValue: 200
   ingreward: {fileID: 0}
   attackSound:
   - {fileID: 8300000, guid: 696aa9de82c6440418d324fc0a6b1c12, type: 3}
