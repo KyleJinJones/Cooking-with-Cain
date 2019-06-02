@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Rabies Pea
   sprite: {fileID: 21300000, guid: 290a5fb4ec2e5994a946262fb7e384eb, type: 3}
   stats:
-    attack: 9
+    attack: 4.5
     health: 110
     maxHealth: 110
     burn: 0.07
