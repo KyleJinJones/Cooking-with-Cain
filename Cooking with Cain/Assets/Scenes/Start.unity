@@ -1331,6 +1331,22 @@ PrefabInstance:
       propertyPath: data.potions.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
+        type: 3}
+      propertyPath: data.equipped.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b86f2db889ab564abffeec56ea7264a,
+        type: 2}
+    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
+        type: 3}
+      propertyPath: data.equipped.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
+        type: 3}
+      propertyPath: data.equipped.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207366547924449524, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
         type: 3}
       propertyPath: m_LocalPosition.x
