@@ -1251,10 +1251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec3968d49acba408cf16e3357a5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Felix_Level1
-  spawnPosition: {x: 0, y: 0}
+  sceneName: Kyle_Level
+  spawnPosition: {x: 3, y: -0.5}
   ClearEnemies: 1
-  interactPopup: {fileID: 0}
+  interactPopup: {fileID: 1649911610}
 --- !u!58 &223382412
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1346,7 +1346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223382410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 9.01, z: 0}
+  m_LocalPosition: {x: 19, y: 9, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4290,7 +4290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489898332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 9.01, z: 0}
+  m_LocalPosition: {x: 3, y: 9, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4346,7 +4346,7 @@ MonoBehaviour:
   sceneName: Felix_Level1
   spawnPosition: {x: 0.68, y: -11.4}
   ClearEnemies: 1
-  interactPopup: {fileID: 0}
+  interactPopup: {fileID: 1649911610}
 --- !u!1 &495922240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,7 +4382,7 @@ MonoBehaviour:
   sceneName: Demo1
   spawnPosition: {x: 49.5, y: 0}
   ClearEnemies: 1
-  interactPopup: {fileID: 0}
+  interactPopup: {fileID: 1649911610}
 --- !u!58 &495922242
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10798,7 +10798,7 @@ MonoBehaviour:
   sceneName: Felix_Level2
   spawnPosition: {x: 0, y: 0}
   ClearEnemies: 1
-  interactPopup: {fileID: 0}
+  interactPopup: {fileID: 1649911610}
 --- !u!58 &931498024
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10890,7 +10890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931498022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: 9.01, z: 0}
+  m_LocalPosition: {x: 11, y: 9, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14145,6 +14145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BetterUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1933427068562895296, guid: 068f897f3f27d6146afe55db16b6dbe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1933427068562895300, guid: 068f897f3f27d6146afe55db16b6dbe3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14248,6 +14253,16 @@ PrefabInstance:
     - target: {fileID: 1933427068562895300, guid: 068f897f3f27d6146afe55db16b6dbe3,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373240810050280414, guid: 068f897f3f27d6146afe55db16b6dbe3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373240810050280414, guid: 068f897f3f27d6146afe55db16b6dbe3,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 373240810050280400, guid: 068f897f3f27d6146afe55db16b6dbe3,
