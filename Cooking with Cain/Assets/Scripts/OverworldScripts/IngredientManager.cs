@@ -134,6 +134,7 @@ public class IngredientManager : MonoBehaviour
         for(int i = 0; i < loadout.Count; i++)
         {
             //PlayerPrefs.SetInt(loadout[i].gameObject.name, loadout[i].index);
+            
             IngredientSelector.equipped[i] = loadout[i].ing;
         }
 

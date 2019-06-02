@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfec3f4c11adea4480eb67f6962e86f, type: 3}
   m_Name: FalseLever
   m_EditorClassIdentifier: 
-  attributeType: 0
+  attributeType: 4
   goldcost: 0
   upgradeimage: {fileID: 21300000, guid: 90830b938e6539c4091b8ac0c1f227c6, type: 3}
   infotext: You pull the lever, but nothing happens...

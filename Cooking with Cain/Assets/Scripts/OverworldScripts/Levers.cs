@@ -29,6 +29,7 @@ public class Levers : MonoBehaviour
     private void Awake()
     {
         txtwindow = GameObject.FindGameObjectWithTag("Popup");
+        interactPopup = GameObject.FindGameObjectWithTag("Interact");
     }
 
     void Start()
@@ -54,7 +55,7 @@ public class Levers : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
+        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player"&&!activated)
         {
             if (!reversable)
             {
