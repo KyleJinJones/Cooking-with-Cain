@@ -14737,6 +14737,7 @@ GameObject:
   - component: {fileID: 489898336}
   - component: {fileID: 489898335}
   - component: {fileID: 489898337}
+  - component: {fileID: 489898338}
   m_Layer: 0
   m_Name: EndPortal
   m_TagString: Untagged
@@ -14857,6 +14858,19 @@ MonoBehaviour:
   spawnPosition: {x: 2.95, y: 7.14}
   ClearEnemies: 1
   interactPopup: {fileID: 0}
+--- !u!114 &489898338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489898332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9bc138b2608584bb150bf20f4516f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelset: 1
 --- !u!1001 &500960666
 PrefabInstance:
   m_ObjectHideFlags: 0

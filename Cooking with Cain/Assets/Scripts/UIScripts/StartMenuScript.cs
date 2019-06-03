@@ -9,6 +9,7 @@ public class StartMenuScript : MonoBehaviour
 {
     public void StartGame()
     {
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Intro CS");
     }
 
