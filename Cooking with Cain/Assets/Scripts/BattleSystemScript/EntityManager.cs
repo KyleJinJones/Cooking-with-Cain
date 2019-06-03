@@ -233,7 +233,7 @@ public class EntityManager : MonoBehaviour
             
             rewardsPopup.GetComponentInChildren<Button>().onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene(overworldScene));
             rewardsPopup.GetComponentInChildren<TextMeshProUGUI>().text = string.Format("Congratulations\nYou have obtained {0} gold", goldValue);
-            if (ingrew != null)
+            if (ingrew != null&&!SaveDataManager.currentData.shopBoughtIngredient.Contains(ingrew))
             {
                 SaveDataManager.currentData.shopBoughtIngredient.Add(ingrew);
                 ingrew.obtain();
