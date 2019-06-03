@@ -100,7 +100,7 @@ public class UpgradeInfo : ScriptableObject
                 Gold.gold += amount;
                 break;
             case AttributeType.POTION:
-                HPpotion.potions[(int)potionType] += amount;
+                SaveDataManager.currentData.potions[(int)potionType] += amount;
                 break;
             
         }

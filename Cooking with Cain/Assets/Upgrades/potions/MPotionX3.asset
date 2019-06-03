@@ -37,4 +37,4 @@ MonoBehaviour:
     miss: 0
   ingredient: {fileID: 0}
   potionType: 1
-  amount: 0
+  amount: 3
