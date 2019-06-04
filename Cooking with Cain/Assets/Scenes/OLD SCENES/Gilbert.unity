@@ -53022,11 +53022,6 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3582558522608428664, guid: c07236d2f9cf9894dae3eb544d4e415b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2262375899208723302, guid: c07236d2f9cf9894dae3eb544d4e415b,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -53046,6 +53041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582558522608428664, guid: c07236d2f9cf9894dae3eb544d4e415b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400910767993807971, guid: c07236d2f9cf9894dae3eb544d4e415b,
         type: 3}
