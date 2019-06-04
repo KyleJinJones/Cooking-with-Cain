@@ -67,6 +67,7 @@ public class AttackManager : MonoBehaviour
 
         if (attributes.Contains(Ingredient.Attribute.splash))
         {
+            
             if (Random.value < miss)
                 ResultText.lines.Add(string.Format("The attack misses {0}", target.entityName));
             else

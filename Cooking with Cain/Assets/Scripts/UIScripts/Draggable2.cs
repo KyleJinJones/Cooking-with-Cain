@@ -23,6 +23,7 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         layoutElement.flexibleWidth = 0;
         layoutElement.flexibleHeight = 0;
 
+        print(parent.transform.GetSiblingIndex());
         placeholder.transform.SetSiblingIndex(parent.transform.GetSiblingIndex());
 
         parentToReturnTo = parent.transform.parent;
@@ -34,7 +35,7 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnDrag(PointerEventData eventData)
     {
         parent.transform.position = eventData.position;
-
+        
         if (placeholder.transform.parent != placeholderParent)
         {
             print("CHANGE");
@@ -47,21 +48,34 @@ public class Draggable2 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             if (parent.transform.position.x < placeholderParent.GetChild(i).position.x)
             {
-                newSiblingIndex = i;
-
+                if (placeholder.transform.GetSiblingIndex() % 3 == 0)
+                {
+                    if (i == placeholder.transform.GetSiblingIndex() + 1)
+                    {
+                        newSiblingIndex = i;
+                    }
+                }
+                else if (placeholder.transform.GetSiblingIndex() % 3 == 2)
+                {
+                    if (i == placeholder.transform.GetSiblingIndex() - 1)
+                    {
+                        newSiblingIndex = i;
+                    }
+                }
                 if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
                     newSiblingIndex--;
                 break;
             }
-            if (parent.transform.position.y < placeholderParent.GetChild(i).position.y && placeholderParent.transform.GetSiblingIndex() == i % 3)
+            /*if (parent.transform.position.y < placeholderParent.GetChild(i).position.y && placeholderParent.transform.GetSiblingIndex() == i % 3)
             {
                 newSiblingIndex += 3;
                 print(newSiblingIndex);
                 placeholderParent.GetChild(newSiblingIndex).SetSiblingIndex(newSiblingIndex - 3);
 
                 break;
-            }
+            }*/
         }
+        //print(newSiblingIndex);
         placeholder.transform.SetSiblingIndex(newSiblingIndex);
     }
 

@@ -213,10 +213,11 @@ public class Entity : MonoBehaviour
                 damageText = Instantiate(damageCount, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 damageText.GetComponent<Text>().text = health.ToString();
                 if (health < 0)
-                    damageText.GetComponent<Text>().color = new Color(1, 0, 0, 1);
+                    damageText.GetComponent<Text>().color = new Color(0.745283f, 0, 0, 1);
                 else if (health > 0)
-                    damageText.GetComponent<Text>().color = new Color(0, 1, 0, 1);
+                    damageText.GetComponent<Text>().color = new Color(0.1192111f, 0.745283f, 0, 1);
                 damageText.transform.parent = FindObjectOfType<Canvas>().transform;
+                damageText.transform.SetSiblingIndex(1);
             }
             StartCoroutine(Damage(damageText));
             StartCoroutine(Dtext(damageText));
