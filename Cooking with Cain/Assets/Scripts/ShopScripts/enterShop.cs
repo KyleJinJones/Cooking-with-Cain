@@ -11,9 +11,19 @@ public class enterShop : MonoBehaviour
     public GameObject shopEnterPanel;
     
     private bool changeShop;
-    
+
+    private GameObject Loading;
+
+
+    private void Awake()
+    {
+        Loading = GameObject.FindGameObjectWithTag("Loading");
+        shopEnterPanel = GameObject.FindGameObjectWithTag("Interact");
+    }
+
     private void Start() {
         shopEnterPanel.gameObject.SetActive(false);
+        Loading.SetActive(false);
         changeShop = false;
     }
     
@@ -33,6 +43,7 @@ public class enterShop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
         {
+            Loading.SetActive(true);
             shopScript.currentScene = SceneManager.GetActiveScene().name;
 
             PlayerMovementFixed.spawnPosition = collision.transform.position;

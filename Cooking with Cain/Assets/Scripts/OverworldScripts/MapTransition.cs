@@ -11,9 +11,20 @@ public class MapTransition : MonoBehaviour
     public Vector2 spawnPosition;
 
     public bool ClearEnemies = true;
-
+    private GameObject Loading;
 
     public GameObject interactPopup;
+
+    private void Awake()
+    {
+        Loading = GameObject.FindGameObjectWithTag("Loading");
+        interactPopup = GameObject.FindGameObjectWithTag("Interact");
+    }
+    private void Start()
+    {
+        Loading.SetActive(false);
+        interactPopup.SetActive(false);
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,6 +38,7 @@ public class MapTransition : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
         {
+            Loading.SetActive(true);
             TransitionScene();
 
         }

@@ -14367,7 +14367,7 @@ PrefabInstance:
     - target: {fileID: 7625803869231245086, guid: dff14405611e5ed47a95626fc54f0f04,
         type: 3}
       propertyPath: m_TagString
-      value: Loading
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7625803869231245082, guid: dff14405611e5ed47a95626fc54f0f04,
         type: 3}
@@ -16233,7 +16233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b1c74b9ba802845b9f541c4f74f92b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bg: {fileID: 8300000, guid: 7e936c1058703ad45929745485bcb612, type: 3}
+  bg: {fileID: 8300000, guid: 85da306d08e53504993995c782422b46, type: 3}
 --- !u!1 &1733596659
 GameObject:
   m_ObjectHideFlags: 0
