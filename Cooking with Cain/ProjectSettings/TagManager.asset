@@ -9,6 +9,8 @@ TagManager:
   - PlayerUI
   - Interact
   - Popup
+  - ShopPanels
+  - Loading
   layers:
   - Default
   - TransparentFX
