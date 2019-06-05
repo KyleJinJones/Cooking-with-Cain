@@ -133,3 +133,4 @@ MonoBehaviour:
   - name: Ingredients
     items: []
   shopEnterPanel: {fileID: 0}
+  entersound: {fileID: 8300000, guid: 3f43e12e5eba64346bd1672af012ce2b, type: 3}

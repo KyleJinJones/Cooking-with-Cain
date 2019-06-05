@@ -9,6 +9,7 @@ public class enterShop : MonoBehaviour
     public static int gold;
     public List<ShopPanel> items ;
     public GameObject shopEnterPanel;
+    public AudioClip entersound;
     
     private bool changeShop;
 
@@ -43,6 +44,7 @@ public class enterShop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.tag == "Player")
         {
+            AudioManager.instance.PlaySFX(entersound);
             Loading.SetActive(true);
             shopScript.currentScene = SceneManager.GetActiveScene().name;
 
