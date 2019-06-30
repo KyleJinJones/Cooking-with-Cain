@@ -13512,7 +13512,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 397c2b3590f208443aaa87c98a10a9d9, type: 2}
     - {fileID: 11400000, guid: c91d5afdbd2f9384690c22d12df54282, type: 2}
     - {fileID: 11400000, guid: 5fe347d3a5d55fb4dbdd53c1baa22638, type: 2}
-    - {fileID: 11400000, guid: 96a6286ce8e955545a14a26517212aa9, type: 2}
+    - {fileID: 11400000, guid: fa350e4923ea6d24284bb40fa8c0c7de, type: 2}
   shopEnterPanel: {fileID: 1649911610}
   entersound: {fileID: 8300000, guid: 3f43e12e5eba64346bd1672af012ce2b, type: 3}
 --- !u!58 &1319554148
