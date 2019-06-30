@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec3968d49acba408cf16e3357a5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level
+  sceneName: Level3
   spawnPosition: {x: 3, y: -0.5}
   ClearEnemies: 1
   interactPopup: {fileID: 1649911610}
@@ -14429,6 +14429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: overworldHP
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625803869231245081, guid: dff14405611e5ed47a95626fc54f0f04,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dff14405611e5ed47a95626fc54f0f04, type: 3}
