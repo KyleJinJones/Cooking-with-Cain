@@ -14854,7 +14854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec3968d49acba408cf16e3357a5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Felix_HubWorld
+  sceneName: HubWorld
   spawnPosition: {x: 3, y: 7}
   ClearEnemies: 1
   interactPopup: {fileID: 0}
@@ -17260,7 +17260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec3968d49acba408cf16e3357a5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Felix_HubWorld
+  sceneName: HubWorld
   spawnPosition: {x: 3, y: 7}
   ClearEnemies: 1
   interactPopup: {fileID: 1507036503}
@@ -17977,12 +17977,12 @@ PrefabInstance:
     - target: {fileID: 2548003376887998961, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.53
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 2548003376887998961, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -26.49
+      value: -26.5
       objectReference: {fileID: 0}
     - target: {fileID: 2548003376887998961, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
@@ -121927,7 +121927,7 @@ PrefabInstance:
     - target: {fileID: 2548003376887998959, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_Name
-      value: w
+      value: chest7
       objectReference: {fileID: 0}
     - target: {fileID: 2548003376887998959, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
