@@ -58,7 +58,15 @@ public class IngredientButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
             switch (ingredient.damageType)
             {
                 case Ingredient.DamageType.flat:
-                    tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ingredient.multiplier));
+                    if (ingredient.multiplier < 0)
+                    {
+                        tooltip += string.Format("\n-{0} damage", Mathf.RoundToInt(attack * -ingredient.multiplier));
+                    }
+                    else
+                    {
+                        tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ingredient.multiplier));
+                    }
+                    
                     break;
                 case Ingredient.DamageType.range:
                     tooltip += string.Format("\n+{0}~{1} damage", Mathf.RoundToInt(attack * ingredient.multiplierMin), Mathf.RoundToInt(attack * ingredient.multiplierMax));

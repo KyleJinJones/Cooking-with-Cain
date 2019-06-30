@@ -52,7 +52,14 @@ public class IngredientInventory : MonoBehaviour
             switch (ing.damageType)
             {
                 case Ingredient.DamageType.flat:
-                    tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ing.multiplier));
+                    if (ing.multiplier < 0)
+                    {
+                        tooltip += string.Format("\n-{0} damage", Mathf.RoundToInt(attack * -ing.multiplier));
+                    }
+                    else
+                    {
+                        tooltip += string.Format("\n+{0} damage", Mathf.RoundToInt(attack * ing.multiplier));
+                    }
                     break;
                 case Ingredient.DamageType.range:
                     tooltip += string.Format("\n+{0}~{1} damage", Mathf.RoundToInt(attack * ing.multiplierMin), Mathf.RoundToInt(attack * ing.multiplierMax));
