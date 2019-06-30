@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Checkpoint : MonoBehaviour
 {
-    public GameObject overworldHP;
+    public OverworldHP ohp;
 
     private void Start()
     {
-        overworldHP = FindObjectOfType<OverworldHP>().gameObject;
+        ohp = FindObjectOfType<OverworldHP>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -17,10 +17,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerMovementFixed.spawnPosition = collision.transform.position;
-            overworldHP.GetComponent<OverworldHP>().currenthp = 100;
-            overworldHP.GetComponent<OverworldHP>().hptext.text = "100";
-            overworldHP.transform.GetChild(2).GetComponent<Image>().fillAmount = 1;
-            SaveDataManager.currentData.playerStats.health = 100;
+            ohp.ChangeHP(SaveDataManager.currentData.playerStats.maxHealth - SaveDataManager.currentData.playerStats.health);
             
         }
     }

@@ -32,8 +32,9 @@ public class OverworldHP : MonoBehaviour
         {
             PlayerPrefs.SetFloat("CurrentHP", 100);
         }*/
-        maxhp = Entity.playerStats.maxHealth;
-        currenthp = Entity.playerStats.health;
+       
+        maxhp = SaveDataManager.currentData.playerStats.maxHealth;
+        currenthp = SaveDataManager.currentData.playerStats.health;
         UpdateDisplay();
     }
 
@@ -50,7 +51,7 @@ public class OverworldHP : MonoBehaviour
             currenthp = 0;
         }
         UpdateDisplay();
-        Entity.playerStats.health = currenthp;
+        SaveDataManager.currentData.playerStats.health = currenthp;
     }
 
     //Updates the displayed HP in the UI
