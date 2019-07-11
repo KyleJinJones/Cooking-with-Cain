@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634cf88e2061365468ecf8d9a31e14d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startinging: []
 --- !u!114 &21701897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634cf88e2061365468ecf8d9a31e14d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startinging:
+  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 3a584235598dad143aaa2e8538451a1d, type: 2}
+  - {fileID: 11400000, guid: 72b91d131b1494e49b36add61848da15, type: 2}
+  - {fileID: 11400000, guid: 9b86f2db889ab564abffeec56ea7264a, type: 2}
 --- !u!114 &362445900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,6 +1007,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634cf88e2061365468ecf8d9a31e14d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startinging:
+  - {fileID: 11400000, guid: efcf29fe66150ef4cb654145a1b99a77, type: 2}
+  - {fileID: 11400000, guid: 3a584235598dad143aaa2e8538451a1d, type: 2}
+  - {fileID: 11400000, guid: 72b91d131b1494e49b36add61848da15, type: 2}
+  - {fileID: 11400000, guid: 9b86f2db889ab564abffeec56ea7264a, type: 2}
 --- !u!1 &1357200436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: data.equipped.Array.data[5]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207366547924449523, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
+        type: 3}
+      propertyPath: data.playerStats.attack
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5207366547924449524, guid: 7ac1a7704c99f40409d24c66e1e46a0e,
         type: 3}

@@ -7,7 +7,7 @@ public class SaveDataManager : MonoBehaviour
 {
     public SaveData data;
 
-    static SaveDataManager instance = null;
+    public static SaveDataManager instance = null;
 
     string dataPath;
 
@@ -37,6 +37,12 @@ public class SaveDataManager : MonoBehaviour
         }
 
         instance = this;
+    }
+
+    //Called to reset the currentdata to its defaults
+    public void ResetData()
+    {
+        instance.data = new SaveData();
     }
 
     public void LoadDataFromFile()
@@ -73,7 +79,7 @@ public class SaveDataManager : MonoBehaviour
 public class SaveData
 {
     public Stats playerStats = new Stats();
-    public List<int> despawnedEnemies;
+    public List<int> despawnedEnemies= new List<int>();
     public Vector2 currentPosition;
     public Vector2 checkpointPosition;
     public int gold;

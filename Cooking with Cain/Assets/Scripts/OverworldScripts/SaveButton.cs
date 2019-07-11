@@ -15,5 +15,6 @@ public class SaveButton : MonoBehaviour
     {
         SaveDataManager.currentData.currentPosition = player.transform.position;
         SaveDataManager.currentData.sceneName = SceneManager.GetActiveScene().name;
+        SaveDataManager.instance.SaveDataToFile();
     }
 }
