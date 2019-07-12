@@ -74,6 +74,17 @@ public class EntityManager : MonoBehaviour
         }
     }
 
+    public void PlayerAction(HPpotion.PotionType potionType)
+    {
+        if (playerTurn && SaveDataManager.currentData.potions[(int)potionType] > 0 && player.stats.health < player.stats.maxHealth)
+        {
+            targetIndicator.gameObject.SetActive(false);
+            SaveDataManager.currentData.potions[(int)potionType]--;
+            player.ModifyHealth((int)(player.stats.maxHealth * new float[] { 0.25f, 0.5f, 1f }[(int)potionType]));
+            playerTurn = false;
+        }
+    }
+
     public void StartPlayerTurn()
     {
         playerTurn = true;

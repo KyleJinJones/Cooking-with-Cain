@@ -34,7 +34,7 @@ public class HPpotion : MonoBehaviour
         ownedtxt = GetComponentInChildren<TextMeshProUGUI>();
 
         TooltipText tooltipText = gameObject.AddComponent<TooltipText>();
-        tooltipText.text = string.Format("Heals {0} HP", healamt);
+        tooltipText.text = string.Format("Heals {0}% HP", healamt);
     }
 
     void Update()
@@ -48,7 +48,7 @@ public class HPpotion : MonoBehaviour
     {
         if (amtowned > 0&& hp.currenthp<hp.maxhp)
         {
-            hp.ChangeHP(healamt);
+            hp.ChangeHP(hp.maxhp * healamt/100f);
             amtowned -= 1;
         }
     }
