@@ -14,11 +14,8 @@ public class BossTest : Entity
 
     void Start()
     {
-        TooltipTextWithIngredients tooltip = gameObject.AddComponent<TooltipTextWithIngredients>();
-        tooltip.text = "Ingredients:";
-        List<Ingredient> ingredients = new List<Ingredient>();
-        ingredients.AddRange(GetComponent<EnemyAction>().ingredients);
-        tooltip.sprites = ingredients.ConvertAll(ingredient => ingredient.sprite);
+        TooltipText tooltip = gameObject.AddComponent<TooltipText>();
+        tooltip.text = "Buffel Sprout";
     }
 
     public override void UpdateStartPlayerTurn()

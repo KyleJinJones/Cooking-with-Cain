@@ -22,7 +22,7 @@ MonoBehaviour:
   rewardname: Burn
   limit: 10
   costIncrease: 10
-  required: {fileID: 0}
+  required: {fileID: 11400000, guid: 021cadd095876394fbec5087dddb26ae, type: 2}
   statsModification:
     attack: 0
     health: 0
