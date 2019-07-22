@@ -14425,15 +14425,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7625803869231245087, guid: dff14405611e5ed47a95626fc54f0f04,
-        type: 3}
-      propertyPath: overworldHP
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7625803869231245081, guid: dff14405611e5ed47a95626fc54f0f04,
         type: 3}
       propertyPath: m_SortingOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625803869231245087, guid: dff14405611e5ed47a95626fc54f0f04,
+        type: 3}
+      propertyPath: overworldHP
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dff14405611e5ed47a95626fc54f0f04, type: 3}
@@ -14906,6 +14906,11 @@ PrefabInstance:
     - target: {fileID: 7233673767971714688, guid: 068f897f3f27d6146afe55db16b6dbe3,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5621390908811609650, guid: 068f897f3f27d6146afe55db16b6dbe3,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
