@@ -217,7 +217,7 @@ public class Entity : MonoBehaviour
                 else if (health > 0)
                     damageText.GetComponent<Text>().color = new Color(0.1192111f, 0.745283f, 0, 1);
                 damageText.transform.parent = FindObjectOfType<Canvas>().transform;
-                damageText.transform.SetSiblingIndex(1);
+                damageText.transform.SetSiblingIndex(3);
             }
             StartCoroutine(Damage(damageText));
             StartCoroutine(Dtext(damageText));

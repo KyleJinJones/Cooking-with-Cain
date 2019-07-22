@@ -19067,6 +19067,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2960d19cc3ba99547b827b774dd53409,
         type: 3}
+    - target: {fileID: 2548003376887998960, guid: 4e6422375e36afb44b950a7e367a9833,
+        type: 3}
+      propertyPath: reward
+      value: 
+      objectReference: {fileID: 11400000, guid: 021cadd095876394fbec5087dddb26ae,
+        type: 2}
     - target: {fileID: 2548003376887998961, guid: 4e6422375e36afb44b950a7e367a9833,
         type: 3}
       propertyPath: m_LocalPosition.x
