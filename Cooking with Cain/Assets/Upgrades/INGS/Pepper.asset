@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bfec3f4c11adea4480eb67f6962e86f, type: 3}
+  m_Name: Pepper
+  m_EditorClassIdentifier: 
+  attributeType: 1
+  goldcost: 0
+  upgradeimage: {fileID: 21300000, guid: 6e3af344281cf534c88e32916668d804, type: 3}
+  infotext: 
+  rewardname: Pepper of Punishment
+  limit: 0
+  costIncrease: 0
+  required: {fileID: 11400000}
+  statsModification:
+    attack: 0
+    health: 0
+    maxHealth: 0
+    burn: 0
+    splash: 0
+    lifesteal: 0
+    atkboost: 0
+    atkdebuff: 0
+    stun: 0
+    defboost: 0
+    defdebuff: 0
+    reflect: 0
+    selfdmg: 0
+    miss: 0
+  ingredient: {fileID: 11400000, guid: d1d5a3429b25513499b0655ca27049de, type: 2}
+  potionType: 0
+  amount: 0
