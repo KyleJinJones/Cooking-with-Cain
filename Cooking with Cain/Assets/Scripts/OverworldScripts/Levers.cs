@@ -39,7 +39,7 @@ public class Levers : MonoBehaviour
 
         if (activated)
         {
-            objectToDelete.SetActive(!objectToDelete.activeSelf);
+            objectToDelete.SetActive(false);
             this.GetComponent<SpriteRenderer>().sprite = pulled;
         }
     }

@@ -91,4 +91,5 @@ public class SaveData
     public List<LeverId> activatedLevers = new List<LeverId>();
     public List<UpgradeInfo> shopBoughtIngredient = new List<UpgradeInfo>();
     public List<UpgradeBoughtAmount> shopBoughtStats = new List<UpgradeBoughtAmount>();
+    public List<int> puzzles = new List<int>();
 }
