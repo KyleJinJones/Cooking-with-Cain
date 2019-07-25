@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuScript : MonoBehaviour
 {
-    public List<Ingredient> startinging;
+   // public List<Ingredient> startinging;
+    public List<UpgradeInfo> startinging;
 
     public void StartGame()
     {
@@ -17,16 +18,18 @@ public class StartMenuScript : MonoBehaviour
         SaveDataManager.instance.ResetData();
 
         int temp = 0;
-        foreach(Ingredient i in startinging)
+        foreach(UpgradeInfo u in startinging)
         {
-            SaveDataManager.currentData.equipped[temp] = i;
+            SaveDataManager.currentData.equipped[temp] = u.ingredient;
+            SaveDataManager.currentData.shopBoughtIngredient.Add(u);
             temp++;
         }
+
+
         SaveDataManager.currentData.gold = 100;
         SaveDataManager.currentData.currentPosition =new Vector2(0, 0);
         SaveDataManager.currentData.checkpointPosition = new Vector2(0, 0);
         PlayerMovementFixed.spawnPosition = new Vector2(0, 0);
-        print(SaveDataManager.currentData.checkpointPosition);
         SceneManager.LoadScene("Intro CS");
     }
 
