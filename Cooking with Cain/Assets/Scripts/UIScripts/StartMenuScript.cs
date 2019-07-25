@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ public class StartMenuScript : MonoBehaviour
 
     public void StartGame()
     {
+        File.Delete(Path.Combine(Application.persistentDataPath, "save.json"));
         PlayerPrefs.DeleteAll();
         SaveDataManager.instance.ResetData();
 
