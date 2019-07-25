@@ -8,7 +8,7 @@ public class LevelBlockade : MonoBehaviour
     public int reqlevel = 0;
     void Start()
     {
-        if (PlayerPrefs.HasKey("Level") && PlayerPrefs.GetInt("Level") >= reqlevel)
+        if (SaveDataManager.currentData.level>=reqlevel)
         {
             this.gameObject.SetActive(false);
         }

@@ -7,7 +7,7 @@ public class LevelUpdater : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        PlayerPrefs.SetInt("level", SceneManager.GetActiveScene().buildIndex);
+        //PlayerPrefs.SetInt("level", SceneManager.GetActiveScene().buildIndex);
 	}
 	
 }
