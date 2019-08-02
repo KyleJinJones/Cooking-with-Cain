@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributeType: 4
   goldcost: 0
-  upgradeimage: {fileID: 21300004, guid: 73eadc5dcefa26b47a7291330741afc4, type: 3}
-  infotext: Want some Potions and Upgrades to your Ingredients? Come down to Karl's
-    Krazy Konundrum to get some of the best around!
+  upgradeimage: {fileID: 21300000, guid: dbfa85fd81ebfe34d95d201d23f5d6db, type: 3}
+  infotext: Hello! I am the Selfish - Uh err, I mean Shellfish Shopkeep Larry. Browse
+    for upgrades and potions!
   rewardname: 
   limit: 0
   costIncrease: 0
