@@ -14854,7 +14854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec3968d49acba408cf16e3357a5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: HubWorld
+  sceneName: Level 1 Boss CS
   spawnPosition: {x: 3, y: 7}
   ClearEnemies: 1
   interactPopup: {fileID: 0}
