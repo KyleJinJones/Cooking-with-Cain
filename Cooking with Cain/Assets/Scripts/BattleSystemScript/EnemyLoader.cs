@@ -44,6 +44,9 @@ public class EnemyLoader : MonoBehaviour
         {
             manager.AddEnemyToQueue(GenerateEnemy(enemy));
         }
+
+        enemies.Clear();
+        bosses.Clear();
     }
 
     public Entity GenerateBoss(GameObject prefab)
