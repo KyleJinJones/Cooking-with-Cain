@@ -29,6 +29,7 @@ public class StartMenuScript : MonoBehaviour
         SaveDataManager.currentData.gold = 100;
         SaveDataManager.currentData.currentPosition =new Vector2(0, 0);
         SaveDataManager.currentData.checkpointPosition = new Vector2(0, 0);
+        SaveDataManager.currentData.puzzles = new List<int>();
         PlayerMovementFixed.spawnPosition = new Vector2(0, 0);
         SceneManager.LoadScene("Intro CS");
     }
