@@ -14896,7 +14896,7 @@ PrefabInstance:
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.38
+      value: 7.23
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870112, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
@@ -15000,6 +15000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: detectRadius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4489572396547870126, guid: 7d195afd7042d1c4692de329be529667,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4489572396547870113, guid: 7d195afd7042d1c4692de329be529667,
         type: 3}
