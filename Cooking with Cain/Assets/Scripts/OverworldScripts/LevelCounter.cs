@@ -9,15 +9,9 @@ public class LevelCounter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)&&collision.CompareTag("Player"))
         {
-            if (!PlayerPrefs.HasKey("Level"))
+            if (SaveDataManager.currentData.level < levelset)
             {
-                PlayerPrefs.SetInt("Level", levelset);
-                return;
-            }
-
-            if (PlayerPrefs.GetInt("Level") < levelset)
-            {
-                PlayerPrefs.SetInt("Level", levelset);
+                SaveDataManager.currentData.level=levelset;
             }
         }
     }

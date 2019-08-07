@@ -601,13 +601,13 @@ MonoBehaviour:
     - ' '
     - ' '
     sentences:
-    - With the full might of his demonic abilities, Cain defeated Buffel Sprouts and
-      put him back into the cooking pot.
-    - 'Once thoroughly boiled and garnished with olive oil, salt, garlic, and pepper,
-      they ended '
+    - With the full might of his demonic cooking abilities, Cain defeated Buffel Sprouts
+      and put him back into the cooking pot.
+    - Once thoroughly boiled and garnished with olive oil, salt, garlic, and pepper,
+      Bruffel Sprouts is now a mere appetizer.
     - Cain lived in peace until his cooking show the next day, when he made banana
       fritters.
-    - The End
+    - The End.
 --- !u!114 &1017235710
 MonoBehaviour:
   m_ObjectHideFlags: 0

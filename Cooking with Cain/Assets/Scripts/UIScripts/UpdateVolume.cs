@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelBlockade : MonoBehaviour
+public class UpdateVolume : MonoBehaviour
 {
+    AudioManager a;
     // Start is called before the first frame update
-    public int reqlevel = 0;
     void Start()
     {
-        if (SaveDataManager.currentData.level>=reqlevel)
-        {
-            this.gameObject.SetActive(false);
-        }
+        a = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
