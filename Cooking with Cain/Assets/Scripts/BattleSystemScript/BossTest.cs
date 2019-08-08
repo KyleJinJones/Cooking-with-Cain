@@ -34,6 +34,15 @@ public class BossTest : Entity
         {
             if (cooldown > 0)
             {
+                if (defense != null)
+                {
+                    defense.duration = 0;
+                    defense = null;
+
+                    reflect.duration = 0;
+                    reflect = null;
+                }
+
                 cooldown--;
             }
             else
