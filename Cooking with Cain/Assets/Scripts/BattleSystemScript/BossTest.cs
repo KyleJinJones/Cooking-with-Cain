@@ -48,9 +48,8 @@ public class BossTest : Entity
 
                 manager.AddEnemyToQueue(loader.GenerateEnemy(pea));
                 manager.AddEnemyToQueue(loader.GenerateEnemy(pea));
-                manager.AddEnemyToQueue(loader.GenerateEnemy(pea));
 
-                cooldown = 1;
+                cooldown = 3;
             }
         }
     }
