@@ -48,7 +48,7 @@ public class HPpotion : MonoBehaviour
     {
         if (amtowned > 0&& hp.currenthp<hp.maxhp)
         {
-            hp.ChangeHP(hp.maxhp * healamt/100f);
+            hp.ChangeHP(Mathf.RoundToInt(hp.maxhp * healamt/100f));
             amtowned -= 1;
         }
     }
