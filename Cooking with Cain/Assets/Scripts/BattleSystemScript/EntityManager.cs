@@ -10,7 +10,7 @@ public class EntityManager : MonoBehaviour
     Entity player;
     public Entity[] enemies = new Entity[3];
     public bool playerTurn { get; private set; }
-
+    public List<GameObject> transparentindicators;
     AttackManager attackManager;
 
     public Image targetIndicator;
@@ -159,6 +159,19 @@ public class EntityManager : MonoBehaviour
 
                 for (int i = 0; i < 10; i++)
                     yield return null;
+
+                if (transparentindicators != null)
+                {
+                    for(int i = 0; i < 3; i++)
+                    {
+                        if (enemies[i] != null)
+                        {
+                            transparentindicators[i].transform.position = enemies[i].transform.position;
+                        }
+                    }
+
+                    transparentindicators = null;
+                }
 
                 targetIndicator.transform.position = targeted.transform.position;
                 targetIndicator.gameObject.SetActive(true);
