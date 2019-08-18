@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour {
     public Queue<string> sentences;
     public Queue<string> names;
 
-    void Start()
+    void Awake()    // 8/17/2019 Changed from Start to Awake due to line 35 executing before Start()
     {
         sentences = new Queue<string>();
         names = new Queue<string>();
