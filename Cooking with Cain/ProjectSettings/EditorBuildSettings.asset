@@ -33,10 +33,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level1.unity
     guid: a9c703a493e3cae45a3a334567dbcfff
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/Level 1 Boss Post Battle CS.unity
+    path: Assets/Scenes/Cutscenes/L1 Pre CS.unity
+    guid: 9aca5c124379e42fb8fa4b6f7d1e7657
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/L1 Post CS.unity
     guid: 711d08d27cbeaad46aa20fa63c376ae3
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/Level 2 Boss Post Battle CS.unity
+    path: Assets/Scenes/Cutscenes/L2 Post CS.unity
     guid: 2a7736b72c8d2aa4287f93f22317cf57
   - enabled: 1
     path: Assets/Scenes/Levels/Level2.unity

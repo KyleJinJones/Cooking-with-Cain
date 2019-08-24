@@ -14854,7 +14854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec3968d49acba408cf16e3357a5411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level 1 Boss Post Battle CS
+  sceneName: Hubworld
   spawnPosition: {x: 3, y: 7}
   ClearEnemies: 1
   interactPopup: {fileID: 0}
@@ -16593,7 +16593,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 11400000, guid: 4969ec71a3914a44e9b34fd882d42601, type: 2}
   bosses: []
-  winScene: Level 1 Boss Post Battle CS
+  preBattleScene: L1 Pre CS
+  winScene: L1 Post CS
 --- !u!114 &592524417 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8586631661545586253, guid: 938e90bc215694b47941168635ba5b10,
