@@ -1889,7 +1889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1673003705}
   dialogueText: {fileID: 335484773}
-  scene: 7
+  scene: 4
 --- !u!4 &1794661559
 Transform:
   m_ObjectHideFlags: 0

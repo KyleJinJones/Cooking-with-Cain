@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1615294683}
   dialogueText: {fileID: 1615294682}
-  scene: 12
+  scene: 17
 --- !u!4 &593931447
 Transform:
   m_ObjectHideFlags: 0
@@ -1021,6 +1021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848261476758892793, guid: 4ec94b937cf5c094db3c6ae1e436c96b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.39990234
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec94b937cf5c094db3c6ae1e436c96b, type: 3}

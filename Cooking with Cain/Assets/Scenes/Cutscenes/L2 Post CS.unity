@@ -1118,11 +1118,11 @@ MonoBehaviour:
       is closing!
 
 '
-    - 'I don''t care about your protein shake. WHERE IS BUFFEL SPROUTS!
+    - 'I will break it if you don''t tell me WHERE BUFFEL SPROUTS IS!
 
 '
     - Ok ok I'll tell you. Please don't take my protein away. I'll lose my muscles
-      and  followers on social media!
+      and followers on social media!
     - Buffel sprouts is hiding in... Level 3 *dun dun daaaa*
     - You spoiled the story for the viewers! Damn it Carl!
 --- !u!114 &1046452403
@@ -2035,7 +2035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 91489340}
   dialogueText: {fileID: 50995184}
-  scene: 7
+  scene: 9
 --- !u!4 &2094759846
 Transform:
   m_ObjectHideFlags: 0

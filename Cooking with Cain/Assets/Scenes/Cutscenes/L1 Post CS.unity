@@ -1166,32 +1166,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     names:
-    - 'Cain:'
+    - 'Brock Lee:'
     - 'Brock Lee:'
     - 'Cain:'
-    - 'Brock Lee:'
     - 'Cain:'
     - 'Brock Lee:'
-    - 'Cain:'
-    - 'Brock Lee:'
-    - 'Cain:'
     - 'Cain:'
     sentences:
-    - Here we are Brock.. AGAIN! When are you going to accept your defeat?
-    - Never!
-    - Now tell me where is Buffel Sprouts?
-    - "I won\u2019t tell you where he\u2019s getting ready to take over the Underworld
-      in the Swamp Lands. \n"
-    - '....
-
-'
-    - "Damn it! I did it again! Well he\u2019s gonna defeat you!"
-    - "You\u2019re a good fighter Brock. I made you after all. But you were never
-      smart."
+    - "*shutters*  But\u2026 how?..."
+    - You cook with neither grace nor form! *spits*
+    - "You see. That\u2019s exactly why you lost."
+    - "There\u2019s no room in truly hellish underworld cooking for the likes of GRACE!"
     - THIS IS NOT OVER! MARK MY WORDS CAIN! WE WILL MEET AGAIN!
-    - Yea YEA GET OUTTA HERE!
-    - "*Well looks like Buffel Sprouts isn\u2019t here after all. I guess I need to
-      head to the Swamp Lands to stop Bruffel Sprouts before its too late*"
+    - Yea YEA GET OUTTA HERE! *Brock Lee flees*
 --- !u!114 &1608872219
 MonoBehaviour:
   m_ObjectHideFlags: 0
