@@ -101,7 +101,7 @@ public class EntityManager : MonoBehaviour
                     Button button = enemy.gameObject.AddComponent<Button>();
                     button.onClick.AddListener(() => {
                         targeted = enemy;
-                        targetIndicator.transform.position = enemy.transform.position;
+                        targetIndicator.transform.position = enemy.transform.position + Vector3.up * 225;
                     });
 
                     ResultText.lines.Add(string.Format("{0} spawns", enemy.entityName));
@@ -166,14 +166,14 @@ public class EntityManager : MonoBehaviour
                     {
                         if (enemies[i] != null)
                         {
-                            transparentindicators[i].transform.position = enemies[i].transform.position;
+                            transparentindicators[i].transform.position = enemies[i].transform.position + Vector3.up * 225;
                         }
                     }
 
                     
                 }
 
-                targetIndicator.transform.position = targeted.transform.position;
+                targetIndicator.transform.position = targeted.transform.position+Vector3.up*225;
                 targetIndicator.gameObject.SetActive(true);
 
                 for (int i = 0; i < 10; i++)
