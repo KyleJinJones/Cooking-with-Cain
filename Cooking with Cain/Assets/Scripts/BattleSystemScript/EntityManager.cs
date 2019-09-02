@@ -170,7 +170,7 @@ public class EntityManager : MonoBehaviour
                         }
                     }
 
-                    transparentindicators = null;
+                    
                 }
 
                 targetIndicator.transform.position = targeted.transform.position;
@@ -283,5 +283,20 @@ public class EntityManager : MonoBehaviour
     public void AddEnemyToQueue(Entity enemy)
     {
         queue.Add(enemy);
+    }
+
+    public void EraseTargeting(Entity enemy)
+    {
+        int i = 2;
+        if (enemies[0] == enemy)
+        {
+            i = 0;
+        }
+        else if(enemies[1]== enemy)
+        {
+            i = 1;
+        }
+
+        transparentindicators[i].transform.position = new Vector3(5000, 5000);
     }
 }

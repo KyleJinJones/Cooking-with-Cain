@@ -305,6 +305,7 @@ public class Entity : MonoBehaviour
                 GetComponent<Image>().color = new Color(1, 1, 1, i / 30f);
                 transform.Rotate(0, 0, 15);
                 transform.localPosition = transform.localPosition + new Vector3(30, 10);
+                manager.EraseTargeting(this);
                 yield return null;
             }
         }
